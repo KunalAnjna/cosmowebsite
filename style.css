@@ -705,8 +705,8 @@ button:active {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 50%;
-   margin-bottom: 10px;
+    margin-left: 45%;
+   margin-bottom: 20px;
 }
 #productbtn a{
     color: white;
