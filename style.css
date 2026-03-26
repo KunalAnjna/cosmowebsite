@@ -705,14 +705,13 @@ button:active {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 40%;
-   margin-bottom: 2px;
+    margin-left: 50%;
+   margin-bottom: 10px;
 }
 #productbtn a{
     color: white;
 }
 .products{
-    margin-top: 5px;
     background-color:  #f8f8f8;
 }
 
