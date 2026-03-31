@@ -1558,8 +1558,9 @@ button:active {
 
     /* STATS */
     .stats-container {
+        font-size:small ;
         flex-direction:row;
-        gap: 5px;
+        gap: 10px;
     }
 
     /* TEAM */
@@ -1606,6 +1607,7 @@ button:active {
         align-items: center;
     }
 
+    
     .menu a {
         margin: 6px;
         font-size: 14px;
