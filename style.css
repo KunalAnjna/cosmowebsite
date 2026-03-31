@@ -1558,13 +1558,13 @@ button:active {
 
     /* STATS */
     .stats-container {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction:row;
+        gap: 5px;
     }
 
     /* TEAM */
     .team-container {
-        flex-direction: column;
+        flex-direction:row;
         text-align: center;
     }
 
