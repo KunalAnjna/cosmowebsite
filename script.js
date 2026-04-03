@@ -23,13 +23,6 @@ function toggleText() {
   }
 }
 
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
-
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
-
 /* ================= IMAGE LOAD ANIMATION ================= */
 window.addEventListener("load", () => {
   const images = document.querySelectorAll(".img");

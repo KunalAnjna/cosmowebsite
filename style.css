@@ -581,7 +581,7 @@ button:active{
 /* MOBILE */
 @media (max-width: 600px){
     .hero {
-        margin-top: 200px;
+        margin-top: 250px;
         min-height: 60vh;
     }
 
