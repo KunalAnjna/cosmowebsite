@@ -581,11 +581,12 @@ button:active{
 /* MOBILE */
 @media (max-width: 600px){
     .hero {
-        min-height: 70vh;
+        margin-top: 200px;
+        min-height: 60vh;
     }
 
     .hero-content {
-        padding: 15px;
+        padding: 120px;
     }
 }
 /* About SECTION */
