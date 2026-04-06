@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>LS-R902</title>
+<title>LS-R700</title>
 
 <style>
 body {
@@ -20,26 +20,48 @@ body {
 
 .header h1 {
   margin: 0;
-  font-size: 40px;
+  font-size: clamp(28px, 5vw, 40px);
 }
 
 .subtitle {
   color: #38bdf8;
 }
 
-/* IMAGE */
+
+/*abut prd section*/
+.info-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 10px;
+
+}
+
+.info-box h3 {
+  font-size: clamp(16px, 2vw, 20px);
+ 
+  color: #ffffff;
+}
+/* IMAGE FIX */
 .image {
   display: flex;
   justify-content: center;
-  margin: 30px ;
-  height:400px;
-  width: 500px;
-  margin-left: 25%;
+  align-items: center;
+  margin: 10px auto;
+  margin-bottom: 120px;
+  width: 100%;
+  max-width: 900px; /* control width */
+  padding: 0 15px;
 }
 
 .image img {
-  height: 400px;
-  width: 500px;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
@@ -65,7 +87,6 @@ body {
 
 .car:hover {
   transform: translateY(-10px);
-  background: rgba(255, 255, 255);
 }
 
 /* TITLE */
@@ -78,19 +99,16 @@ body {
 .car p {
   margin: 8px 0;
   font-size: 16px;
+  line-height: 1.7;
 }
 
-
-/* RESPONSIVE */
-@media(max-width: 768px){
-  .image img {
-    width: 100%;
-  }
-}
+/* SLIDER FIX */
 .slider {
   position: relative;
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3/2;
+  margin: auto;
 }
 
 .slide {
@@ -105,6 +123,43 @@ body {
 
 .slide.active {
   opacity: 1;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media(max-width: 1024px){
+  .grid {
+    padding: 30px;
+    gap: 15px;
+  }
+}
+
+/* Mobile */
+@media(max-width: 768px){
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .image {
+    margin: 20px auto;
+  }
+
+  .car {
+    padding: 15px;
+  }
+}
+
+/* Small Mobile */
+@media(max-width: 480px){
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .car p {
+    font-size: 14px;
+  }
 }
 </style>
 <link rel="stylesheet" href="style.css">
@@ -143,13 +198,16 @@ body {
   <h1>LS-R700</h1>
   <p class="subtitle">DP Leak Testers</p>
 </div>
-<div style="display: flex;justify-content: center;height: 200px;width: 800px;margin-left: 25%;">
-    <h3>Our mid-range model of Air Leak Testers. Highly functional and easy to use, it has extensive 
-<br>
+<div class="info-box">
+  <h3>
+   Our mid-range model of Air Leak Testers. Highly functional and easy to use, it has extensive features in a compact body. <br> <br>
+   It offers a good balance of functions and price.<br><br>
 
-    <h3>Our mid-range model of Air Leak Testers. Highly functional and easy to use, it has extensive 
-</h3>
- </div>
+    Large color touch-screen LCD and easy-to-understand icons.<br>
+
+  </h3>
+</div>
+ 
 <div class="image">
   <div class="slider">
     <img src="DPLeak/LS-R700_001.png" class="slide active">
@@ -164,11 +222,15 @@ body {
   <!-- CARD 1 -->
   <div class="car">
     <h3>Specs</h3>
-  
+      
+    
+<p><strong> Range:</strong>	-100 kPa to 2.0 MPa</p>
+<p> <strong> source:</strong>	100 to 240 VAC, 50/60 Hz, 70 VA max</p>
+ <p><strong>Operating temperature:</strong>  5 to 45°C</p>
+  <p><strong>                       Storage temperature:</strong> -20 to 60°C</p>
+<p> <strong>External dimensions:	</strong>W195 x D304.7 x H250.2 (excluding protrusions)</p>
+<p><strong>Weight:</strong>	Approx. 10 kg (Standard spec.)</p><br>
 
-      <p>Pressure: -100 kPa to 1 MPa</p>
-      <p>Power: 100-240 VAC</p>
-      <p>Temp: 0°C - 40°C</p>
     </div>
  
 
@@ -177,9 +239,14 @@ body {
     <h3>Features</h3>
     
 
-      <p>Touch LCD</p>
-      <p>Fast response</p>
-      <p>Multi-language</p>
+      <p>Intuitive operation with icons</p>
+      <p>3 measurement screens</p>
+      <p>USB port for easy data collection</p>
+      <p>Compact housing for easy installation</p>
+    <p>Explanation displayed on guidance bar</p>
+    <p>Phoenix Contact I/O connector</p>
+    
+    
     </div>
   
   
@@ -188,9 +255,13 @@ body {
     <h3>Functions</h3>
   
 
-      <p>Auto setup</p>
-      <p>Leak detection</p>
-      <p>USB storage</p>
+      <p>Intelligent Pneumatic Circuit</p>
+      <p>High-performance differential pressure sensor</p>
+      <p>USB memory data storage</p>
+      <p>Test pressure control by electro-pneumatic regulator</p>   
+    <p>High-pressure compatible</p>
+    
+    
     </div>
   </div>
 
