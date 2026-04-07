@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LZ-3000</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #3c5b5d, #46daff);
+  color: rgb(255, 255, 255);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 40px);
+}
+
+.subtitle {
+  color: #38bdf8;
+}
+
+
+/*abut prd section*/
+.info-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 10px;
+
+}
+
+.info-box h3 {
+  font-size: clamp(16px, 2vw, 20px);
+ 
+  color: #ffffff;
+}
+/* IMAGE FIX */
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  margin-bottom: 120px;
+  width: 100%;
+  max-width: 900px; /* control width */
+  padding: 0 15px;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+/* CARD */
+.car {
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #000000;
+}
+
+.car:hover {
+  transform: translateY(-10px);
+}
+
+/* TITLE */
+.car h3 {
+  margin-top: 0;
+  color: #38bdf8;
+}
+
+/* LIST */
+.car p {
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* SLIDER FIX */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3/2;
+  margin: auto;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media(max-width: 1024px){
+  .grid {
+    padding: 30px;
+    gap: 15px;
+  }
+}
+
+/* Mobile */
+@media(max-width: 768px){
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .image {
+    margin: 20px auto;
+  }
+
+  .car {
+    padding: 15px;
+  }
+}
+
+/* Small Mobile */
+@media(max-width: 480px){
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .car p {
+    font-size: 14px;
+  }
+}
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo">
+                </div>
+            </div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+               <div class="dropdown">
+                <a>About us ▾</a>
+
+                <div class="dropdown-menu">
+                    <p><a href="message.html">Message from Director</a></p>
+                    <p><a href="">Our Presence and Joint Venture </a></p>
+                    <p><a href="">Our Team </a></p>
+                </div>
+            </div>
+            <!-- DROPDOWN END -->
+                <a href="products.html">Products and Services</a>
+                <a href="client.html">Clients</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+
+            
+                <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
+        
+        </div>
+    </header>
+
+<div class="header">
+  <h1>LZ-3000</h1>
+  <p class="subtitle">VolumetricLeak Testers</p>
+</div>
+<div class="info-box">
+  <h3>
+Differential pressure Air Leak Tester that can perform highly sensitive testing under an environment of ultra-high pressure.<br><br>
+It realizes differential pressure leak test with a resolution of 1 Pa at up to 16 MPa..<br>
+
+  </h3>
+</div>
+ 
+<div class="image">
+  <div class="slider">
+    <img src="VolumetricLeak/l2-3000_01.png" class="slide active">
+    <img src="VolumetricLeak/l2-3000_02.png" class="slide">
+    <img src="VolumetricLeak/l2-3000_01.png" class="slide">
+    <img src="VolumetricLeak/l2-3000_02.png" class="slide">
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- CARD 1 -->
+  <div class="car">
+    <h3>Specs</h3>
+      
+    
+<p><strong> Range:</strong>	10 MPa, 16 MPa</p>
+<p> <strong> source:</strong>100 to 240 VAC, 50/60 Hz, 70 VA max</p>
+ <p><strong>Operating temperature:</strong>  5 to 40℃</p>
+  <p><strong> Storage temperature:</strong>-20 to 60℃</p>
+<p> <strong>External dimensions:	</strong>W82 x D230 x H198
+(Pneumatic Unit)</p>
+<p><strong>Weight:</strong>Controller: Approx. 2.6 kg
+Pneumatic Unit (LUA-241): Approx. 15 kg</p><br>
+
+    </div>
+ 
+
+  <!-- CARD 2 -->
+  <div class="car" >
+    <h3>Features</h3>
+    
+
+      <p style="background-color: #3c5b5d; color: white;">Monitoring of test pressure and differential pressure (leak) waveforms.</p>
+      <p>Compensates for noise effects on the works and reduces test time</p>
+      <p style="background-color: #3c5b5d; color: white;">Multi-language (Japanese, English, Chinese)..</p>
+      <p>Sensor unit can be placed close to the work.</p>
+  
+    
+    
+    </div>
+  
+  
+  <!-- CARD 3 -->
+  <div class="car">
+    <h3>Functions</h3>
+  
+
+      <p style="background-color: #3c5b5d; color: white;">Exhaust Interference Prevention</p>
+      <p>High-performance differential pressure sensor</p>
+      <p style="background-color: #3c5b5d; color: white;">USB memory data storage</p>
+      <p>Leak calibratrion</p>   
+    <p style="background-color: #3c5b5d; color: white;">High-pressure compatible</p>
+    <p>Mastering／Master Preset</p>
+    
+    </div>
+  </div>
+
+
+
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+</div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate history</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+
+</footer>
+
+<script>
+
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+
+  index = (index + 1) % slides.length;
+
+  slides[index].classList.add("active");
+}, 2500); // change time here
+</script>
+
+</body>
+</html>
