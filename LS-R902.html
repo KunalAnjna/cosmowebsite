@@ -160,6 +160,160 @@ body {
     font-size: 14px;
   }
 }
+   ============================================= */
+.catalogue-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.catalogue-section h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.catalogue-section p.cat-sub {
+  color: #b0e8ff;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+/* Grid for 4 catalogue cards */
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* Individual catalogue card */
+.cat-card {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 24px 16px;
+  transition: transform 0.3s, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cat-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.13);
+}
+
+/* PDF icon */
+.cat-icon {
+  width: 48px;
+  height: 60px;
+  background: #e63946;
+  border-radius: 6px 16px 6px 6px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.cat-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 14px 0 0;
+  border-color: rgba(255,255,255,0.35) rgba(255,255,255,0.35) transparent transparent;
+}
+
+.cat-card h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.cat-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #b0d8f0;
+  text-align: center;
+}
+
+/* Download button */
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #38bdf8;
+  color: #0c2340;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn-download:hover {
+  background: #7dd3fc;
+  transform: scale(1.04);
+}
+
+/* Download arrow icon */
+.btn-download svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Download ALL button */
+.btn-download-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 14px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 4px 20px rgba(56,189,248,0.35);
+  margin-top: 8px;
+}
+
+.btn-download-all:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+.btn-download-all svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Divider line before "Download All" */
+.cat-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 24px auto;
+  width: 60%;
+}
+
+
 </style>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -254,6 +408,95 @@ body {
       <p>USB storage</p>
     </div>
   </div>
+
+
+  <!-- =============================================
+       CATALOGUE DOWNLOAD SECTION
+       ============================================= -->
+  <div class="catalogue-section">
+    <h2>Download Catalogues</h2>
+    <p class="cat-sub">Choose a specific variant catalogue or download all at once</p>
+
+    <div class="catalogue-grid">
+
+      <!-- ─── CARD 1: LS-R902 Standard ───
+           STEP: Place your PDF file at:  catalogues/LS-R902-Standard.pdf
+           Then the href below will link to it automatically. -->
+      <div class="cat-card">
+        <div class="cat-icon">PDF</div>
+        <h4>LS-R902 Standard</h4>
+        <p>Standard model catalogue with full specification sheet</p>
+        <a class="btn-download" href="catalogues/LS-R902-Standard.pdf" download="LS-R902-Standard.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
+          </svg>
+          Download
+        </a>
+      </div>
+
+      <!-- ─── CARD 2: LS-R902 EV ───
+           STEP: Place your PDF file at:  catalogues/LS-R902-EV.pdf
+           Then the href below will link to it automatically. -->
+      <div class="cat-card">
+        <div class="cat-icon">PDF</div>
+        <h4>LS-R902 EV</h4>
+        <p>Electric Vehicle variant — EV battery & powertrain testing</p>
+        <a class="btn-download" href="catalogues/LS-R902-EV.pdf" download="LS-R902-EV.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
+          </svg>
+          Download
+        </a>
+      </div>
+
+      <!-- ─── CARD 3: LS-R902 Modbus ───
+           STEP: Place your PDF file at:  catalogues/LS-R902-Modbus.pdf
+           Then the href below will link to it automatically. -->
+      <div class="cat-card">
+        <div class="cat-icon">PDF</div>
+        <h4>LS-R902 Modbus</h4>
+        <p>Modbus RTU/TCP communication variant catalogue</p>
+        <a class="btn-download" href="catalogues/LS-R902-Modbus.pdf" download="LS-R902-Modbus.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
+          </svg>
+          Download
+        </a>
+      </div>
+
+      <!-- ─── CARD 4: LS-R902 (4th variant) ───
+           STEP: Rename the card title and description below to match your 4th variant.
+           STEP: Place your PDF file at:  catalogues/LS-R902-[YourVariantName].pdf
+           STEP: Update the href and download attribute to match that filename. -->
+      <div class="cat-card">
+        <div class="cat-icon">PDF</div>
+        <h4>LS-R902 PROFINET</h4>
+        <p>PROFINET / Ethernet-IP fieldbus integration catalogue</p>
+        <a class="btn-download" href="catalogues/LS-R902-PROFINET.pdf" download="LS-R902-PROFINET.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
+          </svg>
+          Download
+        </a>
+      </div>
+
+    </div><!-- /catalogue-grid -->
+
+    <hr class="cat-divider">
+
+    <!-- ─── DOWNLOAD ALL ───
+         STEP: Create a ZIP file containing all 4 PDFs above.
+         STEP: Place it at:  catalogues/LS-R902-All-Catalogues.zip
+         STEP: Update the href and download attribute below if you use a different filename. -->
+    <a class="btn-download-all" href="catalogues/LS-R902-All-Catalogues.zip" download="LS-R902-All-Catalogues.zip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2v14M6 10l6 8 6-8"/><rect x="3" y="19" width="18" height="3" rx="1.5"/>
+      </svg>
+      Download All Catalogues
+    </a>
+
+  </div>
+  <!-- ===== END CATALOGUE SECTION ===== -->
 
 
 
