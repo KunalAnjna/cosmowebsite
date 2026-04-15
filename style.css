@@ -1229,10 +1229,11 @@ background-color: rgb(255, 255, 255,00.2s);
 }
   /* GRID */
 .products-container {
-    display: grid;
-     grid-template-columns: repeat(4, 1fr); 
+    display: flex;
+
      gap: 40px;
       margin-top: 80px;
+      justify-content: space-around;
      } 
  /* CARD */ 
  .product-card { background: #f0f0f0;
