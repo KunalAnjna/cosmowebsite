@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elliptical O-Ring</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #3c5b5d, #46daff);
+  color: rgb(255, 255, 255);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 40px);
+}
+
+.subtitle {
+  color: #38bdf8;
+}
+
+
+/*abut prd section*/
+.info-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 10px;
+
+}
+
+.info-box h3 {
+  font-size: clamp(16px, 2vw, 20px);
+ 
+  color: #ffffff;
+}
+/* IMAGE FIX */
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  margin-bottom: 120px;
+  width: 100%;
+  max-width: 900px; /* control width */
+  padding: 0 15px;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+/* CARD */
+.car {
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #000000;
+}
+
+.car:hover {
+  transform: translateY(-10px);
+}
+
+/* TITLE */
+.car h3 {
+  margin-top: 0;
+  color: #38bdf8;
+}
+
+/* LIST */
+.car p {
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* SLIDER FIX */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3/2;
+  margin: auto;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media(max-width: 1024px){
+  .grid {
+    padding: 30px;
+    gap: 15px;
+  }
+}
+
+/* Mobile */
+@media(max-width: 768px){
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .image {
+    margin: 20px auto;
+  }
+
+  .car {
+    padding: 15px;
+  }
+}
+
+/* Small Mobile */
+@media(max-width: 480px){
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .car p {
+    font-size: 14px;
+  }
+}
+
+.catalogue-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.catalogue-section h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.catalogue-section p.cat-sub {
+  color: #b0e8ff;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+/* Grid for 4 catalogue cards */
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* Individual catalogue card */
+.cat-card {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 24px 16px;
+  transition: transform 0.3s, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cat-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.13);
+}
+
+/* PDF icon */
+.cat-icon {
+  width: 48px;
+  height: 60px;
+  background: #e63946;
+  border-radius: 6px 16px 6px 6px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.cat-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 14px 0 0;
+  border-color: rgba(255,255,255,0.35) rgba(255,255,255,0.35) transparent transparent;
+}
+
+.cat-card h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.cat-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #b0d8f0;
+  text-align: center;
+}
+
+/* Download button */
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #38bdf8;
+  color: #0c2340;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn-download:hover {
+  background: #7dd3fc;
+  transform: scale(1.04);
+}
+
+/* Download arrow icon */
+.btn-download svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Download ALL button */
+.btn-download-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 14px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 4px 20px rgba(56,189,248,0.35);
+  margin-top: 8px;
+}
+
+.btn-download-all:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+.btn-download-all svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Divider line before "Download All" */
+.cat-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 24px auto;
+  width: 60%;
+}
+
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo">
+                </div>
+            </div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+               <div class="dropdown">
+                <a>About us ▾</a>
+
+                <div class="dropdown-menu">
+                    <p><a href="message.html">Message from Director</a></p>
+                    <p><a href="">Our Presence and Joint Venture </a></p>
+                    <p><a href="">Our Team </a></p>
+                </div>
+            </div>
+            <!-- DROPDOWN END -->
+                <a href="products.html">Products and Services</a>
+                <a href="client.html">Clients</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+
+            
+                <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
+        
+        </div>
+    </header>
+
+<div class="header">
+  <h1>NL-S2</h1>
+  <p class="subtitle">NL Select valve</p>
+</div>
+<div class="info-box">
+  <h3>
+Multi-link Air Leak Tester with a color touch-screen LCD. Up to 8 sensor units can be connected to a single Controller for leak testing.<br><br>
+
+    Wiring for the Controller and the sensor units can be reduced by fieldbus.<br>
+
+  </h3>
+</div>
+ 
+<div class="image">
+  <div class="slider">
+    <img src="peripherals/nl-s2-series_01.png" class="slide active">
+    <img src="peripherals/nl-s2-series_02.png" class="slide">
+    <img src="peripherals/nl-s2-series_03.png" class="slide">
+      <img src="peripherals/nl-s2-series_04.png" class="slide">
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- CARD 1 -->
+  <div class="car">
+    <h3>Specs</h3>
+      
+    
+<p><strong> Range:</strong>	-100 kPa to 700 kPa</p>
+<p> <strong> source:</strong>100 to 240 VAC, 50/60 Hz, 50 VA max</p>
+ <p><strong>Operating temperature:</strong>  5 to 45℃</p>
+ 
+<p> <strong>External dimensions:	</strong>Controller: W320 x D175 x H302 (excluding protrusions)
+Pneumatic Circuit Unit: W120 x D301 x H24 (excluding protrusions)</p>
+<p><strong>Weight:</strong>	Controller: Approx. 7.5 kg
+Pneumatic Circuit Unit: 7.0 kg</p><br>
+
+    </div>
+ 
+
+  <!-- CARD 2 -->
+  <div class="car" >
+    <h3>Features</h3>
+    
+
+      <p style="background-color: #3c5b5d; color: white;">Highly sensitive and pressure-resistant DPS. Air operated valves that are not affected by heat.</p>
+      <p>The Intelligent Pneumatic Circuit with excellent performance and safety checks valve operation and sensor sensitivity in every test.</p>
+      <p style="background-color: #3c5b5d; color: white;">Master Preset and NR Mode can improve detection and reduce test time.</p>
+      <p >Extensive channel functions for a wide variety of works.</p>
+  
+    
+    
+    </div>
+  
+  
+  <!-- CARD 3 -->
+  <div class="car">
+    <h3>Functions</h3>
+  
+
+      <p style="background-color: #3c5b5d; color: white;">Intelligent Pneumatic Circuit</p>
+      <p>High-performance differential pressure sensor</p>
+      <p style="background-color: #3c5b5d; color: white;">USB memory data storage</p>
+      <p>Leak calibratrion</p>   
+    <p style="background-color: #3c5b5d; color: white;">High-pressure compatible</p>
+    
+    
+    </div>
+  </div>
+
+  <!-- =============================================
+       CATALOGUE DOWNLOAD SECTION
+       ============================================= -->
+  <div class="catalogue-section">
+    <h2>Download Catalogues</h2>
+    <p class="cat-sub">Choose a specific variant catalogue or download all at once</p>
+
+    <div class="catalogue-grid">
+
+      <!-- ─── CARD 1: LS-R902 Standard ───
+           STEP: Place your PDF file at:  catalogues/LS-R902-Standard.pdf
+           Then the href below will link to it automatically. -->
+      <div class="cat-card">
+        <div class="cat-icon">PDF</div>
+        <h4>LS-R902 Standard</h4>
+        <p>Standard model catalogue with full specification sheet</p>
+        <a class="btn-download" href="catalogues/LS-R902-Standard.pdf" download="LS-R902-Standard.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
+          </svg>
+          Download
+        </a>
+      </div>
+
+      <!-- ─── CARD 2: LS-R902 EV ───
+           STEP: Place your PDF file at:  catalogues/LS-R902-EV.pdf
+           Then the href below will link to it automatically. -->
+      <div class="cat-card">
+        <div class="cat-icon">PDF</div>
+        <h4>LS-R902 EV</h4>
+        <p>Electric Vehicle variant — EV battery & powertrain testing</p>
+        <a class="btn-download" href="catalogues/LS-R902-EV.pdf" download="LS-R902-EV.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
+          </svg>
+          Download
+        </a>
+      </div>
+
+      <!-- ─── CARD 3: LS-R902 Modbus ───
+           STEP: Place your PDF file at:  catalogues/LS-R902-Modbus.pdf
+           Then the href below will link to it automatically. -->
+      <div class="cat-card">
+        <div class="cat-icon">PDF</div>
+        <h4>LS-R902 Modbus</h4>
+        <p>Modbus RTU/TCP communication variant catalogue</p>
+        <a class="btn-download" href="catalogues/LS-R902-Modbus.pdf" download="LS-R902-Modbus.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
+          </svg>
+          Download
+        </a>
+      </div>
+
+      <!-- ─── CARD 4: LS-R902 (4th variant) ───
+           STEP: Rename the card title and description below to match your 4th variant.
+           STEP: Place your PDF file at:  catalogues/LS-R902-[YourVariantName].pdf
+           STEP: Update the href and download attribute to match that filename. -->
+      <div class="cat-card">
+        <div class="cat-icon">PDF</div>
+        <h4>LS-R902 PROFINET</h4>
+        <p>PROFINET / Ethernet-IP fieldbus integration catalogue</p>
+        <a class="btn-download" href="catalogues/LS-R902-PROFINET.pdf" download="LS-R902-PROFINET.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
+          </svg>
+          Download
+        </a>
+      </div>
+
+    </div><!-- /catalogue-grid -->
+
+    <hr class="cat-divider">
+
+    <!-- ─── DOWNLOAD ALL ───
+         STEP: Create a ZIP file containing all 4 PDFs above.
+         STEP: Place it at:  catalogues/LS-R902-All-Catalogues.zip
+         STEP: Update the href and download attribute below if you use a different filename. -->
+    <a class="btn-download-all" href="catalogues/LS-R902-All-Catalogues.zip" download="LS-R902-All-Catalogues.zip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2v14M6 10l6 8 6-8"/><rect x="3" y="19" width="18" height="3" rx="1.5"/>
+      </svg>
+      Download All Catalogues
+    </a>
+
+  </div>
+  <!-- ===== END CATALOGUE SECTION ===== -->
+
+
+
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+</div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate history</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+
+</footer>
+
+<script>
+
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+
+  index = (index + 1) % slides.length;
+
+  slides[index].classList.add("active");
+}, 2500); // change time here
+</script>
+
+</body>
+</html>
