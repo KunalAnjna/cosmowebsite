@@ -1,3 +1,4 @@
+<!-----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,7 @@
                     <p><a href="">Our Team </a></p>
                 </div>
             </div>
-            <!-- DROPDOWN END -->
+            <!-- DROPDOWN END
                 <a href="products.html">Products and Services</a>
                 <a href="client.html">Clients</a>
                 <a href="contact.html">Contact us</a>
@@ -38,7 +39,7 @@
         
         </div>
     </header>
-      <!-- TOP BANNER -->
+      <!-- TOP BANNER 
   <div class="contact-text">
     <h1>contact Us</h1>
 </div>
@@ -49,8 +50,8 @@
 
     <div class="contact-container">
 
-        <!-- Email -->
-        <div class="contact-box">
+        Email -->
+      <!-- <div class="contact-box">
        <div class="icon"><i class="fa fa-envelope"></i></div>
             <div>
                 <h3>Email Address</h3>
@@ -58,7 +59,7 @@
             </div>
         </div>
 
-        <!-- Call -->
+
         <div class="contact-box">
           
 <div class="icon"><i class="fa fa-phone"></i></div>
@@ -66,9 +67,7 @@
                 <h3>Call Us</h3>
                 <p>+91-9910031732</p>
             </div>
-        </div>
 
-        <!-- Address -->
         <div class="contact-box">
         
 <div class="icon"><i class="fa fa-location-dot"></i></div>
@@ -107,7 +106,7 @@
 
     <div class="footer-container">
 
-        <!-- COLUMN 1 -->
+      
         <div class="footer-col">
             <h3>Information</h3>
             <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
@@ -122,7 +121,7 @@
 </div>
         </div>
 
-        <!-- COLUMN 2 -->
+        
         <div class="footer-col">
             <h3>Products</h3>
             <a href="AirLeak.html">Air Leak Testers</a>
@@ -134,7 +133,6 @@
              <a href="soundvibration.html">Analyzers</a>
         </div>
 
-        <!-- COLUMN 3 -->
         <div class="footer-col">
             <h3>Quick Links</h3>
             <a href="#">Leak Test Machine</a>
@@ -145,7 +143,7 @@
             <a href="#">Contact Us</a>
         </div>
 
-        <!-- COLUMN 4 -->
+        
         <div class="footer-col">
             <h3>Company</h3>
             <a href="#">Corporate history</a>
@@ -157,7 +155,6 @@
 
     </div>
 
-    <!-- BOTTOM -->
     <div class="footer-bottom">
         <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
     </div>
@@ -165,4 +162,1005 @@
 </footer>
 </body>
 
+</html>
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <title>Contact | Cosmo Instruments India</title>
+
+    <style>
+
+    /* MAP + FORM WRAPPER */
+    .map-form-wrapper {
+        width: 100%;
+        background: #f4f7fb;
+        padding: 60px 0 70px;
+    }
+    .map-form-heading {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 0 16px;
+    }
+    .map-form-heading h2 {
+        font-size: 2rem;
+        background: linear-gradient(to right, rgb(104, 224, 251), rgb(20, 125, 144));
+         color: white;
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+    .map-form-heading p {
+        color: #5a6a85;
+        font-size: 1rem;
+    }
+    .map-form-split {
+        display: flex;
+        max-width: 1340px;
+        margin: 0 auto;
+        padding: 0 30px;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    /* ENQUIRY FORM PANEL */
+    .form-panel {
+        flex: 0 0 44%;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 36px 32px;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+        display: flex;
+        flex-direction: column;
+    }
+    .form-panel h3 {
+        font-size: 1.4rem;
+       background: #226b98;
+       color: white;
+        font-weight: 700;
+        margin: 0 0 4px;
+    }
+    .form-sub {
+        color: #414b5f;
+        font-size: 0.85rem;
+        margin: 0 0 18px;
+    }
+    .form-panel .underline {
+        width: 48px;
+        height: 3px;
+        background: #3c80ab;
+        border-radius: 2px;
+        margin-bottom: 22px;
+    }
+    .form-row {
+        display: flex;
+        gap: 14px;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-bottom: 14px;
+    }
+    .form-group label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #1a2a4a;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .form-group label .req { color: #e53935; margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        border: 1.5px solid #dce3ee;
+        border-radius: 8px;
+        padding: 10px 13px;
+        font-size: 0.88rem;
+        color: #1a2a4a;
+        background: #f9fafc;
+        font-family: inherit;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        resize: vertical;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #1a2a4a;
+        box-shadow: 0 0 0 3px rgba(26,42,74,0.08);
+        background: #fff;
+    }
+    .form-group input.field-error,
+    .form-group select.field-error {
+        border-color: #e53935;
+        box-shadow: 0 0 0 3px rgba(229,57,53,0.08);
+    }
+    .field-hint {
+        font-size: 0.7rem;
+        color: #e53935;
+        margin-top: 4px;
+        display: none;
+    }
+    .field-hint.show { display: block; }
+
+    /* phone row */
+    .phone-row {
+        display: flex;
+        gap: 8px;
+    }
+    .phone-row select {
+        flex: 0 0 118px;
+        border: 1.5px solid #dce3ee;
+        border-radius: 8px;
+        padding: 10px 8px;
+        font-size: 0.82rem;
+        color: #1a2a4a;
+        background: #f9fafc;
+        font-family: inherit;
+        outline: none;
+        transition: border-color 0.2s;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+    .phone-row select:focus {
+        border-color: #1a2a4a;
+        box-shadow: 0 0 0 3px rgba(26,42,74,0.08);
+    }
+    .phone-row input { flex: 1; }
+    .form-group textarea { min-height: 100px; }
+
+    /* submit button */
+    .form-submit-btn {
+        margin-top: 6px;
+        width: 100%;
+        padding: 13px;
+    background: linear-gradient(to bottom, rgb(104, 224, 251), rgb(20, 125, 144));
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        cursor: pointer;
+        transition: background 0.22s, transform 0.15s;
+        font-family: inherit;
+    }
+    .form-submit-btn:hover:not([disabled]) {
+    background: linear-gradient(to bottom, rgb(104, 224, 251), rgb(20, 125, 144));
+        transform: translateY(-1px);
+    }
+    .form-submit-btn[disabled] {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+    .form-bottom-note {
+        text-align: center;
+        margin-top: 12px;
+        font-size: 0.73rem;
+        color: #aab2c2;
+    }
+
+    /* success state */
+    #form-success {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .success-icon {
+        width: 74px; height: 74px;
+        background: #e8f5e9;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 18px;
+    }
+    .success-icon i { font-size: 2rem; color: #2e7d32; }
+    #form-success h3 { color: #1a2a4a; font-size: 1.2rem; margin-bottom: 8px; }
+    #form-success p  { color: #5a6a85; font-size: 0.85rem; margin-bottom: 4px; }
+    .reset-btn {
+        margin-top: 20px;
+        padding: 10px 26px;
+        background: #1a2a4a;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.84rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+        font-family: inherit;
+    }
+    .reset-btn:hover {   background: linear-gradient(to bottom, rgb(104, 224, 251), rgb(20, 125, 144)); }
+
+    /* error banner */
+    #form-error-banner {
+        display: none;
+        background: #fff3f3;
+        border: 1.5px solid #ffcdd2;
+        border-radius: 8px;
+        padding: 12px 14px;
+        margin-bottom: 14px;
+        font-size: 0.81rem;
+        color: #c62828;
+    }
+
+    /* MAP PANEL */
+    .map-panel {
+        flex: 1;
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+        display: flex;
+        flex-direction: column;
+        min-height: 580px;
+    }
+    .map-panel-header {
+          background: linear-gradient(to bottom, rgb(104, 224, 251), rgb(20, 125, 144));
+        padding: 15px 22px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .map-panel-header h4 { color: #fff; font-size: 0.92rem; font-weight: 600; margin: 0; }
+    .office-dots { display: flex; gap: 8px; margin-left: auto; }
+    .office-dot {
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        background:white;
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    /* office tabs */
+    .office-tabs-section { background: #fff; border-bottom: 1px solid #e8edf5; }
+    .office-tabs { display: flex; overflow-x: auto; scrollbar-width: none; }
+    .office-tabs::-webkit-scrollbar { display: none; }
+    .office-tab {
+        flex: 1;
+        min-width: 110px;
+        padding: 11px 8px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #7a8aaa;
+        transition: all 0.2s;
+        text-align: center;
+        font-family: inherit;
+    }
+    .office-tab i { display: block; font-size: 0.95rem; margin-bottom: 3px; color: rgb(104, 224, 251); }
+    .office-tab:hover, .office-tab.active { color: #1a2a4a; border-bottom-color: rgb(20, 125, 144); }
+    #india-map { flex: 1; min-height: 460px; }
+
+    /* LEAFLET POPUP */
+    .leaflet-popup-content-wrapper {
+        border-radius: 12px !important;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.18) !important;
+        padding: 0 !important;
+        overflow: hidden;
+        border: none !important;
+    }
+    .leaflet-popup-content { margin: 0 !important; width: 290px !important; }
+
+    /* OFFICE CARDS STRIP */
+    .offices-strip { background: #f4f7fb; padding: 50px 30px 60px; }
+    .offices-strip-inner { max-width: 1340px; margin: 0 auto; }
+    .offices-strip-inner h2 { font-size: 1.55rem; color: #1a2a4a; font-weight: 700; margin-bottom: 4px; }
+    .strip-sub { color: #7a8aaa; font-size: 0.88rem; margin-bottom: 28px; }
+    .offices-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+    }
+    .office-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px 18px;
+        box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+        border-left: 4px solid rgb(20, 125, 144);
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .office-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .hq-card { border-left-color:rgb(20, 125, 144); }
+    .office-card-region {
+        font-size: 0.68rem; font-weight: 700; color:rgb(20, 125, 144);
+        letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px;
+    }
+    .office-card h4 { font-size: 0.95rem; color: #1a2a4a; font-weight: 700; margin-bottom: 9px; }
+    .office-card-addr { font-size: 0.76rem; color: #5a6a85; line-height: 1.6; margin-bottom: 13px; }
+    .office-card-link {
+        display: inline-flex; align-items: center; gap: 5px;
+        font-size: 0.73rem; font-weight: 600; color: #1a2a4a;
+        text-decoration: none; border-bottom: 1.5px solid rgb(20, 125, 144);
+        padding-bottom: 1px; transition: color 0.2s;
+    }
+    .office-card-link:hover { color: rgb(20, 125, 144); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+        .map-form-split { flex-direction: column; padding: 0 16px; }
+        .form-panel { flex: none; }
+        .map-panel { min-height: 420px; }
+        .form-row { flex-direction: column; gap: 0; }
+    }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="navbar">
+        <div class="nav-logo border">
+            <div class="logo"></div>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a>About us </a>
+                <div class="dropdown-menu">
+                    <p><a href="message.html">Message from Director</a></p>
+                    <p><a href="">Our Presence and Joint Venture</a></p>
+                    <p><a href="">Our Team</a></p>
+                </div>
+            </div>
+            <a href="products.html">Products and Services</a>
+            <a href="client.html">Clients</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+        <div class="contact">
+            <button><a href="contact.html" id="button-tag">Request Quote</a></button>
+        </div>
+    </div>
+</header>
+
+<!-- TOP BANNER -->
+<div class="contact-text">
+    <h1>Contact Us</h1>
+</div>
+<!--
+ QUICK CONTACT BOXES 
+ <section class="contact-section">
+    <h2>Let's Get in Touch</h2>
+    <div class="underline"></div>
+    <div class="contact-container">
+
+        <div class="contact-box">
+            <div class="icon"><i class="fa fa-envelope"></i></div>
+            <div>
+                <h3>Email Address</h3>
+                <p>Cosmoinstrumentsindia@Gmail.com</p>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <div class="icon"><i class="fa fa-phone"></i></div>
+            <div>
+                <h3>Call Us</h3>
+                <p>+91-9910031732</p>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <div class="icon"><i class="fa fa-location-dot"></i></div>
+            <div>
+                <a href="https://maps.app.goo.gl/71AtJsadUK4utpfb8" id="Address">
+                    <h3>Headquarters</h3>
+                    <p>Plot No.262, Sector 8, IMT Manesar, Gurugram, Haryana 122052</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section> 
+-->
+
+<!-- SPLIT: FORM + MAP -->
+<div class="map-form-wrapper">
+    <div class="map-form-heading">
+        <h2>Our Offices Across India</h2>
+        <p>Hover any map pin for office details &nbsp;&middot;&nbsp; Fill the form to send us your enquiry</p>
+    </div>
+
+    <div class="map-form-split">
+
+        <!-- ENQUIRY FORM -->
+        <div class="form-panel">
+
+            <h3>Send Your Enquiry</h3>
+            <p class="form-sub">Our team will get back to you within 24 hours.</p>
+            <div class="underline"></div>
+
+            <!-- SUCCESS -->
+            <div id="form-success">
+                <div class="success-icon"><i class="fa fa-check"></i></div>
+                <h3>Enquiry Sent!</h3>
+                <p>Thank you. We have received your message.</p>
+                <p style="color:#7a8aaa;font-size:0.78rem;">A confirmation has been sent to your email.<br>Our sales team will contact you within 1 business day.</p>
+                <button class="reset-btn" onclick="resetForm()">Send Another Enquiry</button>
+            </div>
+
+            <!-- ERROR BANNER -->
+            <div id="form-error-banner">
+                <i class="fa fa-circle-exclamation" style="margin-right:6px;"></i>
+                <span id="form-error-msg">Something went wrong. Please try again.</span>
+            </div>
+
+            <!-- FIELDS -->
+            <div id="form-fields">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name <span class="req">*</span></label>
+                        <input type="text" id="f-name" placeholder="Your full name">
+                        <span class="field-hint" id="hint-name">Full name is required.</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Company <span class="req">*</span></label>
+                        <input type="text" id="f-company" placeholder="Company / Organisation">
+                        <span class="field-hint" id="hint-company">Company name is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address <span class="req">*</span></label>
+                    <input type="text" id="f-email" placeholder="you@company.com">
+                    <span class="field-hint" id="hint-email">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number <span class="req">*</span></label>
+                    <div class="phone-row">
+                        <select id="f-country-code">
+                            <option value="+91">&#127470;&#127475; +91</option>
+                            <option value="+1">&#127482;&#127480; +1</option>
+                            <option value="+44">&#127468;&#127463; +44</option>
+                            <option value="+61">&#127462;&#127482; +61</option>
+                            <option value="+49">&#127465;&#127466; +49</option>
+                            <option value="+33">&#127467;&#127479; +33</option>
+                            <option value="+81">&#127471;&#127477; +81</option>
+                            <option value="+86">&#127464;&#127475; +86</option>
+                            <option value="+65">&#127480;&#127468; +65</option>
+                            <option value="+971">&#127462;&#127466; +971</option>
+                            <option value="+966">&#127480;&#127462; +966</option>
+                            <option value="+60">&#127474;&#127486; +60</option>
+                            <option value="+62">&#127470;&#127465; +62</option>
+                            <option value="+82">&#127472;&#127479; +82</option>
+                            <option value="+55">&#127463;&#127479; +55</option>
+                            <option value="+27">&#127487;&#127462; +27</option>
+                            <option value="+7">&#127479;&#127482; +7</option>
+                            <option value="+90">&#127481;&#127479; +90</option>
+                            <option value="+92">&#127477;&#127472; +92</option>
+                            <option value="+880">&#127463;&#127465; +880</option>
+                            <option value="+94">&#127473;&#127472; +94</option>
+                            <option value="+977">&#127475;&#127477; +977</option>
+                        </select>
+                        <input type="tel" id="f-phone" placeholder="Mobile number"
+                               maxlength="15">
+                    </div>
+                    <span class="field-hint" id="hint-phone">Please enter a valid phone number (digits only).</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nearest Cosmo Office <span class="req">*</span></label>
+                        <select id="f-office">
+                            <option value="">Select office</option>
+                            <option value="Gurugram (HQ) - Haryana">Gurugram (HQ) - Haryana</option>
+                            <option value="Bangalore - Karnataka">Bangalore - Karnataka</option>
+                            <option value="Pune (Chakan) - Maharashtra">Pune (Chakan) - Maharashtra</option>
+                            <option value="Chennai - Tamil Nadu">Chennai - Tamil Nadu</option>
+                            <option value="Ahmedabad - Gujarat">Ahmedabad - Gujarat</option>
+                        </select>
+                        <span class="field-hint" id="hint-office">Please select the nearest office.</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Your City / Location <span class="req">*</span></label>
+                        <input type="text" id="f-location" placeholder="e.g. Pune, Maharashtra">
+                        <span class="field-hint" id="hint-location">Please enter your city or location.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Subject <span class="req">*</span></label>
+                    <input type="text" id="f-subject" placeholder="e.g. Air Leak Tester enquiry">
+                    <span class="field-hint" id="hint-subject">Subject is required.</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Message <span style="color:#aab2c2;font-weight:400;font-size:0.68rem;text-transform:none;">(optional)</span></label>
+                    <textarea id="f-message" placeholder="Describe your requirement, product interest, or any additional details..."></textarea>
+                </div>
+
+                <button type="button" id="submit-btn" class="form-submit-btn" onclick="submitEnquiry()">
+                    <i class="fa fa-paper-plane" style="margin-right:8px;"></i> Send Message
+                </button>
+
+                <p class="form-bottom-note">
+                    <i class="fa fa-lock" style="margin-right:4px;"></i>
+                    Your information is secure and will never be shared.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- MAP PANEL -->
+        <div class="map-panel">
+            <div class="map-panel-header">
+                <i class="fa fa-map-location-dot" style="color:white;font-size:1rem;"></i>
+                <h4>India Office Locations &nbsp;&ndash;&nbsp; 5 Offices</h4>
+                <div class="office-dots">
+                    <div class="office-dot"></div>
+                    <div class="office-dot"></div>
+                    <div class="office-dot"></div>
+                    <div class="office-dot"></div>
+                    <div class="office-dot"></div>
+                </div>
+            </div>
+            <div class="office-tabs-section">
+                <div class="office-tabs">
+                    <button class="office-tab active" onclick="flyTo(0)">
+                        <i class="fa fa-star"></i> Gurugram HQ
+                    </button>
+                    <button class="office-tab" onclick="flyTo(1)">
+                        <i class="fa fa-building"></i> Bangalore
+                    </button>
+                    <button class="office-tab" onclick="flyTo(2)">
+                        <i class="fa fa-building"></i> Pune
+                    </button>
+                    <button class="office-tab" onclick="flyTo(3)">
+                        <i class="fa fa-building"></i> Chennai
+                    </button>
+                    <button class="office-tab" onclick="flyTo(4)">
+                        <i class="fa fa-building"></i> Gujarat
+                    </button>
+                </div>
+            </div>
+            <div id="india-map"></div>
+        </div>
+
+    </div>
+</div>
+
+<!-- OFFICE CARDS -->
+<div class="offices-strip">
+    <div class="offices-strip-inner">
+        <h2>All Our Offices</h2>
+        <p class="strip-sub">Click any card to highlight it on the map above</p>
+        <div class="offices-grid" id="officeCards"></div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified - Committed to Quality and Excellence</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>EV Summit 2025-26 concluded successfully - Advancing electric mobility.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+            <a href="soundvibration.html">Analyzers</a>
+        </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate History</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&#169; 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+</footer>
+
+<!-- LEAFLET -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+<!-- MAP SCRIPT -->
+<script>
+var offices = [
+    {
+        id: 0, isHQ: true,
+        name: "Gurugram - Headquarters",
+        region: "North Zone - HQ",
+        address: "Plot No. 262, Sector 8, HSIDC IMT Manesar, Gurugram, Haryana - 122 052",
+        phone: "+91-9910031732",
+        email: "Cosmoinstrumentsindia@gmail.com",
+        mapsUrl: "https://maps.app.goo.gl/71AtJsadUK4utpfb8",
+        lat: 28.3593,
+        lng: 76.9330
+    },
+    {
+        id: 1, isHQ: false,
+        name: "Bangalore - South Zone",
+        region: "South Zone",
+        address: "No. 1, 3rd Main, J.C. Industrial Layout, Yelachenahalli, Kanakapura Road, Bengaluru - 560 062, Karnataka",
+        phone: "+91-9910031732",
+        email: "Cosmoinstrumentsindia@gmail.com",
+        mapsUrl: "https://share.google/mh8qqM7lGVdKp0btx",
+        lat: 12.8889,
+        lng: 77.5733
+    },
+    {
+        id: 2, isHQ: false,
+        name: "Pune - Chakan Office",
+        region: "West Zone",
+        address: "Plot No. 38 and 39, Phase III, Chakan Industrial Area, Post Nighoje, Taluka Khed, Pune - 410 501, Maharashtra",
+        phone: "+91-9910031732",
+        email: "Cosmoinstrumentsindia@gmail.com",
+        mapsUrl: "https://share.google/P8AxUYPwUm555LYba",
+        lat: 18.7636,
+        lng: 73.8674
+    },
+    {
+        id: 3, isHQ: false,
+        name: "Chennai Office",
+        region: "South Zone",
+        address: "No. 832, Chennai - Bangalore National Highway, Sriperumbuthur, Kancheepuram, Tamil Nadu - 602 105",
+        phone: "+91-9910031732",
+        email: "Cosmoinstrumentsindia@gmail.com",
+        mapsUrl: "https://share.google/hyCyqW2N17p1DuElN",
+        lat: 12.9665,
+        lng: 79.8875
+    },
+    {
+        id: 4, isHQ: false,
+        name: "Gujarat - Ahmedabad",
+        region: "West Zone",
+        address: "Shop No. 602, C-1, 6th Floor, Shreeji Plaza, S.P. Ring Road, Nava Naroda, Ahmedabad - 382 330, Gujarat",
+        phone: "+91-9910031732",
+        email: "Cosmoinstrumentsindia@gmail.com",
+        mapsUrl: "https://share.google/TiqZqEpfi2ykmbYLk",
+        lat: 23.0736,
+        lng: 72.6412
+    }
+];
+
+var map = L.map('india-map', {
+    center: [21.5, 80.5],
+    zoom: 5,
+    zoomControl: true,
+    scrollWheelZoom: true
+});
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+    maxZoom: 18
+}).addTo(map);
+
+function makePinIcon(isHQ) {
+    var size = isHQ ? 44 : 36;
+    var bg   = isHQ ? 'rgb(104,224,251)' : 'rgb(20, 125, 144)';
+    var lbl  = isHQ ? '&#9733;' : 'C';
+    var html = '<div style="width:' + size + 'px;height:' + size + 'px;background:' + bg + ';' +
+               'border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #fff;' +
+               'box-shadow:0 3px 14px rgba(0,0,0,0.38);display:flex;align-items:center;justify-content:center;">' +
+               '<span style="transform:rotate(45deg);color:#fff;font-size:' + (isHQ ? 14 : 11) + 'px;font-weight:700;">' + lbl + '</span>' +
+               '</div>';
+    return L.divIcon({
+        html: html,
+        className: '',
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size],
+        popupAnchor: [0, -(size + 4)]
+    });
+}
+
+function buildPopup(o) {
+    var headerBg = o.isHQ ? 'linear-gradient(135deg,rgb(104,224,251),rgb(20, 125, 144))' : 'linear-gradient(135deg,rgb(104,224,251),rgb(20, 125, 144))';
+    return '<div style="font-family:Segoe UI,Arial,sans-serif;">' +
+        '<div style="background:' + headerBg + ';padding:13px 15px 11px;">' +
+            '<div style="display:inline-block;background:none;color:#fff;font-size:9px;font-weight:700;' +
+                 'letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-bottom:6px;">' + o.region + '</div>' +
+            '<div style="color:#fff;font-size:0.9rem;font-weight:700;margin:0 0 2px;">' + o.name + '</div>' +
+            '<div style="color:rgba(255,255,255,0.6);font-size:0.72rem;">Cosmo Instruments India Pvt. Ltd.</div>' +
+        '</div>' +
+        '<div style="padding:13px 15px;background:#fff;">' +
+            '<div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:8px;">' +
+                '<i class="fa fa-location-dot" style="color:rgb(104,224,251);font-size:12px;margin-top:3px;flex-shrink:0;"></i>' +
+                '<span style="font-size:0.78rem;color:#444;line-height:1.45;">' + o.address + '</span></div>' +
+            '<div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;">' +
+                '<i class="fa fa-phone" style="color:rgb(104,224,251);font-size:12px;flex-shrink:0;"></i>' +
+                '<span style="font-size:0.78rem;color:#444;">' + o.phone + '</span></div>' +
+            '<div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;">' +
+                '<i class="fa fa-envelope" style="color:rgb(104,224,251);font-size:12px;flex-shrink:0;"></i>' +
+                '<span style="font-size:0.78rem;color:#444;">' + o.email + '</span></div>' +
+            '<div style="display:flex;gap:8px;">' +
+                '<a href="' + o.mapsUrl + '" target="_blank" style="flex:1;padding:8px;background:#1a2a4a;color:#fff;' +
+                    'border-radius:7px;font-size:0.72rem;font-weight:600;text-decoration:none;text-align:center;">' +
+                    '<i class="fa fa-map" style="margin-right:4px;"></i>Directions</a>' +
+                '<a href="tel:' + o.phone.replace(/[^+0-9]/g, '') + '" style="flex:1;padding:8px;background:#f0f4fa;color:#1a2a4a;' +
+                    'border-radius:7px;font-size:0.72rem;font-weight:600;text-decoration:none;text-align:center;">' +
+                    '<i class="fa fa-phone" style="margin-right:4px;"></i>Call</a>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+}
+
+var markers = [];
+
+for (var i = 0; i < offices.length; i++) {
+    (function(o) {
+        var marker = L.marker([o.lat, o.lng], {
+            icon: makePinIcon(o.isHQ),
+            title: o.name
+        }).addTo(map);
+
+        var popup = L.popup({ maxWidth: 300, minWidth: 290 }).setContent(buildPopup(o));
+        marker.bindPopup(popup);
+        marker.on('mouseover', function() { this.openPopup(); });
+        marker.on('click', function() { this.openPopup(); });
+        markers.push(marker);
+    })(offices[i]);
+}
+
+function flyTo(idx) {
+    var o = offices[idx];
+    map.flyTo([o.lat, o.lng], 13, { duration: 1.2 });
+    setTimeout(function() { markers[idx].openPopup(); }, 1300);
+    var tabs = document.querySelectorAll('.office-tab');
+    for (var t = 0; t < tabs.length; t++) {
+        tabs[t].classList.toggle('active', t === idx);
+    }
+}
+
+var group = L.featureGroup(markers);
+map.fitBounds(group.getBounds().pad(0.15));
+
+var grid = document.getElementById('officeCards');
+for (var j = 0; j < offices.length; j++) {
+    (function(o, idx) {
+        var card = document.createElement('div');
+        card.className = 'office-card' + (o.isHQ ? ' hq-card' : '');
+        card.innerHTML =
+            '<div class="office-card-region">' + o.region + '</div>' +
+            '<h4>' + o.name + '</h4>' +
+            '<p class="office-card-addr">' + o.address + '</p>' +
+            '<a href="' + o.mapsUrl + '" target="_blank" class="office-card-link" onclick="event.stopPropagation();">' +
+                '<i class="fa fa-map-pin"></i> View on Map</a>';
+        card.addEventListener('click', function() {
+            flyTo(idx);
+            document.querySelector('.map-form-wrapper').scrollIntoView({ behavior: 'smooth' });
+        });
+        grid.appendChild(card);
+    })(offices[j], j);
+}
+</script>
+
+<!-- FORM SCRIPT -->
+<script>
+var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxxayW6-weVgDZQlSNo4PYSHvQHdE8_eXTGBGW67lNuNDyM5xdnEgqzOqMyQYhIUfme/exec";
+
+var BAD_DOMAINS = [
+    "gmal.com","gmial.com","gamil.com","gmaill.com","gmai.com","gmail.co",
+    "outlok.com","outloo.com","outllok.com","outlook.con","otulook.com",
+    "yaho.com","yahho.com","yahooo.com","yaho.co",
+    "hotmial.com","hotmali.com","hotmail.con","hotmai.com",
+    "rediffmial.com","reddif.com","redif.com"
+];
+
+function isValidEmail(email) {
+    if (!email) return false;
+    if (email.indexOf(',') !== -1) return false;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return false;
+    var parts = email.split('@');
+    if (parts.length !== 2) return false;
+    var domain = parts[1].toLowerCase();
+    for (var i = 0; i < BAD_DOMAINS.length; i++) {
+        if (domain === BAD_DOMAINS[i]) return false;
+    }
+    return true;
+}
+
+function isValidPhone(num) {
+    var cleaned = num.replace(/\s/g, '');
+    return /^[0-9]+$/.test(cleaned) && cleaned.length === 10;
+}
+
+function markError(fieldId, hintId, msg) {
+    var el = document.getElementById(fieldId);
+    var hint = document.getElementById(hintId);
+    if (el) el.classList.add('field-error');
+    if (hint && msg) hint.textContent = msg;
+    if (hint) hint.classList.add('show');
+}
+
+function clearError(fieldId, hintId) {
+    var el = document.getElementById(fieldId);
+    var hint = document.getElementById(hintId);
+    if (el) el.classList.remove('field-error');
+    if (hint) hint.classList.remove('show');
+}
+
+function clearAllErrors() {
+    var fields = [
+        ['f-name','hint-name'],
+        ['f-company','hint-company'],
+        ['f-email','hint-email'],
+        ['f-phone','hint-phone'],
+        ['f-office','hint-office'],
+        ['f-location','hint-location'],
+        ['f-subject','hint-subject']
+    ];
+    for (var i = 0; i < fields.length; i++) {
+        clearError(fields[i][0], fields[i][1]);
+    }
+    document.getElementById('form-error-banner').style.display = 'none';
+}
+
+/* Inline validation on blur */
+document.getElementById('f-phone').addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+document.getElementById('f-email').addEventListener('blur', function() {
+    var val = this.value.trim();
+    if (val && !isValidEmail(val)) {
+        markError('f-email', 'hint-email', 'This email looks incorrect. Check for typos (e.g. gmal.com, outlook,com).');
+    } else {
+        clearError('f-email', 'hint-email');
+    }
+});
+
+document.getElementById('f-phone').addEventListener('blur', function() {
+    var val = this.value.trim();
+    if (val && !isValidPhone(val)) {
+        markError('f-phone', 'hint-phone', 'Please enter a valid number (digits only, min 7).');
+    } else {
+        clearError('f-phone', 'hint-phone');
+    }
+});
+
+function submitEnquiry() {
+    clearAllErrors();
+
+    var name     = document.getElementById('f-name').value.trim();
+    var company  = document.getElementById('f-company').value.trim();
+    var email    = document.getElementById('f-email').value.trim();
+    var phone    = document.getElementById('f-phone').value.trim();
+    var cc       = document.getElementById('f-country-code').value;
+    var office   = document.getElementById('f-office').value;
+    var location = document.getElementById('f-location').value.trim();
+    var subject  = document.getElementById('f-subject').value.trim();
+    var message  = document.getElementById('f-message').value.trim();
+
+    var valid = true;
+
+    if (!name) {
+        markError('f-name', 'hint-name', 'Full name is required.');
+        valid = false;
+    }
+    if (!company) {
+        markError('f-company', 'hint-company', 'Company name is required.');
+        valid = false;
+    }
+    if (!email) {
+        markError('f-email', 'hint-email', 'Email address is required.');
+        valid = false;
+    } else if (!isValidEmail(email)) {
+        markError('f-email', 'hint-email', 'This email looks incorrect. Check for typos (e.g. gmal.com, outlook,com).');
+        valid = false;
+    }
+    if (!phone) {
+        markError('f-phone', 'hint-phone', 'Phone number is required.');
+        valid = false;
+    } else if (!isValidPhone(phone)) {
+        markError('f-phone', 'hint-phone', 'Enter a valid number (digits only, min 7).');
+        valid = false;
+    }
+    if (!office) {
+        markError('f-office', 'hint-office', 'Please select the nearest Cosmo office.');
+        valid = false;
+    }
+    if (!location) {
+        markError('f-location', 'hint-location', 'Please enter your city or location.');
+        valid = false;
+    }
+    if (!subject) {
+        markError('f-subject', 'hint-subject', 'Subject is required.');
+        valid = false;
+    }
+
+    if (!valid) {
+        var firstError = document.querySelector('.field-error');
+        if (firstError) { firstError.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        return;
+    }
+
+    var btn = document.getElementById('submit-btn');
+    btn.setAttribute('disabled', 'disabled');
+    btn.innerHTML = '<i class="fa fa-spinner fa-spin" style="margin-right:8px;"></i> Sending...';
+
+    var payload = {
+        name: name,
+        company: company,
+        email: email,
+        phone: cc + ' ' + phone,
+        office: office,
+        location: location,
+        subject: subject,
+        message: message
+    };
+
+    fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    .then(function() {
+        document.getElementById('form-fields').style.display = 'none';
+        document.getElementById('form-success').style.display = 'flex';
+    })
+    .catch(function() {
+        var banner = document.getElementById('form-error-banner');
+        document.getElementById('form-error-msg').textContent =
+            'Network error. Please check your connection and try again, or email us directly.';
+        banner.style.display = 'block';
+        banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        btn.removeAttribute('disabled');
+        btn.innerHTML = '<i class="fa fa-paper-plane" style="margin-right:8px;"></i> Send Message';
+    });
+}
+
+function resetForm() {
+    var textFields = ['f-name', 'f-company', 'f-email', 'f-phone', 'f-subject', 'f-message', 'f-location'];
+    for (var i = 0; i < textFields.length; i++) {
+        document.getElementById(textFields[i]).value = '';
+    }
+    document.getElementById('f-office').value = '';
+    document.getElementById('f-country-code').value = '+91';
+    clearAllErrors();
+    var btn = document.getElementById('submit-btn');
+    btn.removeAttribute('disabled');
+    btn.innerHTML = '<i class="fa fa-paper-plane" style="margin-right:8px;"></i> Send Message';
+    document.getElementById('form-fields').style.display = 'block';
+    document.getElementById('form-success').style.display = 'none';
+}
+</script>
+
+</body>
 </html>
