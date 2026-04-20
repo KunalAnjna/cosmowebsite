@@ -1,197 +1,522 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>cosmo instruments india</title>
-</head>
+    <title>Clients — Cosmo Instruments India</title>
 
+    <style>
+        /* ─── PAGE RESET ─── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* ─── HERO BANNER ─── */
+        .client-hero {
+           background:   linear-gradient(to right,rgb(104,224,251),rgb(58, 165, 189));
+            padding: 80px 40px 60px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .client-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 120%, #c0392b22 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .client-hero .grid-lines {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(104,224,251,0.03) 1px, transparent 1px),
+                linear-gradient(90deg,rgba(86, 206, 233, 0.03)1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .client-hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: #fff;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+        .client-hero h1 span {
+            color: white;
+        }
+        .client-hero p {
+            font-family: 'DM Sans', sans-serif;
+            color: rgba(255,255,255,0.55);
+            font-size: 1rem;
+            margin-top: 12px;
+            position: relative;
+        }
+
+        /* ─── INDUSTRIES ─── */
+        .industries-v2 {
+            padding: 80px 40px;
+            background: #f9f8f5;
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            color: #0a1628;
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+        }
+        .industry-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        .industry-card {
+            background: #fff;
+            border: 1px solid #e8e5df;
+            border-radius: 16px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            cursor: default;
+        }
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(10,22,40,0.10);
+            border-color: #e74c3c;
+        }
+        .industry-card .icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background:   linear-gradient(to right,rgb(104,224,251),rgb(58, 165, 189));;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .industry-card .icon-wrap img {
+            width: 26px;
+            height: 26px;
+            filter: invert(10%) sepia(30%) saturate(1000%) hue-rotate(185deg);
+        }
+        .industry-card h4 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #0a1628;
+        }
+
+        /* STAT BLOCK */
+        .stat-block {
+            background:  linear-gradient(to right,rgb(104,224,251),rgb(58, 165, 189));
+            border-radius: 20px;
+            padding: 48px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .stat-block .copy h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: #fff;
+            max-width: 440px;
+            line-height: 1.4;
+        }
+        .stat-block .copy p {
+            font-family: 'DM Sans', sans-serif;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        .stat-block .number {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            color: white;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        /* ─── MARQUEE SECTION ─── */
+        .marquee-section {
+            padding: 80px 0;
+            background: #fff;
+            overflow: hidden;
+        }
+        .marquee-header {
+            padding: 0 40px;
+            margin-bottom: 48px;
+        }
+
+        /* Track */
+        .marquee-track {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .marquee-track::before,
+        .marquee-track::after {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            width: 120px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .marquee-track::before {
+            left: 0;
+            background: linear-gradient(90deg, #fff, transparent);
+        }
+        .marquee-track::after {
+            right: 0;
+            background: linear-gradient(-90deg, #fff, transparent);
+        }
+        .marquee-inner {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+        }/* animation */
+.marquee-inner.ltr{animation:scroll-ltr 25s linear infinite;}
+.marquee-inner.rtl{animation:scroll-rtl 30s linear infinite;}
+.marquee-inner.ltr2{animation:scroll-ltr 20s linear infinite;}
+
+@keyframes scroll-ltr{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+}
+@keyframes scroll-rtl{
+    from{transform:translateX(-50%);}
+    to{transform:translateX(0);}
+}
+.logo-card{
+    margin-bottom: 15px;
+    width:150px;
+    height:100px;
+    border-radius:18px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 20px rgba(0,0,0,0.06);
+    transition:all 0.35s ease;
+    backdrop-filter:blur(10px);
+}
+
+.logo-card img{
+    max-height:132px;
+    max-width:110px;
+object-fit: contain;
+
+    transition:all 0.35s ease;
+}
+
+/* HOVER EFFECT */
+.logo-card:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+.logo-card:hover img{
+    filter:grayscale(0%) brightness(1);
+}
+
+/* PAUSE ON HOVER */
+.marquee-track:hover .marquee-inner{
+    animation-play-state:paused;
+}
+
+        /* ─── FOOTER (kept from original) ─── */
+    </style>
+</head>
 <body>
+
+    <!-- ══ HEADER (unchanged from your original) ══ -->
     <header>
         <div class="navbar">
-            <div class="nav-logo border">
-                <div class="logo">
-                </div>
-            </div>
+            <div class="nav-logo border"><div class="logo"></div></div>
             <div class="menu">
                 <a href="index.html">Home</a>
-               <div class="dropdown">
-                <a>About us ▾</a>
-
-                <div class="dropdown-menu">
-                    <p><a href="message.html">Message from Director</a></p>
-                    <p><a href="">Our Presence and Joint Venture </a></p>
-                    <p><a href="">Our Team </a></p>
+                <div class="dropdown">
+                    <a>About us ▾</a>
+                    <div class="dropdown-menu">
+                        <p><a href="message.html">Message from Director</a></p>
+                        <p><a href="">Our Presence and Joint Venture</a></p>
+                        <p><a href="">Our Team</a></p>
+                    </div>
                 </div>
-            </div>
-            <!-- DROPDOWN END -->
                 <a href="products.html">Products and Services</a>
                 <a href="client.html">Clients</a>
                 <a href="contact.html">Contact us</a>
             </div>
-
-            
-                <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
-        
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
         </div>
     </header>
 
-<div class="client-text">
-    <h1>Clients</h1>
-</div>
-
-<section class="industries">
-    <h2>Industries We Serve</h2>
-    <div class="red-line"></div>
-
-    <!-- CARDS -->
-    <div class="cards">
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/743/743922.png" alt="">
-            <p>Automobile</p>
-        </div>
-
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="">
-            <p>Home Appliances</p>
-        </div>
-
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/2966/2966485.png" alt="">
-            <p>Healthcare</p>
-        </div>
-
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="">
-            <p>Renewables</p>
-        </div>
+    <!-- ══ HERO ══ -->
+    <div class="client-hero">
+        <div class="grid-lines"></div>
+        <h1>Trusted by <span>Industry Leaders</span></h1>
+        <p>700+ companies across India rely on Cosmo Instruments for precision testing</p>
     </div>
 
-    <!-- BOTTOM -->
-    <div class="bottom">
-        <div class="left">
-            <h3>
-                Serving over 700+ happy and satisfied<br>
-                clients across India
-            </h3>
-            <div class="blue-line"></div>
+    <!-- ══ INDUSTRIES ══ -->
+    <section class="industries-v2">
+        <p class="section-label">What We Power</p>
+        <h2 class="section-title">Industries We Serve</h2>
+
+        <div class="industry-cards">
+            <div class="industry-card">
+                <div class="icon-wrap">
+                    <img src="https://cdn-icons-png.flaticon.com/512/743/743922.png" alt="Automobile">
+                </div>
+                <h4>Automobile</h4>
+            </div>
+            <div class="industry-card">
+                <div class="icon-wrap">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="Home Appliances">
+                </div>
+                <h4>Home Appliances</h4>
+            </div>
+            <div class="industry-card">
+                <div class="icon-wrap">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966485.png" alt="Healthcare">
+                </div>
+                <h4>Healthcare</h4>
+            </div>
+            <div class="industry-card">
+                <div class="icon-wrap">
+                    <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Renewables">
+                </div>
+                <h4>Renewables</h4>
+            </div>
         </div>
 
-        <div class="right">
-            <span class="num"><i>700</i></span>
-            <span class="plus">+</span>
+        <!-- STAT BLOCK -->
+        <div class="stat-block">
+            <div class="copy">
+                <h3>Serving happy and satisfied clients across India for over two decades</h3>
+                <p>From two-wheelers to EVs — we test what moves India forward.</p>
+            </div>
+            <div class="number" id="counter">0+</div>
         </div>
-    </div>
-</section>
-<section class="clients">
-    <h2>Our Clients</h2>
-    <div class="red-line"></div>
+    </section>
 
-    <div class="client-grid">
-
-        <div class="client">Maruti Suzuki</div>
-        <div class="client">Toyota</div>
-        <div class="client">KIA</div>
-        <div class="client">Hyundai</div>
-        <div class="client">Tata</div>
-
-        <div class="client">TVS</div>
-        <div class="client">Yamaha</div>
-        <div class="client">Hero</div>
-        <div class="client">Honda</div>
-        <div class="client">Ather</div>
-
-        <div class="client">Hitachi</div>
-        <div class="client">Bosch</div>
-        <div class="client">Anand</div>
-        <div class="client">Rockman</div>
-        <div class="client">Ricko</div>
-
-        <div class="client">YKK</div>
-        <div class="client">Om industries</div>
-        <div class="client">Nakayoshi</div>
-        <div class="client">Motherson</div>
-        <div class="client">Victora Auto</div>
-
-        <div class="client">FIATs</div>
-        <div class="client">Nippon</div>
-        <div class="client">NTF</div>
-        <div class="client">Talbros</div>
-        <div class="client">Huber+Suhner</div>
-
-        <div class="client">Tokai Rubber</div>
-        <div class="client">Groz</div>
-        <div class="client">JES</div>
-        <div class="client">Quadsun Technology</div>
-        <div class="client">Consult Techniques</div>
-
-    </div>
-</section>  
-
-
-<footer class="footer">
-
-    <div class="footer-container">
-
-        <!-- COLUMN 1 -->
-        <div class="footer-col">
-            <h3>Information</h3>
-            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
-            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
-            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
-
-          
-         <div class="social-icons">
-    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
-</div>
+    <!-- ══ MARQUEE CLIENTS ══ -->
+    <section class="marquee-section">
+        <div class="marquee-header">
+            <p class="section-label">Our Clients</p>
+            <h2 class="section-title">Names That Trust Us</h2>
         </div>
 
-        <!-- COLUMN 2 -->
-        <div class="footer-col">
-            <h3>Products</h3>
-            <a href="AirLeak.html">Air Leak Testers</a>
-            <a href="flowmeter.html">Air Flow Leak Testers</a>
-            <a href="Helium.html">Helium/Hydrogen</a>
-            <a href="presure.html">Pressure</a>
-            <a href="peripherals.html">Peripherals</a>
-            <a href="gels.html">Cosmo Gels</a>
-             <a href="soundvibration.html">Analyzers</a>
+        <!-- ROW 1 — LTR -->
+        <div class="marquee-track">
+            <div class="marquee-inner ltr" id="row1"></div>
         </div>
 
-        <!-- COLUMN 3 -->
-        <div class="footer-col">
-            <h3>Quick Links</h3>
-            <a href="#">Leak Test Machine</a>
-            <a href="#">Industrial Application</a>
-            <a href="#">Warranty/Service</a>
-            <a href="#">Customers</a>
-            <a href="#">FAQ</a>
-            <a href="#">Contact Us</a>
+        <!-- ROW 2 — RTL -->
+        <div class="marquee-track">
+            <div class="marquee-inner rtl" id="row2"></div>
         </div>
 
-        <!-- COLUMN 4 -->
-        <div class="footer-col">
-            <h3>Company</h3>
-            <a href="#">Corporate history</a>
-            <a href="#">Message from the Director</a>
-            <a href="#">Employment Opportunities</a>
-            <a href="#">Offices in India</a>
-            <a href="#">Worldwide Network</a>
+        <!-- ROW 3 — LTR fast -->
+        <div class="marquee-track">
+            <div class="marquee-inner ltr2" id="row3"></div>
         </div>
+    </section>
 
-    </div>
+    <!-- ══ FOOTER (unchanged from original) ══ -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Information</h3>
+                <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+                <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+                <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Products</h3>
+                <a href="AirLeak.html">Air Leak Testers</a>
+                <a href="flowmeter.html">Air Flow Leak Testers</a>
+                <a href="Helium.html">Helium/Hydrogen</a>
+                <a href="presure.html">Pressure</a>
+                <a href="peripherals.html">Peripherals</a>
+                <a href="gels.html">Cosmo Gels</a>
+                <a href="soundvibration.html">Analyzers</a>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="#">Leak Test Machine</a>
+                <a href="#">Industrial Application</a>
+                <a href="#">Warranty/Service</a>
+                <a href="#">Customers</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h3>Company</h3>
+                <a href="#">Corporate history</a>
+                <a href="#">Message from the Director</a>
+                <a href="#">Employment Opportunities</a>
+                <a href="#">Offices in India</a>
+                <a href="#">Worldwide Network</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+        </div>
+    </footer>
 
-    <!-- BOTTOM -->
-    <div class="footer-bottom">
-        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
-    </div>
+    <script>
+        /* ── All 30 client names ── */
+     
+/* CLIENT LOGOS */
+const clients = [
+    {name:"Maruti",logo:"clientslogo/Maruti-Suzuki-Logo-2000.png"},
+    {name:"Maruti",logo:"clientslogo/Ather.png"},
+     {name:"Maruti",logo:"clientslogo/TVS.jpg"},
+    {name:"Maruti",logo:"clientslogo/KIA.jpg"},
+    {name:"Maruti",logo:"clientslogo/TATA.png"},
+    {name:"Maruti",logo:"clientslogo/HERO.png"},
+    {name:"Maruti",logo:"clientslogo/YAMAHA.png"},
 
-</footer>
+
+        {name:"Maruti",logo:"clientslogo/toyota.png"},
+    {name:"Maruti",logo:"clientslogo/Honda.png"},
+    {name:"Maruti",logo:"clientslogo/BOSCH.png"},
+    {name:"Maruti",logo:"clientslogo/technowings.png"},
+
+     {name:"Maruti",logo:"clientslogo/Maruti-Suzuki-Logo-2000.png"},
+    {name:"Maruti",logo:"clientslogo/Ather.png"},
+     {name:"Maruti",logo:"clientslogo/TVS.jpg"},
+    {name:"Maruti",logo:"clientslogo/KIA.jpg"},
+    {name:"Maruti",logo:"clientslogo/TATA.png"},
+    {name:"Maruti",logo:"clientslogo/HERO.png"},
+    {name:"Maruti",logo:"clientslogo/YAMAHA.png"},
+
+
+        {name:"Maruti",logo:"clientslogo/toyota.png"},
+    {name:"Maruti",logo:"clientslogo/Honda.png"},
+    {name:"Maruti",logo:"clientslogo/BOSCH.png"},
+    {name:"Maruti",logo:"clientslogo/technowings.png"},
+
+     {name:"Maruti",logo:"clientslogo/Maruti-Suzuki-Logo-2000.png"},
+    {name:"Maruti",logo:"clientslogo/Ather.png"},
+    {name:"Maruti",logo:"clientslogo/TVS.jpg"},
+    {name:"Maruti",logo:"clientslogo/KIA.jpg"},
+    {name:"Maruti",logo:"clientslogo/TATA.png"},
+    {name:"Maruti",logo:"clientslogo/HERO.png"},
+    {name:"Maruti",logo:"clientslogo/YAMAHA.png"},
+
+
+        {name:"Maruti",logo:"clientslogo/toyota.png"},
+    {name:"Maruti",logo:"clientslogo/Honda.png"},
+    {name:"Maruti",logo:"clientslogo/BOSCH.png"},
+    {name:"Maruti",logo:"clientslogo/technowings.png"},
+     {name:"Maruti",logo:"clientslogo/Maruti-Suzuki-Logo-2000.png"},
+    {name:"Maruti",logo:"clientslogo/Ather.png"},
+  {name:"Maruti",logo:"clientslogo/TVS.jpg"},
+    {name:"Maruti",logo:"clientslogo/KIA.jpg"},
+    {name:"Maruti",logo:"clientslogo/TATA.png"},
+    {name:"Maruti",logo:"clientslogo/HERO.png"},
+    {name:"Maruti",logo:"clientslogo/YAMAHA.png"},
+
+
+        {name:"Maruti",logo:"clientslogo/toyota.png"},
+    {name:"Maruti",logo:"clientslogo/Honda.png"},
+    {name:"Maruti",logo:"clientslogo/BOSCH.png"},
+    {name:"Maruti",logo:"clientslogo/technowings.png"},
+     {name:"Maruti",logo:"clientslogo/Maruti-Suzuki-Logo-2000.png"},
+    {name:"Maruti",logo:"clientslogo/Ather.png"},
+  {name:"Maruti",logo:"clientslogo/TVS.jpg"},
+    {name:"Maruti",logo:"clientslogo/KIA.jpg"},
+    {name:"Maruti",logo:"clientslogo/TATA.png"},
+    {name:"Maruti",logo:"clientslogo/HERO.png"},
+    {name:"Maruti",logo:"clientslogo/YAMAHA.png"},
+
+
+        {name:"Maruti",logo:"clientslogo/toyota.png"},
+    {name:"Maruti",logo:"clientslogo/Honda.png"},
+    {name:"Maruti",logo:"clientslogo/BOSCH.png"},
+    {name:"Maruti",logo:"clientslogo/technowings.png"},
+
+
+
+
+
+
+
+
+
+
+        
+];
+const r1 = clients.slice(0,20);
+const r2 = clients.slice(20,40);
+const r3 = clients.slice(40,60);
+
+/* BUILD */
+function buildRow(row, data){
+    const items=[...data,...data];
+
+    items.forEach(c=>{
+        const div=document.createElement("div");
+        div.className="logo-card";
+        div.innerHTML=`<img src="${c.logo}">`;
+        row.appendChild(div);
+    });
+}
+
+buildRow(document.getElementById("row1"),r1);
+buildRow(document.getElementById("row2"),r2);
+buildRow(document.getElementById("row3"),r3);
+
+
+        function animateCounter(el, target, duration) {
+            let start = null;
+            function step(ts) {
+                if (!start) start = ts;
+                const progress = Math.min((ts - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target) + '+';
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        const counterEl = document.getElementById('counter');
+        const observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                animateCounter(counterEl, 700, 1800);
+                observer.disconnect();
+            }
+        }, { threshold: 0.4 });
+        observer.observe(counterEl);
+
+    </script>
 </body>
-
 </html>
