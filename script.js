@@ -38,37 +38,37 @@ window.addEventListener("load", () => {
 /* ================= TESTIMONIAL SLIDER ================= */
 const data = [
   {
-    img: "sandeepkumar.jpeg",
-    quote: "We develop and optimize application solutions that ensure seamless system integration, reliable performance.",
-    name: "Mr Sandeep Kumar",
-    role: "Sales Head - 10+ YRS"
+    img: "event1.jpg",
+    quote: "Connecting classrooms with real-world industry to shape future engineers.\n                                                                           We as a Cosmo Instruments India provided a state-of-the-art leak testing laboratory setup to the students of Government Polytechnic Manesar as part of our CSR initiative, enabling hands-on learning with real-world industrial technologies and equipment.     \n                                                                        Our motto for this initiative was to continuously collaborate with educational institutes to bridge the gap between industry and academia. \n                                                                           The program was accompanied by plantation program to promote sustainability and environmental responsibility. 💐 👏",
+   
   },
   {
-    img: "saneetkumar.png",
-    quote: "We build scalable web systems and dashboards for modern businesses.",
-    name: "Saneet Kumar",
-    role: "Web Developer - 8 YRS"
+      img: "event1.jpg",
+   
+    quote: "Connecting classrooms with real-world industry to shape future engineers.\n                                                                           We as a Cosmo Instruments India provided a state-of-the-art leak testing laboratory setup to the students of Government Polytechnic Manesar as part of our CSR initiative, enabling hands-on learning with real-world industrial technologies and equipment.     \n                                                                        Our motto for this initiative was to continuously collaborate with educational institutes to bridge the gap between industry and academia. \n                                                                           The program was accompanied by plantation program to promote sustainability and environmental responsibility. 💐 👏",
   },
   {
-    img: "https://i.pravatar.cc/200?img=45",
-    quote: "AI-powered automation helps companies grow faster and smarter.",
-    name: "Ankit Verma",
-    role: "AI Engineer - 6 YRS"
+      img: "event1.jpg",
+   
+    quote: "Connecting classrooms with real-world industry to shape future engineers.\n                                                                           We as a Cosmo Instruments India provided a state-of-the-art leak testing laboratory setup to the students of Government Polytechnic Manesar as part of our CSR initiative, enabling hands-on learning with real-world industrial technologies and equipment.     \n                                                                        Our motto for this initiative was to continuously collaborate with educational institutes to bridge the gap between industry and academia. \n                                                                           The program was accompanied by plantation program to promote sustainability and environmental responsibility. 💐 👏",
   },
   {
-    img: "https://i.pravatar.cc/200?img=22",
-    quote: "We ensure secure and reliable infrastructure systems.",
-    name: "Priya Singh",
-    role: "DevOps Engineer - 7 YRS"
-  }
+      img: "event1.jpg",
+    quote: "Connecting classrooms with real-world industry to shape future engineers.\n                                                                           We as a Cosmo Instruments India provided a state-of-the-art leak testing laboratory setup to the students of Government Polytechnic Manesar as part of our CSR initiative, enabling hands-on learning with real-world industrial technologies and equipment.     \n                                                                        Our motto for this initiative was to continuously collaborate with educational institutes to bridge the gap between industry and academia. \n                                                                           The program was accompanied by plantation program to promote sustainability and environmental responsibility. 💐 👏",
+   
+  },
+  {
+      img: "event1.jpg",
+    quote: "Connecting classrooms with real-world industry to shape future engineers.\n                                                                           We as a Cosmo Instruments India provided a state-of-the-art leak testing laboratory setup to the students of Government Polytechnic Manesar as part of our CSR initiative, enabling hands-on learning with real-world industrial technologies and equipment.     \n                                                                        Our motto for this initiative was to continuously collaborate with educational institutes to bridge the gap between industry and academia. \n                                                                           The program was accompanied by plantation program to promote sustainability and environmental responsibility. 💐 👏",
+  },
 ];
+
 
 let testimonialIndex = 0;
 
 const img = document.getElementById("profileImg");
 const quote = document.getElementById("quote");
-const name = document.getElementById("name");
-const role = document.getElementById("role");
+
 const dots = document.querySelectorAll(".dot");
 
 function updateSlide(i) {
@@ -78,9 +78,7 @@ function updateSlide(i) {
   setTimeout(() => {
     img.src = data[i].img;
     quote.innerText = data[i].quote;
-    name.innerText = data[i].name;
-    role.innerText = data[i].role;
-
+    
     img.style.opacity = 1;
     quote.style.opacity = 1;
   }, 300);
