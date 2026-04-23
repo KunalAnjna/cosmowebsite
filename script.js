@@ -34,68 +34,119 @@ window.addEventListener("load", () => {
   });
 });
 
-
-/* ================= TESTIMONIAL SLIDER ================= */
+/* ================= DATA ================= */
 const data = [
-  
-  {
-      img: "event2.jpg",
-   
-    quote: "We are excited to present our latest innovation designed to redefine precision and reliability in air leak testing.\nThe LS-R701X is built to deliver:\n ✔ Budget-friendly solution without compromising on quality\n✔ High accuracy and consistent performance\n✔ User-friendly operation for seamless testing\n✔ Advanced technology for modern industrial needs\n✔ Versatile applications across multiple industries\n\nAt Cosmo Instruments India, we continue to push the boundaries of quality and innovation, helping industries achieve superior leak testing standards.\n🔧 Whether it’s automotive, electronics, manufacturing, medical appliances — precision matters.\nExplore the next level of leak testing with LS-R701X."
-  },
-  {
-      img: "event3.jpg",
-   
-    quote: "On this International Women’s Day, Cosmo Instruments India proudly celebrated the incredible women in our office who contribute their talent, hard work, and passion every day. The celebration was a small way to recognize their achievements and appreciate the positive impact they create in our workplace.\n Let’s continue to support, respect, and empower women—not just today, but every day.",
-  },
-  {
-      img: "event4.jpg",
-    quote: "Cosmo Instruments India, in collaboration with Inja Foundation, successfully organized a Free Eye Check-Up Camp and Spectacles Distribution Program in Pune.\nThis initiative aimed to promote better eye health by providing free eye examinations and distributing glasses to those in need, helping many individuals improve their vision and quality of life.\nWe are proud to contribute to community welfare and remain committed to supporting initiatives that create a positive and lasting impact on society.\nA heartfelt thank you to all the doctors, volunteers, and participants who made this program a meaningful success",
-   
-  },
-  {
-      img: "event1.jpg",
-    quote: "Connecting classrooms with real-world industry to shape future engineers.\n                                                                           We as a Cosmo Instruments India provided a state-of-the-art leak testing laboratory setup to the students of Government Polytechnic Manesar as part of our CSR initiative, enabling hands-on learning with real-world industrial technologies and equipment.     \n                                                                        Our motto for this initiative was to continuously collaborate with educational institutes to bridge the gap between industry and academia. \n                                                                           The program was accompanied by plantation program to promote sustainability and environmental responsibility. 💐 👏",
-  },
+
+{
+imgs:["event1.jpg","event2.jpg","event3.jpg"],
+
+quote:`Connecting classrooms with real-world industry to shape future engineers.
+
+We as a Cosmo Instruments India provided a state-of-the-art leak testing laboratory setup to the students of Government Polytechnic Manesar.
+
+Our motto was to bridge the gap between industry and academia.`
+
+},
+
+{
+imgs:["event4.jpg","event5.jpg","event6.jpg"],
+
+quote:`International Women’s Day celebration at Cosmo Instruments India.
+
+We proudly celebrated the incredible women in our office who contribute their talent and hard work every day.`
+
+},
+
+{
+imgs:["event7.jpg","event8.jpg","event9.jpg"],
+
+quote:`Free Eye Check-Up Camp organized in Pune.
+
+This initiative promoted better eye health and distributed spectacles to people in need.`
+
+},
+
+{
+imgs:["event10.jpg","event11.jpg","event12.jpg"],
+
+quote:`Latest innovation LS-R701X launched.
+
+High accuracy, budget friendly, user-friendly and suitable for multiple industries.`
+
+}
+
 ];
 
 
+/* ================= VARIABLES ================= */
 let testimonialIndex = 0;
 
-const img = document.getElementById("profileImg");
+const track = document.getElementById("imageTrack");
 const quote = document.getElementById("quote");
-
 const dots = document.querySelectorAll(".dot");
 
-function updateSlide(i) {
-  img.style.opacity = 0;
-  quote.style.opacity = 0;
 
-  setTimeout(() => {
-    img.src = data[i].img;
-    quote.innerText = data[i].quote;
-    
-    img.style.opacity = 1;
-    quote.style.opacity = 1;
-  }, 300);
+/* ================= UPDATE FUNCTION ================= */
+function updateSlide(i){
 
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[i].classList.add("active");
+    track.style.opacity = 0;
+    quote.style.opacity = 0;
+
+    setTimeout(()=>{
+
+        track.innerHTML = `
+            <img src="${data[i].imgs[0]}">
+            <img src="${data[i].imgs[1]}">
+            <img src="${data[i].imgs[2]}">
+        `;
+
+        // restart animation
+        track.style.animation = "none";
+        track.offsetHeight;
+        track.style.animation = "verticalScroll 30s infinite";
+
+        quote.innerText = data[i].quote;
+
+        track.style.opacity = 1;
+        quote.style.opacity = 1;
+
+    },300);
+
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[i].classList.add("active");
 }
 
-/* AUTO SLIDE */
-setInterval(() => {
-  testimonialIndex = (testimonialIndex + 1) % data.length;
-  updateSlide(testimonialIndex);
-}, 3000);
 
-/* DOT CLICK */
-dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => {
-    testimonialIndex = i;
+/* ================= AUTO SLIDE ================= */
+setInterval(()=>{
+
+    testimonialIndex++;
+    
+    if(testimonialIndex >= data.length){
+        testimonialIndex = 0;
+    }
+
     updateSlide(testimonialIndex);
-  });
+
+},20000);
+
+
+/* ================= DOT CLICK ================= */
+dots.forEach((dot,i)=>{
+
+    dot.addEventListener("click",()=>{
+
+        testimonialIndex = i;
+        updateSlide(i);
+
+    });
+
 });
+
+
+/* FIRST LOAD */
+updateSlide(0);
 
 
 /* ================= COUNTER (FINAL FIXED) ================= */
