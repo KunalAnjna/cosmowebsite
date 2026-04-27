@@ -1,10 +1,17 @@
 *{
     margin: 0;
-    font-family: Arial;
+  
     box-sizing: border-box;
     text-decoration: none;
     /*
 font-family: Roboto , sans-serif;*/
+}
+body{
+   font-family:'DM Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+   font-family:'Syne', sans-serif;
 }
 /* Header Section*/
 /* NAVBAR BASE */
@@ -632,6 +639,7 @@ button:active{
 }
 
 .about-text h2 {
+     font-family:'Syne', sans-serif;
     font-size: clamp(28px, 3vw, 40px);
     margin-bottom: 10px;
 }
