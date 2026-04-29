@@ -1084,7 +1084,7 @@ background-color: rgb(255, 255, 255,00.2s);
     gap: 100px;
     justify-content: center;
     width: max-content;
-    animation: partnerScroll 20s linear infinite;
+    animation: partnerScroll 10s linear infinite;
 }
 
 .partner {
