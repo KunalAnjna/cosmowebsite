@@ -166,11 +166,12 @@ button:active{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 8px 10px;
+        padding: 0 25px 0 10px;   /* right side extra gap */
         overflow-x: auto;
     }
 
     /* scrollbar hide */
+    
     .menu::-webkit-scrollbar{
         display: none;
     }
@@ -183,6 +184,7 @@ button:active{
 
     .menu{
         width: 100%;
+        margin-bottom: 3px;
         padding-right: 5px;
         display: flex;
         align-items: center;
@@ -193,11 +195,24 @@ button:active{
         
     }
 
-    .menu a{
+    .menu a{ 
+        flex-shrink: 0;
         font-size: 14px;
         white-space: nowrap;
     }
+    .dropdown{
+display:flex;
+align-items:center;
+}
 
+.menu{
+padding:0 12px;
+}
+
+.menu{
+overflow-x:auto;
+padding-right:25px;
+}
     button{
         font-size: 12px;
         padding: 6px 10px;
@@ -205,11 +220,12 @@ button:active{
         flex-shrink: 0;
     }
 
-    /* dropdown mobile simple */
+    /* dropdown mobile simple 
     .dropdown-menu{
         position: absolute;
         width: 200px;
     }
+        */
 }
 /* ========================= */
 /* 📲 TABLET VIEW */
