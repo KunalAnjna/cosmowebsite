@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   
+<title>Corporate History — Cosmo Instruments India Pvt. Ltd.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c10;
+    --bg2: #0f1219;
+    --surface: #161b26;
+    --border: #1e2535;
+    --accent: #e8a020;
+    --accent2: #f0c060;
+    --accent-dim: rgba(232,160,32,0.12);
+    --text: #e8ecf4;
+    --text-muted: #6b7a99;
+    --text-faint: #2e3a55;
+    --line: #1a2240;
+    --glow: rgba(232,160,32,0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 999; opacity: 0.4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 80px 40px 60px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(232,160,32,0.08) 0%, transparent 70%),
+      linear-gradient(180deg, #0a0c10 0%, #0d1220 50%, #0a0c10 100%);
+  }
+
+  /* Grid lines */
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(232,160,32,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,160,32,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
+  }
+
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+    position: relative;
+  }
+
+  .hero-tag::before, .hero-tag::after {
+    content: '▸';
+    margin: 0 10px;
+    opacity: 0.5;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 10vw, 140px);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.4s forwards;
+  }
+
+  .hero-title span {
+    display: block;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, #fff8e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    margin-top: 28px;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 520px;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.6s forwards;
+    position: relative;
+  }
+
+  .hero-stats {
+    display: flex; gap: 48px;
+    margin-top: 56px;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.8s forwards;
+  }
+
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .scroll-cue {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    opacity: 0; animation: fadeUp 1s 1.2s forwards;
+    color: var(--text-muted);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .scroll-arrow {
+    width: 1px; height: 40px;
+    background: linear-gradient(180deg, var(--accent), transparent);
+    animation: scrollPulse 1.8s ease-in-out infinite;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    text-align: center;
+    padding: 80px 40px 20px;
+  }
+  .section-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 6vw, 72px);
+    letter-spacing: 0.03em;
+    color: var(--text);
+  }
+
+  /* ── TIMELINE ── */
+  .timeline-wrapper {
+    max-width: 960px;
+    margin: 60px auto 0;
+    padding: 0 40px 100px;
+    position: relative;
+  }
+
+  /* Central spine */
+  .timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 50%; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--accent) 5%, var(--line) 10%, var(--line) 90%, transparent);
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 48px 1fr;
+    gap: 0;
+    margin-bottom: 8px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Alternate left/right */
+  .timeline-item:nth-child(odd) .timeline-content { grid-column: 1; text-align: right; padding-right: 40px; }
+  .timeline-item:nth-child(odd) .timeline-empty  { grid-column: 3; }
+  .timeline-item:nth-child(even) .timeline-content { grid-column: 3; text-align: left; padding-left: 40px; }
+  .timeline-item:nth-child(even) .timeline-empty  { grid-column: 1; }
+  .timeline-node { grid-column: 2; display: flex; justify-content: center; align-items: flex-start; padding-top: 28px; position: relative; }
+
+  .node-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    position: relative; z-index: 2;
+    transition: all 0.3s;
+    box-shadow: 0 0 0 4px var(--accent-dim);
+  }
+
+  .timeline-item:hover .node-dot {
+    background: var(--accent);
+    box-shadow: 0 0 0 8px var(--accent-dim), 0 0 20px var(--glow);
+  }
+
+  .timeline-content {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .tc-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--text-faint);
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+    display: block;
+  }
+
+  .timeline-item:hover .tc-year { color: var(--accent); }
+
+  .tc-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-top: 10px;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+  }
+
+  .tc-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--accent-dim), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+
+  .timeline-item:hover .tc-card {
+    border-color: rgba(232,160,32,0.35);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+  }
+
+  .timeline-item:hover .tc-card::before { opacity: 1; }
+
+  /* Card notch pointing toward spine */
+  .timeline-item:nth-child(odd) .tc-card::after {
+    content: '';
+    position: absolute; right: -7px; top: 22px;
+    width: 12px; height: 12px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    transform: rotate(45deg);
+    transition: background 0.3s;
+  }
+  .timeline-item:nth-child(even) .tc-card::after {
+    content: '';
+    position: absolute; left: -7px; top: 22px;
+    width: 12px; height: 12px;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transform: rotate(45deg);
+    transition: background 0.3s;
+  }
+
+  .tc-img-wrap {
+    width: 100%; height: 130px;
+    border-radius: 4px;
+    overflow: hidden; margin-bottom: 14px;
+    background: var(--bg2);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .tc-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    filter: grayscale(20%);
+    transition: opacity 0.3s, filter 0.3s, transform 0.5s;
+  }
+
+  .timeline-item:hover .tc-img-wrap img {
+    opacity: 1; filter: grayscale(0%); transform: scale(1.04);
+  }
+
+  .tc-badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(232,160,32,0.2);
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    position: relative; z-index: 1;
+  }
+
+  .tc-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    font-weight: 300;
+    position: relative; z-index: 1;
+  }
+
+  /* ── FOOTER BAR ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    background: var(--bg2);
+  }
+
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+  }
+
+  /* ── DECORATIVE STRIP ── */
+  .deco-strip {
+    width: 100%;
+    padding: 16px 0;
+    background: linear-gradient(90deg, transparent, var(--accent-dim), transparent);
+    display: flex; justify-content: center;
+    overflow: hidden;
+  }
+  .deco-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: var(--accent);
+    opacity: 0.5;
+    white-space: nowrap;
+    animation: marquee 28s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(30vw); }
+    to   { transform: translateX(-120%); }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; height: 40px; }
+    50% { opacity: 1; height: 54px; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .timeline-wrapper::before { left: 20px; }
+    .timeline-item { grid-template-columns: 36px 1fr !important; }
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+      grid-column: 2 !important; text-align: left !important;
+      padding-left: 24px !important; padding-right: 0 !important;
+    }
+    .timeline-item:nth-child(odd) .timeline-empty,
+    .timeline-item:nth-child(even) .timeline-empty { display: none; }
+    .timeline-node { grid-column: 1 !important; padding-top: 28px; justify-content: center; }
+    .tc-card::after { display: none !important; }
+    .hero-stats { gap: 24px; }
+    .stat-num { font-size: 32px; }
+  }
+</style>
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+               <div class="logo">
+                </div>
+            </div>
+      
+            <div class="menu">
+                <a href="index.html">Home</a>
+               <div class="dropdown">
+                <a>About us ▾</a>
+
+                <div class="dropdown-menu">
+                    <p><a href="message.html">Our Team</a></p>
+                    <p><a href="CorporateHistory.html">Corporate history </a></p>
+                    <p><a href="">Our Team </a></p>
+                </div>
+            </div>
+            <!-- DROPDOWN END -->
+              <div class="dropdown">
+                <a>What is Leak test? ▾</a>
+
+                <div class="dropdown-menu">
+                    <p><a href="Leakabout.html">What is Leak Test?</a></p>
+                    <p><a href="Selection.html">Select as per industry </a></p>
+            
+                </div>
+            </div>
+                <a href="products.html">Products and Services</a>
+                <a href="client.html">Clients</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
+        </div>
+        </header>
+       
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <p class="hero-tag">Cosmo Instruments India Pvt. Ltd.</p>
+  <h1 class="hero-title">
+    Corporate<br><span>History</span>
+  </h1>
+  <p class="hero-sub">From a single liaison office in Gurugram to a pan-India precision instruments powerhouse — a journey spanning over two decades.</p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">26+</div>
+      <div class="stat-label">Years</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7+</div>
+      <div class="stat-label">City Offices</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">300+</div>
+      <div class="stat-label">Clients</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">ISO</div>
+      <div class="stat-label">Certified</div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <div class="scroll-arrow"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- DECO STRIP -->
+<div class="deco-strip">
+  <span class="deco-text">
+    AIR LEAK TESTING &nbsp;✦&nbsp; PRECISION INSTRUMENTS &nbsp;✦&nbsp; QUALITY EXCELLENCE &nbsp;✦&nbsp; COSMO INSTRUMENTS INDIA &nbsp;✦&nbsp; SINCE 1998 &nbsp;✦&nbsp; ISO CERTIFIED &nbsp;✦&nbsp; MANUFACTURING IN INDIA &nbsp;✦&nbsp; 
+  </span>
+</div>
+
+<!-- SECTION HEADER -->
+<div class="section-header">
+  <p class="section-eyebrow">Our Journey</p>
+  <h2 class="section-title">Milestones &amp; Growth</h2>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline-wrapper" id="timeline">
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">1998</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/1-1.png" alt="1998" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Foundation</span>
+        <p class="tc-text">In the late 90s, Cosmo appointed an authorized agent in India for timely service and technical support to its growing Indian user base.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2000</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/22.png" alt="2000" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Japan Connect</span>
+        <p class="tc-text">Technical advisors from Cosmo Japan began visiting India regularly for on-ground service support and direct customer feedback collection.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2005</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/05/cosmol.png" alt="2005" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">India Decision</span>
+        <p class="tc-text">Based on customer feedback, Cosmo took the strategic decision to establish its own company in India to deliver better nationwide service.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2007</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/05/2007.png" alt="2007" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Liaison Office</span>
+        <p class="tc-text">Cosmo established its Liaison Office in October 2007, training engineers on Air Leak Testing from a single-room office in Sushant Lok, Sector 55, Gurugram.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2008</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/05/2008.png" alt="2008" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Auto Expo</span>
+        <p class="tc-text">Participated in India Auto Show 2008 at Pragati Maidan, Delhi — marking Cosmo's first major public presence at a premier Indian automotive exhibition.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2009</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/44.png" alt="2009" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Incorporation</span>
+        <p class="tc-text">In December 2009, the Liaison Office was officially localized as <strong style="color:var(--accent-dim);filter:brightness(1.8)">Cosmo Instruments India Pvt. Ltd.</strong> at IMT Manesar, Gurugram.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2010</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/33.png" alt="2010" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Team Building</span>
+        <p class="tc-text">Cosmo India built a team of highly qualified sales and service engineers who completed intensive training in Japan, Malaysia &amp; Thailand.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2011</span>
+      <div class="tc-card">
+        <span class="tc-badge">Rapid Expansion</span>
+        <p class="tc-text">A landmark year — the company exceeded 300 clients, achieved INR 13 Million annual turnover, and opened Sales &amp; Service offices in both Bengaluru and Pune regions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2012</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/77.png" alt="2012" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">HQ Upgrade</span>
+        <p class="tc-text">Headquarters were expanded with additional manpower and a dedicated dust-proof calibration lab to support customers with faster, more precise service.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2013</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/88.png" alt="2013" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Manufacturing</span>
+        <p class="tc-text">Commenced manufacturing of Leak Testing Machines in the Bengaluru region — a pivotal step toward becoming a full-stack solutions provider.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2014</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/99.png" alt="2014" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">West Expansion</span>
+        <p class="tc-text">Established a dedicated sales and service office in Pune to ensure timely on-site support for western region customers.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2015</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/1010.png" alt="2015" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">South India</span>
+        <p class="tc-text">Established a sales and service office in Chennai, extending Cosmo's reach into South India with dedicated technical support.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2016</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/1212.png" alt="2016" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">CSR Initiative</span>
+        <p class="tc-text">Plantation programme at Manesar Govt. Polytechnic (Delhi) and Gadudevi Hills, Supewadi (Pune) — led by President Mr. Tomoyuki Furuse San.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2017</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/1313.png" alt="2017a" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">10th Anniversary</span>
+        <p class="tc-text">Celebrated the 10th Year Anniversary of Cosmo Instruments India Pvt. Ltd. — a decade of precision, quality, and customer commitment.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2017</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/1414.png" alt="2017b" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">R&amp;D Expansion</span>
+        <p class="tc-text">Expanded Bengaluru R&amp;D Centre with advanced Leak Test Machine design &amp; manufacturing facilities relocated to a new, larger premises.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2018</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/04/2018.png" alt="2018" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Pune Mfg Unit</span>
+        <p class="tc-text">Pune office expanded with a new machine manufacturing unit for complete leak testing machine solutions with end-to-end delivery capability.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2019</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/1717.png" alt="2019" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Gujarat Entry</span>
+        <p class="tc-text">Established a domestic sales and service office in Ahmedabad, Gujarat to address the growing demand for Leak Testing solutions in the region.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2021</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/1818.png" alt="2021" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">New R&amp;D Hub</span>
+        <p class="tc-text">Bengaluru R&amp;D Centre relocated once again to a newer, larger facility further strengthening machine design and manufacturing capabilities.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2022</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/05/22.png" alt="2022" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Chennai Facility</span>
+        <p class="tc-text">Established a dedicated leak testing machine manufacturing facility at Ambattur, Chennai — bolstering South India operations significantly.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-empty"></div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-content">
+      <span class="tc-year">2023</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/2020.png" alt="2023a" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Becharaji Office</span>
+        <p class="tc-text">Opened a sales and service office in Becharaji, Gujarat — followed by a joint venture for machine manufacturing in both Becharaji and Ahmedabad.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <span class="tc-year">2024</span>
+      <div class="tc-card">
+        <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/04/gla11.png" alt="2024" style="width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:14px;opacity:0.85;">
+        <span class="tc-badge">Bengaluru JV</span>
+        <p class="tc-text">Launched a joint venture for machine manufacturing in Jigani Industrial Area, Bengaluru — continuing expansion into India's most critical precision-manufacturing hub.</p>
+      </div>
+    </div>
+    <div class="timeline-node"><div class="node-dot"></div></div>
+    <div class="timeline-empty"></div>
+  </div>
+
+</div><!-- /timeline-wrapper -->
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+</div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate history</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+
+</footer>  
+
+<script>
+  // Intersection Observer for scroll-triggered animations
+  const items = document.querySelectorAll('.timeline-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+  items.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

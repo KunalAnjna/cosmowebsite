@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+<title>Industrial Leak Testing — Clean Corporate Theme</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --white: #ffffff;
+    --off: #f8f7f4;
+    --blue: #0a3d6b;
+    --blue-mid: #1a5fa8;
+    --blue-light: #e8f1fb;
+    --accent: #e84a2f;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+  }
+  body { background: var(--white); color: var(--text); font-family: 'Jost', sans-serif; line-height: 1.7; }
+
+  /* NAV */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(255,255,255,0.97); z-index: 100; backdrop-filter: blur(8px); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--blue); letter-spacing: 0.02em; }
+  .logo sup { font-size: 0.65rem; color: var(--accent); vertical-align: super; font-family: 'Jost', sans-serif; font-weight: 600; letter-spacing: 0.1em; }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav a { text-decoration: none; color: var(--muted); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; letter-spacing: 0.03em; }
+  nav a:hover { color: var(--blue); }
+  .nav-cta { background: var(--blue); color: white; padding: 0.6rem 1.5rem; border-radius: 2px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--blue-mid); color: white; }
+
+  /* HERO */
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh; align-items: center; }
+  .hero-left { padding: 5rem 4rem; }
+  .hero-right { background: var(--blue); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .hero-right::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E") repeat; }
+  .hero-diagram { position: relative; z-index: 1; text-align: center; color: white; padding: 3rem; }
+  .hero-circle { width: 180px; height: 180px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; }
+  .hero-circle::before { content: ''; position: absolute; inset: 12px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); }
+  .hero-circle::after { content: '±0.1 Pa'; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: white; }
+  .hero-diagram-label { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.6; margin-bottom: 1.5rem; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+  .hero-tag { border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); font-size: 0.78rem; padding: 0.4rem 1rem; border-radius: 40px; letter-spacing: 0.05em; }
+  .eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 600; line-height: 1.1; color: var(--blue); margin-bottom: 1.5rem; }
+  .hero-desc { color: var(--muted); font-size: 1rem; margin-bottom: 2.5rem; max-width: 480px; font-weight: 300; }
+  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--blue); color: white; border: none; padding: 0.9rem 2.2rem; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; border-radius: 2px; letter-spacing: 0.05em; transition: all 0.25s; }
+  .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(10,61,107,0.25); }
+  .btn-ghost { background: transparent; color: var(--blue); border: 1.5px solid var(--blue); padding: 0.85rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 500; cursor: pointer; border-radius: 2px; transition: all 0.25s; }
+  .btn-ghost:hover { background: var(--blue-light); }
+
+  /* STATS ROW */
+  .stats-row { background: var(--off); padding: 2.5rem 4rem; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem; }
+  .stat { text-align: center; }
+  .stat-n { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--blue); }
+  .stat-l { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; margin-top: 2px; }
+
+  /* SECTION */
+  .section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+  .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; }
+  .section-num { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 700; color: var(--border); line-height: 1; margin-right: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--blue); }
+  h2 em { color: var(--accent); font-style: normal; }
+  .section-lead { color: var(--muted); font-size: 0.95rem; max-width: 500px; }
+
+  /* METHODS */
+  .methods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; background: var(--border); }
+  .method-card { background: var(--white); padding: 2.5rem 2rem; transition: all 0.3s; cursor: default; }
+  .method-card:hover { background: var(--blue); color: white; }
+  .method-card:hover .method-num, .method-card:hover .method-desc { color: rgba(255,255,255,0.7); }
+  .method-card:hover .method-title { color: white; }
+  .method-num { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; transition: color 0.3s; }
+  .method-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--blue); margin-bottom: 0.75rem; transition: color 0.3s; }
+  .method-desc { font-size: 0.88rem; color: var(--muted); transition: color 0.3s; }
+
+  /* TABLE */
+  .table-container { margin-top: 2rem; border: 1px solid var(--border); overflow: hidden; border-radius: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  thead { background: var(--blue); color: white; }
+  th { padding: 1rem 1.5rem; text-align: left; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+  td { padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: var(--blue-light); }
+  .lvl-dot { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot-1 { background: #d1d5db; }
+  .dot-2 { background: #fbbf24; }
+  .dot-3 { background: var(--blue-mid); }
+  .dot-4 { background: var(--accent); }
+
+  /* INDUSTRIES */
+  .ind-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .ind-card { border: 1px solid var(--border); padding: 2rem; transition: all 0.3s; }
+  .ind-card:hover { border-color: var(--blue); box-shadow: 0 12px 40px rgba(10,61,107,0.1); transform: translateY(-3px); }
+  .ind-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .ind-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--blue); margin-bottom: 0.5rem; }
+  .ind-desc { font-size: 0.85rem; color: var(--muted); }
+
+  /* FAQ */
+  .faq-list { margin-top: 2.5rem; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q { padding: 1.5rem 0; display: flex; justify-content: space-between; cursor: pointer; font-weight: 500; font-size: 0.95rem; color: var(--blue); user-select: none; }
+  .faq-q:hover { color: var(--blue-mid); }
+  .faq-icon { font-size: 1.4rem; color: var(--accent); line-height: 1; transition: transform 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-a-inner { padding-bottom: 1.5rem; font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+  .faq-item.open .faq-a { max-height: 200px; }
+
+  /* CTA */
+  .cta { background: var(--blue); color: white; padding: 5rem 2rem; text-align: center; }
+  .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1rem; }
+  .cta p { opacity: 0.75; margin-bottom: 2.5rem; font-size: 1rem; }
+  .btn-white { background: white; color: var(--blue); border: none; padding: 0.9rem 2.5rem; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; border-radius: 2px; transition: all 0.2s; }
+  .btn-white:hover { background: var(--off); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+  footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); }
+
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s, transform 0.7s; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 300px; }
+    nav { padding: 1.2rem 1.5rem; }
+    nav ul { display: none; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .stats-row { padding: 2rem 1.5rem; }
+  }
+</style>
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+               <div class="logo">
+                </div>
+            </div>
+      
+            <div class="menu">
+                <a href="index.html">Home</a>
+               <div class="dropdown">
+                <a>About us ▾</a>
+
+                <div class="dropdown-menu">
+                    <p><a href="message.html">Our Team</a></p>
+                    <p><a href="CorporateHistory.html">Corporate history </a></p>
+                    <p><a href="">Our Team </a></p>
+                </div>
+            </div>
+            <!-- DROPDOWN END -->
+              <div class="dropdown">
+                <a>What is Leak test? ▾</a>
+
+                <div class="dropdown-menu">
+                    <p><a href="Leakabout.html">What is Leak Test?</a></p>
+                    <p><a href="Selection.html">Select as per industry </a></p>
+            
+                </div>
+            </div>
+                <a href="products.html">Products and Services</a>
+                <a href="client.html">Clients</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
+        </div>
+        </header>
+
+
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Precision Leak & Flow Testing</div>
+    <h1>Industrial Leak Test Solutions for Every Industry</h1>
+    <p class="hero-desc">From pressure drop to helium tracer gas — comprehensive testing solutions ensuring airtightness, compliance, and zero-defect production lines.</p>
+    <div class="btn-group">
+      <button class="btn-primary">Request Equipment Quote</button>
+      <button class="btn-ghost">Explore Methods</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-diagram">
+      <div class="hero-diagram-label">Measurement Precision</div>
+      <div class="hero-circle"></div>
+      <div class="hero-tags">
+        <span class="hero-tag">Automotive</span>
+        <span class="hero-tag">Medical</span>
+        <span class="hero-tag">Electronics</span>
+        <span class="hero-tag">Aerospace</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat"><div class="stat-n">±0.1 Pa</div><div class="stat-l">Measurement Precision</div></div>
+  <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Quality Control</div></div>
+  <div class="stat"><div class="stat-n">4</div><div class="stat-l">Test Methods</div></div>
+  <div class="stat"><div class="stat-n">2007</div><div class="stat-l">Established</div></div>
+</div>
+
+<div class="section fade-in">
+  <div class="section-header">
+    <div style="display:flex; align-items:flex-end;">
+      <div class="section-num">01</div>
+      <div><h2>What is a <em>Leak Test</em>?</h2></div>
+    </div>
+    <p class="section-lead">Verification of airtightness in components and systems across production lines.</p>
+  </div>
+  <p style="color:var(--muted); max-width:700px; font-weight:300; font-size:1rem; line-height:1.9;">Leak tests allow for the verification of airtightness in components and systems. They are used in production lines to detect defects in valves, seals, assemblies, heat exchangers, and critical components — preventing failures, ensuring compliance with quality standards, reducing waste, and guaranteeing safety in pressurised products.</p>
+
+  <div class="methods-grid" style="margin-top:3rem;">
+    <div class="method-card"><div class="method-num">Method 01</div><div class="method-title">Pressure Drop</div><div class="method-desc">Standard method for detecting leaks by measuring pressure variation. Ideal for automated lines and high-volume quality control.</div></div>
+    <div class="method-card"><div class="method-num">Method 02</div><div class="method-title">Vacuum</div><div class="method-desc">Evaluates hermeticity through controlled vacuum extraction. Used in electronic and medical applications.</div></div>
+    <div class="method-card"><div class="method-num">Method 03</div><div class="method-title">Helium Tracer Gas</div><div class="method-desc">High-precision detection of microleaks in critical components. Standard in medical, aerospace, and advanced automotive.</div></div>
+    <div class="method-card"><div class="method-num">Method 04</div><div class="method-title">Water Sink</div><div class="method-desc">Basic visual inspection by immersion or soapy solution for fundamental, low-risk leak detection.</div></div>
+  </div>
+</div>
+
+<div style="background:var(--off);">
+  <div class="section fade-in">
+    <div class="section-header">
+      <div style="display:flex; align-items:flex-end;">
+        <div class="section-num">02</div>
+        <div><h2>Methods <em>Comparison</em></h2></div>
+      </div>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead><tr><th>Method</th><th>Precision</th><th>Cost</th><th>Application</th><th>Level</th></tr></thead>
+        <tbody>
+          <tr><td>Water Sink</td><td>Low</td><td>Low</td><td>Basic Inspection</td><td><span class="lvl-dot"><span class="dot dot-1"></span> Basic</span></td></tr>
+          <tr><td>Pressure Drop</td><td>Medium</td><td>Medium</td><td>Production Lines</td><td><span class="lvl-dot"><span class="dot dot-2"></span> Standard</span></td></tr>
+          <tr><td>Vacuum</td><td>Medium-High</td><td>Medium</td><td>Electronics / Medical</td><td><span class="lvl-dot"><span class="dot dot-3"></span> Advanced</span></td></tr>
+          <tr><td>Helium / Tracer Gas</td><td>Very High</td><td>High</td><td>Aerospace / Medical</td><td><span class="lvl-dot"><span class="dot dot-4"></span> Critical</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!--
+<div class="section fade-in">
+  <div class="section-header">
+    <div style="display:flex; align-items:flex-end;">
+      <div class="section-num">03</div>
+      <div><h2>Industry <em>Applications</em></h2></div>
+    </div>
+  </div>
+  <div class="ind-grid">
+    <div class="ind-card"><div class="ind-icon">🚗</div><div class="ind-title">Automotive</div><div class="ind-desc">Engines, fuel systems, EV batteries, and critical powertrain components.</div></div>
+    <div class="ind-card"><div class="ind-icon">🏥</div><div class="ind-title">Medical</div><div class="ind-desc">Hermetic device validation and critical medical equipment sealing tests.</div></div>
+    <div class="ind-card"><div class="ind-icon">⚡</div><div class="ind-title">Electronics</div><div class="ind-desc">Moisture protection and airtight enclosure validation for components.</div></div>
+    <div class="ind-card"><div class="ind-icon">🏭</div><div class="ind-title">Industrial</div><div class="ind-desc">Tanks, valves, heat exchangers, and process equipment assemblies.</div></div>
+  </div>
+</div>
+-->
+<div class="section fade-in">
+  <div class="section-header">
+    <div style="display:flex; align-items:flex-end;">
+      <div class="section-num">04</div>
+      <div><h2>Frequently <em>Asked</em></h2></div>
+    </div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q">Which method is most accurate? <span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Helium tracer gas provides the highest accuracy for detecting microleaks in critical applications such as medical devices and aerospace components.</div></div></div>
+    <div class="faq-item"><div class="faq-q">What industries use leak testing? <span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Automotive, medical, electronics, aerospace, food packaging, and general industrial manufacturing all rely on leak testing for quality assurance and regulatory compliance.</div></div></div>
+    <div class="faq-item"><div class="faq-q">Can leak testing be automated? <span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. Modern equipment supports complete integration into production lines with real-time validation, reduced cycle times, and compliance with industrial standards.</div></div></div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>Need Technical Advice?</h2>
+  <p>Our engineers help you select the right equipment for your specific application and production requirements.</p>
+ <a href="contact.html" ><button class="btn-white">Talk to a Specialist</button></a>
+</div>
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+</div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate history</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+
+</footer>    
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+  const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
