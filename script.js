@@ -192,3 +192,47 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 observer.observe(section);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*dropdown*/
+
+
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // mobile fix
+
+        // Close others
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.classList.remove("active");
+            }
+        });
+
+        // Toggle current
+        dropdown.classList.toggle("active");
+    });
+});
+
+// Outside click (mobile + desktop)
+document.addEventListener("click", () => {
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("active");
+    });
+});
