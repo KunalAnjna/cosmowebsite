@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmo Instruments – Quality Policy</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #f0f6ff; }
+
+/* HERO */
+.a-hero {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 60%, #3b82f6 100%);
+  padding: 64px 24px 80px; text-align: center;
+}
+.a-hero .badge {
+  display: inline-block; background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3); border-radius: 50px;
+  padding: 5px 18px; font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: #bfdbfe; margin-bottom: 22px;
+}
+.a-hero h1 {
+  font-family: 'Poppins', sans-serif; font-size: clamp(30px,5vw,52px);
+  font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 14px;
+}
+.a-hero p {
+  color: rgba(255,255,255,0.7); font-size: 16px;
+  max-width: 520px; margin: 0 auto; line-height: 1.7;
+}
+
+/* BODY */
+.a-body { max-width: 1080px; margin: 0 auto; padding: 48px 20px; }
+
+/* STATS ROW */
+.a-stats {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 16px;
+  margin: -44px 0 48px; position: relative; z-index: 2;
+}
+.a-stat {
+  background: #fff; border-radius: 12px; padding: 24px 16px; text-align: center;
+  box-shadow: 0 4px 20px rgba(30,64,175,0.1);
+  border-top: 3px solid #2563eb;
+}
+.a-stat .sv {
+  font-family: 'Poppins',sans-serif; font-size: 28px;
+  font-weight: 800; color: #1d4ed8;
+}
+.a-stat .sl {
+  font-size: 11px; color: #94a3b8; margin-top: 4px;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* SECTION TITLE */
+.a-sec-title {
+  font-family: 'Poppins',sans-serif; font-size: 22px; font-weight: 700;
+  color: #1e3a8a; margin-bottom: 24px; padding-bottom: 12px;
+  border-bottom: 2px solid #dbeafe;
+}
+
+/* CARDS */
+.a-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 18px; margin-bottom: 48px;
+}
+.a-card {
+  background: #fff; border-radius: 12px; padding: 28px 24px;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 2px 12px rgba(30,64,175,0.05);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.a-card:hover {
+  box-shadow: 0 8px 28px rgba(30,64,175,0.13);
+  transform: translateY(-3px);
+}
+.a-card .icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: #eff6ff; display: flex; align-items: center;
+  justify-content: center; font-size: 20px; margin-bottom: 14px;
+}
+.a-card h3 {
+  font-family: 'Poppins',sans-serif; font-size: 15px;
+  font-weight: 700; color: #1e3a8a; margin-bottom: 8px;
+}
+.a-card p { font-size: 13px; color: #64748b; line-height: 1.7; }
+
+/* CERTIFICATE SECTION */
+.a-cert-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  margin-bottom: 24px;
+}
+.a-cert-img-box {
+  background: #fff; border-radius: 12px; overflow: hidden;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 4px 20px rgba(30,64,175,0.08);
+}
+.a-cert-img-box img {
+  width: 100%; display: block; object-fit: contain;
+  background: #f8faff; padding: 12px;
+}
+.a-cert-img-box .img-label {
+  background: #eff6ff; padding: 12px 18px; text-align: center;
+  font-family: 'Poppins',sans-serif; font-size: 13px; font-weight: 600;
+  color: #1d4ed8; border-top: 1px solid #dbeafe;
+}
+
+/* CERT INFO BOX */
+.a-cert-info {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  border-radius: 12px; padding: 36px 32px; color: #fff;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.a-cert-info h3 {
+  font-family: 'Poppins',sans-serif; font-size: 22px; font-weight: 800;
+}
+.a-cert-info p {
+  font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8;
+}
+.a-cert-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.a-cert-chips span {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px; padding: 4px 14px;
+  font-size: 11px; letter-spacing: 1px;
+}
+
+/* FOOTER */
+.a-footer {
+  margin-top: 48px; text-align: center; padding: 24px;
+  font-size: 12px; color: #94a3b8; border-top: 1px solid #dbeafe;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .a-stats { grid-template-columns: repeat(2,1fr); }
+  .a-cert-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+    
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+               <div class="logo">
+                </div>
+            </div>
+      
+            <div class="menu">
+                <a href="index.html">Home</a>
+               <div class="dropdown">
+             <a href="#" class="dropdown-toggle">About us ▾</a>
+
+                <div class="dropdown-menu">
+                     <p><a href="About.html">About us</a></p>
+                    <p><a href="message.html">Message From Director</a></p>
+                    <p><a href="CorporateHistory.html">Corporate history </a></p>
+                        <p><a href="Cerificates.html">ISO Certificates</a></p>
+                   
+                </div>
+            </div>
+            <!-- DROPDOWN END -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle">What is Leak test? ▾</a>
+            
+
+                <div class="dropdown-menu">
+                    <p><a href="Leakabout.html">What is Leak Test?</a></p>
+                    <p><a href="Selection.html">Select as per industry </a></p>
+            
+                </div>
+            </div>
+                <a href="products.html">Products and Services</a>
+                <a href="client.html">Clients</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
+        </div>
+        </header>
+      
+
+<div class="a-hero">
+  <div class="badge">Cosmo Instruments India Pvt. Ltd.</div>
+  <h1>Quality Policy<br>&amp; Certification</h1>
+  <p>Our ISO 9001 certification demonstrates our commitment to delivering reliable, precise instruments and maintaining consistent quality standards worldwide.</p>
+</div>
+
+<div class="a-body">
+
+  <div class="a-stats">
+    <div class="a-stat"><div class="sv">ISO</div><div class="sl">9001 Certified</div></div>
+    <div class="a-stat"><div class="sv">40+</div><div class="sl">Years of Trust</div></div>
+    <div class="a-stat"><div class="sv">100%</div><div class="sl">Traceable</div></div>
+    <div class="a-stat"><div class="sv">D-U-N-S</div><div class="sl">Registered</div></div>
+  </div>
+
+  <h2 class="a-sec-title">Quality Principles</h2>
+  <div class="a-cards">
+    <div class="a-card">
+      <div class="icon">🎯</div>
+      <h3>Customer Focus</h3>
+      <p>Understanding and consistently meeting customer requirements — from precision air leak testers to global after-sales support.</p>
+    </div>
+    <div class="a-card">
+      <div class="icon">🔄</div>
+      <h3>Continuous Improvement</h3>
+      <p>Systematically enhancing our QMS through structured audits, management reviews, and data-driven corrective actions.</p>
+    </div>
+    <div class="a-card">
+      <div class="icon">⚖️</div>
+      <h3>Regulatory Compliance</h3>
+      <p>Unwavering adherence to all applicable statutory and regulatory requirements at every stage of manufacturing and delivery.</p>
+    </div>
+    <div class="a-card">
+      <div class="icon">📐</div>
+      <h3>Measurement Traceability</h3>
+      <p>All instruments calibrated to national and international standards — providing full confidence in every measurement.</p>
+    </div>
+    <div class="a-card">
+      <div class="icon">👥</div>
+      <h3>Employee Competence</h3>
+      <p>Investing in our team's skills through continuous training and development — quality starts with our people.</p>
+    </div>
+    <div class="a-card">
+      <div class="icon">🏭</div>
+      <h3>Manufacturing Excellence</h3>
+      <p>Extended manufacturing facility at Bengaluru — re-inaugurated to expand precision production capabilities.</p>
+    </div>
+  </div>
+
+  <h2 class="a-sec-title">Certificates</h2>
+
+  <div class="a-cert-grid">
+    <div class="a-cert-img-box">
+      <img src="Assets/certificates/word1.jpg" alt="Quality Policy Document" loading="lazy">
+      <div class="img-label">📄 Quality Policy Document</div>
+    </div>
+    <div class="a-cert-img-box">
+      <img src="Assets/certificates/QMS-Certificate.png" alt="ISO QMS Certificate" loading="lazy">
+      <div class="img-label">🏅 ISO 9001 QMS Certificate</div>
+    </div>
+  </div>
+
+  <div class="a-cert-info">
+    <h3>ISO 9001:2015 Quality Management System</h3>
+    <p>Cosmo Instruments India holds active ISO 9001:2015 certification — globally recognized assurance that our Quality Management System consistently delivers products meeting customer and regulatory requirements. Our D-U-N-S® registration further confirms our credibility as a trusted global business partner.</p>
+    <div class="a-cert-chips">
+      <span>✓ ISO 9001:2015</span>
+      <span>✓ D-U-N-S® Registered</span>
+      <span>✓ Extended Bengaluru Facility</span>
+      <span>✓ EV Summit 2025–26</span>
+    </div>
+  </div>
+
+  
+</div>
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+</div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate history</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+
+</footer> 
+<script>
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // mobile fix
+
+        // Close others
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.classList.remove("active");
+            }
+        });
+
+        // Toggle current
+        dropdown.classList.toggle("active");
+    });
+});
+
+// Outside click (mobile + desktop)
+document.addEventListener("click", () => {
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("active");
+    });
+});
+
+
+
+
+
+</script>
+</body>
+</html>
