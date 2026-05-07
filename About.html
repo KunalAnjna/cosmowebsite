@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Cosmo Instruments India</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-dark:   #0d1b3e;
+      --blue-main:   #1a56db;
+      --blue-mid:    #2563eb;
+      --blue-light:  #dbeafe;
+      --blue-pale:   #eff6ff;
+      --text-dark:   #0d1b3e;
+      --text-body:   #4a5568;
+      --text-muted:  #718096;
+      --border:      #e2e8f0;
+      --white:       #ffffff;
+      --bg-page:     #f0f4fa;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-body);
+      min-height: 100vh;
+    }
+    /* ─── HERO (LIGHT) ─── */
+    .hero {
+      background: var(--white);
+      padding: 60px 40px 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-accent-circle {
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: var(--blue-pale);
+      z-index: 0;
+    }
+    .hero-accent-circle2 {
+      position: absolute;
+      bottom: -60px;
+      left: 30%;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      opacity: 0.4;
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .hero-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--blue-main);
+      margin-bottom: 14px;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--blue-main);
+      display: inline-block;
+    }
+    .hero h1 {
+      font-size: 38px;
+      color: var(--text-dark);
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .hero h1 span { color: var(--blue-main); }
+    .hero-line {
+      width: 48px;
+      height: 3px;
+      background: var(--blue-main);
+      margin: 16px 0;
+      border-radius: 2px;
+    }
+    .hero-desc {
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 520px;
+      font-weight: 400;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-pale);
+      color: var(--blue-main);
+      border: 1px solid var(--blue-light);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .badge i { font-size: 14px; }
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 180px;
+      padding-top: 4px;
+    }
+    .hero-pill {
+      background: var(--blue-pale);
+      border: 1px solid var(--blue-light);
+      border-left: 3px solid var(--blue-main);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-pill i { color: var(--blue-main); font-size: 16px; }
+    .hero-tabs {
+      display: flex;
+      gap: 0;
+      margin-top: 36px;
+      position: relative;
+      z-index: 1;
+    }
+    .h-tab {
+      flex: 1;
+      text-align: center;
+      padding: 12px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      border-top: 2px solid var(--border);
+      background: var(--bg-page);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .h-tab:first-child { border-radius: 0; }
+    .h-tab.active {
+      color: var(--blue-main);
+      border-top-color: var(--blue-main);
+      background: white;
+    }
+
+    /* ─── BODY ─── */
+    .body { padding: 36px 40px; }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .stat {
+      background: var(--white);
+      padding: 22px 18px;
+      border-radius: 10px;
+      border-bottom: 3px solid var(--blue-main);
+      animation: fadeUp 0.5s ease both;
+    }
+    .stat:nth-child(1) { animation-delay: 0.05s; }
+    .stat:nth-child(2) { animation-delay: 0.1s; }
+    .stat:nth-child(3) { animation-delay: 0.15s; }
+    .stat:nth-child(4) { animation-delay: 0.2s; }
+    .stat-num {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--blue-main);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    /* SECTION TITLE */
+    .sec-title {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-main);
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sec-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ABOUT GRID */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    .about-text p {
+      color: var(--text-body);
+      font-size: 13.5px;
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .highlights { display: flex; flex-direction: column; gap: 12px; }
+    .highlight {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 16px;
+      border-left: 3px solid var(--blue-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .highlight-icon {
+      color: var(--blue-main);
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .highlight-title {
+      font-weight: 700;
+      color: var(--text-dark);
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+    .highlight-text {
+      font-size: 12px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* SERVICE CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .card {
+      background: var(--white);
+      padding: 20px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      border-color: var(--blue-main);
+      transform: translateY(-2px);
+    }
+    .card-icon {
+      color: var(--blue-main);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .card-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* INDUSTRIES */
+    .industries {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .industry {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .industry:hover { border-color: var(--blue-main); }
+    .ind-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--blue-pale);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue-main);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .ind-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .ind-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* PROCESS STRIP */
+    .process {
+      background: var(--white);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 16px;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background: var(--blue-light);
+      z-index: 0;
+    }
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: var(--blue-pale);
+      border: 2px solid var(--blue-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue-main);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .step-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-align: center;
+    }
+    .step-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* PRESENCE FOOTER */
+    .presence {
+      background: var(--blue-dark);
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .presence-left {}
+    .presence-label {
+      color: #94a3b8;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .locs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .loc {
+      background: rgba(255,255,255,0.08);
+      color: #93c5fd;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid rgba(26, 86, 219, 0.4);
+    }
+    .cta-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn-primary {
+      background: var(--blue-main);
+      color: white;
+      padding: 11px 24px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-outline {
+      background: transparent;
+      color: #93c5fd;
+      padding: 11px 24px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(147,197,253,0.3);
+      transition: border-color 0.2s, color 0.2s;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-outline:hover { border-color: #93c5fd; color: white; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 40px 20px 0; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero h1 { font-size: 26px; }
+      .body { padding: 24px 20px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .industries { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .process-steps::before { display: none; }
+      .presence { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+ 
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+               <div class="logo">
+                </div>
+            </div>
+      
+            <div class="menu">
+                <a href="index.html">Home</a>
+               <div class="dropdown">
+             <a href="#" class="dropdown-toggle">About us ▾</a>
+
+                <div class="dropdown-menu">
+                     <p><a href="About.html">About us</a></p>
+                    <p><a href="message.html">Message From Director</a></p>
+                    <p><a href="CorporateHistory.html">Corporate history </a></p>
+                   
+                </div>
+            </div>
+            <!-- DROPDOWN END -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle">What is Leak test? ▾</a>
+            
+
+                <div class="dropdown-menu">
+                    <p><a href="Leakabout.html">What is Leak Test?</a></p>
+                    <p><a href="Selection.html">Select as per industry </a></p>
+            
+                </div>
+            </div>
+                <a href="products.html">Products and Services</a>
+                <a href="client.html">Clients</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
+        </div>
+        </header>
+      
+
+  <!-- HERO (LIGHT) -->
+  <section class="hero">
+    <div class="hero-accent-circle"></div>
+    <div class="hero-accent-circle2"></div>
+
+    <div class="hero-inner">
+      <div>
+        <p class="hero-tag">About Us</p>
+        <h1>Precision Testing Solutions,<br><span>Built for India's Industries</span></h1>
+        <div class="hero-line"></div>
+        <p class="hero-desc">
+          Cosmo Instruments India Pvt. Ltd. is a trusted provider of air leak and flow testing solutions,
+          delivering precision, reliability, and engineering excellence since 2007.
+        </p>
+        <div class="hero-badges">
+          <span class="badge"><i class="ti ti-map-pin"></i> Headquartered in Gurugram</span>
+          <span class="badge"><i class="ti ti-flag"></i> 100% Made in India</span>
+          <span class="badge"><i class="ti ti-calendar"></i> Est. 2007</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-pill"><i class="ti ti-tool"></i> Custom Manufacturing</div>
+        <div class="hero-pill"><i class="ti ti-cpu"></i> Technical Expertise</div>
+        <div class="hero-pill"><i class="ti ti-headset"></i> After-Sales Support</div>
+        <div class="hero-pill"><i class="ti ti-certificate"></i> Quality Assurance</div>
+      </div>
+    </div>
+
+    <div class="hero-tabs">
+      <div class="h-tab active">Manufacturing</div>
+      <div class="h-tab">Testing</div>
+      <div class="h-tab">Calibration</div>
+      <div class="h-tab">After-Sales</div>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">2007</div>
+        <div class="stat-label">Year established</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Locations across India</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">360°</div>
+        <div class="stat-label">End-to-end support</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Made in India</div>
+      </div>
+    </div>
+
+    <!-- WHO WE ARE -->
+    <p class="sec-title">Who We Are</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Headquartered in Gurugram, Cosmo India has grown into a full-scale engineering company with a skilled team capable of designing and manufacturing customized testing systems tailored to diverse industrial applications.</p>
+        <p>Our comprehensive product range — advanced air leak testers and flow testers — is engineered to ensure the highest standards of quality control across industries.</p>
+        <p>Beyond manufacturing, we offer end-to-end support including installation, calibration, and after-sales service — ensuring seamless operation and long-term performance for every client we serve.</p>
+      </div>
+      <div class="highlights">
+        <div class="highlight">
+          <i class="ti ti-award highlight-icon"></i>
+          <div>
+            <div class="highlight-title">18+ Years of Excellence</div>
+            <div class="highlight-text">Trusted by leading OEMs and Tier-1 suppliers across India's manufacturing sector.</div>
+          </div>
+        </div>
+        <div class="highlight">
+          <i class="ti ti-settings highlight-icon"></i>
+          <div>
+            <div class="highlight-title">Fully Customized Solutions</div>
+            <div class="highlight-text">Every system designed from scratch to match your exact process and application needs.</div>
+          </div>
+        </div>
+        <div class="highlight">
+          <i class="ti ti-map-pin highlight-icon"></i>
+          <div>
+            <div class="highlight-title">Pan-India Service Network</div>
+            <div class="highlight-text">On-site support available at 6+ locations for rapid response and minimal downtime.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT WE OFFER -->
+    <p class="sec-title">What We Offer</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon"><i class="ti ti-tool"></i></div>
+        <div class="card-title">Custom Manufacturing</div>
+        <div class="card-text">In-house design and fabrication of leak and flow testing systems built for specific applications.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="ti ti-cpu"></i></div>
+        <div class="card-title">Technical Expertise</div>
+        <div class="card-text">A trained team of engineers delivering precise, application-specific testing solutions.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="ti ti-headset"></i></div>
+        <div class="card-title">After-Sales Service</div>
+        <div class="card-text">Installation, calibration, and ongoing support for long-term operational efficiency.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="ti ti-certificate"></i></div>
+        <div class="card-title">Quality Assurance</div>
+        <div class="card-text">Committed to delivering reliable solutions meeting stringent industrial quality standards.</div>
+      </div>
+    </div>
+
+    <!-- INDUSTRIES -->
+    <p class="sec-title">Industries We Serve</p>
+    <div class="industries">
+      <div class="industry">
+        <div class="ind-icon"><i class="ti ti-car"></i></div>
+        <div><div class="ind-name">Automotive</div><div class="ind-desc">Engine &amp; transmission testing</div></div>
+      </div>
+      <div class="industry">
+        <div class="ind-icon"><i class="ti ti-heart-rate-monitor"></i></div>
+        <div><div class="ind-name">Medical Devices</div><div class="ind-desc">Sterile packaging integrity</div></div>
+      </div>
+      <div class="industry">
+        <div class="ind-icon"><i class="ti ti-bolt"></i></div>
+        <div><div class="ind-name">Electronics</div><div class="ind-desc">IP-rated enclosure testing</div></div>
+      </div>
+      <div class="industry">
+        <div class="ind-icon"><i class="ti ti-droplet"></i></div>
+        <div><div class="ind-name">HVAC &amp; Plumbing</div><div class="ind-desc">Pipe and valve leak testing</div></div>
+      </div>
+      <div class="industry">
+        <div class="ind-icon"><i class="ti ti-package"></i></div>
+        <div><div class="ind-name">Packaging</div><div class="ind-desc">Seal integrity &amp; burst tests</div></div>
+      </div>
+      <div class="industry">
+        <div class="ind-icon"><i class="ti ti-building-factory"></i></div>
+        <div><div class="ind-name">Industrial Mfg</div><div class="ind-desc">Custom flow measurement</div></div>
+      </div>
+    </div>
+
+    <!-- PROCESS -->
+    <p class="sec-title">Our Process</p>
+    <div class="process">
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-label">Requirement<br>Analysis</div>
+          <div class="step-sub">Understanding your needs</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-label">Custom<br>Design</div>
+          <div class="step-sub">Tailored engineering</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-label">Manufacturing</div>
+          <div class="step-sub">In-house fabrication</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-label">Installation &amp;<br>Calibration</div>
+          <div class="step-sub">On-site setup</div>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div class="step-label">After-Sales<br>Support</div>
+          <div class="step-sub">Long-term service</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRESENCE -->
+    <div class="presence">
+      <div class="presence-left">
+        <div class="presence-label">Our Presence Across India</div>
+        <div class="locs">
+          <span class="loc">Gurugram</span>
+          <span class="loc">Manesar</span>
+          <span class="loc">Bengaluru</span>
+          <span class="loc">Pune</span>
+          <span class="loc">Chennai</span>
+          <span class="loc">Gujarat</span>
+        </div>
+      </div>
+      <div class="cta-group">
+        <a href="#" class="btn-outline"><i class="ti ti-file-description"></i> Brochure</a>
+        <a href="#" class="btn-primary"><i class="ti ti-arrow-right"></i> Get in Touch</a>
+      </div>
+    </div>
+
+  </div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+</div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate history</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+
+</footer>  
+  <script>
+    document.querySelectorAll('.h-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.h-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+  <script>
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // mobile fix
+
+        // Close others
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.classList.remove("active");
+            }
+        });
+
+        // Toggle current
+        dropdown.classList.toggle("active");
+    });
+});
+
+// Outside click (mobile + desktop)
+document.addEventListener("click", () => {
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("active");
+    });
+});</script>
+</body>
+</html>
