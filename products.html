@@ -9,7 +9,9 @@
     <title>contact cosmo instruments india</title>
 </head>
 
-<body><header>
+<body>
+    
+    <header>
         <div class="navbar">
             <div class="nav-logo border">
                <div class="logo">
@@ -19,17 +21,18 @@
             <div class="menu">
                 <a href="index.html">Home</a>
                <div class="dropdown">
-                <a>About us ▾</a>
+             <a href="#" class="dropdown-toggle">About us ▾</a>
 
                 <div class="dropdown-menu">
-                    <p><a href="message.html">Our Team</a></p>
+                    <p><a href="message.html">Message From Director</a></p>
                     <p><a href="CorporateHistory.html">Corporate history </a></p>
                     <p><a href="">Our Team </a></p>
                 </div>
             </div>
             <!-- DROPDOWN END -->
               <div class="dropdown">
-                <a>What is Leak test? ▾</a>
+                <a href="#" class="dropdown-toggle">What is Leak test? ▾</a>
+            
 
                 <div class="dropdown-menu">
                     <p><a href="Leakabout.html">What is Leak Test?</a></p>
@@ -44,6 +47,8 @@
             <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
         </div>
         </header>
+      
+    
    <section class="products-hero">
 
     <!-- Background Image -->
@@ -216,5 +221,33 @@
 
 </footer>
 </body>
+<script>
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // mobile fix
+
+        // Close others
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.classList.remove("active");
+            }
+        });
+
+        // Toggle current
+        dropdown.classList.toggle("active");
+    });
+});
+
+// Outside click (mobile + desktop)
+document.addEventListener("click", () => {
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("active");
+    });
+});</script>
 
 </html>
