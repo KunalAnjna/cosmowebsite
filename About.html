@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -20,7 +19,7 @@
       --blue-pale:   #eff6ff;
       --text-dark:   #0d1b3e;
       --text-body:   #4a5568;
-      --text-muted:  #718096;
+      --text-muted:  #000000;
       --border:      #e2e8f0;
       --white:       #ffffff;
       --bg-page:     #f0f4fa;
@@ -35,10 +34,13 @@
     /* ─── HERO (LIGHT) ─── */
     .hero {
       background: var(--white);
-      padding: 60px 40px 0;
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid var(--border);
+      min-height: 55vh;
+      display: flex;
+      justify-content: flex-start !important;
+      padding-left: 40px;
     }
     .hero-accent-circle {
       position: absolute;
@@ -62,18 +64,15 @@
       z-index: 0;
     }
     .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 40px;
-      align-items: flex-start;
+     width: 100%;
+     
+     
     }
     .hero-tag {
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 11px;
+      font-size: 16px;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       font-weight: 600;
@@ -104,9 +103,9 @@
     }
     .hero-desc {
       color: var(--text-body);
-      font-size: 14px;
+      font-size: 18px;
       line-height: 1.8;
-      max-width: 520px;
+      max-width: 800px;
       font-weight: 400;
     }
     .hero-badges {
@@ -124,58 +123,10 @@
       border: 1px solid var(--blue-light);
       padding: 6px 14px;
       border-radius: 20px;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 600;
     }
-    .badge i { font-size: 14px; }
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-width: 180px;
-      padding-top: 4px;
-    }
-    .hero-pill {
-      background: var(--blue-pale);
-      border: 1px solid var(--blue-light);
-      border-left: 3px solid var(--blue-main);
-      border-radius: 0 8px 8px 0;
-      padding: 10px 16px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-dark);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .hero-pill i { color: var(--blue-main); font-size: 16px; }
-    .hero-tabs {
-      display: flex;
-      gap: 0;
-      margin-top: 36px;
-      position: relative;
-      z-index: 1;
-    }
-    .h-tab {
-      flex: 1;
-      text-align: center;
-      padding: 12px 10px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: var(--text-muted);
-      border-top: 2px solid var(--border);
-      background: var(--bg-page);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .h-tab:first-child { border-radius: 0; }
-    .h-tab.active {
-      color: var(--blue-main);
-      border-top-color: var(--blue-main);
-      background: white;
-    }
-
+    .badge i { font-size: 16px; }
     /* ─── BODY ─── */
     .body { padding: 36px 40px; }
 
@@ -185,6 +136,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
       margin-bottom: 36px;
+      height: 17vh;
     }
     .stat {
       background: var(--white);
@@ -204,14 +156,14 @@
       line-height: 1;
     }
     .stat-label {
-      font-size: 11px;
+      font-size: 16px;
       color: var(--text-muted);
       margin-top: 5px;
     }
 
     /* SECTION TITLE */
     .sec-title {
-      font-size: 11px;
+      font-size: 18px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--blue-main);
@@ -237,7 +189,7 @@
     }
     .about-text p {
       color: var(--text-body);
-      font-size: 13.5px;
+      font-size: 16px;
       line-height: 1.85;
       margin-bottom: 14px;
     }
@@ -261,11 +213,11 @@
     .highlight-title {
       font-weight: 700;
       color: var(--text-dark);
-      font-size: 13px;
+      font-size: 15px;
       margin-bottom: 3px;
     }
     .highlight-text {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-body);
       line-height: 1.6;
     }
@@ -274,10 +226,11 @@
     .cards {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 36px;
     }
     .card {
+      width: 300px !important;
       background: var(--white);
       padding: 20px 16px;
       border-radius: 10px;
@@ -288,19 +241,27 @@
       border-color: var(--blue-main);
       transform: translateY(-2px);
     }
-    .card-icon {
+    .card-title i {
       color: var(--blue-main);
-      font-size: 24px;
-      margin-bottom: 12px;
+      font-size: 22px;
+      
+      
     }
     .card-title {
-      font-size: 13px;
+    margin-right: 70px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--text-dark);
-      margin-bottom: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap:10px;
+      
+
     }
     .card-text {
-      font-size: 12px;
+      margin-top: 10px;
+      font-size: 14px;
       color: var(--text-muted);
       line-height: 1.65;
     }
@@ -332,16 +293,16 @@
       align-items: center;
       justify-content: center;
       color: var(--blue-main);
-      font-size: 20px;
+      font-size: 24px;
       flex-shrink: 0;
     }
     .ind-name {
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--text-dark);
     }
     .ind-desc {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--text-muted);
       margin-top: 2px;
     }
@@ -389,17 +350,17 @@
       align-items: center;
       justify-content: center;
       color: var(--blue-main);
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 700;
     }
     .step-label {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--text-dark);
       text-align: center;
     }
     .step-sub {
-      font-size: 10px;
+      font-size: 12px;
       color: var(--text-muted);
       text-align: center;
     }
@@ -417,8 +378,8 @@
     }
     .presence-left {}
     .presence-label {
-      color: #94a3b8;
-      font-size: 10px;
+      color: white;
+      font-size: 13px;
       letter-spacing: 2px;
       text-transform: uppercase;
       font-weight: 600;
@@ -434,7 +395,7 @@
       color: #93c5fd;
       padding: 5px 14px;
       border-radius: 20px;
-      font-size: 12px;
+      font-size: 15px;
       font-weight: 600;
       border: 1px solid rgba(26, 86, 219, 0.4);
     }
@@ -566,20 +527,10 @@
           <span class="badge"><i class="ti ti-calendar"></i> Est. 2007</span>
         </div>
       </div>
-      <div class="hero-right">
-        <div class="hero-pill"><i class="ti ti-tool"></i> Custom Manufacturing</div>
-        <div class="hero-pill"><i class="ti ti-cpu"></i> Technical Expertise</div>
-        <div class="hero-pill"><i class="ti ti-headset"></i> After-Sales Support</div>
-        <div class="hero-pill"><i class="ti ti-certificate"></i> Quality Assurance</div>
-      </div>
+  
     </div>
 
-    <div class="hero-tabs">
-      <div class="h-tab active">Manufacturing</div>
-      <div class="h-tab">Testing</div>
-      <div class="h-tab">Calibration</div>
-      <div class="h-tab">After-Sales</div>
-    </div>
+  
   </section>
 
   <!-- BODY -->
@@ -642,23 +593,23 @@
     <p class="sec-title">What We Offer</p>
     <div class="cards">
       <div class="card">
-        <div class="card-icon"><i class="ti ti-tool"></i></div>
-        <div class="card-title">Custom Manufacturing</div>
+        <div class="card-title"><i class="ti ti-tool"></i>Custom Manufacturing</div>
+    
         <div class="card-text">In-house design and fabrication of leak and flow testing systems built for specific applications.</div>
       </div>
       <div class="card">
-        <div class="card-icon"><i class="ti ti-cpu"></i></div>
-        <div class="card-title">Technical Expertise</div>
+        <div class="card-title"><i class="ti ti-cpu"></i>Technical Expertise</div>
+        
         <div class="card-text">A trained team of engineers delivering precise, application-specific testing solutions.</div>
       </div>
       <div class="card">
-        <div class="card-icon"><i class="ti ti-headset"></i></div>
-        <div class="card-title">After-Sales Service</div>
+        <div class="card-title"><i class="ti ti-headset"></i>After-Sales Service</div>
+     
         <div class="card-text">Installation, calibration, and ongoing support for long-term operational efficiency.</div>
       </div>
       <div class="card">
-        <div class="card-icon"><i class="ti ti-certificate"></i></div>
-        <div class="card-title">Quality Assurance</div>
+        <div class="card-title"><i class="ti ti-certificate"></i>Quality Assurance</div>
+        
         <div class="card-text">Committed to delivering reliable solutions meeting stringent industrial quality standards.</div>
       </div>
     </div>
@@ -729,7 +680,7 @@
       <div class="presence-left">
         <div class="presence-label">Our Presence Across India</div>
         <div class="locs">
-          <span class="loc">Gurugram</span>
+          
           <span class="loc">Manesar</span>
           <span class="loc">Bengaluru</span>
           <span class="loc">Pune</span>
