@@ -152,24 +152,25 @@ updateSlide(0);
 /* ================= COUNTER (FINAL FIXED) ================= */
 const counters = document.querySelectorAll(".counter");
 const section = document.querySelector(".stats");
-
 function startCounter(counter) {
   const target = +counter.getAttribute("data-target");
-  let count = 0;
+  const duration = +counter.getAttribute("data-duration") || 1200;
+  let start = null;
 
-  const duration = 1200;
-  const step = Math.ceil(target / (duration / 16));
+  function animate(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    const current = Math.min(Math.floor((progress / duration) * target), target);
+    counter.innerText = current.toLocaleString() + "+";
 
-  const interval = setInterval(() => {
-    count += step;
-
-    if (count >= target) {
-      count = target;
-      clearInterval(interval);
+    if (progress < duration) {
+      requestAnimationFrame(animate);
+    } else {
+      counter.innerText = target.toLocaleString() + "+";
     }
+  }
 
-    counter.innerText = count.toLocaleString() + "+";
-  }, 16);
+  requestAnimationFrame(animate);
 }
 
 const observer = new IntersectionObserver((entries) => {
