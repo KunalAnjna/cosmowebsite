@@ -246,52 +246,39 @@ Ideal for waterproof test of parts and finished products that require IP ratings
         </div>
     </div>
 </section><!-- ================= NEWS / EVENTS SECTION ================= -->
-<section class="team">
+<!-- HTML -->
+<section class="ci-ev-section">
+    <div class="ci-ev-inner">
 
-    <div class="overlay"></div>
-
-    <div class="team-container">
-
-        <h1>News Release / Events</h1>
-
-        <div class="event-content">
-
-            <!-- LEFT IMAGE SLIDER -->
-            <div class="team-img">
-                <div class="image-slider">
-
-                    <div class="image-track" id="imageTrack">
-                        <img src="event1.jpg">
-                        <img src="event2.jpg">
-                        <img src="event3.jpg">
-                    </div>
-
-                </div>
+        <div class="ci-ev-heading">
+            <div class="ci-ev-left-head">
+                <p class="ci-ev-label">Latest Updates</p>
+                <h2>News Release &amp; Events</h2>
             </div>
-
-            <!-- RIGHT CONTENT -->
-            <div class="team-content">
-
-                <h1>Latest Event</h1>
-
-                <p id="quote">
-                    Loading...
-                </p>
-
-                <!-- DOTS -->
-                <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-
+            <div class="ci-ev-counter">
+                Event <span id="ci-ev-cur">1</span> / <span id="ci-ev-total">3</span>
             </div>
+        </div>
 
+        <div class="ci-ev-stage" id="ci-evStage"></div>
+
+        <div class="ci-ev-footer">
+            <div class="ci-ev-nav-dots" id="ci-evNavDots"></div>
+            <div class="ci-ev-progress-wrap">
+                <div class="ci-ev-progress-bar" id="ci-evProgressBar"></div>
+            </div>
+            <div class="ci-ev-arrows">
+                <button class="ci-ev-arrow" id="ci-evPrev" aria-label="Previous event">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button class="ci-ev-arrow" id="ci-evNext" aria-label="Next event">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
         </div>
 
     </div>
-
+</section>
 </section>
 <footer class="footer">
 
@@ -352,7 +339,202 @@ Ideal for waterproof test of parts and finished products that require IP ratings
         <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
     </div>
 
-</footer>   
+</footer>  
+<script>
+    // JavaScript for EVENT SECTION
+(function () {
+
+    const CI_EVENTS = [
+        {
+            tag:    "CSR Polytechnic Lab Opening",
+            date:   "April 2026",
+            title:  "CSR Polytechnic Lab Opening",
+            desc:   "We as a Cosmo Instruments India provided a state-of-the-art leak testing laboratory setup to the students of Government Polytechnic Manesar as part of our CSR initiative, enabling hands-on learning with real-world industrial technologies and equipment./n Our motto for this initiative was to continuously collaborate with educational institutes to bridge the gap between industry and academia./nThe program was accompanied by plantation program to promote sustainability and environmental responsibility. 💐 👏 ",
+            link:   "#",
+            images: ["Assets/Event/CSR_Polytechnic_Lab_Opening/polytechnic1.jpeg", "Assets/Event/CSR_Polytechnic_Lab_Opening/polytechnic2.jpeg", "Assets/Event/CSR_Polytechnic_Lab_Opening/polytechnic4.jpeg"]
+        },
+        {
+            tag:    "Womens Day",
+            date:   "March 2026",
+            title:  "Womens Day Celebration",
+            desc:   "On this International Women’s Day, Cosmo Instruments India proudly celebrated the incredible women in our office who contribute their talent, hard work, and passion every day. The celebration was a small way to recognize their achievements and appreciate the positive impact they create in our workplace. ",
+            link:   "#",
+            images: ["Assets/Event/womens_day/womens_day1.jpg", "Assets/Event/womens_day/womens_day2.jpg", "Assets/Event/womens_day/womens_day4.jpg"]
+        },
+        {
+            tag:    "Cosmo Instruments India X GLA",
+            date:   "February 2025",
+            title:  "Cosmo Instruments India X GLA",
+            desc:   "We are delighted to share glimpses from the inauguration of our partner company GLA extended manufacturing facility in Bengaluru, a significant step in strengthening our manufacturing capabilities and commitment to delivering world-class leak and flow testing solutions./nThe occasion was honoured by the presence of our esteemed guests and leadership team from Cosmo Japan (Chairperson Tomoyuki Furuse San, President Haruka Furuse San, Overseas Sales Head Akihiko Matshusita San, Overseas Section Manager Ryota Hyodo San,). Everyone’s presence made this milestone even more special and meaningful for all of us.",
+            link:   "#",
+            images: ["Assets/Event/GLA_Inauguration/GLA_Inauguration1.jpg", "Assets/Event/GLA_Inauguration/GLA_Inauguration2.jpg", "Assets/Event/GLA_Inauguration/GLA_Inauguration4.jpg"]
+        }
+    ];
+
+    const CI_EV_EVENT_DURATION = 12000;
+    const CI_EV_IMAGE_DURATION = 5000;
+
+    const ciEvStage    = document.getElementById('ci-evStage');
+    const ciEvNavDots  = document.getElementById('ci-evNavDots');
+    const ciEvProgress = document.getElementById('ci-evProgressBar');
+    const ciEvCur      = document.getElementById('ci-ev-cur');
+    const ciEvTotal    = document.getElementById('ci-ev-total');
+
+    let ciEvCurrent      = 0;
+    let ciEvCurrentImage = {};
+    let ciEvEventTimer   = null;
+    let ciEvImageTimers  = {};
+
+    ciEvTotal.textContent = CI_EVENTS.length;
+
+    CI_EVENTS.forEach((ev, ei) => {
+        const card = document.createElement('div');
+        card.className = 'ci-ev-card';
+        card.id = `ci-evcard-${ei}`;
+
+        const imgPane = document.createElement('div');
+        imgPane.className = 'ci-ev-images';
+
+        ev.images.forEach((src, ii) => {
+            const img = document.createElement('img');
+            img.className = 'ci-ev-img-slide' + (ii === 0 ? ' current' : '');
+            img.src = src;
+            img.alt = ev.title;
+            imgPane.appendChild(img);
+        });
+
+        const imgDots = document.createElement('div');
+        imgDots.className = 'ci-ev-img-dots';
+        imgDots.id = `ci-evimgdots-${ei}`;
+        ev.images.forEach((_, ii) => {
+            const d = document.createElement('button');
+            d.className = 'ci-ev-img-dot' + (ii === 0 ? ' active' : '');
+            d.setAttribute('aria-label', `Image ${ii + 1}`);
+            d.addEventListener('click', () => ciEvJumpImage(ei, ii));
+            imgDots.appendChild(d);
+        });
+        imgPane.appendChild(imgDots);
+
+        const imgBar = document.createElement('div');
+        imgBar.className = 'ci-ev-img-progress';
+        imgBar.id = `ci-evimgbar-${ei}`;
+        imgPane.appendChild(imgBar);
+
+        const info = document.createElement('div');
+        info.className = 'ci-ev-info';
+        info.innerHTML = `
+            <span class="ci-ev-tag">${ev.tag}</span>
+            <h3>${ev.title}</h3>
+            <div class="ci-ev-date"><i class="fa-regular fa-calendar"></i>${ev.date}</div>
+            <p>${ev.desc}</p>
+            <a href="${ev.link}" class="ci-ev-readmore">Read full story <i class="fa-solid fa-arrow-right"></i></a>
+        `;
+
+        card.appendChild(imgPane);
+        card.appendChild(info);
+        ciEvStage.appendChild(card);
+
+        const dot = document.createElement('button');
+        dot.className = 'ci-ev-nav-dot' + (ei === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Event ${ei + 1}`);
+        dot.addEventListener('click', () => ciEvGoTo(ei));
+        ciEvNavDots.appendChild(dot);
+
+        ciEvCurrentImage[ei] = 0;
+    });
+
+    function ciEvGoTo(idx) {
+        const old = ciEvCurrent;
+        ciEvCurrent = (idx + CI_EVENTS.length) % CI_EVENTS.length;
+
+        const oldCard = document.getElementById(`ci-evcard-${old}`);
+        const newCard = document.getElementById(`ci-evcard-${ciEvCurrent}`);
+
+        if (oldCard.classList.contains('active')) {
+            oldCard.classList.remove('active');
+            oldCard.classList.add('exit-up');
+            setTimeout(() => oldCard.classList.remove('exit-up'), 700);
+        }
+        newCard.classList.add('active');
+
+        ciEvCur.textContent = ciEvCurrent + 1;
+        document.querySelectorAll('.ci-ev-nav-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === ciEvCurrent);
+        });
+
+        ciEvStopImageCycle(old);
+        ciEvStartImageCycle(ciEvCurrent);
+        ciEvRestartProgress();
+
+        clearTimeout(ciEvEventTimer);
+        ciEvEventTimer = setTimeout(() => ciEvGoTo(ciEvCurrent + 1), CI_EV_EVENT_DURATION);
+    }
+
+    function ciEvRestartProgress() {
+        ciEvProgress.style.transition = 'none';
+        ciEvProgress.style.width = '0%';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            ciEvProgress.style.transition = `width ${CI_EV_EVENT_DURATION}ms linear`;
+            ciEvProgress.style.width = '100%';
+        }));
+    }
+
+    function ciEvStartImageCycle(ei) {
+        if (CI_EVENTS[ei].images.length <= 1) return;
+        ciEvCycleImage(ei);
+    }
+
+    function ciEvCycleImage(ei) {
+        clearTimeout(ciEvImageTimers[ei]);
+        ciEvImageTimers[ei] = setTimeout(() => {
+            const next = (ciEvCurrentImage[ei] + 1) % CI_EVENTS[ei].images.length;
+            ciEvJumpImage(ei, next);
+            ciEvCycleImage(ei);
+        }, CI_EV_IMAGE_DURATION);
+
+        const bar = document.getElementById(`ci-evimgbar-${ei}`);
+        if (bar) {
+            bar.style.transition = 'none';
+            bar.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                bar.style.transition = `width ${CI_EV_IMAGE_DURATION}ms linear`;
+                bar.style.width = '100%';
+            }));
+        }
+    }
+
+    function ciEvJumpImage(ei, targetIdx) {
+        const card = document.getElementById(`ci-evcard-${ei}`);
+        if (!card) return;
+        const slides = card.querySelectorAll('.ci-ev-img-slide');
+        const dots   = document.querySelectorAll(`#ci-evimgdots-${ei} .ci-ev-img-dot`);
+
+        slides[ciEvCurrentImage[ei]]?.classList.remove('current');
+        dots[ciEvCurrentImage[ei]]?.classList.remove('active');
+
+        ciEvCurrentImage[ei] = targetIdx;
+
+        slides[ciEvCurrentImage[ei]]?.classList.add('current');
+        dots[ciEvCurrentImage[ei]]?.classList.add('active');
+    }
+
+    function ciEvStopImageCycle(ei) {
+        clearTimeout(ciEvImageTimers[ei]);
+    }
+
+    document.getElementById('ci-evPrev').addEventListener('click', () => {
+        clearTimeout(ciEvEventTimer);
+        ciEvGoTo(ciEvCurrent - 1);
+    });
+    document.getElementById('ci-evNext').addEventListener('click', () => {
+        clearTimeout(ciEvEventTimer);
+        ciEvGoTo(ciEvCurrent + 1);
+    });
+
+    ciEvGoTo(0);
+
+})();
+</script> 
 <script src="script.js"></script> 
 </body>
 
