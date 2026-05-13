@@ -1,241 +1,676 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<title>Leak Test Applications — Cosmo (Themes 3–7)</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Righteous&family=Unbounded:wght@300;400;700;900&family=Tenor+Sans&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leak Test Applications by Industry — Cosmo de México</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c1:rgb(104,224,251);
+  --c2:rgb(58,165,189);
+  --white:#ffffff;
+  --offwhite:#f4fafc;
+  --dark:#0c2530;
+  --mid:#2a6070;
+  --soft:#7aacba;
+  --border:rgba(58,165,189,0.14);
+}
 html{scroll-behavior:smooth}
-body{overflow-x:hidden;font-family:'Space Grotesk',sans-serif}
-
-/* ═══════════════════════ THEME SWITCHER ═══════════════════════ */
-.theme-switcher{
-  position:fixed;
-  top:1rem;
-  right:1rem;z-index:9999;
-  background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);
-  border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:5px;
-  border:1px solid rgba(255,255,255,0.1);
+body{background:var(--white);color:var(--dark);;font-weight:300;overflow-x:hidden}
+.navbar{
+    width: 100%;
+    min-height: 70px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    font-size:20px;
 }
-.theme-switcher span{font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:0 4px;text-align:center}
-.ts-btn{
-  font-size:0.65rem;font-weight:600;letter-spacing:0.5px;
-  padding:5px 10px;border-radius:6px;border:1px solid rgba(255,255,255,0.15);
-  background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);
-  cursor:pointer;white-space:nowrap;transition:all 0.15s;text-align:center;
+
+
+/* LOGO */
+.nav-logo{
+    width: 160px;
+    height: 55px;
 }
-.ts-btn:hover,.ts-btn.active{background:rgba(104,224,251,0.25);border-color:rgb(104,224,251);color:#fff}
 
-/* ═══════════════════════ THEME 3: BRUTAL NEWSPAPER ═══════════════════════ */
-body.t3{background:#f0ebe0;color:#1a1a1a;font-family:'Tenor Sans',sans-serif}
-body.t3 .page{display:none}.page.t3-page{display:block}
-
-.t3-hero{
-  background:#1a1a1a;color:#f0ebe0;padding:4rem 5vw 3rem;
-  border-bottom:6px solid rgb(104,224,251);
+.logo{
+    width: 100%;
+    height: 100%;
+    background-image: url(cosmologo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
 }
-.t3-hero .t3-pretitle{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:rgb(104,224,251);margin-bottom:1rem}
-.t3-hero h1{font-family:'Unbounded',sans-serif;font-size:clamp(2rem,5vw,4.5rem);font-weight:900;line-height:1.0;letter-spacing:-3px;margin-bottom:1rem;text-transform:uppercase}
-.t3-hero h1 span{color:transparent;-webkit-text-stroke:2px rgb(104,224,251)}
-.t3-hero p{font-size:1rem;color:rgba(240,235,224,0.7);max-width:500px;line-height:1.7}
 
-.t3-tabs{background:#1a1a1a;padding:0 5vw;border-bottom:1px solid rgba(104,224,251,0.2);display:flex;overflow-x:auto;gap:0;position:sticky;top:0;z-index:100}
-.t3-tab{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:rgba(240,235,224,0.4);background:none;border:none;border-bottom:3px solid transparent;padding:1rem 1.2rem;cursor:pointer;white-space:nowrap;transition:all 0.15s}
-.t3-tab.active,.t3-tab:hover{color:rgb(104,224,251);border-bottom-color:rgb(104,224,251)}
-
-.t3-content{max-width:1200px;margin:0 auto;padding:3rem 5vw}
-.t3-sec-head{margin-bottom:2rem;padding-bottom:1rem;border-bottom:3px solid #1a1a1a;display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
-.t3-sec-head h2{font-family:'Unbounded',sans-serif;font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:-1px}
-.t3-sec-head .t3-count{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:#888;letter-spacing:1px}
-
-.t3-search{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;padding:10px 14px;border:2px solid #1a1a1a;background:transparent;width:100%;max-width:360px;outline:none;margin-bottom:1.5rem;transition:border-color 0.2s}
-.t3-search:focus{border-color:rgb(104,224,251)}
-.t3-search::placeholder{color:#888}
-
-.t3-table{width:100%;border-collapse:collapse}
-.t3-table thead tr{border-bottom:3px solid #1a1a1a}
-.t3-table th{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;padding:8px 12px;text-align:left;color:#888;font-weight:500}
-.t3-table tbody tr{border-bottom:1px solid #ccc;transition:background 0.1s}
-.t3-table tbody tr:hover{background:rgba(104,224,251,0.06)}
-.t3-table td{padding:14px 12px;vertical-align:top;font-size:0.88rem}
-.t3-comp strong{font-size:0.9rem;display:block;margin-bottom:3px;font-family:'Unbounded',sans-serif;font-size:0.78rem;font-weight:700}
-.t3-comp span{font-size:0.78rem;color:#666;line-height:1.5}
-.t3-leak{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:rgb(58,165,189)}
-.t3-badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:1px;padding:2px 7px;margin:2px;border:1px solid}
-.t3-air{border-color:rgb(58,165,189);color:rgb(58,165,189)}
-.t3-he{border-color:#c9954a;color:#c9954a}
-.t3-eq{font-size:0.7rem;font-family:'IBM Plex Mono',monospace;color:#555;display:inline;margin-right:6px}
-.t3-sec{display:none}.t3-sec.active{display:block}
-.t3-foot{background:#1a1a1a;color:rgba(240,235,224,0.6);padding:2rem 5vw;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:2;border-top:4px solid rgb(104,224,251)}
-
-/* ═══════════════════════ THEME 4: GLASSMORPHISM BLUE ═══════════════════════ */
-body.t4{background:linear-gradient(135deg,#0a1628 0%,#0d2140 40%,#0a2030 100%);min-height:100vh;font-family:'Space Grotesk',sans-serif}
-body.t4 .page{display:none}.page.t4-page{display:block}
-
-.t4-hero{
-  padding:5rem 6vw 4rem;
-  background:radial-gradient(ellipse 70% 60% at 60% 30%,rgba(104,224,251,0.08) 0%,transparent 70%);
-  border-bottom:1px solid rgba(104,224,251,0.1);
+.logo:hover{
+    transform: scale(1.05);
 }
-.t4-eyebrow{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:rgb(104,224,251);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px}
-.t4-eyebrow::after{content:'';flex:1;height:1px;background:linear-gradient(to right,rgba(104,224,251,0.4),transparent);max-width:200px}
-.t4-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4.5rem);color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
-.t4-hero h1 em{font-style:italic;color:rgb(104,224,251)}
-.t4-hero p{font-size:0.98rem;color:rgba(255,255,255,0.55);max-width:500px;line-height:1.75;margin-bottom:2rem}
-.t4-pills{display:flex;gap:8px;flex-wrap:wrap}
-.t4-pill{background:rgba(104,224,251,0.08);border:1px solid rgba(104,224,251,0.2);color:rgba(255,255,255,0.8);font-size:0.78rem;padding:6px 14px;border-radius:100px}
 
-.t4-tabs{background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);border-bottom:1px solid rgba(104,224,251,0.08);padding:0 6vw;display:flex;overflow-x:auto;gap:0;position:sticky;top:0;z-index:100}
-.t4-tab{font-size:0.82rem;color:rgba(255,255,255,0.4);background:none;border:none;border-bottom:2px solid transparent;padding:1rem 1.2rem;cursor:pointer;white-space:nowrap;transition:all 0.2s}
-.t4-tab.active,.t4-tab:hover{color:rgb(104,224,251);border-bottom-color:rgb(104,224,251)}
-
-.t4-content{max-width:1100px;margin:0 auto;padding:3rem 4vw}
-.t4-sec{display:none}.t4-sec.active{display:block}
-.t4-sh{color:#fff;font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:4px}
-.t4-sp{font-size:0.88rem;color:rgba(255,255,255,0.45);margin-bottom:2rem;line-height:1.6}
-
-.t4-search{background:rgba(255,255,255,0.05);border:1px solid rgba(104,224,251,0.2);color:#fff;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;padding:10px 16px;border-radius:8px;outline:none;width:100%;max-width:340px;margin-bottom:1.5rem;transition:border-color 0.2s}
-.t4-search::placeholder{color:rgba(255,255,255,0.3)}
-.t4-search:focus{border-color:rgba(104,224,251,0.5)}
-
-.t4-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
-.t4-card{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(104,224,251,0.1);
-  border-radius:16px;padding:1.4rem;
-  backdrop-filter:blur(10px);
-  transition:background 0.2s,border-color 0.2s,transform 0.2s;
+/* MENU */
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
-.t4-card:hover{background:rgba(104,224,251,0.06);border-color:rgba(104,224,251,0.3);transform:translateY(-2px)}
-.t4-card .t4c-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
-.t4-card .t4c-methods{display:flex;gap:4px}
-.t4c-m{font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;border-radius:100px}
-.t4c-air{background:rgba(104,224,251,0.12);border:1px solid rgba(104,224,251,0.25);color:rgb(104,224,251)}
-.t4c-he{background:rgba(255,200,80,0.1);border:1px solid rgba(255,200,80,0.25);color:#ffc850}
-.t4c-name{font-size:1rem;font-weight:600;color:#fff;margin-bottom:6px}
-.t4c-desc{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.65;margin-bottom:14px}
-.t4c-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:12px}
-.t4c-lbl{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:3px}
-.t4c-leak{font-family:'IBM Plex Mono',monospace;font-size:0.88rem;color:rgb(104,224,251);font-weight:500}
-.t4c-equip{margin-top:8px;display:flex;gap:4px;flex-wrap:wrap}
-.t4c-eq{font-size:0.68rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);padding:2px 8px;border-radius:4px}
-.t4-foot{background:rgba(0,0,0,0.3);border-top:1px solid rgba(104,224,251,0.08);padding:2rem 6vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.t4-foot p{font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.9}
-.t4-foot a{color:rgb(104,224,251);text-decoration:none}
 
-/* ═══════════════════════ THEME 5: TROPICAL GRADIENT ═══════════════════════ */
-body.t5{background:#fff;font-family:'Space Grotesk',sans-serif}
-body.t5 .page{display:none}.page.t5-page{display:block}
-
-.t5-hero{
-  background:linear-gradient(to right,rgb(104,224,251),rgb(58,165,189));
-  padding:5rem 6vw;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;
+/* LINKS */
+.menu a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    transition: 0.3s;
 }
-.t5-hero h1{font-family:'Righteous',cursive;font-size:clamp(2.5rem,5.5vw,4.5rem);color:#fff;line-height:1.05;margin-bottom:0.8rem;letter-spacing:-1px}
-.t5-hero p{font-size:1rem;color:rgba(255,255,255,0.85);max-width:480px;line-height:1.7;margin-bottom:1.5rem}
-.t5-hero .t5-tag{display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:0.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:4px;margin-bottom:1.2rem}
-.t5-nums{display:grid;grid-template-columns:1fr 1fr;gap:1rem;background:rgba(255,255,255,0.15);border-radius:16px;padding:1.5rem;min-width:220px;backdrop-filter:blur(10px)}
-.t5-num .n{font-family:'Righteous',cursive;font-size:2rem;color:#fff;display:block;line-height:1}
-.t5-num .l{font-size:0.68rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);display:block;margin-top:2px}
 
-.t5-tabs{background:#fff;border-bottom:2px solid rgba(58,165,189,0.15);padding:0 6vw;display:flex;overflow-x:auto;gap:0;position:sticky;top:0;z-index:100}
-.t5-tab{font-size:0.82rem;font-weight:500;color:#888;background:none;border:none;border-bottom:3px solid transparent;padding:1.1rem 1.3rem;cursor:pointer;white-space:nowrap;transition:all 0.2s;margin-bottom:-2px}
-.t5-tab.active,.t5-tab:hover{color:rgb(58,165,189);border-bottom-color:rgb(58,165,189)}
+/* UNDERLINE */
+.menu a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: rgb(129, 129, 218);
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s;
+}
 
-.t5-content{max-width:1100px;margin:0 auto;padding:3rem 4vw}
-.t5-sec{display:none}.t5-sec.active{display:block}
-.t5-sh{font-family:'Righteous',cursive;font-size:1.6rem;color:#0c2530;margin-bottom:6px;letter-spacing:-0.5px}
-.t5-sp{font-size:0.88rem;color:#7a8a90;margin-bottom:2rem;line-height:1.6}
+.menu a:hover::after{
+    width: 100%;
+}
 
-.t5-search{border:2px solid rgba(58,165,189,0.25);color:#0c2530;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;padding:10px 16px;border-radius:100px;outline:none;width:100%;max-width:340px;margin-bottom:1.5rem;transition:border-color 0.2s}
-.t5-search::placeholder{color:#aaa}
-.t5-search:focus{border-color:rgb(58,165,189)}
+.menu a:hover{
+    color: rgb(129, 129, 218);
+}
 
-.t5-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem}
-.t5-card{
-  border-radius:20px;padding:1.5rem;border:1.5px solid rgba(58,165,189,0.12);
-  background:#fff;
-  transition:box-shadow 0.25s,transform 0.25s;
+/* DROPDOWN */
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background: white;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(5px);
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+
+.dropdown.active .dropdown-menu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+.dropdown-menu p{
+    padding: 10px;
+}
+
+.dropdown-menu p:hover{
+    background: #f2f2f2;
+}
+
+/* BUTTON */
+button{
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 14px;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background: white;
+    color: #FF4742;
+    transform: translateY(2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+#button-tag{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#button-tag:hover{
+    color: #FF4742;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+/* ========================= */
+/* 📱 MOBILE VIEW */
+/* ========================= */
+
+/* ========================= */
+/* 📱 MOBILE SAME LINE NAVBAR */
+/* ========================= */
+
+@media (max-width: 767px){
+
+    
+    .navbar{ 
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 25px 0 10px;   /* right side extra gap */
+        overflow-x: auto;
+    }
+
+    /* scrollbar hide */
+    
+    .menu::-webkit-scrollbar{
+        display: none;
+    }
+
+    .nav-logo{
+        width: 120px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .menu{
+        width: 100%;
+        margin-bottom: 3px;
+        padding-right: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 15px;
+        flex-shrink: 0;
+        
+    }
+
+    .menu a{ 
+        flex-shrink: 0;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .dropdown{
+display:flex;
+align-items:center;
+}
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static; /* important */
+        width: 100%;
+    }
+}
+
+.menu{
+padding:0 12px;
+}
+
+.menu{
+overflow-x:auto;
+padding-right:25px;
+}
+    button{
+        font-size: 12px;
+        padding: 6px 10px;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+
+    /* dropdown mobile simple 
+    .dropdown-menu{
+        position: absolute;
+        width: 200px;
+    }
+        */
+}
+/* ========================= */
+/* 📲 TABLET VIEW */
+/* ========================= */
+
+@media (max-width: 1023px){
+
+    .navbar{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 25px;
+         overflow-x: auto;
+    }
+
+    .menu{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    }
+      .menu::-webkit-scrollbar{
+        display: none;
+    }
+      button{
+        font-size: 12px;
+        padding: 6px 10px;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+ .menu a{
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .nav-logo{
+        width: 130px;
+        height: 45px;
+    }
+}
+
+/* ── HERO ── */
+.hero{
+  margin-top: 70px;
+  background:linear-gradient(135deg,rgb(104,224,251) 0%,rgb(58,165,189) 60%,rgb(30,120,150) 100%);
+  padding:4.5rem 6vw 0;
   position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:flex-end;
+  min-height:72vh;
 }
-.t5-card::after{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle,rgba(104,224,251,0.12),transparent);pointer-events:none}
-.t5-card:hover{box-shadow:0 16px 40px rgba(58,165,189,0.15);transform:translateY(-3px)}
-.t5c-ind{display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:12px;background:linear-gradient(to right,rgba(104,224,251,0.15),rgba(58,165,189,0.1));color:rgb(58,165,189)}
-.t5c-name{font-size:1.05rem;font-weight:700;color:#0c2530;margin-bottom:6px}
-.t5c-desc{font-size:0.82rem;color:#7a8a90;line-height:1.65;margin-bottom:14px}
-.t5c-leak-area{background:linear-gradient(to right,rgba(104,224,251,0.08),rgba(58,165,189,0.04));border-radius:10px;padding:10px 14px;margin-bottom:10px}
-.t5c-ll{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:rgb(58,165,189);display:block;margin-bottom:2px}
-.t5c-lv{font-family:'IBM Plex Mono',monospace;font-size:0.9rem;font-weight:500;color:#0c2530}
-.t5c-methods{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
-.t5c-m{font-size:0.62rem;font-weight:600;padding:2px 9px;border-radius:100px}
-.t5c-air{background:rgba(58,165,189,0.1);color:rgb(58,165,189)}
-.t5c-he{background:rgba(255,180,60,0.1);color:#c97a10}
-.t5c-equip{display:flex;gap:4px;flex-wrap:wrap}
-.t5c-eq{font-size:0.68rem;background:#f0f8fa;color:#4a7a8a;padding:2px 8px;border-radius:5px;border:1px solid rgba(58,165,189,0.15)}
-.t5-foot{background:linear-gradient(to right,rgb(58,165,189),rgb(104,224,251));padding:2.5rem 6vw;color:#fff;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
-.t5-foot .t5fl{font-family:'Righteous',cursive;font-size:1.2rem}
-.t5-foot p{font-size:0.8rem;opacity:0.85;line-height:1.9}
+.hero::before{
+  content:'COSMO';
+  position:absolute;right:-1rem;top:0;
+  font-family:'Righteous',cursive;
+  font-size:clamp(8rem,16vw,15rem);
+  color:rgba(255,255,255,0.07);
+  line-height:1;pointer-events:none;letter-spacing:-4px;
+}
+.hero-left{padding-bottom:3.5rem;position:relative;z-index:2}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);
+  color:#fff;font-size:0.7rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  padding:5px 14px;border-radius:100px;margin-bottom:1.5rem;backdrop-filter:blur(8px);
+}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#fff;display:block;opacity:0.8}
+.hero h1{
+ 
+  font-size:clamp(2.8rem,6vw,5rem);
+  color:#fff;line-height:1.05;margin-bottom:1rem;
+  letter-spacing:-1px;
+}
+.hero h1 span{opacity:0.7}
+.hero-p{
+  font-size:1rem;color:rgba(255,255,255,0.85);
+  max-width:500px;line-height:1.75;margin-bottom:2rem;
+}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:0.5rem}
+.hero-pill{
+  background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.35);
+  color:#fff;font-size:0.78rem;font-weight:500;
+  padding:7px 16px;border-radius:50px;
+  cursor:pointer;transition:all 0.2s;
+}
+.hero-pill:hover{background:rgba(255,255,255,0.3)}
 
-@media(max-width:640px){
-  .t5-hero{grid-template-columns:1fr}
-  .t5-nums{display:flex;gap:1rem}
+/* Hero right — stat block */
+.hero-right{
+  position:relative;z-index:2;
+  padding-bottom:3rem;
+  display:flex;flex-direction:column;gap:1rem;
+  min-width:200px;
+}
+.stat-tile{
+  background:rgba(255,255,255,0.18);backdrop-filter:blur(12px);
+  border:1.5px solid rgba(255,255,255,0.3);border-radius:16px;
+  padding:1.1rem 1.4rem;text-align:center;
+  transition:transform 0.2s;
+}
+.stat-tile:hover{transform:translateY(-2px)}
+.stat-tile .sn{
+ font-size:2rem;
+  color:#fff;line-height:1;display:block;
+}
+.stat-tile .sl{
+  font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.7);display:block;margin-top:3px;
 }
 
-/* ═══════════════════════ THEME 6: CLEAN MINIMAL DARK LINE ═══════════════════════ */
-body.t6{background:#fafafa;font-family:'Space Grotesk',sans-serif;color:#111}
-body.t6 .page{display:none}.page.t6-page{display:block}
+/* WAVE */
+.wave{display:block;width:100%;overflow:hidden;line-height:0;background:linear-gradient(135deg,rgb(104,224,251),rgb(30,120,150))}
+.wave svg{display:block;width:100%}
 
-.t6-top{padding:4rem 6vw 3rem;border-bottom:1px solid #e0e0e0}
-.t6-top-inner{max-width:700px}
-.t6-sup{font-size:0.68rem;letter-spacing:3px;text-transform:uppercase;color:rgb(58,165,189);margin-bottom:1.2rem;font-weight:600}
-.t6-top h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:700;line-height:1.08;letter-spacing:-2px;color:#0a0a0a;margin-bottom:1rem}
-.t6-top h1 .t6-hl{color:rgb(58,165,189)}
-.t6-top p{font-size:0.95rem;color:#666;line-height:1.75;max-width:480px;margin-bottom:2rem}
-.t6-statrow{display:flex;gap:2.5rem;flex-wrap:wrap}
-.t6-stat .sn{font-size:1.8rem;font-weight:700;color:rgb(58,165,189);line-height:1;display:block}
-.t6-stat .sl{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:#aaa;display:block;margin-top:3px}
+/* ── STICKY TABS ── */
+.tabs-bar{
+  background:var(--white);
+  border-bottom:2px solid rgba(58,165,189,0.12);
+  padding:0 5vw;
+  display:flex;overflow-x:auto;gap:0;
+  position:sticky;top:0;z-index:200;
+  box-shadow:0 2px 20px rgba(58,165,189,0.08);
+}
+.tabs-bar::-webkit-scrollbar{display:none}
+.t-btn{
+  font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:500;
+  color:#000000;background:none;border:none;
+  border-bottom:6px solid transparent;
+  padding:1rem 1.2rem;cursor:pointer;white-space:nowrap;
+  transition:all 0.2s;margin-bottom:-2px;letter-spacing:0.2px;
+  display:flex;align-items:center;gap:6px;
+}
+.t-btn:hover{color:var(--c2)}
+.t-btn.active{color:var(--c2);border-bottom-color:var(--c2);font-weight:600}
 
-.t6-nav{border-bottom:1px solid #e0e0e0;padding:0 6vw;display:flex;overflow-x:auto;gap:0;position:sticky;top:0;z-index:100;background:#fafafa}
-.t6-tab{font-size:0.82rem;font-weight:500;color:#aaa;background:none;border:none;border-bottom:2px solid transparent;padding:1rem 1.2rem;cursor:pointer;white-space:nowrap;transition:all 0.2s;margin-bottom:-1px}
-.t6-tab.active,.t6-tab:hover{color:#111;border-bottom-color:#111}
+/* ── CONTENT AREA ── */
+.content{max-width:1160px;margin:0 auto;padding:3rem 4vw 5rem}
+.section{display:none}
+.section.active{display:block}
 
-.t6-body{max-width:1100px;margin:0 auto;padding:3rem 4vw}
-.t6-sec{display:none}.t6-sec.active{display:block}
-.t6-sh2{font-size:1.4rem;font-weight:700;letter-spacing:-0.5px;margin-bottom:4px}
-.t6-shp{font-size:0.87rem;color:#888;margin-bottom:2rem;line-height:1.6}
+/* Section header */
+.sec-hdr{margin-bottom:2rem}
+.sec-hdr h2{
+  font-family:'Righteous',cursive;
+  font-size:1.8rem;color:var(--dark);letter-spacing:-0.5px;margin-bottom:5px;
+}
+.sec-hdr p{font-size:0.9rem;color:var(--soft);line-height:1.65;max-width:580px}
 
-.t6-search{border:1px solid #ddd;color:#111;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;padding:10px 16px;border-radius:8px;outline:none;width:100%;max-width:340px;margin-bottom:1.5rem;background:#fff;transition:border-color 0.2s}
-.t6-search:focus{border-color:rgb(58,165,189)}
+/* Search + filter row */
+.toolbar{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;flex-wrap:wrap}
+.search-wrap{
+  display:flex;align-items:center;gap:9px;
+  background:var(--offwhite);border:1.5px solid var(--border);
+  border-radius:100px;padding:9px 18px;flex:1;max-width:360px;
+  transition:border-color 0.2s;
+}
+.search-wrap:focus-within{border-color:var(--c2)}
+.search-wrap svg{width:15px;height:15px;stroke:var(--soft);flex-shrink:0;fill:none;stroke-width:2;stroke-linecap:round}
+.search-wrap input{
+  border:none;outline:none;
+  font-family:'Space Grotesk',sans-serif;font-size:0.86rem;
+  color:var(--dark);background:none;flex:1;
+}
+.search-wrap input::placeholder{color:#bbb}
 
-.t6-table{width:100%;border-collapse:collapse}
-.t6-table th{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:#aaa;padding:8px 14px;text-align:left;font-weight:600;border-bottom:1px solid #e0e0e0}
-.t6-table tr:not(:last-child){border-bottom:1px solid #f0f0f0}
-.t6-table td{padding:16px 14px;vertical-align:top;font-size:0.87rem}
-.t6-comp strong{display:block;font-size:0.88rem;font-weight:600;color:#111;margin-bottom:3px}
-.t6-comp span{font-size:0.78rem;color:#888;line-height:1.5}
-.t6-lv{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:rgb(58,165,189)}
-.t6-m{font-size:0.62rem;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin:2px;display:inline-block}
-.t6-mair{background:#e8f7fa;color:rgb(58,165,189)}
-.t6-mhe{background:#fef8ee;color:#b87a20}
-.t6-eqt{font-size:0.72rem;color:#666;font-family:'IBM Plex Mono',monospace;display:inline-block;margin:2px}
-.t6-foot{border-top:1px solid #e0e0e0;padding:2rem 6vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.t6-foot p{font-size:0.78rem;color:#aaa;line-height:1.9}
-.t6-foot a{color:rgb(58,165,189);text-decoration:none}
+.filter-btns{display:flex;gap:6px;flex-wrap:wrap}
+.fb{
+  font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 14px;border-radius:100px;border:1.5px solid var(--border);
+  background:var(--white);color:var(--soft);cursor:pointer;transition:all 0.15s;
+}
+.fb.on,.fb:hover{background:rgba(58,165,189,0.1);border-color:var(--c2);color:var(--c2)}
 
-/* ═══════════════════════ SHARED DATA COMMON ═══════════════════════ */
-.sc{display:none}.sc.act{display:block}
+/* ── CARD GRID ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.1rem}
 
+/* Card */
+.card{
+  background:var(--white);
+  border:1.5px solid var(--border);border-radius:20px;
+  padding:1.5rem 1.6rem;
+  position:relative;overflow:hidden;
+  transition:box-shadow 0.25s,transform 0.25s,border-color 0.25s;
+}
+.card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(to right,var(--c1),var(--c2));
+  border-radius:20px 20px 0 0;
+}
+.card::after{
+  content:'';position:absolute;
+  bottom:-30px;right:-30px;
+  width:100px;height:100px;border-radius:50%;
+  background:radial-gradient(circle,rgba(104,224,251,0.1),transparent);
+  pointer-events:none;
+}
+.card:hover{
+  box-shadow:0 14px 42px rgba(58,165,189,0.14);
+  transform:translateY(-3px);
+  border-color:rgba(58,165,189,0.35);
+}
+
+.card-methods{display:flex;gap:5px;margin-bottom:12px}
+.cm{font-size:0.62rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px}
+.cm-air{background:rgba(58,165,189,0.1);border:1px solid rgba(58,165,189,0.25);color:var(--c2)}
+.cm-he{background:rgba(255,185,60,0.1);border:1px solid rgba(255,185,60,0.3);color:#b87a10}
+
+.card-name{font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:6px;line-height:1.3}
+.card-desc{font-size:0.82rem;color:var(--soft);line-height:1.67;margin-bottom:14px}
+
+.card-leak{
+  background:linear-gradient(to right,rgba(104,224,251,0.1),rgba(58,165,189,0.05));
+  border:1px solid rgba(58,165,189,0.15);border-radius:10px;
+  padding:10px 14px;margin-bottom:12px;
+}
+.cl-label{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--c2);display:block;margin-bottom:2px;font-weight:600}
+.cl-val{font-family:'IBM Plex Mono',monospace;font-size:0.9rem;font-weight:500;color:var(--dark)}
+
+.card-equip{display:flex;gap:5px;flex-wrap:wrap}
+.ceq{
+  font-size:0.69rem;font-family:'IBM Plex Mono',monospace;
+  background:var(--offwhite);border:1px solid rgba(58,165,189,0.18);
+  color:var(--mid);padding:3px 9px;border-radius:6px;
+}
+
+/* ── WHY SECTION ── */
+.why-band{
+  background:linear-gradient(135deg,rgba(104,224,251,0.08),rgba(58,165,189,0.05));
+  border:1px solid var(--border);border-radius:20px;
+  padding:2.5rem 3rem;margin-top:3.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
+}
+.why-band h3{font-family:'Righteous',cursive;font-size:1.5rem;color:var(--dark);margin-bottom:0.8rem}
+.why-band p{font-size:0.9rem;color:var(--soft);line-height:1.72}
+.why-pts{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.why-pt{display:flex;gap:10px;align-items:flex-start}
+.why-pt .wp-icon{
+  width:36px;height:36px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--c1),var(--c2));
+  display:flex;align-items:center;justify-content:center;
+}
+.why-pt .wp-icon svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}
+.why-pt .wp-txt strong{display:block;font-size:0.88rem;font-weight:600;color:var(--dark);margin-bottom:2px}
+.why-pt .wp-txt span{font-size:0.78rem;color:var(--soft);line-height:1.5}
+
+/* ── CTA STRIP ── */
+.cta-strip{
+  background:linear-gradient(to right,var(--c2),var(--c1));
+  border-radius:20px;padding:2rem 2.5rem;margin-top:2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;
+}
+.cta-strip h4{font-family:'Righteous',cursive;font-size:1.3rem;color:#fff;letter-spacing:-0.3px}
+.cta-strip p{font-size:0.88rem;color:rgba(255,255,255,0.82);margin-top:3px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.cta-btn{
+  font-size:0.84rem;font-weight:600;padding:10px 22px;border-radius:10px;
+  cursor:pointer;border:none;text-decoration:none;display:inline-block;
+  transition:opacity 0.2s;letter-spacing:0.3px;
+}
+.cta-btn.primary{background:#fff;color:var(--c2)}
+.cta-btn.secondary{background:rgba(255,255,255,0.2);border:1.5px solid rgba(255,255,255,0.4);color:#fff}
+.cta-btn:hover{opacity:0.88}
+
+/* ================= FOOTER ================= */
+.footer {
+    padding: 60px 40px;
+    color: #fff;
+
+    background: 
+        linear-gradient(rgba(11, 28, 52, 0.85), rgba(11, 28, 52, 0.85)),
+        url('footerimage.jpeg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* CONTAINER */
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* 🔥 important */
+}
+
+/* COLUMN */
+.footer-col {
+    flex: 1 1 220px; /* 🔥 responsive width */
+    min-width: 200px;
+}
+
+/* HEADINGS */
+.footer-col h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* underline */
+.footer-col h3::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #1e6fa3;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* LINKS */
+.footer-col a {
+    display: block;
+    color: #ccc;
+    margin: 8px 0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #fff;
+    transform: translateX(5px); /* 🔥 small animation */
+}
+
+/* TEXT */
+.footer-col p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #1e6fa3;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 8px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #0c4d75;
+    transform: translateY(-3px);
+}
+
+/* BOTTOM */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 50px 30px;
+    }
+
+    .footer-container {
+        gap: 25px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-col {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-col h3 {
+        font-size: 18px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+        font-size: 13px;
+    }
+}
+
+
+
+
+
+/* FADE IN ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-left h1,.hero-left .hero-p,.hero-left .hero-pills{animation:fadeUp 0.7s both}
+.hero-left h1{animation-delay:0.15s}
+.hero-left .hero-p{animation-delay:0.3s}
+.hero-left .hero-pills{animation-delay:0.45s}
 </style>
-
 </head>
 <body>
-    
+  
     <header>
         <div class="navbar">
             <div class="nav-logo border">
@@ -274,318 +709,938 @@ body.t6 .page{display:none}.page.t6-page{display:block}
             <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
         </div>
         </header>
-          
+      
 
-<body class="t3">
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-tag">Cosmo de México · Industrial Leak Testing</span>
+    <h1>Leak Test<br><span>Applications</span><br>by Industry</h1>
+    <p class="hero-p">Discover how hermetic testing applies across industries to guarantee quality, safety and regulatory compliance. Find your component, select the right method and equipment.</p>
+  
+  </div>
+  <div class="hero-right">
+    <div class="stat-tile"><span class="sn">7</span><span class="sl">Industries</span></div>
+    <div class="stat-tile"><span class="sn">60+</span><span class="sl">Components</span></div>
+    <div class="stat-tile"><span class="sn">Air</span><span class="sl">Test Method</span></div>
+    <div class="stat-tile"><span class="sn">He</span><span class="sl">Test Method</span></div>
+  </div>
+</section>
 
-<!-- THEME SWITCHER -->
-<div class="theme-switcher">
-  <span>Theme</span>
-  <button class="ts-btn active" onclick="setTheme('t3',this)">3 Brutal</button>
-  <button class="ts-btn" onclick="setTheme('t4',this)">4 Glass</button>
-  <button class="ts-btn" onclick="setTheme('t5',this)">5 Tropical</button>
-  <button class="ts-btn" onclick="setTheme('t6',this)">6 Minimal</button>
+<!-- Wave Divider -->
+<div class="wave">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,30 C480,65 960,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff"/>
+  </svg>
 </div>
 
-<!-- ═══════════ THEME 3: BRUTAL NEWSPAPER ═══════════ -->
-<div class="page t3-page">
-  <div class="t3-hero">
-    <p class="t3-pretitle">// cosmo_de_mexico — industrial_leak_test_db</p>
-    <h1>LEAK TEST<br><span>BY INDUSTRY</span></h1>
-    <p>Industrial hermetic testing solutions. Automotive · EV · Medical · Electronics · Household · Food · Other. Select your sector.</p>
-  </div>
-  <div class="t3-tabs">
-    <button class="t3-tab active" onclick="t3Tab('ev',this)">⚡ EV</button>
-    <button class="t3-tab" onclick="t3Tab('auto',this)">🚗 AUTO</button>
-    <button class="t3-tab" onclick="t3Tab('med',this)">🏥 MED</button>
-    <button class="t3-tab" onclick="t3Tab('elec',this)">💡 ELEC</button>
-    <button class="t3-tab" onclick="t3Tab('home',this)">🏠 HOME</button>
-    <button class="t3-tab" onclick="t3Tab('food',this)">🥫 FOOD</button>
-    <button class="t3-tab" onclick="t3Tab('other',this)">⚙️ OTHER</button>
-  </div>
-  <div class="t3-content">
-    <div class="t3-sec active" id="t3-ev">
-      <div class="t3-sec-head"><h2>Electric Vehicles</h2><span class="t3-count">17 components</span></div>
-      <input class="t3-search" placeholder="Search component..." id="t3s-ev" oninput="t3Filter('ev')">
-      <table class="t3-table" id="t3t-ev"><thead><tr><th>Component</th><th>Leak Ref.</th><th>Method</th><th>Equipment</th></tr></thead><tbody>
-        <tr><td class="t3-comp"><strong>Inverter</strong><span>Converts DC to AC. Critical hermetic protection.</span></td><td class="t3-leak">0.5 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902EV</span><span class="t3-eq">LDS3000</span></td></tr>
-        <tr><td class="t3-comp"><strong>Inverter Housing</strong><span>Protects inverter against dust and humidity.</span></td><td class="t3-leak">0.3 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902EV</span><span class="t3-eq">LDS3000</span></td></tr>
-        <tr><td class="t3-comp"><strong>Converter</strong><span>Regulates voltage in automotive electrical systems.</span></td><td class="t3-leak">0.3 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902EV</span></td></tr>
-        <tr><td class="t3-comp"><strong>Converter Housing</strong><span>Protects converter circuits from contamination.</span></td><td class="t3-leak">0.4 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902EV</span><span class="t3-eq">LDS3000</span></td></tr>
-        <tr><td class="t3-comp"><strong>Converter Micro-leak</strong><span>High-precision micro-leak detection in sealed electronics.</span></td><td class="t3-leak">2.5×10⁻⁵ Pa·m³/s</td><td><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LDS3000</span></td></tr>
-        <tr><td class="t3-comp"><strong>Separator</strong><span>Separates fluids or gases in electrical/thermal systems.</span></td><td class="t3-leak">1 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LDS3000AQ</span></td></tr>
-        <tr><td class="t3-comp"><strong>Base Plate</strong><span>Structural plate supporting electronic components.</span></td><td class="t3-leak">1.5×10⁻² Pa·m³/s</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902EV</span><span class="t3-eq">LDS3000</span></td></tr>
-        <tr><td class="t3-comp"><strong>Lithium Battery</strong><span>Maximum hermetic integrity to prevent moisture and safety risks.</span></td><td class="t3-leak">1.0×10⁻⁵ Pa·m³/s</td><td><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LDS3000</span></td></tr>
-        <tr><td class="t3-comp"><strong>Battery Cap</strong><span>Protects battery against external contaminants.</span></td><td class="t3-leak">0.5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902EV</span></td></tr>
-        <tr><td class="t3-comp"><strong>E-Axle (Water Channel)</strong><span>Cooling channels requiring refrigerant leak prevention.</span></td><td class="t3-leak">5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902EV</span></td></tr>
-        <tr><td class="t3-comp"><strong>E-Axle (Full Unit)</strong><span>Integrated motor, transmission and electronics system.</span></td><td class="t3-leak">1 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902EV</span><span class="t3-eq">LDS3000AQ</span></td></tr>
-        <tr><td class="t3-comp"><strong>EV Battery Assembly</strong><span>Complete battery assembly hermetic validation in production.</span></td><td class="t3-leak">30 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902EV</span></td></tr>
-        <tr><td class="t3-comp"><strong>EV Motor Assembly</strong><span>Complete electric motor thermal and electrical protection.</span></td><td class="t3-leak">12 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902EV</span></td></tr>
-        <tr><td class="t3-comp"><strong>EV Motor Housing</strong><span>Housing protecting motor against environmental conditions.</span></td><td class="t3-leak">34 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902EV</span></td></tr>
-        <tr><td class="t3-comp"><strong>EV Motor Water Channel</strong><span>Motor cooling channels that must remain leak-free.</span></td><td class="t3-leak">5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902EV</span></td></tr>
-        <tr><td class="t3-comp"><strong>Fuel Cell Battery Cover</strong><span>Hydrogen system protection requiring high-precision testing.</span></td><td class="t3-leak">6.0×10⁻⁴ Pa·m³/s</td><td><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LDS3000</span></td></tr>
-        <tr><td class="t3-comp"><strong>Fuel Cell Components</strong><span>Hydrogen components requiring maximum hermetic sealing.</span></td><td class="t3-leak">5.0×10⁻² Pa·m³/s</td><td><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LDS3000AQ</span></td></tr>
-      </tbody></table>
-    </div>
-    <div class="t3-sec" id="t3-auto">
-      <div class="t3-sec-head"><h2>Automotive</h2><span class="t3-count">21 components</span></div>
-      <input class="t3-search" placeholder="Search component..." id="t3s-auto" oninput="t3Filter('auto')">
-      <table class="t3-table" id="t3t-auto"><thead><tr><th>Component</th><th>Leak Ref.</th><th>Method</th><th>Equipment</th></tr></thead><tbody>
-        <tr><td class="t3-comp"><strong>Automotive Axle</strong><span>Transmits torque. Avoids lubricant loss.</span></td><td class="t3-leak">2.5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LS-R700</span></td></tr>
-        <tr><td class="t3-comp"><strong>Fuel Injector</strong><span>Doses/atomizes fuel. Micro-leak detection critical.</span></td><td class="t3-leak">0.005~0.4 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LDS3000AQ</span></td></tr>
-        <tr><td class="t3-comp"><strong>Intake Manifold</strong><span>Distributes air to cylinders. Prevents uncontrolled air entry.</span></td><td class="t3-leak">0.5~4 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LDS3000AQ</span></td></tr>
-        <tr><td class="t3-comp"><strong>Water Pump</strong><span>Circulates engine coolant. Critical thermal management.</span></td><td class="t3-leak">0.25 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LDS3000AQ</span></td></tr>
-        <tr><td class="t3-comp"><strong>Air Suspension Tank</strong><span>Stores compressed air for pneumatic suspension.</span></td><td class="t3-leak">1.0×10⁻⁹ Pa·m³/s</td><td><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LDS3000</span></td></tr>
-        <tr><td class="t3-comp"><strong>Engine Assembly</strong><span>Complete engine integrating all main systems.</span></td><td class="t3-leak">5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LS-R700</span></td></tr>
-        <tr><td class="t3-comp"><strong>Oil Pan</strong><span>Stores engine lubricating oil. Prevents lubrication loss.</span></td><td class="t3-leak">1 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LS-R700</span></td></tr>
-        <tr><td class="t3-comp"><strong>EVAP Canister</strong><span>Captures fuel vapors. Emissions compliance.</span></td><td class="t3-leak">10 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LS-R700</span></td></tr>
-        <tr><td class="t3-comp"><strong>High Pressure Valve</strong><span>Regulates high-pressure fuel, gas or hydraulic flow.</span></td><td class="t3-leak">1.0×10⁻³ Pa·m³/s</td><td><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LDS3000</span></td></tr>
-        <tr><td class="t3-comp"><strong>Muffler</strong><span>Reduces combustion noise. Exhaust system sealing.</span></td><td class="t3-leak">20 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LS-R700</span></td></tr>
-        <tr><td class="t3-comp"><strong>Vehicle Camera</strong><span>ADAS/backup cameras. Critical IP sealing against moisture.</span></td><td class="t3-leak">0.25 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R740ZL</span><span class="t3-eq">LZ-R155</span></td></tr>
-        <tr><td class="t3-comp"><strong>Automotive Connector</strong><span>Electrical interface. Prevents moisture ingress.</span></td><td class="t3-leak">0.2 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R700</span><span class="t3-eq">LS-1866</span></td></tr>
-        <tr><td class="t3-comp"><strong>Cylinder Block</strong><span>Main engine structure under high pressure and temperature.</span></td><td class="t3-leak">10 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-1881A</span><span class="t3-eq">LS-R902</span></td></tr>
-        <tr><td class="t3-comp"><strong>Cylinder Head</strong><span>Seals combustion chamber. Houses valves and injectors.</span></td><td class="t3-leak">2–15 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-1881A</span><span class="t3-eq">LS-R902</span></td></tr>
-        <tr><td class="t3-comp"><strong>Heat Exchanger</strong><span>Transfers thermal energy. Prevents cross-contamination.</span></td><td class="t3-leak">0.2 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LDS3000AQ</span></td></tr>
-        <tr><td class="t3-comp"><strong>Fuel Tank</strong><span>Stores gasoline or diesel. EVAP emissions and safety.</span></td><td class="t3-leak">0.15 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902</span><span class="t3-eq">LDS3000AQ</span></td></tr>
-        <tr><td class="t3-comp"><strong>Brake Caliper</strong><span>Hydraulic brake pressure application. Vehicle safety critical.</span></td><td class="t3-leak">0.5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R740SH</span><span class="t3-eq">LS-R902</span></td></tr>
-        <tr><td class="t3-comp"><strong>Radiator</strong><span>Dissipates engine coolant heat under variable conditions.</span></td><td class="t3-leak">1.7×10⁻³ Pa·m³/s</td><td><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LDS3000AQ</span></td></tr>
-        <tr><td class="t3-comp"><strong>ABS System</strong><span>Anti-lock braking. Hydraulic and electronic hermetic integrity.</span></td><td class="t3-leak">0.1 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R740SS</span></td></tr>
-        <tr><td class="t3-comp"><strong>SCR Sensor</strong><span>NOx emission monitoring in selective catalytic reduction.</span></td><td class="t3-leak">2.1×10⁻⁴ Pa·m³/s</td><td><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LDS3000</span></td></tr>
-      </tbody></table>
-    </div>
-    <div class="t3-sec" id="t3-med">
-      <div class="t3-sec-head"><h2>Medical Equipment</h2></div>
-      <table class="t3-table"><thead><tr><th>Component</th><th>Leak Ref.</th><th>Method</th><th>Equipment</th></tr></thead><tbody>
-        <tr><td class="t3-comp"><strong>Catheter</strong><span>Flexible fluid administration device.</span></td><td class="t3-leak">0.1 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R740SS</span></td></tr>
-        <tr><td class="t3-comp"><strong>Cannula</strong><span>Tube for fluid/gas administration.</span></td><td class="t3-leak">0.5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span></td></tr>
-        <tr><td class="t3-comp"><strong>Endoscope</strong><span>Medical visualization instrument. Sealed to prevent contamination.</span></td><td class="t3-leak">0.1 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R700</span></td></tr>
-        <tr><td class="t3-comp"><strong>Lung Force Valve</strong><span>Respiratory valve regulating airflow to lungs.</span></td><td class="t3-leak">0.5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R700</span></td></tr>
-        <tr><td class="t3-comp"><strong>Panel</strong><span>Medical panel protection of internal components.</span></td><td class="t3-leak">0.09 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R740SS</span></td></tr>
-        <tr><td class="t3-comp"><strong>Ventilation Filter</strong><span>Air passage control in medical devices.</span></td><td class="t3-leak">0.1 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R700</span></td></tr>
-        <tr><td class="t3-comp"><strong>Micro-needle Port</strong><span>High-precision microinjection port.</span></td><td class="t3-leak">0.2 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span></td></tr>
-        <tr><td class="t3-comp"><strong>Regulator</strong><span>Controls pressure or flow in medical systems.</span></td><td class="t3-leak">3 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R700</span></td></tr>
-      </tbody></table>
-    </div>
-    <div class="t3-sec" id="t3-elec"><div class="t3-sec-head"><h2>Electronics</h2></div><table class="t3-table"><thead><tr><th>Component</th><th>Leak Ref.</th><th>Method</th><th>Equipment</th></tr></thead><tbody><tr><td class="t3-comp"><strong>Sealed Connector</strong><span>Hermetic electrical connector.</span></td><td class="t3-leak">0.1~0.5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R700</span></td></tr><tr><td class="t3-comp"><strong>MEMS Sensor</strong><span>Ultra-precision micro-electromechanical sensor.</span></td><td class="t3-leak">1.0×10⁻⁶ Pa·m³/s</td><td><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LDS3000</span></td></tr><tr><td class="t3-comp"><strong>Module Housing</strong><span>IP-rated sealed enclosure for control modules.</span></td><td class="t3-leak">0.3 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R740ZL</span></td></tr><tr><td class="t3-comp"><strong>Pressure Sensor</strong><span>Industrial or automotive pressure measurement sensor.</span></td><td class="t3-leak">0.2 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span></td></tr></tbody></table></div>
-    <div class="t3-sec" id="t3-home"><div class="t3-sec-head"><h2>Household</h2></div><table class="t3-table"><thead><tr><th>Component</th><th>Leak Ref.</th><th>Method</th><th>Equipment</th></tr></thead><tbody><tr><td class="t3-comp"><strong>Gas Valve</strong><span>Critical safety sealing in residential appliances.</span></td><td class="t3-leak">0.1 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span></td></tr><tr><td class="t3-comp"><strong>HVAC Compressor</strong><span>Refrigerant compression in HVAC systems.</span></td><td class="t3-leak">1 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902</span></td></tr><tr><td class="t3-comp"><strong>Water Meter</strong><span>Residential water flow measurement.</span></td><td class="t3-leak">0.5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R700</span></td></tr></tbody></table></div>
-    <div class="t3-sec" id="t3-food"><div class="t3-sec-head"><h2>Food Industry</h2></div><table class="t3-table"><thead><tr><th>Component</th><th>Leak Ref.</th><th>Method</th><th>Equipment</th></tr></thead><tbody><tr><td class="t3-comp"><strong>Food Pouch</strong><span>Flexible packaging seal validation.</span></td><td class="t3-leak">5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span></td></tr><tr><td class="t3-comp"><strong>Can Seal</strong><span>Metal container preservation integrity.</span></td><td class="t3-leak">1 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R700</span></td></tr><tr><td class="t3-comp"><strong>Bottle Cap</strong><span>Beverage and food preservation testing.</span></td><td class="t3-leak">0.5 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R740SS</span></td></tr></tbody></table></div>
-    <div class="t3-sec" id="t3-other"><div class="t3-sec-head"><h2>Other Industries</h2></div><table class="t3-table"><thead><tr><th>Component</th><th>Leak Ref.</th><th>Method</th><th>Equipment</th></tr></thead><tbody><tr><td class="t3-comp"><strong>Industrial Compressor</strong><span>Gas compression in industrial process systems.</span></td><td class="t3-leak">5 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902</span></td></tr><tr><td class="t3-comp"><strong>Pressure Tank</strong><span>Pressurized gas or fluid storage vessel.</span></td><td class="t3-leak">2 mL/min</td><td><span class="t3-badge t3-air">Air</span></td><td><span class="t3-eq">LS-R902</span></td></tr><tr><td class="t3-comp"><strong>Industrial Valve</strong><span>Fluid flow control in pipelines.</span></td><td class="t3-leak">0.5~2 mL/min</td><td><span class="t3-badge t3-air">Air</span><span class="t3-badge t3-he">He</span></td><td><span class="t3-eq">LS-R902</span></td></tr></tbody></table></div>
-  </div>
-  <div class="t3-foot"><p>© 2025 Cosmo de México | info@cosmodemexico.com | japanese@cosmodemexico.com<br>Theme 3 — Brutalist Newspaper</p></div>
+<!-- ══════════ TABS ══════════ -->
+<div class="tabs-bar" id="tabsBar">
+  <button class="t-btn active" id="btn-ev"   onclick="showTab('ev',this)">⚡ Electric EV</button>
+  <button class="t-btn"        id="btn-auto" onclick="showTab('auto',this)">🚗 Automotive</button>
+  <button class="t-btn"        id="btn-med"  onclick="showTab('med',this)">🏥 Medical</button>
+  <button class="t-btn"        id="btn-elec" onclick="showTab('elec',this)">💡 Electronics</button>
+  <button class="t-btn"        id="btn-home" onclick="showTab('home',this)">🏠 Household</button>
+  <button class="t-btn"        id="btn-food" onclick="showTab('food',this)">🥫 Food</button>
+  <button class="t-btn"        id="btn-other"onclick="showTab('other',this)">⚙️ Other Industries</button>
 </div>
 
-<!-- ═══════════ THEME 4: GLASSMORPHISM ═══════════ -->
-<div class="page t4-page" style="display:none">
-  <div class="t4-hero">
-    <p class="t4-eyebrow">Cosmo de México</p>
-    <h1>Leak Test<br>Applications<br><em>by Industry</em></h1>
-    <p>Discover hermetic testing solutions for every sector. Select your component and find the ideal method and equipment.</p>
-    <div class="t4-pills"><span class="t4-pill">⚡ Electric EV</span><span class="t4-pill">🚗 Automotive</span><span class="t4-pill">🏥 Medical</span><span class="t4-pill">💡 Electronics</span></div>
-  </div>
-  <div class="t4-tabs">
-    <button class="t4-tab active" onclick="t4Tab('ev',this)">⚡ Electric EV</button>
-    <button class="t4-tab" onclick="t4Tab('auto',this)">🚗 Automotive</button>
-    <button class="t4-tab" onclick="t4Tab('med',this)">🏥 Medical</button>
-    <button class="t4-tab" onclick="t4Tab('elec',this)">💡 Electronics</button>
-    <button class="t4-tab" onclick="t4Tab('home',this)">🏠 Household</button>
-    <button class="t4-tab" onclick="t4Tab('food',this)">🥫 Food</button>
-    <button class="t4-tab" onclick="t4Tab('other',this)">⚙️ Other</button>
-  </div>
-  <div class="t4-content">
-    <div class="t4-sec active" id="t4-ev">
-      <div class="t4-sh">Electric Vehicles</div>
-      <p class="t4-sp">Batteries, inverters, e-axle, fuel cell and thermal systems.</p>
-      <input class="t4-search" placeholder="Search component..." id="t4s-ev" oninput="t4Filter('ev')">
-      <div class="t4-grid" id="t4g-ev">
-        <div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">Inverter</div><div class="t4c-desc">Converts DC to AC in EVs. Critical hermetic protection against humidity.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.5 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902EV</span><span class="t4c-eq">LDS3000</span></div></div></div>
-        <div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">Inverter Housing</div><div class="t4c-desc">Protects inverter against dust, humidity and external agents.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.3 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902EV</span><span class="t4c-eq">LDS3000</span></div></div></div>
-        <div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Converter</div><div class="t4c-desc">Regulates and transforms voltage in automotive electrical systems.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.3 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902EV</span></div></div></div>
-        <div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">Lithium Battery</div><div class="t4c-desc">Maximum hermetic integrity to prevent moisture ingress and safety risks.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">1.0×10⁻⁵ Pa·m³/s</div><div class="t4c-equip"><span class="t4c-eq">LDS3000</span></div></div></div>
-        <div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Battery Cap</div><div class="t4c-desc">Protects battery against external contaminants.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.5 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902EV</span></div></div></div>
-        <div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">E-Axle (Full Unit)</div><div class="t4c-desc">Integrated motor, transmission and electronics in EVs.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">1 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902EV</span><span class="t4c-eq">LDS3000AQ</span></div></div></div>
-        <div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">EV Battery Assembly</div><div class="t4c-desc">Complete battery assembly hermetic validation in production.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">30 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902EV</span></div></div></div>
-        <div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">Fuel Cell Components</div><div class="t4c-desc">Hydrogen components requiring maximum hermetic sealing for safety.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">5.0×10⁻² Pa·m³/s</div><div class="t4c-equip"><span class="t4c-eq">LDS3000AQ</span></div></div></div>
+<!-- ══════════ CONTENT ══════════ -->
+<div class="content">
+
+  <!-- ────── EV ────── -->
+  <div class="section active" id="sec-ev">
+    <div class="sec-hdr">
+      <h2>Electric Vehicles & EV Electronics</h2>
+      <p>EV systems require more rigorous hermetic levels than traditional components. Batteries, inverters, e-axle, fuel cell and thermal management testing guide.</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="srch-ev" placeholder="Search component..." oninput="filterCards('ev')">
+      </div>
+      <div class="filter-btns">
+        <button class="fb on"  onclick="filterMethod('ev','all',this)">All</button>
+        <button class="fb"     onclick="filterMethod('ev','air',this)">Air Only</button>
+        <button class="fb"     onclick="filterMethod('ev','he',this)">Helium Only</button>
       </div>
     </div>
-    <div class="t4-sec" id="t4-auto"><div class="t4-sh">Automotive</div><p class="t4-sp">Hermetic validation for engines, fuel systems, valves and brakes.</p><div class="t4-grid"><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Fuel Injector</div><div class="t4c-desc">Doses and atomizes fuel. Critical hermetic integrity.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.005~0.4 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902</span><span class="t4c-eq">LDS3000AQ</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">Fuel Tank</div><div class="t4c-desc">Safely stores gasoline or diesel. EVAP emissions and safety.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.15 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902</span><span class="t4c-eq">LDS3000AQ</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Brake Caliper</div><div class="t4c-desc">Hydraulic brake pressure application. Vehicle safety critical.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.5 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R740SH</span><span class="t4c-eq">LS-R902</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">Air Suspension Tank</div><div class="t4c-desc">Stores compressed air for pneumatic suspension systems.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">1.0×10⁻⁹ Pa·m³/s</div><div class="t4c-equip"><span class="t4c-eq">LDS3000</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Cylinder Block</div><div class="t4c-desc">Main engine structure under high pressure and temperature.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">10 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-1881A</span><span class="t4c-eq">LS-R902</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">ABS System</div><div class="t4c-desc">Anti-lock braking. Hydraulic and electronic hermetic integrity.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.1 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R740SS</span></div></div></div></div></div>
-    <div class="t4-sec" id="t4-med"><div class="t4-sh">Medical Equipment</div><p class="t4-sp">High precision and sterility for critical medical devices.</p><div class="t4-grid"><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Catheter</div><div class="t4c-desc">Flexible fluid administration device. High integrity required.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.1 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R740SS</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Endoscope</div><div class="t4c-desc">Medical visualization instrument. Sealed to prevent contamination.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.1 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R700</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Lung Force Valve</div><div class="t4c-desc">Respiratory valve regulating airflow to lungs.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.5 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R700</span></div></div></div></div></div>
-    <div class="t4-sec" id="t4-elec"><div class="t4-sh">Electronics</div><p class="t4-sp">Micro-leak detection in sensors, connectors and MEMS.</p><div class="t4-grid"><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Sealed Connector</div><div class="t4c-desc">Hermetic electrical connector against moisture and contaminants.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.1~0.5 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R700</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">MEMS Sensor</div><div class="t4c-desc">Ultra-precision micro-electromechanical sensor detection.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">1.0×10⁻⁶ Pa·m³/s</div><div class="t4c-equip"><span class="t4c-eq">LDS3000</span></div></div></div></div></div>
-    <div class="t4-sec" id="t4-home"><div class="t4-sh">Household Appliances</div><p class="t4-sp">Water, gas, HVAC and residential appliance systems.</p><div class="t4-grid"><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Gas Valve</div><div class="t4c-desc">Critical safety sealing in residential gas appliances.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.1 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">HVAC Compressor</div><div class="t4c-desc">Refrigerant compression in HVAC systems.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">1 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902</span></div></div></div></div></div>
-    <div class="t4-sec" id="t4-food"><div class="t4-sh">Food Industry</div><p class="t4-sp">Seal validation in packaging and preservation systems.</p><div class="t4-grid"><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Flexible Food Pouch</div><div class="t4c-desc">Hermetic seal validation in flexible packaging.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">5 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Bottle Cap</div><div class="t4c-desc">Beverage and food preservation cap testing.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">0.5 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R740SS</span></div></div></div></div></div>
-    <div class="t4-sec" id="t4-other"><div class="t4-sh">Other Industries</div><p class="t4-sp">Compressors, tanks, valves and diverse industrial systems.</p><div class="t4-grid"><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span><span class="t4c-m t4c-he">Helium</span></div></div><div class="t4c-name">Industrial Compressor</div><div class="t4c-desc">Gas compression in industrial process systems.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">5 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902</span></div></div></div><div class="t4-card"><div class="t4c-top"><div class="t4c-methods"><span class="t4c-m t4c-air">Air</span></div></div><div class="t4c-name">Pressure Tank</div><div class="t4c-desc">Pressurized gas or fluid storage vessel.</div><div class="t4c-bottom"><div class="t4c-lbl">Leak Reference</div><div class="t4c-leak">2 mL/min</div><div class="t4c-equip"><span class="t4c-eq">LS-R902</span></div></div></div></div></div>
-  </div>
-  <div class="t4-foot"><div><p>© 2025 Cosmo de México<br><a href="mailto:info@cosmodemexico.com">info@cosmodemexico.com</a> · <a href="mailto:japanese@cosmodemexico.com">japanese@cosmodemexico.com</a></p></div><div><p style="text-align:right">Theme 4 — Glassmorphism Dark Blue<br>Leak Test Applications by Industry</p></div></div>
-</div>
+    <div class="grid" id="grid-ev">
 
-<!-- ═══════════ THEME 5: TROPICAL ═══════════ -->
-<div class="page t5-page" style="display:none">
-  <div class="t5-hero">
-    <div><span class="t5-tag">Cosmo de México</span><h1>Leak Test<br>Applications</h1><p>Hermetic testing solutions for 7 industries. Find your component, method and equipment in seconds.</p></div>
-    <div class="t5-nums"><div class="t5-num"><span class="n">7</span><span class="l">Industries</span></div><div class="t5-num"><span class="n">60+</span><span class="l">Parts</span></div><div class="t5-num"><span class="n">Air</span><span class="l">Method</span></div><div class="t5-num"><span class="n">He</span><span class="l">Method</span></div></div>
-  </div>
-  <div class="t5-tabs">
-    <button class="t5-tab active" onclick="t5Tab('ev',this)">⚡ Electric EV</button>
-    <button class="t5-tab" onclick="t5Tab('auto',this)">🚗 Automotive</button>
-    <button class="t5-tab" onclick="t5Tab('med',this)">🏥 Medical</button>
-    <button class="t5-tab" onclick="t5Tab('elec',this)">💡 Electronics</button>
-    <button class="t5-tab" onclick="t5Tab('home',this)">🏠 Household</button>
-    <button class="t5-tab" onclick="t5Tab('food',this)">🥫 Food</button>
-    <button class="t5-tab" onclick="t5Tab('other',this)">⚙️ Other</button>
-  </div>
-  <div class="t5-content">
-    <div class="t5-sec active" id="t5-ev"><div class="t5-sh">Electric Vehicles (EV)</div><p class="t5-sp">Batteries, inverters, e-axle, fuel cell and thermal systems.</p><input class="t5-search" placeholder="Search component..." id="t5s-ev" oninput="t5Filter('ev')"><div class="t5-grid" id="t5g-ev">
-      <div class="t5-card"><span class="t5c-ind">Electric EV</span><div class="t5c-name">Inverter</div><div class="t5c-desc">Converts DC to AC. Critical hermetic protection against humidity.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.5 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902EV</span><span class="t5c-eq">LDS3000</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Electric EV</span><div class="t5c-name">Lithium Battery</div><div class="t5c-desc">EV batteries need maximum hermetic integrity for moisture and safety.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">1.0×10⁻⁵ Pa·m³/s</div></div><div class="t5c-methods"><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LDS3000</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Electric EV</span><div class="t5c-name">EV Battery Assembly</div><div class="t5c-desc">Complete battery assembly requiring hermetic validation in production.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">30 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902EV</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Electric EV</span><div class="t5c-name">E-Axle (Full Unit)</div><div class="t5c-desc">Integrated motor, transmission and electronics system in EVs.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">1 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902EV</span><span class="t5c-eq">LDS3000AQ</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Electric EV</span><div class="t5c-name">Converter</div><div class="t5c-desc">Regulates and transforms voltage in automotive electrical systems.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.3 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902EV</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Electric EV</span><div class="t5c-name">Fuel Cell Components</div><div class="t5c-desc">Hydrogen components requiring maximum hermetic sealing for safety.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">5.0×10⁻² Pa·m³/s</div></div><div class="t5c-methods"><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LDS3000AQ</span></div></div>
-    </div></div>
-    <div class="t5-sec" id="t5-auto"><div class="t5-sh">Automotive Industry</div><p class="t5-sp">Hermetic validation for engines, fuel systems, valves and brakes.</p><div class="t5-grid">
-      <div class="t5-card"><span class="t5c-ind">Automotive</span><div class="t5c-name">Fuel Injector</div><div class="t5c-desc">Doses and atomizes fuel in combustion engines. Micro-leak critical.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.005~0.4 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902</span><span class="t5c-eq">LDS3000AQ</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Automotive</span><div class="t5c-name">Brake Caliper</div><div class="t5c-desc">Applies hydraulic pressure on brake pads. Vehicle safety critical.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.5 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R740SH</span><span class="t5c-eq">LS-R902</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Automotive</span><div class="t5c-name">Fuel Tank</div><div class="t5c-desc">Safely stores gasoline or diesel. Critical for EVAP and safety.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.15 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902</span><span class="t5c-eq">LDS3000AQ</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Automotive</span><div class="t5c-name">Air Suspension Tank</div><div class="t5c-desc">Compressed air storage for pneumatic suspension. Ultra-precision.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">1.0×10⁻⁹ Pa·m³/s</div></div><div class="t5c-methods"><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LDS3000</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Automotive</span><div class="t5c-name">ABS System</div><div class="t5c-desc">Anti-lock braking system. Hydraulic and electronic hermetic integrity.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.1 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R740SS</span></div></div>
-      <div class="t5-card"><span class="t5c-ind">Automotive</span><div class="t5c-name">Cylinder Head</div><div class="t5c-desc">Seals combustion chamber. Houses valves and injectors.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">2–15 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-1881A</span><span class="t5c-eq">LS-R902</span></div></div>
-    </div></div>
-    <div class="t5-sec" id="t5-med"><div class="t5-sh">Medical Equipment</div><p class="t5-sp">High precision and sterility for critical medical devices.</p><div class="t5-grid"><div class="t5-card"><span class="t5c-ind">Medical</span><div class="t5c-name">Catheter</div><div class="t5c-desc">Flexible fluid administration. High integrity to avoid contamination.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.1 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R740SS</span></div></div><div class="t5-card"><span class="t5c-ind">Medical</span><div class="t5c-name">Endoscope</div><div class="t5c-desc">Medical visualization instrument. Sealed to prevent contamination.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.1 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R700</span></div></div><div class="t5-card"><span class="t5c-ind">Medical</span><div class="t5c-name">Lung Force Valve</div><div class="t5c-desc">Respiratory valve regulating airflow to lungs.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.5 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R700</span></div></div></div></div>
-    <div class="t5-sec" id="t5-elec"><div class="t5-sh">Electronics</div><p class="t5-sp">Sensors, connectors, MEMS and electronic devices.</p><div class="t5-grid"><div class="t5-card"><span class="t5c-ind">Electronics</span><div class="t5c-name">MEMS Sensor</div><div class="t5c-desc">Ultra-precision micro-electromechanical detection.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">1.0×10⁻⁶ Pa·m³/s</div></div><div class="t5c-methods"><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LDS3000</span></div></div><div class="t5-card"><span class="t5c-ind">Electronics</span><div class="t5c-name">Sealed Connector</div><div class="t5c-desc">Hermetic electrical connector against moisture and contaminants.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.1~0.5 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R700</span></div></div></div></div>
-    <div class="t5-sec" id="t5-home"><div class="t5-sh">Household Appliances</div><p class="t5-sp">Water, gas, HVAC and residential systems.</p><div class="t5-grid"><div class="t5-card"><span class="t5c-ind">Household</span><div class="t5c-name">Gas Valve</div><div class="t5c-desc">Critical safety sealing in residential gas appliances.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.1 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902</span></div></div><div class="t5-card"><span class="t5c-ind">Household</span><div class="t5c-name">HVAC Compressor</div><div class="t5c-desc">Refrigerant compression. Hermetic sealing essential.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">1 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902</span></div></div></div></div>
-    <div class="t5-sec" id="t5-food"><div class="t5-sh">Food Industry</div><p class="t5-sp">Packaging, containers and preservation seal validation.</p><div class="t5-grid"><div class="t5-card"><span class="t5c-ind">Food</span><div class="t5c-name">Flexible Food Pouch</div><div class="t5c-desc">Hermetic seal validation in flexible food packaging.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">5 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902</span></div></div><div class="t5-card"><span class="t5c-ind">Food</span><div class="t5c-name">Bottle Cap</div><div class="t5c-desc">Cap hermetic testing for beverage and food preservation.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.5 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R740SS</span></div></div></div></div>
-    <div class="t5-sec" id="t5-other"><div class="t5-sh">Other Industries</div><p class="t5-sp">Compressors, tanks, valves and industrial systems.</p><div class="t5-grid"><div class="t5-card"><span class="t5c-ind">Industrial</span><div class="t5c-name">Industrial Compressor</div><div class="t5c-desc">Gas compression in industrial process systems.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">5 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902</span></div></div><div class="t5-card"><span class="t5c-ind">Industrial</span><div class="t5c-name">Industrial Valve</div><div class="t5c-desc">Fluid flow control in industrial pipelines.</div><div class="t5c-leak-area"><span class="t5c-ll">Leak Reference</span><div class="t5c-lv">0.5~2 mL/min</div></div><div class="t5c-methods"><span class="t5c-m t5c-air">Air</span><span class="t5c-m t5c-he">Helium</span></div><div class="t5c-equip"><span class="t5c-eq">LS-R902</span></div></div></div></div>
-  </div>
-  <div class="t5-foot"><div><span class="t5fl">Cosmo de México</span><p>info@cosmodemexico.com · servicioacliente@cosmodemexico.com</p></div><div style="text-align:right"><p>Theme 5 — Tropical Gradient<br>Leak Test Applications by Industry</p></div></div>
-</div>
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Inverter</div>
+        <div class="card-desc">Converts DC to AC in EVs. Critical hermetic protection against humidity and contamination of electronic components.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span><span class="ceq">LDS3000</span></div>
+      </div>
 
-<!-- ═══════════ THEME 6: MINIMAL DARK LINE ═══════════ -->
-<div class="page t6-page" style="display:none">
-  <div class="t6-top">
-    <div class="t6-top-inner">
-      <p class="t6-sup">Cosmo de México — Industrial Leak Testing</p>
-      <h1>Leak Test<br><span class="t6-hl">Applications</span><br>by Industry</h1>
-      <p>Discover how hermetic testing applies across industries to ensure quality, safety and regulatory compliance. Select your sector below.</p>
-      <div class="t6-statrow">
-        <div class="t6-stat"><span class="sn">7</span><span class="sl">Sectors</span></div>
-        <div class="t6-stat"><span class="sn">60+</span><span class="sl">Components</span></div>
-        <div class="t6-stat"><span class="sn">Air/He</span><span class="sl">Test Methods</span></div>
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Inverter Housing</div>
+        <div class="card-desc">Protects the inverter against dust, humidity and external agents. Seal integrity is critical for long-term reliability.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.3 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Converter</div>
+        <div class="card-desc">Regulates and transforms voltage levels in automotive electrical systems. Essential sealing for operational safety.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.3 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Converter Housing</div>
+        <div class="card-desc">Protects converter circuits from contamination and electrical failure. Hermetic integrity ensures component longevity.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.4 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Converter Micro-leak Test</div>
+        <div class="card-desc">High-precision application to detect micro-leaks in sealed electronic systems. Ultra-fine detection required.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">2.5×10⁻⁵ Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Separator</div>
+        <div class="card-desc">Separates fluids or gases in electrical or thermal systems. Proper sealing prevents cross-contamination.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Base Plate</div>
+        <div class="card-desc">Structural plate supporting electronic or mechanical components. Adequate sealing prevents moisture ingress and failures.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1.5×10⁻² Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Lithium Battery</div>
+        <div class="card-desc">EV batteries require maximum hermetic integrity to prevent moisture ingress and critical safety risks.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1.0×10⁻⁵ Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Battery Cap</div>
+        <div class="card-desc">Protects the battery against external contaminants and ensures system sealing integrity in production.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">E-Axle — Water Channel</div>
+        <div class="card-desc">Cooling channels requiring hermetic tests to prevent refrigerant leaks and maintain thermal efficiency.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">E-Axle — Full Unit</div>
+        <div class="card-desc">Integrated system combining motor, transmission and electronics in electric vehicles. Complete assembly validation.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">EV Battery Assembly</div>
+        <div class="card-desc">Complete battery assembly requiring hermetic validation during production. Ensures safety of the entire pack.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">30 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">EV Motor Assembly</div>
+        <div class="card-desc">Complete electric motor requiring sealing for thermal and electrical protection in EV drive systems.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">12 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">EV Motor Housing</div>
+        <div class="card-desc">Housing protecting the motor against external environmental conditions including moisture, dust and temperature.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">34 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">EV Motor — Water Channel</div>
+        <div class="card-desc">Motor cooling channels that must remain completely leak-free for optimal thermal management.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902EV</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Fuel Cell Battery Cover</div>
+        <div class="card-desc">Protection for hydrogen systems requiring high-precision testing. Safety critical in fuel cell vehicles.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">6.0×10⁻⁴ Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Fuel Cell Components</div>
+        <div class="card-desc">Hydrogen-operating components requiring maximum hermetic sealing for safety and performance.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">5.0×10⁻² Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+    </div><!-- /grid-ev -->
+  </div><!-- /sec-ev -->
+
+  <!-- ────── AUTOMOTIVE ────── -->
+  <div class="section" id="sec-auto">
+    <div class="sec-hdr">
+      <h2>Automotive Industry</h2>
+      <p>Hermetic validation for engines, fuel systems, valves, brakes and mechanical components. Complete guide for automotive leak testing.</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="srch-auto" placeholder="Search component..." oninput="filterCards('auto')">
+      </div>
+      <div class="filter-btns">
+        <button class="fb on" onclick="filterMethod('auto','all',this)">All</button>
+        <button class="fb"    onclick="filterMethod('auto','air',this)">Air Only</button>
+        <button class="fb"    onclick="filterMethod('auto','he',this)">Helium Only</button>
+      </div>
+    </div>
+    <div class="grid" id="grid-auto">
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Automotive Axle</div>
+        <div class="card-desc">Transmits torque from differential to wheels. Critical sealing to avoid lubricant loss and transmission failure.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">2.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Fuel Injector</div>
+        <div class="card-desc">Doses and atomizes fuel inside combustion engines. Hermetic integrity is critical for engine performance and emissions.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.005 ~ 0.4 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Intake Manifold</div>
+        <div class="card-desc">Distributes air to engine cylinders. Critical to prevent uncontrolled air entry and loss of engine performance.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 ~ 4 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Water Pump</div>
+        <div class="card-desc">Circulates coolant through engine and radiator. Critical hermetic sealing for thermal management and preventing overheating.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.25 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Air Suspension Tank</div>
+        <div class="card-desc">Stores compressed air for pneumatic suspension systems. Ultra-precision hermetic test ensures ride quality and system safety.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1.0×10⁻⁹ Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Extension Housing</div>
+        <div class="card-desc">Structural transmission casing protecting internal components. Hermetic sealing prevents lubricant leaks and contamination.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Engine Assembly</div>
+        <div class="card-desc">Complete engine assembly integrating combustion, lubrication and cooling systems. Multi-subsystem hermetic validation.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Oil Pan</div>
+        <div class="card-desc">Stores engine lubricating oil. Critical sealing to prevent lubrication loss, engine damage and contamination.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">EVAP Canister</div>
+        <div class="card-desc">Captures and stores fuel vapors to prevent atmospheric release. Critical for emissions compliance and EVAP system integrity.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">10 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">High Pressure Valve</div>
+        <div class="card-desc">Regulates fluid flow in high-pressure fuel, gas or hydraulic systems. Critical sealing to prevent dangerous leaks.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1.0×10⁻³ Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Muffler (Silencer)</div>
+        <div class="card-desc">Reduces combustion noise in the exhaust system. Hermetic sealing prevents leaks affecting engine performance and emissions.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">20 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Vehicle Camera (ADAS)</div>
+        <div class="card-desc">Backup/ADAS cameras exposed to humidity, dust and temperature changes. IP-rated sealing critical for reliable operation.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.25 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R740ZL</span><span class="ceq">LZ-R155</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Automotive Connector</div>
+        <div class="card-desc">Electrical interface transmitting energy and signals between vehicle systems. Prevents moisture ingress and signal failure.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.2 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Cylinder Block</div>
+        <div class="card-desc">Main engine structure housing cylinders, oil and cooling channels. Sealing is essential under high pressure and temperature.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">10 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-1881A</span><span class="ceq">LS-R902</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Cylinder Head</div>
+        <div class="card-desc">Seals the combustion chamber, housing valves, spark plugs and injectors. Integrates oil and coolant channels.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">2 – 15 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-1881A</span><span class="ceq">LS-R902</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Heat Exchanger</div>
+        <div class="card-desc">Transfers thermal energy between fluids without mixing. Hermetic sealing prevents cross-contamination and thermal efficiency loss.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.2 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Fuel Tank</div>
+        <div class="card-desc">Safely stores gasoline or diesel. Hermetic sealing critical for EVAP system compliance and preventing fire hazards.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.15 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Brake Caliper</div>
+        <div class="card-desc">Applies hydraulic pressure on brake pads to stop the vehicle. Hermetic sealing is safety-critical to prevent brake fluid leaks.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R740SH</span><span class="ceq">LS-R902</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Radiator</div>
+        <div class="card-desc">Dissipates engine coolant heat via air exchange. Operates under variable pressure and temperature cycles.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1.7×10⁻³ Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">ABS System</div>
+        <div class="card-desc">Anti-lock Braking System prevents wheel lockup. Integrates hydraulic and electronic components requiring hermetic integrity.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R740SS</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">SCR Sensor</div>
+        <div class="card-desc">Monitors NOx emissions in Selective Catalytic Reduction systems. Exposed to harsh chemical and thermal conditions.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">2.1×10⁻⁴ Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000</span></div>
+      </div>
+
+    </div><!-- /grid-auto -->
+  </div><!-- /sec-auto -->
+
+  <!-- ────── MEDICAL ────── -->
+  <div class="section" id="sec-med">
+    <div class="sec-hdr">
+      <h2>Medical Equipment</h2>
+      <p>Leak control for critical medical devices requiring high precision, sterility and regulatory compliance. Patient safety depends on hermetic integrity.</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="srch-med" placeholder="Search component..." oninput="filterCards('med')">
+      </div>
+    </div>
+    <div class="grid" id="grid-med">
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Catheter</div>
+        <div class="card-desc">Flexible medical device for administering or draining fluids inside the body. High integrity essential to avoid contamination.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R740SS</span><span class="ceq">LS-1881A</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Cannula</div>
+        <div class="card-desc">Tube used for administration of fluids or gases in medical procedures. Hermetic sealing is fundamental for patient safety.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Stainless Steel Tube</div>
+        <div class="card-desc">Metal conduit used in medical equipment. Requires pressure resistance and adequate hermetic sealing.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">DigiChamber</div>
+        <div class="card-desc">Chamber used in medical devices for fluid flow measurement or control. Precise sealing required for accurate readings.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Dent Ject Nozzle</div>
+        <div class="card-desc">Dental equipment nozzle for precise fluid application. Hermetic integrity prevents contamination in clinical procedures.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.3 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Endoscope</div>
+        <div class="card-desc">Medical instrument for internal visualization. Sealed to prevent contamination, fluid ingress and functional damage.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Lung Force Valve</div>
+        <div class="card-desc">Valve in respiratory equipment that regulates airflow to the lungs. Critical sealing for patient respiratory safety.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Panel</div>
+        <div class="card-desc">Medical equipment panel requiring hermetic sealing to protect internal components from contamination and moisture.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.09 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R740SS</span><span class="ceq">LS-1881A</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Ventilation Filter</div>
+        <div class="card-desc">Controls air passage in medical devices, preventing contaminants from reaching sensitive components or patients.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Micro-needle Port</div>
+        <div class="card-desc">High-precision port for microinjection in medical applications. Ultra-fine hermetic control required.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.2 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Magnetic Gear Pump</div>
+        <div class="card-desc">Fluid transfer pump used in medical or pharmaceutical applications. Hermetic sealing prevents contamination.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.3 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Regulator</div>
+        <div class="card-desc">Controls pressure or flow in medical systems. Precise sealing required for consistent and safe operation.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">3 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+    </div><!-- /grid-med -->
+  </div><!-- /sec-med -->
+
+  <!-- ────── ELECTRONICS ────── -->
+  <div class="section" id="sec-elec">
+    <div class="sec-hdr">
+      <h2>Electronic Components</h2>
+      <p>Micro-leak detection in sensors, connectors, MEMS and sealed electronic devices. High-precision testing ensures reliability under harsh conditions.</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="srch-elec" placeholder="Search component..." oninput="filterCards('elec')">
+      </div>
+    </div>
+    <div class="grid" id="grid-elec">
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Sealed Connector</div>
+        <div class="card-desc">Hermetically sealed electrical connector designed to prevent moisture and contaminants from reaching internal contacts.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.1 ~ 0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">MEMS Sensor</div>
+        <div class="card-desc">Micro-electromechanical sensor requiring ultra-precision leak detection. Any ingress compromises sensor accuracy.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1.0×10⁻⁶ Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Electronic Module Housing</div>
+        <div class="card-desc">Sealed enclosure for control modules requiring IP-rated sealing against moisture, dust and chemical exposure.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.3 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R740ZL</span><span class="ceq">LZ-R155</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Pressure Sensor</div>
+        <div class="card-desc">Sensor measuring pressure in industrial or automotive applications. Hermetic integrity ensures accurate, long-term readings.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.2 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Relay Housing</div>
+        <div class="card-desc">Protective housing for industrial or automotive relays. Sealing prevents arcing, oxidation and premature failure.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ────── HOUSEHOLD ────── -->
+  <div class="section" id="sec-home">
+    <div class="sec-hdr">
+      <h2>Household Appliances</h2>
+      <p>Tests in water, gas, HVAC and home appliance systems. Ensures safety and reliability of residential products.</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="srch-home" placeholder="Search component..." oninput="filterCards('home')">
+      </div>
+    </div>
+    <div class="grid" id="grid-home">
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Gas Valve</div>
+        <div class="card-desc">Controls gas flow in residential appliances such as stoves and heaters. Hermetic sealing is safety-critical.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">HVAC Compressor</div>
+        <div class="card-desc">Compresses refrigerant in HVAC systems. Hermetic sealing is essential to prevent refrigerant loss and system failure.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Water Meter</div>
+        <div class="card-desc">Measures water flow in residential or commercial systems. Proper sealing ensures accurate measurement and no leakage.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Washing Machine Pump</div>
+        <div class="card-desc">Water circulation pump in washing machines. Leak-free operation prevents water damage and appliance failure.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">2 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Refrigerator Compressor</div>
+        <div class="card-desc">Compresses refrigerant in household refrigerators. Hermetic integrity ensures energy efficiency and appliance longevity.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Gas Pipe Joint</div>
+        <div class="card-desc">Joints in residential gas piping systems. Critical hermetic sealing to prevent gas leaks and explosion hazards.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.2 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ────── FOOD ────── -->
+  <div class="section" id="sec-food">
+    <div class="sec-hdr">
+      <h2>Food Industry</h2>
+      <p>Seal validation in packaging, containers and preservation systems. Hermetic integrity maintains product freshness and meets food safety regulations.</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="srch-food" placeholder="Search component..." oninput="filterCards('food')">
+      </div>
+    </div>
+    <div class="grid" id="grid-food">
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Flexible Food Pouch</div>
+        <div class="card-desc">Hermetic seal validation in flexible packaging to maintain product freshness, prevent contamination and ensure shelf life.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Food Can Seal</div>
+        <div class="card-desc">Metal container seal validation to ensure preservation integrity and prevent contamination of canned products.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Bottle Cap</div>
+        <div class="card-desc">Cap hermetic testing to ensure preservation of beverages and food products. Critical for consumer safety compliance.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R740SS</span><span class="ceq">LS-1881A</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Tray Seal</div>
+        <div class="card-desc">Hermetic seal validation in rigid tray packaging for fresh produce, meat and ready meals. Prevents spoilage.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">3 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Modified Atmosphere Pack</div>
+        <div class="card-desc">MAP packaging seal testing to validate gas composition retention for extended product shelf life.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">2 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ────── OTHER ────── -->
+  <div class="section" id="sec-other">
+    <div class="sec-hdr">
+      <h2>Other Industries</h2>
+      <p>Compressors, tanks, valves and diverse industrial systems. Hermetic testing ensures safety and performance across all sectors.</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="srch-other" placeholder="Search component..." oninput="filterCards('other')">
+      </div>
+    </div>
+    <div class="grid" id="grid-other">
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Industrial Compressor</div>
+        <div class="card-desc">Compresses gas or air in industrial process systems. Hermetic sealing critical for pressure retention and safety.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Pressure Tank</div>
+        <div class="card-desc">Industrial vessel for storing pressurized gases or fluids. Hermetic integrity ensures safe operation and regulatory compliance.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">2 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LS-R700</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Industrial Valve</div>
+        <div class="card-desc">Controls fluid flow in pipelines and industrial process systems. Critical sealing prevents costly process interruptions.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 ~ 2 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000</span></div>
+      </div>
+
+      <div class="card" data-m="he">
+        <div class="card-methods"><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Hydraulic Cylinder</div>
+        <div class="card-desc">Actuator converting hydraulic pressure into linear motion. Seal integrity is critical for force transmission efficiency.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1.0×10⁻³ Pa·m³/s</span></div>
+        <div class="card-equip"><span class="ceq">LDS3000</span><span class="ceq">LS-R902</span></div>
+      </div>
+
+      <div class="card" data-m="air">
+        <div class="card-methods"><span class="cm cm-air">Air</span></div>
+        <div class="card-name">Pipeline Fitting</div>
+        <div class="card-desc">Connects sections of pipelines in water, gas and industrial fluid transport. Hermetic sealing prevents leaks.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">1 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R700</span><span class="ceq">LS-1866</span></div>
+      </div>
+
+      <div class="card" data-m="air he">
+        <div class="card-methods"><span class="cm cm-air">Air</span><span class="cm cm-he">Helium</span></div>
+        <div class="card-name">Heat Pump</div>
+        <div class="card-desc">Transfers heat between indoor and outdoor environments. Hermetic integrity prevents refrigerant leaks and efficiency loss.</div>
+        <div class="card-leak"><span class="cl-label">Leak Reference</span><span class="cl-val">0.5 mL/min</span></div>
+        <div class="card-equip"><span class="ceq">LS-R902</span><span class="ceq">LDS3000AQ</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WHY LEAK TESTS MATTER -->
+  <div class="why-band">
+    <div>
+      <h3>Why Are Leak Tests Important?</h3>
+      <p>Hermetic testing allows detection of invisible leaks that can affect product performance, safety and lifespan. Depending on the industry, methods such as air, helium or hydrogen are used to ensure reliable results in both production and laboratory environments.</p>
+    </div>
+    <div class="why-pts">
+      <div class="why-pt">
+        <div class="wp-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="wp-txt"><strong>Product Safety</strong><span>Prevent dangerous leaks in fuel, gas and medical systems</span></div>
+      </div>
+      <div class="why-pt">
+        <div class="wp-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="wp-txt"><strong>Precision</strong><span>From rapid inline tests to high-precision micro-leak detection</span></div>
+      </div>
+      <div class="why-pt">
+        <div class="wp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="wp-txt"><strong>Compliance</strong><span>Meet ISO, IATF and industry-specific quality standards</span></div>
+      </div>
+      <div class="why-pt">
+        <div class="wp-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div class="wp-txt"><strong>All Industries</strong><span>EV, Automotive, Medical, Electronics, Food and more</span></div>
       </div>
     </div>
   </div>
-  <div class="t6-nav">
-    <button class="t6-tab active" onclick="t6Tab('ev',this)">⚡ Electric EV</button>
-    <button class="t6-tab" onclick="t6Tab('auto',this)">🚗 Automotive</button>
-    <button class="t6-tab" onclick="t6Tab('med',this)">🏥 Medical</button>
-    <button class="t6-tab" onclick="t6Tab('elec',this)">💡 Electronics</button>
-    <button class="t6-tab" onclick="t6Tab('home',this)">🏠 Household</button>
-    <button class="t6-tab" onclick="t6Tab('food',this)">🥫 Food</button>
-    <button class="t6-tab" onclick="t6Tab('other',this)">⚙️ Other</button>
-  </div>
-  <div class="t6-body">
-    <div class="t6-sec active" id="t6-ev">
-      <div class="t6-sh2">Electric Vehicles (EV)</div>
-      <p class="t6-shp">Batteries, inverters, e-axle, fuel cell and thermal management systems.</p>
-      <input class="t6-search" placeholder="Search component..." id="t6s-ev" oninput="t6Filter('ev')">
-      <table class="t6-table" id="t6t-ev"><thead><tr><th>Component</th><th>Leak Reference</th><th>Method</th><th>Equipment</th></tr></thead><tbody>
-        <tr><td class="t6-comp"><strong>Inverter</strong><span>Converts DC to AC. Critical hermetic protection against humidity.</span></td><td class="t6-lv">0.5 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902EV</span><span class="t6-eqt">LDS3000</span></td></tr>
-        <tr><td class="t6-comp"><strong>Inverter Housing</strong><span>Protects inverter against dust and humidity.</span></td><td class="t6-lv">0.3 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902EV</span><span class="t6-eqt">LDS3000</span></td></tr>
-        <tr><td class="t6-comp"><strong>Lithium Battery</strong><span>Maximum hermetic integrity preventing moisture and safety risks.</span></td><td class="t6-lv">1.0×10⁻⁵ Pa·m³/s</td><td><span class="t6-m t6-mhe">Helium</span></td><td><span class="t6-eqt">LDS3000</span></td></tr>
-        <tr><td class="t6-comp"><strong>Battery Cap</strong><span>Protects battery against external contaminants.</span></td><td class="t6-lv">0.5 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R902EV</span></td></tr>
-        <tr><td class="t6-comp"><strong>E-Axle (Water Channel)</strong><span>Cooling channels. Prevents refrigerant leaks.</span></td><td class="t6-lv">5 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R902EV</span></td></tr>
-        <tr><td class="t6-comp"><strong>E-Axle (Full Unit)</strong><span>Integrated motor, transmission and electronics.</span></td><td class="t6-lv">1 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902EV</span><span class="t6-eqt">LDS3000AQ</span></td></tr>
-        <tr><td class="t6-comp"><strong>EV Battery Assembly</strong><span>Complete battery assembly validation in production.</span></td><td class="t6-lv">30 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R902EV</span></td></tr>
-        <tr><td class="t6-comp"><strong>EV Motor Assembly</strong><span>Complete electric motor thermal and electrical protection.</span></td><td class="t6-lv">12 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R902EV</span></td></tr>
-        <tr><td class="t6-comp"><strong>Fuel Cell Battery Cover</strong><span>Hydrogen system protection. High-precision testing.</span></td><td class="t6-lv">6.0×10⁻⁴ Pa·m³/s</td><td><span class="t6-m t6-mhe">Helium</span></td><td><span class="t6-eqt">LDS3000</span></td></tr>
-        <tr><td class="t6-comp"><strong>Fuel Cell Components</strong><span>Hydrogen components. Maximum hermetic sealing for safety.</span></td><td class="t6-lv">5.0×10⁻² Pa·m³/s</td><td><span class="t6-m t6-mhe">Helium</span></td><td><span class="t6-eqt">LDS3000AQ</span></td></tr>
-      </tbody></table>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <div>
+      <h4>Which component do you need to validate?</h4>
+      <p>We help you select the ideal method and equipment for your application.</p>
     </div>
-    <div class="t6-sec" id="t6-auto"><div class="t6-sh2">Automotive Industry</div><p class="t6-shp">Hermetic validation for engines, fuel systems, valves and brakes.</p><input class="t6-search" placeholder="Search..." id="t6s-auto" oninput="t6Filter('auto')"><table class="t6-table" id="t6t-auto"><thead><tr><th>Component</th><th>Leak Reference</th><th>Method</th><th>Equipment</th></tr></thead><tbody>
-      <tr><td class="t6-comp"><strong>Fuel Injector</strong><span>Doses and atomizes fuel. Critical hermetic integrity.</span></td><td class="t6-lv">0.005~0.4 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902</span><span class="t6-eqt">LDS3000AQ</span></td></tr>
-      <tr><td class="t6-comp"><strong>Intake Manifold</strong><span>Distributes air to cylinders. Prevents uncontrolled air entry.</span></td><td class="t6-lv">0.5~4 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902</span><span class="t6-eqt">LDS3000AQ</span></td></tr>
-      <tr><td class="t6-comp"><strong>Water Pump</strong><span>Circulates engine coolant. Critical thermal management.</span></td><td class="t6-lv">0.25 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902</span><span class="t6-eqt">LDS3000AQ</span></td></tr>
-      <tr><td class="t6-comp"><strong>Air Suspension Tank</strong><span>Compressed air for pneumatic suspension. Ultra-precision.</span></td><td class="t6-lv">1.0×10⁻⁹ Pa·m³/s</td><td><span class="t6-m t6-mhe">Helium</span></td><td><span class="t6-eqt">LDS3000</span></td></tr>
-      <tr><td class="t6-comp"><strong>Cylinder Block</strong><span>Main engine structure under high pressure and temperature.</span></td><td class="t6-lv">10 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-1881A</span><span class="t6-eqt">LS-R902</span></td></tr>
-      <tr><td class="t6-comp"><strong>Cylinder Head</strong><span>Seals combustion chamber. Houses valves, spark plugs and injectors.</span></td><td class="t6-lv">2–15 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-1881A</span><span class="t6-eqt">LS-R902</span></td></tr>
-      <tr><td class="t6-comp"><strong>Brake Caliper</strong><span>Hydraulic brake pressure. Vehicle safety critical.</span></td><td class="t6-lv">0.5 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R740SH</span><span class="t6-eqt">LS-R902</span></td></tr>
-      <tr><td class="t6-comp"><strong>Fuel Tank</strong><span>Stores gasoline or diesel. EVAP emissions and safety.</span></td><td class="t6-lv">0.15 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902</span><span class="t6-eqt">LDS3000AQ</span></td></tr>
-      <tr><td class="t6-comp"><strong>ABS System</strong><span>Anti-lock braking. Hydraulic and electronic hermetic integrity.</span></td><td class="t6-lv">0.1 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R740SS</span></td></tr>
-      <tr><td class="t6-comp"><strong>Radiator</strong><span>Dissipates engine coolant heat under variable pressure.</span></td><td class="t6-lv">1.7×10⁻³ Pa·m³/s</td><td><span class="t6-m t6-mhe">Helium</span></td><td><span class="t6-eqt">LDS3000AQ</span></td></tr>
-    </tbody></table></div>
-    <div class="t6-sec" id="t6-med"><div class="t6-sh2">Medical Equipment</div><p class="t6-shp">High precision and sterility compliance for critical medical devices.</p><table class="t6-table"><thead><tr><th>Component</th><th>Leak Reference</th><th>Method</th><th>Equipment</th></tr></thead><tbody><tr><td class="t6-comp"><strong>Catheter</strong><span>Flexible fluid administration. High integrity required.</span></td><td class="t6-lv">0.1 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R740SS</span></td></tr><tr><td class="t6-comp"><strong>Cannula</strong><span>Tube for fluid or gas administration.</span></td><td class="t6-lv">0.5 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R902</span></td></tr><tr><td class="t6-comp"><strong>Endoscope</strong><span>Medical visualization instrument. Sealed to prevent contamination.</span></td><td class="t6-lv">0.1 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R700</span></td></tr><tr><td class="t6-comp"><strong>Lung Force Valve</strong><span>Respiratory valve regulating airflow to lungs.</span></td><td class="t6-lv">0.5 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R700</span></td></tr><tr><td class="t6-comp"><strong>Ventilation Filter</strong><span>Air passage control preventing contaminants in medical devices.</span></td><td class="t6-lv">0.1 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R700</span></td></tr><tr><td class="t6-comp"><strong>Regulator</strong><span>Controls pressure or flow in medical systems.</span></td><td class="t6-lv">3 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R700</span></td></tr></tbody></table></div>
-    <div class="t6-sec" id="t6-elec"><div class="t6-sh2">Electronic Components</div><p class="t6-shp">Sensors, connectors, MEMS and electronic devices.</p><table class="t6-table"><thead><tr><th>Component</th><th>Leak Reference</th><th>Method</th><th>Equipment</th></tr></thead><tbody><tr><td class="t6-comp"><strong>Sealed Connector</strong><span>Hermetic connector against moisture.</span></td><td class="t6-lv">0.1~0.5 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R700</span></td></tr><tr><td class="t6-comp"><strong>MEMS Sensor</strong><span>Ultra-precision micro-electromechanical sensor.</span></td><td class="t6-lv">1.0×10⁻⁶ Pa·m³/s</td><td><span class="t6-m t6-mhe">Helium</span></td><td><span class="t6-eqt">LDS3000</span></td></tr></tbody></table></div>
-    <div class="t6-sec" id="t6-home"><div class="t6-sh2">Household Appliances</div><p class="t6-shp">Water, gas, HVAC and residential systems.</p><table class="t6-table"><thead><tr><th>Component</th><th>Leak Reference</th><th>Method</th><th>Equipment</th></tr></thead><tbody><tr><td class="t6-comp"><strong>Gas Valve</strong><span>Critical safety sealing in residential gas appliances.</span></td><td class="t6-lv">0.1 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R902</span></td></tr><tr><td class="t6-comp"><strong>HVAC Compressor</strong><span>Refrigerant compression. Hermetic sealing essential.</span></td><td class="t6-lv">1 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902</span></td></tr></tbody></table></div>
-    <div class="t6-sec" id="t6-food"><div class="t6-sh2">Food Industry</div><p class="t6-shp">Packaging, containers and preservation systems.</p><table class="t6-table"><thead><tr><th>Component</th><th>Leak Reference</th><th>Method</th><th>Equipment</th></tr></thead><tbody><tr><td class="t6-comp"><strong>Flexible Food Pouch</strong><span>Hermetic seal validation in flexible food packaging.</span></td><td class="t6-lv">5 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R902</span></td></tr><tr><td class="t6-comp"><strong>Bottle Cap</strong><span>Beverage and food preservation cap testing.</span></td><td class="t6-lv">0.5 mL/min</td><td><span class="t6-m t6-mair">Air</span></td><td><span class="t6-eqt">LS-R740SS</span></td></tr></tbody></table></div>
-    <div class="t6-sec" id="t6-other"><div class="t6-sh2">Other Industries</div><p class="t6-shp">Compressors, tanks, valves and industrial systems.</p><table class="t6-table"><thead><tr><th>Component</th><th>Leak Reference</th><th>Method</th><th>Equipment</th></tr></thead><tbody><tr><td class="t6-comp"><strong>Industrial Compressor</strong><span>Gas compression in industrial process systems.</span></td><td class="t6-lv">5 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902</span></td></tr><tr><td class="t6-comp"><strong>Industrial Valve</strong><span>Fluid flow control in pipelines and industrial systems.</span></td><td class="t6-lv">0.5~2 mL/min</td><td><span class="t6-m t6-mair">Air</span><span class="t6-m t6-mhe">He</span></td><td><span class="t6-eqt">LS-R902</span></td></tr></tbody></table></div>
+    <div class="cta-btns">
+      <a href="contact.html" class="cta-btn primary">Request Advisory</a>
+      <a href="Leakabout.html" class="cta-btn secondary" target="_blank">Learn the Fundamentals</a>
+    </div>
   </div>
-  <div class="t6-foot"><div><p>© 2025 Cosmo de México | <a href="mailto:info@cosmodemexico.com">info@cosmodemexico.com</a><br><a href="mailto:servicioacliente@cosmodemexico.com">servicioacliente@cosmodemexico.com</a></p></div><p>Theme 6 — Clean Minimal | Leak Test Applications by Industry</p></div>
+
+</div><!-- /content -->
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
 </div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate history</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+
+</footer>  
 
 <script>
-// THEME SWITCHER
-const themes={t3:'t3',t4:'t4',t5:'t5',t6:'t6'};
-function setTheme(t,btn){
-  document.querySelectorAll('.ts-btn').forEach(b=>b.classList.remove('active'));
+/* ─── TAB SYSTEM ─── */
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.t-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
   btn.classList.add('active');
-  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
-  document.querySelector('.'+t+'-page').style.display='block';
-  // Apply body class
-  document.body.className=t;
-}
-// T3 FUNCS
-function t3Tab(id,btn){
-  document.querySelectorAll('.t3-sec').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.t3-tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById('t3-'+id).classList.add('active');
-  btn.classList.add('active');
-}
-function t3Filter(id){
-  const q=(document.getElementById('t3s-'+id)||{}).value;
-  if(!q)return;
-  document.querySelectorAll('#t3t-'+id+' tbody tr').forEach(r=>{
-    r.style.display=r.textContent.toLowerCase().includes(q.toLowerCase())?'':'none';
+  // Reset search
+  const inp = document.getElementById('srch-' + id);
+  if (inp) inp.value = '';
+  // Reset filter btns
+  document.querySelectorAll('#sec-' + id + ' .fb').forEach((f, i) => {
+    f.classList.toggle('on', i === 0);
   });
+  // Show all cards
+  document.querySelectorAll('#grid-' + id + ' .card').forEach(c => c.style.display = '');
+  // Scroll to tabs
+  document.getElementById('tabsBar').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
-// T4 FUNCS
-function t4Tab(id,btn){
-  document.querySelectorAll('.t4-sec').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.t4-tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById('t4-'+id).classList.add('active');
-  btn.classList.add('active');
+
+function jumpTab(id) {
+  const btn = document.getElementById('btn-' + id);
+  showTab(id, btn);
+  document.getElementById('tabsBar').scrollIntoView({ behavior: 'smooth' });
 }
-function t4Filter(id){
-  const q=document.getElementById('t4s-'+id).value.toLowerCase();
-  document.querySelectorAll('#t4g-'+id+' .t4-card').forEach(c=>{
-    c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';
-  });
-}
-// T5 FUNCS
-function t5Tab(id,btn){
-  document.querySelectorAll('.t5-sec').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.t5-tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById('t5-'+id).classList.add('active');
-  btn.classList.add('active');
-}
-function t5Filter(id){
-  const q=document.getElementById('t5s-'+id).value.toLowerCase();
-  document.querySelectorAll('#t5g-'+id+' .t5-card').forEach(c=>{
-    c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';
-  });
-}
-// T6 FUNCS
-function t6Tab(id,btn){
-  document.querySelectorAll('.t6-sec').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.t6-tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById('t6-'+id).classList.add('active');
-  btn.classList.add('active');
-}
-function t6Filter(id){
-  const q=(document.getElementById('t6s-'+id)||{}).value;
-  if(!q)return;
-  document.querySelectorAll('#t6t-'+id+' tbody tr').forEach(r=>{
-    r.style.display=r.textContent.toLowerCase().includes(q.toLowerCase())?'':'none';
+
+/* ─── SEARCH ─── */
+function filterCards(id) {
+  const q = (document.getElementById('srch-' + id)?.value || '').toLowerCase();
+  document.querySelectorAll('#grid-' + id + ' .card').forEach(card => {
+    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
   });
 }
 
+/* ─── METHOD FILTER ─── */
+function filterMethod(tabId, method, btn) {
+  btn.closest('.filter-btns').querySelectorAll('.fb').forEach(f => f.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('#grid-' + tabId + ' .card').forEach(card => {
+    if (method === 'all') {
+      card.style.display = '';
+    } else {
+      card.style.display = (card.dataset.m || '').includes(method) ? '' : 'none';
+    }
+  });
+}
+
+/* ─── CARD ENTRANCE ANIMATION ─── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }, i * 55);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+function observeCards() {
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(18px)';
+    card.style.transition = 'opacity 0.45s, transform 0.45s';
+    observer.observe(card);
+  });
+}
+observeCards();
+
+
+
+
+
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+  const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  
 const dropdowns = document.querySelectorAll(".dropdown");
 
 dropdowns.forEach(dropdown => {
@@ -615,4 +1670,4 @@ document.addEventListener("click", () => {
 });
 </script>
 </body>
-</html
+</html>
