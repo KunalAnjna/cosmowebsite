@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leak Test Machines | Cosmo Instruments India</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   
+  <style>
+    /* ===================== RESET ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; }
+.navbar{
+    width: 100%;
+    min-height: 70px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    font-size:20px;
+}
+
+
+/* LOGO */
+.nav-logo{
+    width: 160px;
+    height: 55px;
+}
+
+.logo{
+    width: 100%;
+    height: 100%;
+    background-image: url(cosmologo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover{
+    transform: scale(1.05);
+}
+
+/* MENU */
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+/* LINKS */
+.menu a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* UNDERLINE */
+.menu a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: rgb(129, 129, 218);
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s;
+}
+
+.menu a:hover::after{
+    width: 100%;
+}
+
+.menu a:hover{
+    color: rgb(129, 129, 218);
+}
+
+/* DROPDOWN */
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background: white;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(5px);
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+
+.dropdown.active .dropdown-menu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+.dropdown-menu p{
+    padding: 10px;
+}
+
+.dropdown-menu p:hover{
+    background: #f2f2f2;
+}
+
+/* BUTTON */
+button{
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 14px;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background: white;
+    color: #FF4742;
+    transform: translateY(2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+#button-tag{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#button-tag:hover{
+    color: #FF4742;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+/* ========================= */
+/* 📱 MOBILE VIEW */
+/* ========================= */
+
+/* ========================= */
+/* 📱 MOBILE SAME LINE NAVBAR */
+/* ========================= */
+
+@media (max-width: 767px){
+
+    
+    .navbar{ 
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 25px 0 10px;   /* right side extra gap */
+        overflow-x: auto;
+    }
+
+    /* scrollbar hide */
+    
+    .menu::-webkit-scrollbar{
+        display: none;
+    }
+
+    .nav-logo{
+        width: 120px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .menu{
+        width: 100%;
+        margin-bottom: 3px;
+        padding-right: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 15px;
+        flex-shrink: 0;
+        
+    }
+
+    .menu a{ 
+        flex-shrink: 0;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .dropdown{
+display:flex;
+align-items:center;
+}
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static; /* important */
+        width: 100%;
+    }
+}
+
+.menu{
+padding:0 12px;
+}
+
+.menu{
+overflow-x:auto;
+padding-right:25px;
+}
+    button{
+        font-size: 12px;
+        padding: 6px 10px;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+
+    /* dropdown mobile simple 
+    .dropdown-menu{
+        position: absolute;
+        width: 200px;
+    }
+        */
+}
+/* ========================= */
+/* 📲 TABLET VIEW */
+/* ========================= */
+
+@media (max-width: 1023px){
+
+    .navbar{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 25px;
+         overflow-x: auto;
+    }
+
+    .menu{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    }
+      .menu::-webkit-scrollbar{
+        display: none;
+    }
+      button{
+        font-size: 12px;
+        padding: 6px 10px;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+ .menu a{
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .nav-logo{
+        width: 130px;
+        height: 45px;
+    }
+}    
+
+body {
+      --bg: #f7f6f3;
+      --bg2: #ffffff;
+      --bg3: #eeecea;
+      --accent: rgb(58, 165, 189);
+      --accent2: rgb(104, 224, 251);
+      --text: #111827;
+      --text2: #6b7280;
+      --card: #ffffff;
+      --card-border: #e5e7eb;
+      --heading-font: 'Playfair Display', serif;
+      --body-font: 'DM Sans', sans-serif;
+      --tag-bg: rgba(0,82,204,0.08);
+      --tag-color: rgb(104, 224, 251);
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+    }
+
+    /* ===================== COMMON LAYOUT ===================== */
+    .page-wrap { max-width: 1300px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 100px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 70px;
+    }
+
+    body .hero {     background: linear-gradient(135deg, rgb(104, 224, 251) 0%, rgb(58, 165, 189) 60%, rgb(30, 120, 150) 100%);}
+
+ 
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    }
+    .hero-title {
+      font-family: var(--heading-font);
+      font-size: clamp(32px, 6vw, 68px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    body .hero-title { color: white;}
+
+    .hero-title span { opacity: 0.7;}
+    .hero-sub {
+      max-width: 680px;
+      margin: 0 auto 40px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: white;
+    }
+    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-family: var(--heading-font);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff;
+      border: 2px solid var(--accent);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    body .btn-primary { color: #fff; }
+    .btn-primary:hover { background: var(--accent2); border-color: var(--accent2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .btn-secondary {
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-family: var(--heading-font);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-secondary:hover { background: var(--tag-bg); transform: translateY(-2px); }
+
+    /* ===== BENEFITS STRIP ===== */
+    .benefits {
+      padding: 48px 24px;
+      background: var(--bg2);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+    }
+       .benefits-inner {
+      max-width: 1300px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 0;
+    }
+    .benefit-item {
+      flex: 1 1 200px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px 28px;
+      border-right: 1px solid var(--card-border);
+    }
+    .benefit-item:last-child { border-right: none; }
+    .benefit-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--tag-bg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .benefit-text strong {
+      display: block;
+      font-family: var(--heading-font);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .benefit-text span { font-size: 12px; color: var(--text2); line-height: 1.5; }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header {
+      text-align: center;
+      padding: 70px 24px 0;
+      margin-bottom: 50px;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--heading-font);
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .section-desc { font-size: 15px; color: var(--text2); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+    /* ===== FILTER TABS ===== */
+    .filter-wrap { text-align: center; margin-bottom: 40px; padding: 0 24px; }
+    .filter-tabs { display: inline-flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .filter-tab {
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: 1.5px solid var(--card-border);
+      background: transparent;
+      color: black;
+      font-family: var(--body-font);
+      transition: all 0.2s;
+    }
+    .filter-tab:hover, .filter-tab.active {
+      border-color: var(--accent);
+      color: rgb(0, 0, 0);
+      background: var(--tag-bg);
+    }
+
+    /* ===== MACHINE GRID ===== */
+    .machines-section { padding: 0 24px 80px; }
+    .machines-grid {
+      max-width: 1300px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .machine-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+   
+    body .machine-card { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .machine-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+ 
+    body .machine-card:hover { box-shadow: 0 12px 40px rgba(0,82,204,0.12); }
+
+    .card-image {
+      height: 200px;
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    body .card-image { background: linear-gradient(135deg, #f0f0ec, #e8eaf0); }
+
+    .card-image img {
+      max-height: 170px;
+      max-width: 85%;
+      object-fit: contain;
+      transition: transform 0.4s;
+    }
+    .machine-card:hover .card-image img { transform: scale(1.07); }
+    .card-tag {
+      position: absolute;
+      top: 12px; left: 12px;
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff;
+    }
+    body .card-tag { color: #fff; }
+    .card-body { padding: 22px 22px 26px; flex: 1; display: flex; flex-direction: column; }
+    .card-title {
+      font-family: var(--heading-font);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+       .card-desc { font-size: 13px; color: var(--text2); line-height: 1.65; flex: 1; }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--card-border);
+    }
+    .card-category {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .card-arrow {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--tag-bg);
+      color: var(--accent);
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    .machine-card:hover .card-arrow { background: var(--accent); color: #fff; }
+
+    /* ===== HIDDEN CARD ===== */
+    .machine-card.hidden { display: none; }
+
+  
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 80px 24px;
+      text-align: center;
+      background: var(--bg2);
+      border-top: 1px solid var(--card-border);
+    }
+    .cta-title { font-family: var(--heading-font); font-size: clamp(24px, 4vw, 40px); font-weight: 700; color: var(--text); margin-bottom: 16px; }
+    .cta-sub { font-size: 16px; color: var(--text2); margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== FOOTER STRIP ===== */
+    .footer {
+    padding: 60px 40px;
+    color: #fff;
+
+    background: 
+        linear-gradient(rgba(11, 28, 52, 0.85), rgba(11, 28, 52, 0.85)),
+        url('footerimage.jpeg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* CONTAINER */
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* 🔥 important */
+}
+
+/* COLUMN */
+.footer-col {
+    flex: 1 1 220px; /* 🔥 responsive width */
+    min-width: 200px;
+}
+
+/* HEADINGS */
+.footer-col h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* underline */
+.footer-col h3::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #1e6fa3;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* LINKS */
+.footer-col a {
+    display: block;
+    color: #ccc;
+    margin: 8px 0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #fff;
+    transform: translateX(5px); /* 🔥 small animation */
+}
+
+/* TEXT */
+.footer-col p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #1e6fa3;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 8px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #0c4d75;
+    transform: translateY(-3px);
+}
+
+/* BOTTOM */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 50px 30px;
+    }
+
+    .footer-container {
+        gap: 25px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-col {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-col h3 {
+        font-size: 18px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+        font-size: 13px;
+    }
+}
+
+
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .machine-card { animation: fadeUp 0.5s ease both; }
+    .machine-card:nth-child(1) { animation-delay: 0.05s; }
+    .machine-card:nth-child(2) { animation-delay: 0.1s; }
+    .machine-card:nth-child(3) { animation-delay: 0.15s; }
+    .machine-card:nth-child(4) { animation-delay: 0.2s; }
+    .machine-card:nth-child(5) { animation-delay: 0.25s; }
+    .machine-card:nth-child(6) { animation-delay: 0.3s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .benefit-item { border-right: none; border-bottom: 1px solid var(--card-border); }
+      .theme-btn { writing-mode: horizontal-tb; transform: none; min-height: auto; padding: 10px 14px; }
+      .theme-btn.active { transform: none; }
+    }
+  </style>
+</head>
+<body class>
+
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+               <div class="logo">
+                </div>
+            </div>
+      
+            <div class="menu">
+                <a href="index.html">Home</a>
+               <div class="dropdown">
+             <a href="#" class="dropdown-toggle">About us ▾</a>
+
+                <div class="dropdown-menu">
+                     <p><a href="About.html">About us</a></p>
+                    <p><a href="message.html">Message From Director</a></p>
+                    <p><a href="CorporateHistory.html">Corporate history </a></p>
+                        <p><a href="Cerificates.html">ISO Certificates</a></p>
+                   
+                </div>
+            </div>
+            <!-- DROPDOWN END -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle">What is Leak test? ▾</a>
+            
+
+                <div class="dropdown-menu">
+                    <p><a href="Leakabout.html">What is Leak Test?</a></p>
+                    <p><a href="Selection.html">Select as per industry </a></p>
+             
+            
+                </div>
+            </div>
+               <a href="Machines.html">Leak Test Machines</a>
+                <a href="products.html">Products and Services</a>
+                <a href="client.html">Clients</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
+        </div>
+        </header>
+      
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Precision Engineering</div>
+    <h1 class="hero-title">Leak Test <span>Machines</span><br>for Industrial Quality</h1>
+    <p class="hero-sub">Cosmo Instruments India manufactures high-precision Leak Test Machines engineered for accuracy, reliability, and fast cycle times in industrial production lines. Trusted globally across automotive, EV, HVAC, medical, and precision engineering industries.</p>
+  
+  </section>
+
+  <!-- BENEFITS STRIP -->
+  <div class="benefits">
+    <div class="benefits-inner">
+      <div class="benefit-item">
+        <div class="benefit-icon">🎯</div>
+        <div class="benefit-text">
+          <strong>High-Accuracy Detection</strong>
+          <span>Detects micro & macro leaks with precision</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🔄</div>
+        <div class="benefit-text">
+          <strong>Stable & Repeatable</strong>
+          <span>Consistent test results across all cycles</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🖥️</div>
+        <div class="benefit-text">
+          <strong>PLC + HMI Control</strong>
+          <span>Advanced automation interface</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">⚙️</div>
+        <div class="benefit-text">
+          <strong>Conveyor Compatible</strong>
+          <span>Seamless automated fixture integration</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🏭</div>
+        <div class="benefit-text">
+          <strong>Industrial-Grade</strong>
+          <span>Built for continuous production operation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MACHINES SECTION -->
+  <div class="section-header page-wrap">
+    <div class="section-label">Our Product Range</div>
+    <h2 class="section-title">Leak Test Machine Solutions</h2>
+    <p class="section-desc">Browse our complete range of custom-built leak testing machines for every industrial application.</p>
+  </div>
+
+  <div class="filter-wrap">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All Machines</button>
+      <button class="filter-tab" data-filter="2w">2-Wheeler</button>
+      <button class="filter-tab" data-filter="4w">4-Wheeler</button>
+      <button class="filter-tab" data-filter="ev">Electric Vehicle</button>
+      <button class="filter-tab" data-filter="helium">Helium / Hydrogen</button>
+      <button class="filter-tab" data-filter="assembly">Assembly Line</button>
+      <button class="filter-tab" data-filter="other">Other</button>
+    </div>
+  </div>
+
+  <section class="machines-section">
+    <div class="machines-grid" id="machinesGrid">
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/l1.png" alt="Fuel Cut Off Valve Machine" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Fuel Cut Off Valve LTM</div>
+          <p class="card-desc">Fuel cut-off valve flow testing with different angles along with "O" Ring presence. Model selection using vision camera and Laser marker with data traceability.</p>
+          
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/l2.png" alt="Inlet Pipe LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Inlet Pipe LTM</div>
+          <p class="card-desc">Plastic body leak test, Hot Inserts & Cold Inserts presence check with laser marking for data traceability.</p>
+       
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/l3.png" alt="Cam Carrier LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Cam Carrier LTM</div>
+          <p class="card-desc">Casting part full body leak test & Oil hole leak test with continuity confirmation.</p>
+         
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="other">
+        <div class="card-image">
+          <span class="card-tag">Suspension</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/l4.png" alt="Shock Absorber LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Shock Absorber LTM</div>
+          <p class="card-desc">4-Station leak testing machine for shock absorber with dust cap pressing.</p>
+        
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="ev">
+        <div class="card-image">
+          <span class="card-tag">EV</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/l5.png" alt="Battery Cover LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Battery Cover LTM</div>
+          <p class="card-desc">Dual station Battery cover full body leak testing machine for electric vehicles.</p>
+         
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="assembly">
+        <div class="card-image">
+          <span class="card-tag">Assembly</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2023/12/l6.png" alt="PRV LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">PRV LTM</div>
+          <p class="card-desc">PRV Cap model selection, Spring & diaphragm presence check, Cap pressing and micro low pressure flow test for Part open and close condition.</p>
+          <div class="card-footer">
+            <span class="card-category">Assembly</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="2w">
+        <div class="card-image">
+          <span class="card-tag">2-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m1.png" alt="2W Fuel Tank LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">2W Fuel Tank LTM</div>
+          <p class="card-desc">Three station Scooter & Bike fuel tank leak testing machine to detect weld area leakage checking.</p>
+          <div class="card-footer">
+            <span class="card-category">2-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="2w">
+        <div class="card-image">
+          <span class="card-tag">2-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m2.png" alt="2W Canister LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">2W Canister LTM</div>
+          <p class="card-desc">Dual station for leak check and Dual station for Flow check of Canister part.</p>
+          <div class="card-footer">
+            <span class="card-category">2-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="2w">
+        <div class="card-image">
+          <span class="card-tag">2-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m3.png" alt="2W Cylinder Head LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">2W Cylinder Head LTM</div>
+          <p class="card-desc">Dual station 2W cylinder head with Dry & Wet Leak testing machine. Water raising type Leak test machine.</p>
+          <div class="card-footer">
+            <span class="card-category">2-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m4.png" alt="4W Timing Cover LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W Timing Cover LTM</div>
+          <p class="card-desc">4W Timing cover full body leak test machine.</p>
+          <div class="card-footer">
+            <span class="card-category">4-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m5.png" alt="4W Clean Side Duct LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W Clean Side Duct LTM</div>
+          <p class="card-desc">4W Plastic part body leak test with outrunner feedback check machine.</p>
+          <div class="card-footer">
+            <span class="card-category">4-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m6.png" alt="4W Exhaust Manifold LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W Exhaust Manifold LTM</div>
+          <p class="card-desc">Exhaust manifold leak check with Cold bush & Hot inserts presence feedback with Fixture change over type LTM.</p>
+          <div class="card-footer">
+            <span class="card-category">4-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m7.png" alt="4W Cover Plate LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W Cover Plate LTM</div>
+          <p class="card-desc">Cover plate body leak checking machine with Dot punch marking machine.</p>
+          <div class="card-footer">
+            <span class="card-category">4-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m8.png" alt="4W Ball Joint LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W Ball Joint LTM</div>
+          <p class="card-desc">12 variant models Ball joint leak checking machine in single fixture.</p>
+          <div class="card-footer">
+            <span class="card-category">Chassis</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m9.png" alt="4W CNG Filter LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W CNG Filter LTM</div>
+          <p class="card-desc">Dual Station leak testing machine for CNG Filter.</p>
+          <div class="card-footer">
+            <span class="card-category">4-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="2w">
+        <div class="card-image">
+          <span class="card-tag">2-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m10.png" alt="2W Crank Case LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">2W Crank Case LTM</div>
+          <p class="card-desc">Crank case body leak check with continuity confirmation checking machine with High pressure & low pressure.</p>
+          <div class="card-footer">
+            <span class="card-category">2-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m11.png" alt="4W Head Cover LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W Head Cover LTM</div>
+          <p class="card-desc">4W Head cover body (Plastic part) leak test machine with Laser Marking on Plastic part.</p>
+          <div class="card-footer">
+            <span class="card-category">4-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m12.png" alt="4W Oil Pan LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W Oil Pan LTM</div>
+          <p class="card-desc">Dual Station Oil pan leak testing machine for dual cavities. Each station testing for dual cavities simultaneously.</p>
+          <div class="card-footer">
+            <span class="card-category">4-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="other">
+        <div class="card-image">
+          <span class="card-tag">3-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m13.png" alt="3W Gear Box LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">3W Gear Box LTM</div>
+          <p class="card-desc">Gear box assembly leak testing with Vacuum pressure and Oil seal presence checking.</p>
+          <div class="card-footer">
+            <span class="card-category">3-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m14.png" alt="4W Cylinder Block LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W Cylinder Block LTM</div>
+          <p class="card-desc">Cylinder block leak checking machine with conveyor line setup for automated production.</p>
+          <div class="card-footer">
+            <span class="card-category">Powertrain</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="other">
+        <div class="card-image">
+          <span class="card-tag">Gantry</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m15.png" alt="EGR Assembly LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">EGR Assembly LTM</div>
+          <p class="card-desc">Gantry type machine with leak test & burst test for EGR Assembly body.</p>
+          <div class="card-footer">
+            <span class="card-category">Engine Systems</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="other">
+        <div class="card-image">
+          <span class="card-tag">Braking</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m16.png" alt="Brake Caliper LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Brake Caliper LTM</div>
+          <p class="card-desc">Leak testing machine for Brake Caliper with piston forward & reverse condition with pressure drop testing confirmation.</p>
+          <div class="card-footer">
+            <span class="card-category">Braking Systems</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m17.png" alt="Cam Carrier LTM Hi-Pressure" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Cam Carrier LTM (Hi-Pressure)</div>
+          <p class="card-desc">Leak testing machine with High pressure and low-pressure test for Cam carrier body and 12 continuity feedback check.</p>
+          <div class="card-footer">
+            <span class="card-category">Powertrain</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="other">
+        <div class="card-image">
+          <span class="card-tag">Heavy Vehicle</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m18.png" alt="Manifold LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Manifold LTM</div>
+          <p class="card-desc">Manifold Leak check for earth moving vehicle part with part sliding type machine.</p>
+          <div class="card-footer">
+            <span class="card-category">Heavy Vehicle</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="other">
+        <div class="card-image">
+          <span class="card-tag">Appliance</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m20.png" alt="Washing Machine Tub LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Washing Machine Tub LTM</div>
+          <p class="card-desc">Home appliances washing machine tub, dual seals leak check at single cycle.</p>
+          <div class="card-footer">
+            <span class="card-category">Appliances</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m19.png" alt="4W T/M Case LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W T/M Case LTM</div>
+          <p class="card-desc">Transmission case leak testing machine for 4-wheeler vehicles.</p>
+          <div class="card-footer">
+            <span class="card-category">Transmission</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="2w">
+        <div class="card-image">
+          <span class="card-tag">2-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m21.png" alt="2W Alloy Wheel LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">2W Alloy Wheel LTM</div>
+          <p class="card-desc">Dry & Wet type leak testing machine for alloy wheel with water raising method.</p>
+          <div class="card-footer">
+            <span class="card-category">2-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="assembly">
+        <div class="card-image">
+          <span class="card-tag">Assembly Line</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-233.png" alt="PRV Air Cleaner Assembly Line" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">PRV Air Cleaner Assembly Line</div>
+          <p class="card-desc">4-station line: Cap Pressing → PRV open/close flow testing → Full body leak testing → Final Inspection station.</p>
+          <div class="card-footer">
+            <span class="card-category">Assembly Line</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="assembly">
+        <div class="card-image">
+          <span class="card-tag">Assembly Line</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m23.png" alt="Water Pump Assembly Line" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Water Pump Assembly Line</div>
+          <p class="card-desc">Pipe pressing, bearing pressing, impeller pressing, Hub pressing, Performance & Final leak testing. Pressing application with Servo Press.</p>
+          <div class="card-footer">
+            <span class="card-category">Assembly Line</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="4w">
+        <div class="card-image">
+          <span class="card-tag">4-Wheeler</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m25.png" alt="4W Oil Pan LTM Engraving" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">4W Oil Pan LTM (Engraving)</div>
+          <p class="card-desc">Fixture change over type Leak test with Engraving machine for part identification.</p>
+          <div class="card-footer">
+            <span class="card-category">4-Wheeler</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="helium">
+        <div class="card-image">
+          <span class="card-tag">Helium</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m26.png" alt="AC Radiator Helium LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">AC Radiator Helium LTM</div>
+          <p class="card-desc">Helium leak test for AC radiator with high-sensitivity detection.</p>
+          <div class="card-footer">
+            <span class="card-category">Helium Testing</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="helium">
+        <div class="card-image">
+          <span class="card-tag">Helium</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m27.png" alt="Fuel Rail Helium LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Fuel Rail Helium LTM</div>
+          <p class="card-desc">High helium pressure for fuel rail leak test machine with precision sensing.</p>
+          <div class="card-footer">
+            <span class="card-category">Helium Testing</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="ev">
+        <div class="card-image">
+          <span class="card-tag">EV</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m28.png" alt="Dashboard Assembly LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Dashboard Assembly LTM</div>
+          <p class="card-desc">Electric vehicle dashboard assembly body leak test & vent ports flow test.</p>
+          <div class="card-footer">
+            <span class="card-category">Electric Vehicle</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="ev">
+        <div class="card-image">
+          <span class="card-tag">EV</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/02/ltm-m29.png" alt="Battery Cover LTM EV" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Battery Cover LTM (EV)</div>
+          <p class="card-desc">Electric vehicle battery cover leak test with dual station for enhanced throughput.</p>
+          <div class="card-footer">
+            <span class="card-category">Electric Vehicle</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="ev">
+        <div class="card-image">
+          <span class="card-tag">EV</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-03-at-4.58.05-PM-qy3lpwexlf2uzo2rh4alayydzohj0ettfiidrq5o8w-removebg-preview.png" alt="Vehicle Control Unit LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Vehicle Control Unit LTM</div>
+          <p class="card-desc">Dual station leak testing machine for electric vehicle VCU.</p>
+          <div class="card-footer">
+            <span class="card-category">Electric Vehicle</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="helium">
+        <div class="card-image">
+          <span class="card-tag">Helium</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-03-at-4.58.05-PM-qy3lpwexlf2uzo2rh4alayydzohj0ettfiidrq5o8w-removebg-preview.png" alt="Brake Hose Pipe Helium LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Brake Hose Pipe Helium LTM</div>
+          <p class="card-desc">High Pressure Helium LTM for checking fine leaks using helium and nitrogen gas mixtures.</p>
+          <div class="card-footer">
+            <span class="card-category">Helium Testing</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="other">
+        <div class="card-image">
+          <span class="card-tag">Semi-Auto</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2025/02/Sandfit-1-1.jpg" alt="Oil Pan Wet Type LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Oil Pan Wet Type LTM</div>
+          <p class="card-desc">Semi-automatic immersion type LTM for Oil Pan parts. PLC automation control. Multi models supported with changeover fixtures.</p>
+          <div class="card-footer">
+            <span class="card-category">Wet Testing</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="other">
+        <div class="card-image">
+          <span class="card-tag">Semi-Auto</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2025/02/Z12E-Oil-Cover-Front-LTM-1-1.jpeg" alt="Oil Pump Front Cover LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Oil Pump Front Cover LTM</div>
+          <p class="card-desc">Semi-automatic dry type Leak Testing Machine for Front Cover & Cover Plate parts. Uses COSMO Japan LS-1866. Robust design with standard BOP's and PLC automation.</p>
+          <div class="card-footer">
+            <span class="card-category">Dry Testing</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-card" data-cat="other">
+        <div class="card-image">
+          <span class="card-tag">Multi-Model</span>
+          <img src="https://cosmoinstrumentsindia.com/wp-content/uploads/2025/03/bosch-photo-1-1-scaled.jpg" alt="Fuel Filter LTM" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Fuel Filter LTM</div>
+          <p class="card-desc">Dry-type Leak Test Machine (Capsule Type) with Multi-Model Setup and easy changeover. Identifies leakage in Fuel Filters efficiently.</p>
+          <div class="card-footer">
+            <span class="card-category">Fuel Systems</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <h2 class="cta-title">Need a Custom Leak Test Solution?</h2>
+    <p class="cta-sub">Our engineers work with you to design a machine perfectly suited for your parts, process, and production line requirements.</p>
+    <div class="cta-buttons">
+      <a href="https://cosmoinstrumentsin.netlify.app/contact" class="btn-primary">Request A Quote</a>
+      <a href="https://cosmoinstrumentsindia.com/download/" class="btn-secondary">Download Full Catalogue</a>
+    </div>
+  </section>
+
+  <!-- FOOTER STRIP -->
+  
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+</div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate history</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+
+</footer>  
+
+  <script>
+    // Drop Down
+    
+
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // mobile fix
+
+        // Close others
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.classList.remove("active");
+            }
+        });
+
+        // Toggle current
+        dropdown.classList.toggle("active");
+    });
+});
+
+// Outside click (mobile + desktop)
+document.addEventListener("click", () => {
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("active");
+    });
+});
+
+    // Filter tabs
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.dataset.filter;
+        document.querySelectorAll('.machine-card').forEach(card => {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
