@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>LS-R902</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
 
 <style>
 body {
@@ -14,10 +17,12 @@ body {
 
 /* HEADER */
 .header {
-  text-align: center;
+  text-align: center ;
   padding: 40px 20px;
 }
-
+.header p{
+  text-align: center ;
+}
 .header h1 {
   margin: 0;
   font-size: clamp(28px, 5vw, 40px);
@@ -321,31 +326,43 @@ body {
     <header>
         <div class="navbar">
             <div class="nav-logo border">
-                <div class="logo">
+               <div class="logo">
                 </div>
             </div>
+      
             <div class="menu">
                 <a href="index.html">Home</a>
                <div class="dropdown">
-                <a>About us ▾</a>
+             <a href="#" class="dropdown-toggle">About us ▾</a>
 
                 <div class="dropdown-menu">
-                    <p><a href="message.html">Message from Director</a></p>
-                    <p><a href="">Our Presence and Joint Venture </a></p>
-                    <p><a href="">Our Team </a></p>
+                     <p><a href="About.html">About us</a></p>
+                    <p><a href="message.html">Message From Director</a></p>
+                    <p><a href="CorporateHistory.html">Corporate history </a></p>
+                        <p><a href="Cerificates.html">ISO Certificates</a></p>
+                   
                 </div>
             </div>
             <!-- DROPDOWN END -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle">What is Leak test? ▾</a>
+            
+
+                <div class="dropdown-menu">
+                    <p><a href="Leakabout.html">What is Leak Test?</a></p>
+                    <p><a href="Selection.html">Select as per industry </a></p>
+             
+            
+                </div>
+            </div>
+               <a href="Machines.html">Leak Test Machines</a>
                 <a href="products.html">Products and Services</a>
                 <a href="client.html">Clients</a>
                 <a href="contact.html">Contact us</a>
             </div>
-
-            
-                <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
-        
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
         </div>
-    </header>
+        </header>
 
 <div class="header">
   <h1>LS-R902</h1>
@@ -426,7 +443,7 @@ body {
         <div class="cat-icon">PDF</div>
         <h4>LS-R902 Standard</h4>
         <p>Standard model catalogue with full specification sheet</p>
-        <a class="btn-download" href="CATALOGS/LS-R902-985B1-ENGLISH CATALOG.pdf" download="LS-R902-Standard.pdf">
+        <a class="btn-download" href="Assets/Airleak/CATALOGS/LS-R902-985B1-ENGLISH CATALOG.pdf" download="LS-R902-Standard.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
           </svg>
@@ -441,7 +458,7 @@ body {
         <div class="cat-icon">PDF</div>
         <h4>LS-R902 EV</h4>
         <p>Electric Vehicle variant — EV battery & powertrain testing</p>
-        <a class="btn-download" href="catalogues/LS-R902-EV.pdf" download="LS-R902-EV.pdf">
+        <a class="btn-download" href="Assets/Airleak/catalogues/LS-R902-EV.pdf" download="LS-R902-EV.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
           </svg>
@@ -472,7 +489,7 @@ body {
         <div class="cat-icon">PDF</div>
         <h4>LS-R902 ATC</h4>
         <p>PROFINET / Ethernet-IP fieldbus integration catalogue</p>
-        <a class="btn-download" href="CATALOGS/LS-R902(ATC)-985B1-A-ProductInfo_180828.pdf" download="LS-R902-ATC.pdf">
+        <a class="btn-download" href="Assets/Airleak/CATALOGS/LS-R902(ATC)-985B1-A-ProductInfo_180828.pdf" download="LS-R902-ATC.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
           </svg>
@@ -489,7 +506,7 @@ body {
          STEP: Create a ZIP file containing all 4 PDFs above.
          STEP: Place it at:  catalogues/LS-R902-All-Catalogues.zip
          STEP: Update the href and download attribute below if you use a different filename. -->
-    <a class="btn-download-all" href="CATALOGS/LSR-902.zip" download="LS-R902-All-Catalogues.zip">
+    <a class="btn-download-all" href="Assets/Airleak/CATALOGS/LSR-902.zip" download="LS-R902-All-Catalogues.zip">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 2v14M6 10l6 8 6-8"/><rect x="3" y="19" width="18" height="3" rx="1.5"/>
       </svg>
@@ -498,8 +515,6 @@ body {
 
   </div>
   <!-- ===== END CATALOGUE SECTION ===== -->
-
-
 
 
 
@@ -516,9 +531,9 @@ body {
 
            
          <div class="social-icons">
-    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
         </div>
 
@@ -537,22 +552,21 @@ body {
         <!-- COLUMN 3 -->
         <div class="footer-col">
             <h3>Quick Links</h3>
-            <a href="#">Leak Test Machine</a>
-            <a href="#">Industrial Application</a>
-            <a href="#">Warranty/Service</a>
-            <a href="#">Customers</a>
-            <a href="#">FAQ</a>
-            <a href="#">Contact Us</a>
+            <a href="Machines.html">Leak Test Machine</a>
+            <a href="Selection.html">Industrial Application</a>
+            <a href="client.html">Customers</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contact.html">Contact Us</a>
         </div>
 
         <!-- COLUMN 4 -->
         <div class="footer-col">
             <h3>Company</h3>
-            <a href="#">Corporate history</a>
-            <a href="#">Message from the Director</a>
-            <a href="#">Employment Opportunities</a>
-            <a href="#">Offices in India</a>
-            <a href="#">Worldwide Network</a>
+            <a href="About.html">About us</a>
+            <a href="CorporateHistory.html">Corporate history</a>
+            <a href="message.html">Message from the Director</a>
+            <a href="Cerificates.html">Cerificates</a>
+            
         </div>
 
     </div>
@@ -562,7 +576,7 @@ body {
         <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
     </div>
 
-</footer>
+</footer> 
 
 <script>
 
