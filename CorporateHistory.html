@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
    
 <title>Corporate History — Cosmo Instruments India Pvt. Ltd.</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0c10;
@@ -17,7 +16,7 @@
     --border: #1e2535;
     --accent: rgb(20,125,144);
     --accent2: rgb(20,125,144);
-    --accent-dim: rgba(156, 153, 147, 0.12);
+    --accent-dim: rgba(147, 155, 156, 0.12);
     --text: #e8ecf4;
     --text-muted: #6b7a99;
     --text-faint: #2e3a55;
@@ -76,9 +75,9 @@
 
   .hero-tag {
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.25em;
-    color: var(--accent);
+    color: white;
     text-transform: uppercase;
     margin-bottom: 24px;
     opacity: 0;
@@ -122,6 +121,7 @@
     animation: fadeUp 0.9s 0.6s forwards;
     position: relative;
   }
+  
 
   .hero-stats {
     display: flex; gap: 48px;
@@ -168,7 +168,7 @@
   }
   .section-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 15px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--accent);
@@ -272,7 +272,7 @@
   }
 
   .timeline-item:hover .tc-card {
-    border-color: rgba(232,160,32,0.35);
+    border-color: rgba(32, 159, 232, 0.35);
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     transform: translateY(-2px);
   }
@@ -329,7 +329,7 @@
     text-transform: uppercase;
     color: var(--accent);
     background: var(--accent-dim);
-    border: 1px solid rgba(232,160,32,0.2);
+    border: 1px solid rgba(18, 134, 163, 0.2);
     padding: 3px 8px;
     border-radius: 2px;
     margin-bottom: 10px;
@@ -339,33 +339,12 @@
   .tc-text {
     font-size: 14px;
     line-height: 1.65;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.79);
     font-weight: 300;
     position: relative; z-index: 1;
   }
 
   /* ── FOOTER BAR ── */
-  .footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 40px;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 16px;
-    background: var(--bg2);
-  }
-
-  .footer-brand {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-  }
-
-  .footer-copy {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    color: var(--text-muted);
-  }
 
   /* ── DECORATIVE STRIP ── */
   .deco-strip {
@@ -379,8 +358,8 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 13px;
     letter-spacing: 0.35em;
-    color: var(--accent);
-    opacity: 0.5;
+    color: white;
+    
     white-space: nowrap;
     animation: marquee 28s linear infinite;
   }
@@ -421,7 +400,7 @@
 
 </head>
 <body>
-    <header>
+      <header>
         <div class="navbar">
             <div class="nav-logo border">
                <div class="logo">
@@ -449,9 +428,11 @@
                 <div class="dropdown-menu">
                     <p><a href="Leakabout.html">What is Leak Test?</a></p>
                     <p><a href="Selection.html">Select as per industry </a></p>
+             
             
                 </div>
             </div>
+               <a href="Machines.html">Leak Test Machines</a>
                 <a href="products.html">Products and Services</a>
                 <a href="client.html">Clients</a>
                 <a href="contact.html">Contact us</a>
@@ -459,7 +440,6 @@
             <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
         </div>
         </header>
-        
 
 <!-- HERO -->
 <section class="hero">
@@ -470,7 +450,7 @@
   <h1 class="hero-title">
     Corporate<br><span>History</span>
   </h1>
-  <p class="hero-sub">From a single liaison office in Gurugram to a pan-India precision instruments powerhouse — a journey spanning over two decades.</p>
+  <p class="hero-sub" style="text-align: center;">From a single liaison office in Gurugram to a pan-India precision instruments powerhouse — a journey spanning over two decades.</p>
 
   <div class="hero-stats">
     <div class="stat">
@@ -491,10 +471,6 @@
     </div>
   </div>
 
-  <div class="scroll-cue">
-    <div class="scroll-arrow"></div>
-    <span>Scroll to explore</span>
-  </div>
 </section>
 
 <!-- DECO STRIP -->
@@ -506,7 +482,7 @@
 
 <!-- SECTION HEADER -->
 <div class="section-header">
-  <p class="section-eyebrow">Our Journey</p>
+  <p class="section-eyebrow" style="text-align: center;">Our Journey</p>
   <h2 class="section-title">Milestones &amp; Growth</h2>
 </div>
 
@@ -824,7 +800,7 @@
             <a href="#">Industrial Application</a>
             <a href="#">Warranty/Service</a>
             <a href="#">Customers</a>
-            <a href="#">FAQ</a>
+            <a href="Faq.html">FAQ</a>
             <a href="#">Contact Us</a>
         </div>
 

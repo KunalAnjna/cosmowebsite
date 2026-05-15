@@ -29,7 +29,10 @@ h1,h2,h3,h4,h5,h6{
     z-index: 1000;
     font-size:20px;
 }
-
+p{
+    text-align: justify;
+     
+}
 
 /* LOGO */
 .nav-logo{
@@ -1755,6 +1758,10 @@ object-position: center top;
     margin-top: 40px;
     font-size: 14px;
     color: #aaa;
+
+}
+.footer-bottom p{
+text-align: center;
 }
 
 /* ================= RESPONSIVE ================= */
