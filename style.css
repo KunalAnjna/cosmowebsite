@@ -165,7 +165,50 @@ button:active{
 /* ========================= */
 /* 📱 MOBILE VIEW */
 /* ========================= */
+@media (min-width: 768px) and (max-width: 1023px){
 
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .nav-logo{
+        width: 130px;
+        height: 45px;
+        flex-shrink: 0;
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .menu::-webkit-scrollbar{
+        display: none;
+    }
+
+    .menu a{
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    button{
+        font-size: 12px;
+        padding: 6px 10px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
 /* ========================= */
 /* 📱 MOBILE SAME LINE NAVBAR */
 /* ========================= */
