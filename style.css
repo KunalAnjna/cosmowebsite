@@ -170,7 +170,7 @@ button:active{
 /* 📱 MOBILE SAME LINE NAVBAR */
 /* ========================= */
 
-@media (max-width: 767px){
+@media (max-width: 768px){
 
     
     .navbar{ 
@@ -216,7 +216,7 @@ button:active{
 display:flex;
 align-items:center;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .dropdown-menu {
         position: static; /* important */
         width: 100%;
