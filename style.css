@@ -216,7 +216,7 @@ button:active{
 display:flex;
 align-items:center;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .dropdown-menu {
         position: static; /* important */
         width: 100%;
@@ -249,7 +249,7 @@ padding-right:25px;
 /* 📲 TABLET VIEW */
 /* ========================= */
 
-@media (max-width: 1023px){
+@media (max-width: 1024px){
 
     .navbar{
         display: flex;
