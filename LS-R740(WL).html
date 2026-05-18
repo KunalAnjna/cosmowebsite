@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>LS-R740 (WL)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body {
@@ -348,8 +349,8 @@ body {
     </header>
 
 <div class="header">
-  <h1>LS-R740 (ZL)</h1>
-  <p class="subtitle">VolumetricLeak Testers</p>
+  <h1>LS-R740 (WL)</h1>
+  <p class="subtitle" style="text-align: center;">VolumetricLeak Testers</p>
 </div>
 <div class="info-box">
   <h3>
@@ -425,7 +426,7 @@ Pneumatic Unit (LUA-241): Approx. 15 kg</p><br>
        ============================================= -->
   <div class="catalogue-section">
     <h2>Download Catalogues</h2>
-    <p class="cat-sub">Choose a specific variant catalogue or download all at once</p>
+    <p class="cat-sub" style="text-align: center;">Choose a specific variant catalogue or download all at once</p>
 
 
     <div class="catalogue-grid">
@@ -450,7 +451,6 @@ Pneumatic Unit (LUA-241): Approx. 15 kg</p><br>
 
 
 
-
 <footer class="footer">
 
     <div class="footer-container">
@@ -464,9 +464,9 @@ Pneumatic Unit (LUA-241): Approx. 15 kg</p><br>
 
            
          <div class="social-icons">
-    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
         </div>
 
@@ -474,7 +474,7 @@ Pneumatic Unit (LUA-241): Approx. 15 kg</p><br>
         <div class="footer-col">
             <h3>Products</h3>
             <a href="AirLeak.html">Air Leak Testers</a>
-            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="flowmeter.html">Air Flow  Testers</a>
             <a href="Helium.html">Helium/Hydrogen</a>
             <a href="presure.html">Pressure</a>
             <a href="peripherals.html">Peripherals</a>
@@ -485,22 +485,21 @@ Pneumatic Unit (LUA-241): Approx. 15 kg</p><br>
         <!-- COLUMN 3 -->
         <div class="footer-col">
             <h3>Quick Links</h3>
-            <a href="#">Leak Test Machine</a>
-            <a href="#">Industrial Application</a>
-            <a href="#">Warranty/Service</a>
-            <a href="#">Customers</a>
-            <a href="#">FAQ</a>
-            <a href="#">Contact Us</a>
+            <a href="Machines.html">Leak Test Machine</a>
+            <a href="Selection.html">Industrial Application</a>
+            <a href="client.html">Customers</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contact.html">Contact Us</a>
         </div>
 
         <!-- COLUMN 4 -->
         <div class="footer-col">
             <h3>Company</h3>
-            <a href="#">Corporate history</a>
-            <a href="#">Message from the Director</a>
-            <a href="#">Employment Opportunities</a>
-            <a href="#">Offices in India</a>
-            <a href="#">Worldwide Network</a>
+            <a href="About.html">About us</a>
+            <a href="CorporateHistory.html">Corporate history</a>
+            <a href="message.html">Message from the Director</a>
+            <a href="Cerificates.html">Cerificates</a>
+            
         </div>
 
     </div>
@@ -510,9 +509,42 @@ Pneumatic Unit (LUA-241): Approx. 15 kg</p><br>
         <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
     </div>
 
+</footer> 
+
 </footer>
 
 <script>
+  
+
+
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // mobile fix
+
+        // Close others
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.classList.remove("active");
+            }
+        });
+
+        // Toggle current
+        dropdown.classList.toggle("active");
+    });
+});
+
+// Outside click (mobile + desktop)
+document.addEventListener("click", () => {
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("active");
+    });
+});
+
 
 let slides = document.querySelectorAll(".slide");
 let index = 0;
