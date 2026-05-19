@@ -1490,6 +1490,10 @@ object-position: center top;
     .ci-ev-heading { flex-direction: column; align-items: flex-start; }
 }
 
+.ci-ev-images:hover .ci-ev-img-progress {
+    transition: none !important;
+}
+
 /*products page*//* ================= HERO SECTION ================= */
 
 .products-hero{

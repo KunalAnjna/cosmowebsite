@@ -281,7 +281,7 @@ Ideal for waterproof test of parts and finished products that require IP ratings
 
     </div>
 </section>
-</section>
+
 <footer class="footer">
 
     <div class="footer-container">
@@ -458,6 +458,17 @@ Ideal for waterproof test of parts and finished products that require IP ratings
         }
         newCard.classList.add('active');
 
+        
+newCard.addEventListener('mouseenter', () => {
+    clearTimeout(ciEvEventTimer);
+    ciEvProgress.style.transition = 'none';
+});
+
+newCard.addEventListener('mouseleave', () => {
+    ciEvRestartProgress();
+    ciEvEventTimer = setTimeout(() => ciEvGoTo(ciEvCurrent + 1), CI_EV_EVENT_DURATION);
+});
+
         ciEvCur.textContent = ciEvCurrent + 1;
         document.querySelectorAll('.ci-ev-nav-dot').forEach((d, i) => {
             d.classList.toggle('active', i === ciEvCurrent);
@@ -479,11 +490,24 @@ Ideal for waterproof test of parts and finished products that require IP ratings
             ciEvProgress.style.width = '100%';
         }));
     }
+function ciEvStartImageCycle(ei) {
+    if (CI_EVENTS[ei].images.length <= 1) return;
 
-    function ciEvStartImageCycle(ei) {
-        if (CI_EVENTS[ei].images.length <= 1) return;
+    const card = document.getElementById(`ci-evcard-${ei}`);
+    const imgPane = card.querySelector('.ci-ev-images');
+
+    imgPane.addEventListener('mouseenter', () => {
+        clearTimeout(ciEvImageTimers[ei]);
+        const bar = document.getElementById(`ci-evimgbar-${ei}`);
+        if (bar) { bar.style.transition = 'none'; }
+    });
+
+    imgPane.addEventListener('mouseleave', () => {
         ciEvCycleImage(ei);
-    }
+    });
+
+    ciEvCycleImage(ei);
+}
 
     function ciEvCycleImage(ei) {
         clearTimeout(ciEvImageTimers[ei]);
