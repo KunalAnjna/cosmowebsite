@@ -342,7 +342,7 @@ Ideal for waterproof test of parts and finished products that require IP ratings
 
 </footer> 
 <script>
-    // JavaScript for EVENT SECTION
+// JavaScript for EVENT SECTION
 (function () {
 
     const CI_EVENTS = [
@@ -358,7 +358,7 @@ Ideal for waterproof test of parts and finished products that require IP ratings
             tag:    "Womens Day",
             date:   "March 2026",
             title:  "Womens Day Celebration",
-            desc:   "On this International Women’s Day, Cosmo Instruments India proudly celebrated the incredible women in our office who contribute their talent, hard work, and passion every day. The celebration was a small way to recognize their achievements and appreciate the positive impact they create in our workplace. ",
+            desc:   "On this International Women's Day, Cosmo Instruments India proudly celebrated the incredible women in our office who contribute their talent, hard work, and passion every day. The celebration was a small way to recognize their achievements and appreciate the positive impact they create in our workplace. ",
             link:   "https://www.linkedin.com/posts/cosmo-instruments-india-pvt-ltd_cip-cosmoinstrumentsindia-airleaktester-activity-7438177074512809985-18Zv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUi6ygBp8xQfuB8tmR7Zv9W55ou1_wVHuI",
             images: ["Assets/Event/womens_day/womens_day1.jpg", "Assets/Event/womens_day/womens_day2.jpg", "Assets/Event/womens_day/womens_day4.jpg"]
         },
@@ -366,7 +366,7 @@ Ideal for waterproof test of parts and finished products that require IP ratings
             tag:    "Cosmo Instruments India X GLA",
             date:   "February 2025",
             title:  "Cosmo Instruments India X GLA",
-            desc:   "We are delighted to share glimpses from the inauguration of our partner company GLA extended manufacturing facility in Bengaluru, a significant step in strengthening our manufacturing capabilities and commitment to delivering world-class leak and flow testing solutions./nThe occasion was honoured by the presence of our esteemed guests and leadership team from Cosmo Japan (Chairperson Tomoyuki Furuse San, President Haruka Furuse San, Overseas Sales Head Akihiko Matshusita San, Overseas Section Manager Ryota Hyodo San,). Everyone’s presence made this milestone even more special and meaningful for all of us.",
+            desc:   "We are delighted to share glimpses from the inauguration of our partner company GLA extended manufacturing facility in Bengaluru, a significant step in strengthening our manufacturing capabilities and commitment to delivering world-class leak and flow testing solutions./nThe occasion was honoured by the presence of our esteemed guests and leadership team from Cosmo Japan (Chairperson Tomoyuki Furuse San, President Haruka Furuse San, Overseas Sales Head Akihiko Matshusita San, Overseas Section Manager Ryota Hyodo San,). Everyone's presence made this milestone even more special and meaningful for all of us.",
             link:   "https://www.linkedin.com/posts/cosmo-instruments-india-pvt-ltd_csr-cosmoinstrumentsindia-cip-activity-7451897447485702144-hFSC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUi6ygBp8xQfuB8tmR7Zv9W55ou1_wVHuI",
             images: ["Assets/Event/GLA_Inauguration/GLA_Inauguration1.jpg", "Assets/Event/GLA_Inauguration/GLA_Inauguration2.jpg", "Assets/Event/GLA_Inauguration/GLA_Inauguration4.jpg"]
         }
@@ -385,6 +385,10 @@ Ideal for waterproof test of parts and finished products that require IP ratings
     let ciEvCurrentImage = {};
     let ciEvEventTimer   = null;
     let ciEvImageTimers  = {};
+    let ciEvIsHovered    = false;
+
+    // Track which imgPanes already have listeners — stacking rokne ke liye
+    const ciEvImgListenersAdded = {};
 
     ciEvTotal.textContent = CI_EVENTS.length;
 
@@ -428,7 +432,7 @@ Ideal for waterproof test of parts and finished products that require IP ratings
             <h3>${ev.title}</h3>
             <div class="ci-ev-date"><i class="fa-regular fa-calendar"></i>${ev.date}</div>
             <p>${ev.desc}</p>
-            <a href="${ev.link}" class="ci-ev-readmore"  target="_blank">Read full story <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="${ev.link}" class="ci-ev-readmore" target="_blank">Read full story <i class="fa-solid fa-arrow-right"></i></a>
         `;
 
         card.appendChild(imgPane);
@@ -442,6 +446,21 @@ Ideal for waterproof test of parts and finished products that require IP ratings
         ciEvNavDots.appendChild(dot);
 
         ciEvCurrentImage[ei] = 0;
+
+        // imgPane pe listener SIRF EK BAAR lagao — yahan, build time pe
+        if (CI_EVENTS[ei].images.length > 1) {
+            imgPane.addEventListener('mouseenter', () => {
+                clearTimeout(ciEvImageTimers[ei]);
+                const bar = document.getElementById(`ci-evimgbar-${ei}`);
+                if (bar) {
+                    bar.style.transition = 'none';
+                    bar.style.width = bar.style.width; // freeze current width
+                }
+            });
+            imgPane.addEventListener('mouseleave', () => {
+                ciEvCycleImage(ei);
+            });
+        }
     });
 
     function ciEvGoTo(idx) {
@@ -458,17 +477,6 @@ Ideal for waterproof test of parts and finished products that require IP ratings
         }
         newCard.classList.add('active');
 
-        
-newCard.addEventListener('mouseenter', () => {
-    clearTimeout(ciEvEventTimer);
-    ciEvProgress.style.transition = 'none';
-});
-
-newCard.addEventListener('mouseleave', () => {
-    ciEvRestartProgress();
-    ciEvEventTimer = setTimeout(() => ciEvGoTo(ciEvCurrent + 1), CI_EV_EVENT_DURATION);
-});
-
         ciEvCur.textContent = ciEvCurrent + 1;
         document.querySelectorAll('.ci-ev-nav-dot').forEach((d, i) => {
             d.classList.toggle('active', i === ciEvCurrent);
@@ -479,7 +487,9 @@ newCard.addEventListener('mouseleave', () => {
         ciEvRestartProgress();
 
         clearTimeout(ciEvEventTimer);
-        ciEvEventTimer = setTimeout(() => ciEvGoTo(ciEvCurrent + 1), CI_EV_EVENT_DURATION);
+        if (!ciEvIsHovered) {
+            ciEvEventTimer = setTimeout(() => ciEvGoTo(ciEvCurrent + 1), CI_EV_EVENT_DURATION);
+        }
     }
 
     function ciEvRestartProgress() {
@@ -490,24 +500,12 @@ newCard.addEventListener('mouseleave', () => {
             ciEvProgress.style.width = '100%';
         }));
     }
-function ciEvStartImageCycle(ei) {
-    if (CI_EVENTS[ei].images.length <= 1) return;
 
-    const card = document.getElementById(`ci-evcard-${ei}`);
-    const imgPane = card.querySelector('.ci-ev-images');
-
-    imgPane.addEventListener('mouseenter', () => {
-        clearTimeout(ciEvImageTimers[ei]);
-        const bar = document.getElementById(`ci-evimgbar-${ei}`);
-        if (bar) { bar.style.transition = 'none'; }
-    });
-
-    imgPane.addEventListener('mouseleave', () => {
+    function ciEvStartImageCycle(ei) {
+        if (CI_EVENTS[ei].images.length <= 1) return;
+        // Sirf cycle start karo — listener yahan NAHI lagana, woh upar laga chuka hai
         ciEvCycleImage(ei);
-    });
-
-    ciEvCycleImage(ei);
-}
+    }
 
     function ciEvCycleImage(ei) {
         clearTimeout(ciEvImageTimers[ei]);
@@ -554,6 +552,19 @@ function ciEvStartImageCycle(ei) {
     document.getElementById('ci-evNext').addEventListener('click', () => {
         clearTimeout(ciEvEventTimer);
         ciEvGoTo(ciEvCurrent + 1);
+    });
+
+    // Stage hover — SIRF EK BAAR, IIFE ke andar
+    ciEvStage.addEventListener('mouseenter', () => {
+        ciEvIsHovered = true;
+        clearTimeout(ciEvEventTimer);
+        ciEvProgress.style.transition = 'none';
+    });
+
+    ciEvStage.addEventListener('mouseleave', () => {
+        ciEvIsHovered = false;
+        ciEvRestartProgress();
+        ciEvEventTimer = setTimeout(() => ciEvGoTo(ciEvCurrent + 1), CI_EV_EVENT_DURATION);
     });
 
     ciEvGoTo(0);
