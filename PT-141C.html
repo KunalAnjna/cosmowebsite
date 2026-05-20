@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>PT-161A</title>
+<title>PT-141A</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 <style>
 body {
@@ -318,38 +320,50 @@ body {
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+  <header>
         <div class="navbar">
             <div class="nav-logo border">
-                <div class="logo">
+               <div class="logo">
                 </div>
             </div>
+      
             <div class="menu">
                 <a href="index.html">Home</a>
                <div class="dropdown">
-                <a>About us ▾</a>
+             <a href="#" class="dropdown-toggle">About us ▾</a>
 
                 <div class="dropdown-menu">
-                    <p><a href="message.html">Message from Director</a></p>
-                    <p><a href="">Our Presence and Joint Venture </a></p>
-                    <p><a href="">Our Team </a></p>
+                     <p><a href="About.html">About us</a></p>
+                    <p><a href="message.html">Message From Director</a></p>
+                    <p><a href="CorporateHistory.html">Corporate history </a></p>
+                        <p><a href="Cerificates.html">ISO Certificates</a></p>
+                   
                 </div>
             </div>
             <!-- DROPDOWN END -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle">What is Leak test? ▾</a>
+            
+
+                <div class="dropdown-menu">
+                    <p><a href="Leakabout.html">What is Leak Test?</a></p>
+                    <p><a href="Selection.html">Select as per industry </a></p>
+             
+            
+                </div>
+            </div>
+               <a href="Machines.html">Leak Test Machines</a>
                 <a href="products.html">Products and Services</a>
                 <a href="client.html">Clients</a>
                 <a href="contact.html">Contact us</a>
             </div>
-
-            
-                <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
-        
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
         </div>
-    </header>
-
+        </header>
+    
 <div class="header">
   <h1>PT-141A</h1>
-  <p class="subtitle">Pressure Gauge</p>
+  <p class="subtitle" style="text-align: center;">Pressure Gauge</p>
 </div>
 <div class="info-box">
   <h3>
@@ -420,16 +434,16 @@ Pneumatic Circuit Unit: 7.0 kg</p><br>
 
   <!-- =============================================
        CATALOGUE DOWNLOAD SECTION
-       ============================================= -->
+       ============================================= 
   <div class="catalogue-section">
     <h2>Download Catalogues</h2>
-    <p class="cat-sub">Choose a specific variant catalogue or download all at once</p>
+    <p class="cat-sub" style="text-align: center;">Choose a specific variant catalogue or download all at once</p>
 
     <div class="catalogue-grid">
 
-      <!-- ─── CARD 1: LS-R902 Standard ───
+      - ─── CARD 1: LS-R902 Standard ───
            STEP: Place your PDF file at:  catalogues/LS-R902-Standard.pdf
-           Then the href below will link to it automatically. -->
+           Then the href below will link to it automatically. --
       <div class="cat-card">
         <div class="cat-icon">PDF</div>
         <h4>LS-R902 Standard</h4>
@@ -441,72 +455,11 @@ Pneumatic Circuit Unit: 7.0 kg</p><br>
           Download
         </a>
       </div>
-
-      <!-- ─── CARD 2: LS-R902 EV ───
-           STEP: Place your PDF file at:  catalogues/LS-R902-EV.pdf
-           Then the href below will link to it automatically. -->
-      <div class="cat-card">
-        <div class="cat-icon">PDF</div>
-        <h4>LS-R902 EV</h4>
-        <p>Electric Vehicle variant — EV battery & powertrain testing</p>
-        <a class="btn-download" href="catalogues/LS-R902-EV.pdf" download="LS-R902-EV.pdf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
-          </svg>
-          Download
-        </a>
-      </div>
-
-      <!-- ─── CARD 3: LS-R902 Modbus ───
-           STEP: Place your PDF file at:  catalogues/LS-R902-Modbus.pdf
-           Then the href below will link to it automatically. -->
-      <div class="cat-card">
-        <div class="cat-icon">PDF</div>
-        <h4>LS-R902 Modbus</h4>
-        <p>Modbus RTU/TCP communication variant catalogue</p>
-        <a class="btn-download" href="catalogues/LS-R902-Modbus.pdf" download="LS-R902-Modbus.pdf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
-          </svg>
-          Download
-        </a>
-      </div>
-
-      <!-- ─── CARD 4: LS-R902 (4th variant) ───
-           STEP: Rename the card title and description below to match your 4th variant.
-           STEP: Place your PDF file at:  catalogues/LS-R902-[YourVariantName].pdf
-           STEP: Update the href and download attribute to match that filename. -->
-      <div class="cat-card">
-        <div class="cat-icon">PDF</div>
-        <h4>LS-R902 PROFINET</h4>
-        <p>PROFINET / Ethernet-IP fieldbus integration catalogue</p>
-        <a class="btn-download" href="catalogues/LS-R902-PROFINET.pdf" download="LS-R902-PROFINET.pdf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 4v12M6 14l6 6 6-6"/><line x1="4" y1="22" x2="20" y2="22"/>
-          </svg>
-          Download
-        </a>
-      </div>
-
-    </div><!-- /catalogue-grid -->
-
-    <hr class="cat-divider">
-
-    <!-- ─── DOWNLOAD ALL ───
-         STEP: Create a ZIP file containing all 4 PDFs above.
-         STEP: Place it at:  catalogues/LS-R902-All-Catalogues.zip
-         STEP: Update the href and download attribute below if you use a different filename. -->
-    <a class="btn-download-all" href="catalogues/LS-R902-All-Catalogues.zip" download="LS-R902-All-Catalogues.zip">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2v14M6 10l6 8 6-8"/><rect x="3" y="19" width="18" height="3" rx="1.5"/>
-      </svg>
-      Download All Catalogues
-    </a>
-
   </div>
-  <!-- ===== END CATALOGUE SECTION ===== -->
-
-
+   ===== END CATALOGUE SECTION ===== 
+  </div>
+  
+--->
 
 
 
@@ -523,9 +476,9 @@ Pneumatic Circuit Unit: 7.0 kg</p><br>
 
            
          <div class="social-icons">
-    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
         </div>
 
@@ -544,22 +497,21 @@ Pneumatic Circuit Unit: 7.0 kg</p><br>
         <!-- COLUMN 3 -->
         <div class="footer-col">
             <h3>Quick Links</h3>
-            <a href="#">Leak Test Machine</a>
-            <a href="#">Industrial Application</a>
-            <a href="#">Warranty/Service</a>
-            <a href="#">Customers</a>
-            <a href="#">FAQ</a>
-            <a href="#">Contact Us</a>
+            <a href="Machines.html">Leak Test Machine</a>
+            <a href="Selection.html">Industrial Application</a>
+            <a href="client.html">Customers</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contact.html">Contact Us</a>
         </div>
 
         <!-- COLUMN 4 -->
         <div class="footer-col">
             <h3>Company</h3>
-            <a href="#">Corporate history</a>
-            <a href="#">Message from the Director</a>
-            <a href="#">Employment Opportunities</a>
-            <a href="#">Offices in India</a>
-            <a href="#">Worldwide Network</a>
+            <a href="About.html">About us</a>
+            <a href="CorporateHistory.html">Corporate history</a>
+            <a href="message.html">Message from the Director</a>
+            <a href="Cerificates.html">Cerificates</a>
+            
         </div>
 
     </div>
@@ -568,8 +520,7 @@ Pneumatic Circuit Unit: 7.0 kg</p><br>
     <div class="footer-bottom">
         <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
     </div>
-
-</footer>
+    
 
 <script>
 
@@ -583,6 +534,35 @@ setInterval(() => {
 
   slides[index].classList.add("active");
 }, 2500); // change time here
+
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // mobile fix
+
+        // Close others
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.classList.remove("active");
+            }
+        });
+
+        // Toggle current
+        dropdown.classList.toggle("active");
+    });
+});
+
+// Outside click (mobile + desktop)
+document.addEventListener("click", () => {
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("active");
+    });
+});
+
 </script>
 
 </body>
