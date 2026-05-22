@@ -204,7 +204,7 @@
     }
     .success-icon i { font-size: 2rem; color: #ffffff; }
     #form-success h3 { color: #3fca3f; font-size: 1.2rem; margin-bottom: 8px; background: none !important; }
-    #form-success p  { color: #5a6a85; font-size: 0.85rem; margin-bottom: 4px; }
+    #form-success p  { text-align: center !important; color: #5a6a85; font-size: 0.85rem; margin-bottom: 4px; }
     .reset-btn {
         margin-top: 20px;
         padding: 10px 26px;
@@ -449,7 +449,7 @@
                 <div class="success-icon"><i class="fa fa-check"></i></div>
                 <h3>Enquiry Sent!</h3>
                 <p>Thank you. We have received your message.</p>
-                <p style="color:#7a8aaa;font-size:0.78rem;">A confirmation has been sent to your email.<br>Our sales team will contact you within 1 business day.</p>
+                <p style="color:#7a8aaa;font-size:0.78rem;">A confirmation has been sent to your email.<br>Our Team Will Contact You Soon.</p>
                 <button class="reset-btn" onclick="resetForm()">Send Another Enquiry</button>
             </div>
 
@@ -911,7 +911,7 @@ document.getElementById('f-email').addEventListener('blur', function() {
 document.getElementById('f-phone').addEventListener('blur', function() {
     var val = this.value.trim();
     if (val && !isValidPhone(val)) {
-        markError('f-phone', 'hint-phone', 'Please enter a valid number (digits only, min 7).');
+        markError('f-phone', 'hint-phone', 'Please enter a valid number (digits only, min 10).');
     } else {
         clearError('f-phone', 'hint-phone');
     }
@@ -951,7 +951,7 @@ function submitEnquiry() {
         markError('f-phone', 'hint-phone', 'Phone number is required.');
         valid = false;
     } else if (!isValidPhone(phone)) {
-        markError('f-phone', 'hint-phone', 'Enter a valid number (digits only, min 7).');
+        markError('f-phone', 'hint-phone', 'Enter a valid number (digits only, min 10).');
         valid = false;
     }
     if (!office) {
