@@ -181,7 +181,6 @@ button:active{
         align-items: center;
         padding: 10px 20px;
         flex-wrap: nowrap;
-       
     }
 
     .nav-logo{
@@ -196,8 +195,9 @@ button:active{
         justify-content: space-between;
         align-items: center;
         gap: 25px;
-        overflow-x: auto;
         flex-wrap: nowrap;
+        /* overflow-x: auto; -- yeh hatao, dropdown block ho raha tha */
+        overflow: visible;
     }
 
     .menu::-webkit-scrollbar{
@@ -214,6 +214,17 @@ button:active{
         padding: 6px 10px;
         flex-shrink: 0;
         white-space: nowrap;
+    }
+
+    .dropdown{
+        position: relative;
+    }
+
+    .dropdown-menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 9999;
     }
 }
 /* ========================= */
