@@ -165,48 +165,45 @@ button:active{
 /* ========================= */
 /* 📱 MOBILE VIEW */
 /* ========================= */
-@media (min-width: 768px) and (max-width: 1023px){
+/* ========================= */
+/* 💻 MEDIUM LAPTOP (1024px - 1279px) → Image 3 style */
+/* ========================= */
+@media (min-width: 768px) and (max-width: 1279px) {
 
-    .navbar{
+    .navbar {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        flex-wrap: nowrap;
-       
+        gap: 6px;
     }
 
-    .nav-logo{
-        width: 130px;
-        height: 45px;
-        flex-shrink: 0;
+    .nav-logo {
+        width: 140px;
+        height: 50px;
     }
 
-    .menu{
+    .menu {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 8px;
-        overflow-x: auto;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
-    .menu::-webkit-scrollbar{
-        display: none;
+    .menu a {
+        font-size: 14px;
+        white-space: nowrap;
     }
 
-    .menu a{
+    .contact {
+        margin-top: 2px;
+    }
+
+    button {
         font-size: 13px;
-        white-space: nowrap;
-    }
-
-    button{
-        font-size: 12px;
-        padding: 6px 10px;
-        flex-shrink: 0;
-        white-space: nowrap;
+        padding: 7px 12px;
     }
 }
 /* ========================= */
@@ -298,7 +295,7 @@ padding-right:25px;
         display: flex;
         justify-content: space-evenly;
         padding: 10px 25px;
-         overflow-x: auto;
+         
     }
 
     .menu{
