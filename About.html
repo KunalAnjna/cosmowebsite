@@ -6,7 +6,7 @@
   <title>About Us — Cosmo Instruments India</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="style2.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -761,28 +761,7 @@
       });
     });
   </script>
-
-<script>
-    const links = document.querySelectorAll('.menu a');
-    const currentPage = window.location.pathname.split('/').pop();
-
-    links.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage) {
-            link.classList.add('active');
-
-            // Agar yeh link dropdown ke andar hai
-            const parentDropdown = link.closest('.dropdown');
-            if (parentDropdown) {
-                const parentToggle = parentDropdown.querySelector('.dropdown-toggle');
-                if (parentToggle) {
-                    parentToggle.classList.add('active');
-                }
-            }
-        }
-    });
-</script>
-  <script>
+<script src="script2.js"></script>  <script>
 const dropdowns = document.querySelectorAll(".dropdown");
 
 dropdowns.forEach(dropdown => {

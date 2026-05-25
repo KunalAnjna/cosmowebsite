@@ -1,0 +1,15 @@
+.menu a.active {
+    color: rgb(129, 129, 218);
+}
+
+.menu a.active::after {
+    width: 100%;
+}
+
+.dropdown-toggle.active {
+    color: rgb(129, 129, 218);
+}
+
+.dropdown-toggle.active::after {
+    width: 100%;
+}
