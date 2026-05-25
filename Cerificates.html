@@ -316,7 +316,7 @@ body {  background: #f0f6ff; }
 
 </footer>
 <script>
-    const links = document.querySelectorAll('.menu a');
+ const links = document.querySelectorAll('.menu a');
     const currentPage = window.location.pathname.split('/').pop();
 
     links.forEach(link => {
@@ -324,7 +324,6 @@ body {  background: #f0f6ff; }
         if (linkPage === currentPage) {
             link.classList.add('active');
 
-            // Agar yeh link dropdown ke andar hai
             const parentDropdown = link.closest('.dropdown');
             if (parentDropdown) {
                 const parentToggle = parentDropdown.querySelector('.dropdown-toggle');
