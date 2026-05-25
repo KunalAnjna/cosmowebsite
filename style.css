@@ -174,7 +174,7 @@ button:active{
         align-items: center;
         padding: 10px 20px;
         flex-wrap: nowrap;
-        overflow-x: auto;
+       
     }
 
     .nav-logo{
@@ -222,7 +222,7 @@ button:active{
         flex-direction: column;
         justify-content: center;
         padding: 0 25px 0 10px;   /* right side extra gap */
-        overflow-x: auto;
+     
     }
 
     /* scrollbar hide */
