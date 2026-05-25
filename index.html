@@ -343,6 +343,17 @@ Ideal for waterproof test of parts and finished products that require IP ratings
 
 </footer> 
 <script>
+    const links = document.querySelectorAll('.menu a');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        }
+    });
+</script>
+<script>
 // JavaScript for EVENT SECTION
 (function () {
 

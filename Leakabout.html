@@ -333,8 +333,27 @@
     <div class="footer-bottom">
         <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
     </div>
-</footer>    
+</footer>
+<script>
+    const links = document.querySelectorAll('.menu a');
+    const currentPage = window.location.pathname.split('/').pop();
 
+    links.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+
+            // Agar yeh link dropdown ke andar hai
+            const parentDropdown = link.closest('.dropdown');
+            if (parentDropdown) {
+                const parentToggle = parentDropdown.querySelector('.dropdown-toggle');
+                if (parentToggle) {
+                    parentToggle.classList.add('active');
+                }
+            }
+        }
+    });
+</script>
 <script>
   document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => {

@@ -161,11 +161,18 @@ button:hover{
 button:active{
     transform: scale(0.95);
 }
+.menu a.active {
+    color: rgb(129, 129, 218);
+}
+
+.menu a.active::after {
+    width: 100%;
+}
 
 /* ========================= */
 /* 📱 MOBILE VIEW */
 /* ========================= */
-@media (min-width: 768px) and (max-width: 1450px){
+@media (min-width: 1000px) and (max-width: 1450px){
 
     .navbar{
         display: flex;
@@ -213,7 +220,7 @@ button:active{
 /* 📱 MOBILE SAME LINE NAVBAR */
 /* ========================= */
 
-@media (max-width: 767px){
+@media (max-width: 1000px){
 
     
     .navbar{ 
