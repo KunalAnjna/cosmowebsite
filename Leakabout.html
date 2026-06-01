@@ -64,7 +64,7 @@
   .section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
   .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; }
   .section-num {  font-size: 5rem; font-weight: 700; color: var(--border); line-height: 1; margin-right: 1.5rem; }
-  h2 {  font-size: 2.2rem; font-weight: 600; color: var(--blue); }
+  h2 {  font-size: 2.2rem; font-weight: 600; color: rgb(8, 49, 85); }
   h2 em { color: var(--accent); font-style: normal; }
   .section-lead { color: var(--muted); font-size: 0.95rem; max-width: 500px; }
 
@@ -111,6 +111,11 @@
   .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .faq-a-inner { padding-bottom: 1.5rem; font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
   .faq-item.open .faq-a { max-height: 200px; }
+   .btn-Faq { margin-top: 20px;
+    display: flex;
+    justify-content: center; background:Blue; color: White; border: none; padding: 0.5rem 2 rem; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; border-radius: 2px; transition: all 0.2s; }
+  .btn-Faq:hover { background: var(--off); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
 
   /* CTA */
   .cta { background: var(--blue); color: white; padding: 5rem 2rem; text-align: center; }
@@ -266,10 +271,12 @@
     <div class="faq-item"><div class="faq-q">What industries use Leak Testing? <span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Automotive, Medical, Electronics, Aerospace, Food Packaging, and General Industrial Manufacturing all rely on leak testing for quality assurance and regulatory compliance.</div></div></div>
     <div class="faq-item"><div class="faq-q">What is Differential Pressure Testing? <span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Differential pressure testing involves measuring the pressure difference between two points(Work Part and Master Part ) to detect leaks or measure flow rates.</div></div></div>
   </div>
+ 
+ <a href="Faq.html" ><button class="btn-Faq">More FAQs</button></a>
 </div>
 
 <div class="cta">
-  <h2>Need Technical Advice?</h2>
+  <h2 style="color: white;">Need Technical Advice?</h2>
   <p style="text-align: center;">Our engineers help you select the right equipment for your specific application and production requirements.</p>
  <a href="contact.html" ><button class="btn-white">Talk to a Specialist</button></a>
 </div>
