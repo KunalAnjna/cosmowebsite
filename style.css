@@ -1576,7 +1576,7 @@ background-color: rgb(255, 255, 255,00.2s);
 .products-container{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: stretch;
     gap: 40px;
     margin-top: 80px;
@@ -1586,13 +1586,14 @@ background-color: rgb(255, 255, 255,00.2s);
 /* CARD */
 .product-card{
     flex: 1 1 280px;
-    max-width: 360px;
+    max-width: 280px;
     min-width: 260px;
     background: #f0f0f0;
     padding: 25px;
     cursor: pointer;
     transition: 0.3s ease;
     border-radius: 12px;
+    height: 300px;
 }
 
 /* IMAGE */
@@ -2234,7 +2235,7 @@ text-align: center;
 
 /* ARROW */
 .arrow{
-    position: absolute;
+   
     right: 25px;
     bottom: 20px;
     color: #1e90ff;
