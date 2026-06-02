@@ -1,25 +1,32 @@
+const navLinks = document.querySelectorAll('.menu a');
 
-    const navLinks = document.querySelectorAll('.menu a');
-    let currentPage = window.location.pathname.split('/').pop();
+function normalize(str) {
+    return str
+        .replace(/\.html$/i, '')
+        .replace(/^.*\/\/[^\/]+/, '') // domain strip (www.cosmo.com/about → /about)
+        .replace(/\/index$/i, '')
+        .replace(/\/$/, '')
+        .toLowerCase()
+        .trim()
+        || '/';
+}
 
-    if (currentPage === '' || currentPage === '/') {
-        currentPage = 'index.html';
-    }
+const currentClean = normalize(window.location.href);
 
-    navLinks.forEach(function(link) {
-        const linkPage = link.getAttribute('href');
-        const linkClean = linkPage ? linkPage.replace('.html', '').toLowerCase() : '';
-        const currentClean = currentPage.replace('.html', '').toLowerCase();
+navLinks.forEach(function(link) {
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
 
-        if (linkClean === currentClean || linkPage === currentPage) {
-            link.classList.add('active');
+    const absolute = new URL(href, window.location.href).href;
+    const linkClean = normalize(absolute);
 
-            const parentDropdown = link.closest('.dropdown');
-            if (parentDropdown) {
-                const parentToggle = parentDropdown.querySelector('.dropdown-toggle');
-                if (parentToggle) {
-                    parentToggle.classList.add('active');
-                }
-            }
+    if (linkClean === currentClean) {
+        link.classList.add('active');
+
+        const parentDropdown = link.closest('.dropdown');
+        if (parentDropdown) {
+            const parentToggle = parentDropdown.querySelector('.dropdown-toggle');
+            if (parentToggle) parentToggle.classList.add('active');
         }
-    });
+    }
+});
