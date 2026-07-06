@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers - Cosmo Instruments India Pvt. Ltd.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
   :root{
     --navy:#ffffff;
     --navy-2:#f4f7fb;
@@ -30,9 +30,7 @@
   h1,h2,h3,h4{font-family:'Poppins',sans-serif;}
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
-
-  /* NAV */
-  .navbar{
+.navbar{
     width: 100%;
     min-height: 70px;
     background-color: white;
@@ -360,7 +358,8 @@ padding-right:25px;
     }
 }
 
-  /* HERO */
+
+/* HERO */
   .hero{
     position:relative;
     padding:110px 32px 90px;
@@ -465,46 +464,171 @@ padding-right:25px;
   .why-card h4{font-size:1rem; margin-bottom:8px; color:var(--blue);}
   .why-card p{font-size:.88rem; color:var(--muted);}
 
-  /* FOOTER */
-  footer{background:#0f2545; border-top:1px solid var(--line); padding:60px 32px 24px;}
-  .footer-grid{
-    max-width:1180px; margin:0 auto; display:grid;
-    grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px;
-  }
-  .footer-grid h5{font-size:.85rem; text-transform:uppercase; letter-spacing:1.5px; color:var(--accent-2); margin-bottom:18px;}
-  .footer-grid ul{list-style:none;}
-  .footer-grid ul li{margin-bottom:10px;}
-  .footer-grid ul li a{color:rgba(255,255,255,0.65); font-size:.88rem;}
-  .footer-grid ul li a:hover{color:#ffffff;}
-  .footer-brand .logo{margin-bottom:14px; color:#ffffff;}
-  .footer-brand p{color:rgba(255,255,255,0.65); font-size:.88rem; max-width:280px;}
-  .social{display:flex; gap:14px; margin-top:18px;}
-  .social a{
-    width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.18);
-    display:flex; align-items:center; justify-content:center; font-size:.85rem; color:rgba(255,255,255,0.7);
-  }
-  .social a:hover{color:var(--accent-2); border-color:var(--accent-2);}
-  .footer-bottom{
-    max-width:1180px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(255,255,255,0.12);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-    font-size:.8rem; color:rgba(255,255,255,0.55);
-  }
+/* FOOTER */
 
-  @media(max-width:900px){
-    .footer-grid{grid-template-columns:1fr 1fr;}
-  }
-  @media(max-width:768px){
-    nav ul{
-      position:absolute; top:100%; left:0; right:0; background:var(--navy-2);
-      flex-direction:column; padding:20px 32px; display:none; gap:16px;
-      border-bottom:1px solid var(--line);
+/* ================= FOOTER ================= */
+.footer {
+    padding: 60px 40px;
+    color: #fff;
+
+    background: 
+        linear-gradient(rgba(11, 28, 52, 0.85), rgba(11, 28, 52, 0.85)),
+        url('footerimage.jpeg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* CONTAINER */
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* 🔥 important */
+}
+
+/* COLUMN */
+.footer-col {
+    flex: 1 1 220px; /* 🔥 responsive width */
+    min-width: 200px;
+}
+
+/* HEADINGS */
+.footer-col h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* underline */
+.footer-col h3::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #1e6fa3;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* LINKS */
+.footer-col a {
+    display: block;
+    color: #ccc;
+    margin: 8px 0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #fff;
+    transform: translateX(5px); /* 🔥 small animation */
+}
+
+/* TEXT */
+.footer-col p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #1e6fa3;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 8px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #0c4d75;
+    transform: translateY(-3px);
+}
+
+/* BOTTOM */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+
+}
+.footer-bottom p{
+text-align: center;
+}
+.footer-col p{
+    text-align: left;}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 50px 30px;
     }
-    nav ul.show{display:flex;}
-    .menu-toggle{display:block;}
-    .hero{padding:80px 20px 60px;}
-    section{padding:56px 20px;}
-    .footer-grid{grid-template-columns:1fr;}
-  }
+
+    .footer-container {
+        gap: 25px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-col {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-col h3 {
+        font-size: 18px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+        font-size: 13px;
+    }
+}
+
+
+
+
+
 </style>
 </head>
 <body>
@@ -543,7 +667,7 @@ padding-right:25px;
                 
             </div>
                <a href="Machines.html">Leak Test Machines</a>
-                <a href="products.html">Products and Services</a>
+                <a href="products.html">Products </a>
                 <a href="client.html">Clients</a>
                 <a href="contact.html">Contact us</a>
                 <a href="careers.html">Careers</a>
@@ -725,61 +849,107 @@ padding-right:25px;
     </div>
   </div>
 </section>
+<footer class="footer">
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="https://cosmoinstruments.netlify.app/" class="logo">COSMO <span style="color:var(--accent);">INSTRUMENTS</span></a>
-      <p>Trusted provider of air leak and flow testing solutions across India since 2007.</p>
-      <div class="social">
-        <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd" target="_blank" rel="noopener">in</a>
-        <a href="https://x.com/CIP_India" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/cosmoinstrumentsindia/" target="_blank" rel="noopener">IG</a>
-      </div>
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow  Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="Machines.html">Leak Test Machine</a>
+            <a href="Selection.html">Industrial Application</a>
+            <a href="client.html">Customers</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="About.html">About us</a>
+            <a href="CorporateHistory.html">Corporate History</a>
+            <a href="message.html">Message from the Director</a>
+            <a href="Cerificates.html">Certificates</a>
+            
+        </div>
+
     </div>
-    <div>
-      <h5>Products</h5>
-      <ul>
-        <li><a href="https://cosmoinstruments.netlify.app/airleak">Air Leak Testers</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/flowmeter">Air Flow Testers</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/helium">Helium/Hydrogen</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/presure">Pressure</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/peripherals">Peripherals</a></li>
-      </ul>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
     </div>
-    <div>
-      <h5>Quick Links</h5>
-      <ul>
-        <li><a href="https://cosmoinstruments.netlify.app/machines">Leak Test Machine</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/selection">Industrial Application</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/client">Customers</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/faq">FAQ</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/contact">Contact Us</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Company</h5>
-      <ul>
-        <li><a href="https://cosmoinstruments.netlify.app/about">About us</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/corporatehistory">Corporate History</a></li>
-        <li><a href="https://cosmoinstruments.netlify.app/message">Message from the Director</a></li>
-        <li><a href="#careers">Careers</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Cosmo Instruments India Pvt. Ltd.</span>
-    <span>D-U-N-S® Registered Business | Dun & Bradstreet</span>
-  </div>
+
 </footer>
 
 <script>
-  document.querySelectorAll('.job-card').forEach(card=>{
-    card.addEventListener('click', ()=> card.classList.toggle('open'));
-  });
-  document.getElementById('menuToggle').addEventListener('click', ()=>{
-    document.getElementById('navMenu').classList.toggle('show');
-  });
+  document.addEventListener("DOMContentLoaded", () => {
+
+    // ==========================
+    // Job Card Toggle
+    // ==========================
+    document.querySelectorAll(".job-card").forEach(card => {
+        card.addEventListener("click", function () {
+            this.classList.toggle("open");
+        });
+    });
+
+    // ==========================
+    // Navbar Dropdown
+    // ==========================
+    document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+        toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const dropdown = this.parentElement;
+
+            // Close other dropdowns
+            document.querySelectorAll(".dropdown").forEach(item => {
+                if (item !== dropdown) {
+                    item.classList.remove("active");
+                }
+            });
+
+            dropdown.classList.toggle("active");
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".dropdown").forEach(item => {
+            item.classList.remove("active");
+        });
+    });
+
+});
 </script>
 
 </body>
