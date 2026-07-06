@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Here - Cosmo Instruments India Pvt. Ltd.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark: rgb(30, 120, 150);
+    --mid: rgb(58, 165, 189);
+    --light: rgb(104, 224, 251);
+    --white: #ffffff;
+    --white2: #f4fafc;
+    --black: #000000;
+    --radius: 6px;
+    --shadow: 0 4px 24px rgba(30,120,150,.18);
+    --text:#12242c;
+    --muted:#4d6b74;
+    --line:rgba(30,120,150,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--white);
+    color:var(--text);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+
+  /* NAV (matches careers page) */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 1px 12px rgba(18,36,44,0.05);
+  }
+  .nav-wrap{
+    max-width:1280px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 32px;
+  }
+  .logo{font-weight:800; font-size:1.25rem; letter-spacing:.5px; color:var(--dark);}
+  .logo span{color:var(--mid);}
+  nav ul{list-style:none; display:flex; gap:26px; align-items:center;}
+  nav ul li{position:relative; font-size:.92rem; font-weight:500; color:var(--muted);}
+  nav ul li a:hover{color:var(--dark);}
+  .nav-cta{
+    background:var(--dark); color:#ffffff; font-weight:700;
+    padding:10px 20px; border-radius:var(--radius); font-size:.88rem;
+  }
+  .menu-toggle{display:none; background:none; border:none; color:var(--text); font-size:1.6rem; cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:80px 32px 60px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(104,224,251,0.20), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(58,165,189,0.16), transparent 40%),
+      linear-gradient(180deg,#ffffff 0%, var(--white2) 100%);
+    text-align:center;
+  }
+  .hero .eyebrow{
+    display:inline-block; color:var(--dark); font-weight:700; font-size:.8rem;
+    letter-spacing:2.5px; text-transform:uppercase; margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:clamp(2rem,4.5vw,3rem); font-weight:800; line-height:1.15;
+    max-width:760px; margin:0 auto 16px; color:var(--dark);
+  }
+  .hero p{
+    max-width:620px; margin:0 auto; color:var(--muted); font-size:1.02rem;
+  }
+
+  /* FORM SECTION */
+  .form-section{padding:50px 32px 90px;}
+  .form-wrap{
+    max-width:820px; margin:0 auto;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    padding:44px;
+  }
+  .form-wrap h2{
+    font-size:1.4rem; font-weight:700; color:var(--dark); margin-bottom:6px;
+  }
+  .form-wrap .sub{color:var(--muted); font-size:.92rem; margin-bottom:32px;}
+
+  .form-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:22px;
+  }
+  .field{display:flex; flex-direction:column; gap:8px;}
+  .field.full{grid-column:1 / -1;}
+  .field label{
+    font-size:.85rem; font-weight:600; color:var(--text);
+  }
+  .field label .req{color:var(--dark);}
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="tel"],
+  .field input[type="number"],
+  .field select{
+    padding:12px 14px; border:1px solid rgba(30,120,150,0.28);
+    border-radius:var(--radius); font-size:.92rem; font-family:'Inter',sans-serif;
+    color:var(--text); background:var(--white2);
+    outline:none; transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field input:focus, .field select:focus{
+    border-color:var(--mid); box-shadow:0 0 0 3px rgba(58,165,189,0.18);
+    background:var(--white);
+  }
+  .file-drop{
+    border:1.5px dashed var(--mid); border-radius:var(--radius);
+    padding:22px; text-align:center; background:var(--white2);
+    cursor:pointer; transition:background .2s ease;
+    position:relative;
+  }
+  .file-drop:hover{background:rgba(104,224,251,0.10);}
+  .file-drop input[type="file"]{
+    position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%;
+  }
+  .file-drop .icon{font-size:1.4rem; color:var(--dark); margin-bottom:6px;}
+  .file-drop .label{font-size:.88rem; font-weight:600; color:var(--dark);}
+  .file-drop .hint{font-size:.78rem; color:var(--muted); margin-top:4px;}
+  #fileName{font-size:.82rem; color:var(--mid); margin-top:8px; font-weight:600;}
+
+  .preview-card{
+    display:flex; align-items:center; gap:14px;
+    margin-top:14px; padding:14px 16px;
+    background:var(--white2); border:1px solid var(--line); border-radius:var(--radius);
+  }
+  .preview-card .thumb{
+    width:52px; height:52px; border-radius:8px; background:var(--dark);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-weight:800; font-size:.72rem; flex-shrink:0; overflow:hidden;
+  }
+  .preview-card .thumb img{width:100%; height:100%; object-fit:cover;}
+  .preview-card .info{flex:1; min-width:0;}
+  .preview-card .info .name{font-weight:600; font-size:.88rem; color:var(--text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .preview-card .info .meta{font-size:.78rem; color:var(--muted); margin-top:2px;}
+  .preview-card .view-link{font-size:.82rem; font-weight:700; color:var(--dark); flex-shrink:0;}
+  .pdf-embed{
+    margin-top:12px; width:100%; height:340px; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  }
+  .pdf-embed iframe{width:100%; height:100%; border:none;}
+
+  .mail-note{
+    text-align:center; font-size:.8rem; color:var(--muted); margin-top:14px;
+  }
+
+  .consent{
+    display:flex; align-items:flex-start; gap:10px; margin-top:8px;
+    font-size:.85rem; color:var(--muted);
+  }
+  .consent input{margin-top:3px;}
+
+  .btn-submit{
+    width:100%; margin-top:28px;
+    background:linear-gradient(135deg,var(--dark),var(--mid));
+    color:#ffffff; font-weight:700; font-size:1rem;
+    padding:16px; border:none; border-radius:var(--radius);
+    cursor:pointer; box-shadow:0 10px 26px rgba(30,120,150,0.30);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-submit:hover{transform:translateY(-2px); box-shadow:0 14px 32px rgba(30,120,150,0.40);}
+  .btn-submit:disabled{opacity:.7; cursor:not-allowed; transform:none;}
+
+  .success-box{
+    display:none; text-align:center; padding:36px 20px;
+  }
+  .success-box .tick{
+    width:64px; height:64px; border-radius:50%; background:rgba(104,224,251,0.25);
+    color:var(--dark); font-size:1.8rem; display:flex; align-items:center; justify-content:center;
+    margin:0 auto 18px; font-weight:800;
+  }
+  .success-box h3{color:var(--dark); margin-bottom:8px;}
+  .success-box p{color:var(--muted); font-size:.92rem;}
+
+  /* FOOTER (matches careers page) */
+  footer{background:rgb(20,80,100); border-top:1px solid var(--line); padding:60px 32px 24px;}
+  .footer-grid{
+    max-width:1180px; margin:0 auto; display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px;
+  }
+  .footer-grid h5{font-size:.85rem; text-transform:uppercase; letter-spacing:1.5px; color:var(--light); margin-bottom:18px;}
+  .footer-grid ul{list-style:none;}
+  .footer-grid ul li{margin-bottom:10px;}
+  .footer-grid ul li a{color:rgba(255,255,255,0.68); font-size:.88rem;}
+  .footer-grid ul li a:hover{color:#ffffff;}
+  .footer-brand .logo{margin-bottom:14px; color:#ffffff;}
+  .footer-brand .logo span{color:var(--light);}
+  .footer-brand p{color:rgba(255,255,255,0.68); font-size:.88rem; max-width:280px;}
+  .social{display:flex; gap:14px; margin-top:18px;}
+  .social a{
+    width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2);
+    display:flex; align-items:center; justify-content:center; font-size:.85rem; color:rgba(255,255,255,0.75);
+  }
+  .social a:hover{color:var(--light); border-color:var(--light);}
+  .footer-bottom{
+    max-width:1180px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(255,255,255,0.14);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:.8rem; color:rgba(255,255,255,0.6);
+  }
+
+  @media(max-width:900px){
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:768px){
+    nav ul{
+      position:absolute; top:100%; left:0; right:0; background:var(--white);
+      flex-direction:column; padding:20px 32px; display:none; gap:16px;
+      border-bottom:1px solid var(--line);
+    }
+    nav ul.show{display:flex;}
+    .menu-toggle{display:block;}
+    .form-grid{grid-template-columns:1fr;}
+    .form-wrap{padding:26px;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="https://cosmoinstruments.netlify.app/" class="logo">COSMO <span>INSTRUMENTS</span></a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <ul id="navMenu">
+      <li><a href="https://cosmoinstruments.netlify.app/">Home</a></li>
+      <li><a href="https://cosmoinstruments.netlify.app/about">About us</a></li>
+      <li><a href="https://cosmoinstruments.netlify.app/machines">Leak Test Machines</a></li>
+      <li><a href="https://cosmoinstruments.netlify.app/products">Products and Services</a></li>
+      <li><a href="https://cosmoinstruments.netlify.app/client">Clients</a></li>
+      <li><a href="./careers.html" style="color:var(--dark);font-weight:700;">Careers</a></li>
+      <li><a href="https://cosmoinstruments.netlify.app/contact">Contact us</a></li>
+      <li><a href="https://cosmoinstruments.netlify.app/contact" class="nav-cta">Request Quote</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Careers &rarr; Apply Here</span>
+  <h1>Apply Here</h1>
+  <p>We're hiring! Discover exciting opportunities to advance your career with Cosmo Way. Fill in the form below and our HR team will get in touch with you.</p>
+</section>
+
+<section class="form-section">
+  <div class="form-wrap">
+
+    <div id="formView">
+      <h2>Job Application Form</h2>
+      <div class="sub">Fields marked <span style="color:var(--dark);">*</span> are required.</div>
+
+      <form id="applyForm" action="https://formspree.io/f/xqevgvwp" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New Job Application - Cosmo Instruments India">
+        <div class="form-grid">
+
+          <div class="field">
+            <label>Name <span class="req">*</span></label>
+            <input type="text" name="name" required placeholder="Your full name">
+          </div>
+
+          <div class="field">
+            <label>Age <span class="req">*</span></label>
+            <input type="number" name="age" min="18" max="65" required placeholder="Your age">
+          </div>
+
+          <div class="field">
+            <label>Location <span class="req">*</span></label>
+            <select name="location" required>
+              <option value="" disabled selected>Select location</option>
+              <option>Manesar</option>
+              <option>Bengaluru</option>
+              <option>Chennai</option>
+              <option>Gujarat</option>
+              <option>Pune</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>E-mail ID <span class="req">*</span></label>
+            <input type="email" name="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="field">
+            <label>Contact No <span class="req">*</span></label>
+            <input type="tel" name="contact" required placeholder="10-digit mobile number">
+          </div>
+
+          <div class="field">
+            <label>Educational Qualification <span class="req">*</span></label>
+            <select name="qualification" required>
+              <option value="" disabled selected>Select qualification</option>
+              <option>Diploma</option>
+              <option>B.E / B.Tech</option>
+              <option>Degree</option>
+              <option>B.Com</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Work Experience <span class="req">*</span></label>
+            <select name="experience" required>
+              <option value="" disabled selected>Select experience</option>
+              <option>Fresher</option>
+              <option>1-2 years</option>
+              <option>2-3 years</option>
+              <option>5-8 years</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Position Applying For <span class="req">*</span></label>
+            <select name="position" required>
+              <option value="" disabled selected>Select position</option>
+              <option>Service Engineer (Fresher)</option>
+              <option>Service Engineer (1-2 Years experience)</option>
+              <option>Assembly Engineer (Fresher)</option>
+              <option>Assembly Engineer (1-2 Years experience)</option>
+              <option>Design Engineer (Fresher)</option>
+              <option>Design Engineer (1-2 Years experience)</option>
+              <option>Account Executive (5-8 Years Experience)</option>
+              <option>Sales Executive (Fresher)</option>
+              <option>Sales Executive (2-3 Years experience)</option>
+              <option>Technical Sales Executive (Fresher)</option>
+              <option>Technical Sales Executive (2-3 Years experience)</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label>Upload Resume <span class="req">*</span></label>
+            <div class="file-drop">
+              <input type="file" name="resume_attachment" id="resumeInput" accept=".pdf,.doc,.docx" required>
+              <div class="icon">&#8593;</div>
+              <div class="label">Click to upload or drag your resume here</div>
+              <div class="hint">PDF or Word file, up to 5MB</div>
+            </div>
+            <div id="fileName"></div>
+            <div id="resumePreview"></div>
+          </div>
+
+          <div class="field full">
+            <label class="consent">
+              <input type="checkbox" required>
+              <span>I agree with the handling of my personal information as per Cosmo Instruments India's Privacy Policy.</span>
+            </label>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">Submit Application</button>
+        <div class="mail-note">Your application details are sent automatically. You'll get a one-click option to email your resume next.</div>
+      </form>
+    </div>
+
+    <div class="success-box" id="successBox">
+      <div class="tick">&#10003;</div>
+      <h3>Application Submitted!</h3>
+      <p>Thank you for applying to Cosmo Instruments India. Your application details have been sent to our HR team &mdash; they will review it and reach out to you soon.</p>
+      <div id="resumeStep" style="display:none; margin-top:24px; padding-top:24px; border-top:1px solid var(--line);">
+        <p style="font-weight:600; color:var(--dark); margin-bottom:6px;">One last step — send us your resume</p>
+        <p style="font-size:.85rem; margin-bottom:16px;">Click below to open your email app with the details pre-filled, then attach your resume file and hit send.</p>
+        <a id="resumeMailBtn" href="#" class="btn-submit" style="display:inline-block; width:auto; padding:14px 32px;">Email My Resume</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="https://cosmoinstruments.netlify.app/" class="logo">COSMO <span>INSTRUMENTS</span></a>
+      <p>Trusted provider of air leak and flow testing solutions across India since 2007.</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd" target="_blank" rel="noopener">in</a>
+        <a href="https://x.com/CIP_India" target="_blank" rel="noopener">X</a>
+        <a href="https://www.instagram.com/cosmoinstrumentsindia/" target="_blank" rel="noopener">IG</a>
+      </div>
+    </div>
+    <div>
+      <h5>Products</h5>
+      <ul>
+        <li><a href="https://cosmoinstruments.netlify.app/airleak">Air Leak Testers</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/flowmeter">Air Flow Testers</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/helium">Helium/Hydrogen</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/presure">Pressure</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/peripherals">Peripherals</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="https://cosmoinstruments.netlify.app/machines">Leak Test Machine</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/selection">Industrial Application</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/client">Customers</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/faq">FAQ</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="https://cosmoinstruments.netlify.app/about">About us</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/corporatehistory">Corporate History</a></li>
+        <li><a href="https://cosmoinstruments.netlify.app/message">Message from the Director</a></li>
+        <li><a href="./careers.html">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Cosmo Instruments India Pvt. Ltd.</span>
+    <span>D-U-N-S® Registered Business | Dun & Bradstreet</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuToggle').addEventListener('click', ()=>{
+    document.getElementById('navMenu').classList.toggle('show');
+  });
+
+  const resumeInput = document.getElementById('resumeInput');
+  const fileName = document.getElementById('fileName');
+  const resumePreview = document.getElementById('resumePreview');
+
+  function fmtSize(bytes){
+    if(bytes < 1024) return bytes + ' B';
+    if(bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+    return (bytes/(1024*1024)).toFixed(2) + ' MB';
+  }
+
+  resumeInput.addEventListener('change', ()=>{
+    resumePreview.innerHTML = '';
+    fileName.textContent = '';
+    if(!resumeInput.files.length) return;
+    const file = resumeInput.files[0];
+    fileName.textContent = '✓ Selected: ' + file.name;
+    const url = URL.createObjectURL(file);
+    const ext = file.name.split('.').pop().toLowerCase();
+
+    const card = document.createElement('div');
+    card.className = 'preview-card';
+
+    let thumbHTML = '<div class="thumb">' + ext.toUpperCase() + '</div>';
+    card.innerHTML = thumbHTML +
+      '<div class="info"><div class="name">' + file.name + '</div>' +
+      '<div class="meta">' + fmtSize(file.size) + '</div></div>' +
+      '<a class="view-link" href="' + url + '" target="_blank" rel="noopener">Open ↗</a>';
+    resumePreview.appendChild(card);
+
+    if(ext === 'pdf'){
+      const embedWrap = document.createElement('div');
+      embedWrap.className = 'pdf-embed';
+      embedWrap.innerHTML = '<iframe src="' + url + '"></iframe>';
+      resumePreview.appendChild(embedWrap);
+    }
+  });
+
+  document.getElementById('applyForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    // Build FormData but exclude the resume file — Formspree's free plan
+    // does not support file attachments, so we send text fields only here.
+    const formData = new FormData(form);
+    formData.delete('resume_attachment');
+
+    const name = form.name.value;
+    const position = form.position.value;
+    const resumeFile = resumeInput.files[0];
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById('formView').style.display = 'none';
+        document.getElementById('successBox').style.display = 'block';
+
+        // Resume file can't be auto-attached on the free plan, so open a
+        // pre-filled email as a second step for the applicant to attach it.
+        const subject = 'Resume - ' + position + ' - ' + name;
+        const body = 'Hi,%0D%0A%0D%0APlease find my resume attached for the ' + encodeURIComponent(position) + ' position.%0D%0A%0D%0AName: ' + encodeURIComponent(name) + '%0D%0A%0D%0A(Please attach: ' + encodeURIComponent(resumeFile ? resumeFile.name : 'your resume file') + ')';
+        const mailtoLink = 'mailto:Kunalanjna7747@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+
+        const resumeStep = document.getElementById('resumeStep');
+        resumeStep.style.display = 'block';
+        document.getElementById('resumeMailBtn').href = mailtoLink;
+      } else {
+        response.json().then(data => {
+          alert('Something went wrong. Please try again or contact us directly. (' + (data.error || 'Unknown error') + ')');
+          btn.disabled = false;
+          btn.textContent = 'Submit Application';
+        });
+      }
+    })
+    .catch(() => {
+      alert('Network error. Please check your connection and try again.');
+      btn.disabled = false;
+      btn.textContent = 'Submit Application';
+    });
+  });
+</script>
+
+</body>
+</html>
