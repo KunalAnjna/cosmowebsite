@@ -709,8 +709,7 @@ text-align: center;
       <h2>Job Application Form</h2>
       <div class="sub">Fields marked <span style="color:var(--dark);">*</span> are required.</div>
 
-      <form id="applyForm" action="https://formspree.io/f/xqevgvwp" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_subject" value="New Job Application - Cosmo Instruments India">
+      <form id="applyForm" action="backend/send-application.php" method="POST" enctype="multipart/form-data">
         <div class="form-grid">
 
           <div class="field">
@@ -807,19 +806,14 @@ text-align: center;
         </div>
 
         <button type="submit" class="btn-submit" id="submitBtn">Submit Application</button>
-        <div class="mail-note">Your application details are sent automatically. You'll get a one-click option to email your resume next.</div>
+        <div class="mail-note">Submitting this form will automatically email your details and resume to our HR team.</div>
       </form>
     </div>
 
     <div class="success-box" id="successBox">
       <div class="tick">&#10003;</div>
       <h3>Application Submitted!</h3>
-      <p>Thank you for applying to Cosmo Instruments India. Your application details have been sent to our HR team &mdash; they will review it and reach out to you soon.</p>
-      <div id="resumeStep" style="display:none; margin-top:24px; padding-top:24px; border-top:1px solid var(--line);">
-        <p style="font-weight:600; color:var(--dark); margin-bottom:6px;">One last step — send us your resume</p>
-        <p style="font-size:.85rem; margin-bottom:16px;">Click below to open your email app with the details pre-filled, then attach your resume file and hit send.</p>
-        <a id="resumeMailBtn" href="#" class="btn-submit" style="display:inline-block; width:auto; padding:14px 32px;">Email My Resume</a>
-      </div>
+      <p>Thank you for applying to Cosmo Instruments India. Your details and resume have been emailed to our HR team &mdash; they will review it and reach out to you soon.</p>
     </div>
 
   </div>
@@ -1027,13 +1021,9 @@ text-align: center;
         submitBtn.disabled = true;
         submitBtn.textContent = "Submitting...";
 
+        // resume_attachment stays in formData so our PHP backend
+        // emails it as a real file attachment automatically.
         const formData = new FormData(this);
-
-        formData.delete("resume_attachment");
-
-        const name = this.name.value;
-        const position = this.position.value;
-        const resumeFile = resumeInput?.files[0];
 
         try {
 
@@ -1045,33 +1035,18 @@ text-align: center;
                 }
             });
 
-            if (!response.ok) {
-                throw new Error("Submission Failed");
+            const result = await response.json();
+
+            if (!response.ok || !result.ok) {
+                throw new Error(result.error || "Submission Failed");
             }
 
             document.getElementById("formView").style.display = "none";
             document.getElementById("successBox").style.display = "block";
 
-            const subject = `Resume - ${position} - ${name}`;
-
-            const body = `Hi,
-
-Please find my resume attached for the ${position} position.
-
-Name: ${name}
-
-Please attach: ${resumeFile ? resumeFile.name : "your resume file"}
-`;
-
-            const mailLink =
-                `mailto:Kunalanjna7747@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            document.getElementById("resumeStep").style.display = "block";
-            document.getElementById("resumeMailBtn").href = mailLink;
-
         } catch (error) {
 
-            alert("Something went wrong. Please try again.");
+            alert("Something went wrong. Please try again. (" + error.message + ")");
 
             submitBtn.disabled = false;
             submitBtn.textContent = "Submit Application";
@@ -1083,4 +1058,4 @@ Please attach: ${resumeFile ? resumeFile.name : "your resume file"}
 </script>
 
 </body>
-</html>
+</html>az
