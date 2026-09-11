@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Air Leak Tester Features | Cosmo Instruments India</title>
+
+    <style>
+        /* ===== Page-specific styles for the Features accordion page ===== */
+        :root{
+            --bp-blue:#0b5ed7;
+            --bp-blue-dark:#003a8c;
+            --bp-bg:#eaf1fc;
+            --bp-border:#c7d9f5;
+        }
+
+        .bp-wrap{
+            max-width:1100px;
+            margin:0 auto;
+            padding:40px 20px 80px;
+            color:#222;
+        }
+
+        .bp-banner{
+           background: linear-gradient(150deg, #e4eaf6 0%, #f5f4f1 100%);
+            color:#fff;
+            padding:50px 20px;
+            text-align:center;
+        }
+        .bp-banner p.bp-eyebrow{
+            text-transform:uppercase;
+            letter-spacing:2px;
+            font-size:14px;
+            opacity:.85;
+            margin:0 0 10px;
+        }
+        .bp-banner h1{
+            margin:0;
+            font-size:clamp(24px,4vw,40px);
+        }
+        .bp-banner p.bp-sub{
+            margin:12px 0 0;
+            font-size:clamp(14px,2vw,17px);
+            opacity:.95;
+        }
+
+        /* Search bar */
+        .bp-search{
+            margin:30px 0 20px;
+            position:relative;
+        }
+        .bp-search input{
+            width:100%;
+            padding:14px 18px 14px 44px;
+            border:1px solid var(--bp-border);
+            border-radius:8px;
+            font-size:15px;
+            outline:none;
+        }
+        .bp-search input:focus{ border-color:var(--bp-blue); }
+        .bp-search i{
+            position:absolute;
+            left:16px; top:50%;
+            transform:translateY(-50%);
+            color:#888;
+        }
+        .bp-no-results{
+            display:none;
+            text-align:center;
+            color:#888;
+            padding:30px 0;
+        }
+
+        /* Accordion */
+        .bp-accordion{
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+        }
+        .bp-acc-item{
+            border:1px solid var(--bp-border);
+            border-radius:10px;
+            overflow:hidden;
+            background:#fff;
+        }
+        .bp-acc-header{
+            display:flex;
+            align-items:center;
+            gap:16px;
+            width:100%;
+            background:var(--bp-bg);
+            border:none;
+            padding:18px 22px;
+            cursor:pointer;
+            text-align:left;
+            font-size:17px;
+            font-weight:600;
+            color:var(--bp-blue-dark);
+            transition:.2s;
+        }
+        .bp-acc-header:hover{ background:#dfeaff; }
+        .bp-acc-num{
+            flex:0 0 auto;
+            width:34px; height:34px;
+            border-radius:50%;
+            background:var(--bp-blue);
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:14px;
+            font-weight:700;
+        }
+        .bp-acc-title{ flex:1; }
+        .bp-acc-title small{
+            display:block;
+            font-weight:400;
+            font-size:13px;
+            color:#555;
+            margin-top:3px;
+        }
+        .bp-acc-chevron{
+            transition:transform .25s;
+            color:var(--bp-blue);
+        }
+        .bp-acc-item.open .bp-acc-chevron{ transform:rotate(180deg); }
+
+        .bp-acc-body{
+            max-height:0;
+            overflow:hidden;
+            transition:max-height .35s ease;
+        }
+        .bp-acc-item.open .bp-acc-body{ max-height:6000px; } /* large enough for content */
+
+        .bp-acc-content{
+            padding:28px 26px 34px;
+            border-top:1px solid var(--bp-border);
+        }
+
+        /* Re-usable content blocks (same as individual feature pages) */
+        .bp-section-title{
+            color:var(--bp-blue-dark);
+            font-size:19px;
+            border-left:4px solid var(--bp-blue);
+            padding-left:10px;
+            margin:30px 0 16px;
+        }
+        .bp-section-title:first-child{ margin-top:0; }
+
+        .bp-grid-2{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:24px;
+        }
+        @media (max-width:800px){ .bp-grid-2{grid-template-columns:1fr;} }
+
+        .bp-card{
+            background:var(--bp-bg);
+            border:1px solid var(--bp-border);
+            border-radius:10px;
+            padding:20px 22px;
+        }
+        .bp-card h4{ color:var(--bp-blue); margin-top:0; font-size:16px; }
+        .bp-card p{ line-height:1.7; margin:0 0 10px; }
+        .bp-card ul{ margin:0; padding-left:18px; line-height:1.75; }
+        .bp-card ul li{ margin-bottom:8px; }
+        .bp-card ul li strong{ color:var(--bp-blue-dark); }
+
+        .bp-diagram-box{
+            background:var(--bp-bg);
+            border:1px solid var(--bp-border);
+            border-radius:10px;
+            padding:16px;
+            text-align:center;
+            margin:18px 0;
+        }
+        .bp-diagram-box img{ max-width:100%; height:auto; border-radius:6px; }
+        .bp-diagram-box .bp-caption{ margin-top:10px; font-size:13px; color:#555; }
+
+        .bp-highlight-box{
+            background:#fff;
+            border:2px solid var(--bp-blue);
+            border-radius:10px;
+            padding:20px 22px;
+        }
+        .bp-highlight-box h4{ color:var(--bp-blue-dark); margin-top:0; }
+        .bp-highlight-box p{ line-height:1.7; margin:0 0 10px; }
+
+        .bp-table-wrap{ overflow-x:auto; margin-top:14px; }
+        table.bp-table{ width:100%; border-collapse:collapse; min-width:480px; }
+        table.bp-table th, table.bp-table td{
+            border:1px solid var(--bp-border);
+            padding:10px 14px;
+            text-align:center;
+            font-size:14px;
+        }
+        table.bp-table thead th{ background:var(--bp-blue); color:#fff; }
+        table.bp-table tbody th{ background:var(--bp-bg); text-align:left; color:var(--bp-blue-dark); }
+        .bp-table-note{ font-size:12px; color:#666; margin-top:8px; }
+
+        .bp-placeholder{
+            padding:30px;
+            text-align:center;
+            color:#999;
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+               <div class="logo"></div>
+            </div>
+
+            <div class="menu">
+                <a href="index.html">Home</a>
+               <div class="dropdown">
+             <a href="#" class="dropdown-toggle">About us ▾</a>
+                <div class="dropdown-menu">
+                     <p><a href="About.html">About us</a></p>
+                    <p><a href="message.html">Message From Director</a></p>
+                    <p><a href="CorporateHistory.html">Corporate history </a></p>
+                        <p><a href="Cerificates.html">ISO Certificates</a></p>
+                </div>
+            </div>
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle">What is Leak test? ▾</a>
+                <div class="dropdown-menu">
+                    <p><a href="Leakabout.html">What is Leak Test?</a></p>
+                           <p><a href="Function2.html">functions</a></p>
+                    <p><a href="Selection.html">Select as per industry </a></p>
+                    <p><a href="Faq.html">FAQs</a></p>
+                    <p><a href="Features.html">Tester Features</a></p>
+                </div>
+            </div>
+                <p><a href="Function2.html">functions</a></p>
+                <a href="products.html">Products </a>
+                <a href="client.html">Clients</a>
+                <a href="contact.html">Contact us</a>
+                <a href="careers.html">Careers</a>
+            </div>
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
+        </div>
+    </header>
+
+    <!-- ================= AIR LEAK TESTER FEATURES (ACCORDION) ================= -->
+
+    <section class="bp-banner">
+       
+        <h1  style="color:black;">Functions</h1>
+       
+    </section>
+
+    <div class="bp-wrap">
+
+        <div class="bp-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="bpSearchInput" placeholder="Search a feature (e.g. Bypass Circuit, Bleed Valve, Auto Zero...)">
+        </div>
+
+        <div class="bp-accordion" id="bpAccordion">
+
+            <!-- ============ FEATURE 01 — BYPASS CIRCUIT (fully filled example) ============ -->
+            <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
+                <button class="bp-acc-header">
+                    <span class="bp-acc-num">01</span>
+                    <span class="bp-acc-title">
+                        Bypass Circuit
+                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
+                </button>
+                <div class="bp-acc-body">
+                    <div class="bp-acc-content">
+
+                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <h4>What it does</h4>
+                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
+                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
+                            </div>
+                            <div class="bp-card">
+                                <h4>Benefits</h4>
+                                <ul>
+                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
+                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
+                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
+                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
+                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
+                        </div>
+
+                        <div class="bp-grid-2">
+                            <div class="bp-highlight-box">
+                                <h4>What Is a Bypass Circuit?</h4>
+                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
+                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <h4>The Problem</h4>
+                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
+                                </div>
+                            </div>
+                            <div class="bp-card">
+                                <h4>The Solution</h4>
+                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
+                        <div class="bp-card">
+                            <ul>
+                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
+                                <li>Use two regulator stages plus an air bleed valve.</li>
+                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
+                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
+                            </ul>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
+                        </div>
+
+                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
+                                <ul>
+                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
+                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
+                                </ul>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Bypass Units</h3>
+                        <div class="bp-table-wrap">
+                            <table class="bp-table">
+                                <thead>
+                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
+                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
+                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- ============ END FEATURE 01 ============ -->
+
+            <!-- ============ FEATURE 02 — placeholder (copy Feature 01 block structure here) ============ -->
+            <div class="bp-acc-item" data-title="Feature 02 placeholder">
+                <button class="bp-acc-header">
+                    <span class="bp-acc-num">02</span>
+                    <span class="bp-acc-title">
+                        Feature 02 Title
+                        <small>Short one-line description from the next PDF</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
+                </button>
+                <div class="bp-acc-body">
+                    <div class="bp-acc-content">
+                        <p class="bp-placeholder">Add this feature's content here — copy the structure used in Feature 01 (section titles, cards, diagram boxes, table if needed).</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat the pattern above for Features 03 to 25 -->
+
+        </div>
+
+        <p class="bp-no-results" id="bpNoResults">No matching feature found.</p>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Information</h3>
+                <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+                <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+                <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/CIP_India" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/cosmoinstrumentsindia/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Products</h3>
+                <a href="AirLeak.html">Air Leak Testers</a>
+                <a href="flowmeter.html">Air Flow  Testers</a>
+                <a href="Helium.html">Helium/Hydrogen</a>
+                <a href="presure.html">Pressure</a>
+                <a href="peripherals.html">Peripherals</a>
+                <a href="gels.html">Cosmo Gels</a>
+                <a href="soundvibration.html">Analyzers</a>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="Machines.html">Leak Test Machine</a>
+                <a href="Selection.html">Industrial Application</a>
+                <a href="client.html">Customers</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h3>Company</h3>
+                <a href="About.html">About us</a>
+                <a href="CorporateHistory.html">Corporate History</a>
+                <a href="message.html">Message from the Director</a>
+                <a href="Cerificates.html">Certificates</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Nav active-link highlighting (same as site pages)
+        const links = document.querySelectorAll('.menu a');
+        const currentPage = window.location.pathname.split('/').pop();
+        links.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+                const parentDropdown = link.closest('.dropdown');
+                if (parentDropdown) {
+                    const parentToggle = parentDropdown.querySelector('.dropdown-toggle');
+                    if (parentToggle) parentToggle.classList.add('active');
+                }
+            }
+        });
+
+        // Accordion open/close
+        document.querySelectorAll('.bp-acc-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.closest('.bp-acc-item');
+                item.classList.toggle('open');
+            });
+        });
+
+        // Live search/filter across accordion items
+        const searchInput = document.getElementById('bpSearchInput');
+        const noResults = document.getElementById('bpNoResults');
+        searchInput.addEventListener('input', () => {
+            const q = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+            document.querySelectorAll('.bp-acc-item').forEach(item => {
+                const haystack = (item.dataset.title + ' ' + item.innerText).toLowerCase();
+                const match = haystack.includes(q);
+                item.style.display = match ? '' : 'none';
+                if (match) visibleCount++;
+            });
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

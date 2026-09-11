@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Cosmo Instruments India</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   
+ 
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    a { text-decoration: none; }
+    body {
+      --bg: #f5f4f1; --bg2: #ffffff; --bg3: #eceae6;
+      --accent: #0052cc; --accent2: #003d99;
+      --text: #111827; --text2: #6b7280; --muted: #d1d5db;
+      --card: #fff; --card-border: #e5e7eb;
+      --q-bg: #f9f8f6; --q-hover: #f0eeeb;
+      --tag-bg: rgba(0,82,204,0.08); --tag-c: #0052cc;
+      --search-bg: #fff; --search-border: #d1d5db;
+      --heading-font: 'Playfair Display',serif;
+      --body-font: 'DM Sans',sans-serif;
+      background: var(--bg); color: var(--text);
+      font-family: var(--body-font);
+    }
+.navbar{
+    width: 100%;
+    min-height: 70px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    font-size:20px;
+}
+
+
+/* LOGO */
+.nav-logo{
+    width: 160px;
+    height: 55px;
+}
+
+.logo{
+    width: 100%;
+    height: 100%;
+    background-image: url(cosmologo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover{
+    transform: scale(1.05);
+}
+
+/* MENU */
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+/* LINKS */
+.menu a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* UNDERLINE */
+.menu a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: rgb(129, 129, 218);
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s;
+}
+
+.menu a:hover::after{
+    width: 100%;
+}
+
+.menu a:hover{
+    color: rgb(129, 129, 218);
+}
+
+/* DROPDOWN */
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background: white;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(5px);
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+
+.dropdown.active .dropdown-menu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+.dropdown-menu p{
+    padding: 10px;
+}
+
+.dropdown-menu p:hover{
+    background: #f2f2f2;
+}
+
+/* BUTTON */
+button{
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 14px;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background: white;
+    color: #FF4742;
+    transform: translateY(2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+#button-tag{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#button-tag:hover{
+    color: #FF4742;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+/* ========================= */
+/* 📱 MOBILE VIEW */
+/* ========================= */
+
+/* ========================= */
+/* 📱 MOBILE SAME LINE NAVBAR */
+/* ========================= */
+
+@media (max-width: 767px){
+
+    
+    .navbar{ 
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 25px 0 10px;   /* right side extra gap */
+        overflow-x: auto;
+    }
+
+    /* scrollbar hide */
+    
+    .menu::-webkit-scrollbar{
+        display: none;
+    }
+
+    .nav-logo{
+        width: 120px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .menu{
+        width: 100%;
+        margin-bottom: 3px;
+        padding-right: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 15px;
+        flex-shrink: 0;
+        
+    }
+
+    .menu a{ 
+        flex-shrink: 0;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .dropdown{
+display:flex;
+align-items:center;
+}
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static; /* important */
+        width: 100%;
+    }
+}
+
+.menu{
+padding:0 12px;
+}
+
+.menu{
+overflow-x:auto;
+padding-right:25px;
+}
+    button{
+        font-size: 12px;
+        padding: 6px 10px;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+
+    /* dropdown mobile simple 
+    .dropdown-menu{
+        position: absolute;
+        width: 200px;
+    }
+        */
+}
+/* ========================= */
+/* 📲 TABLET VIEW */
+/* ========================= */
+
+@media (max-width: 1023px){
+
+    .navbar{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 25px;
+         overflow-x: auto;
+    }
+
+    .menu{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    }
+      .menu::-webkit-scrollbar{
+        display: none;
+    }
+      button{
+        font-size: 12px;
+        padding: 6px 10px;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+ .menu a{
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .nav-logo{
+        width: 130px;
+        height: 45px;
+    }
+}
+    /* ══════════════ HERO ══════════════ */
+    .hero {
+      padding: 90px 24px 70px;
+      text-align: center;
+      position: relative; overflow: hidden;
+      margin-top: 70px;
+    }
+  
+    body .hero { background: linear-gradient(150deg,#e4eaf6 0%,#f5f4f1 100%); }
+
+   
+    .hero-eyebrow {
+      display: inline-block;
+      padding: 5px 18px; border-radius: 20px; margin-bottom: 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      background: var(--tag-bg); color: var(--accent);
+      border: 1px solid var(--accent);
+      font-family: var(--heading-font);
+    }
+    .hero-title {
+      font-family: var(--heading-font);
+      font-size: clamp(34px,6vw,72px); font-weight: 700; line-height: 1.08;
+      margin-bottom: 18px;
+    }
+    body .hero-title { color: var(--text); }
+    .hero-title span { color: var(--accent); }
+    .hero-sub {
+      max-width: 580px; margin: 0 auto 40px;
+      font-size: 16px; line-height: 1.75; color: var(--text2);
+    }
+
+    /* ══════════════ SEARCH BAR ══════════════ */
+    .search-wrap {
+      max-width: 620px; margin: 0 auto;
+      position: relative;
+    }
+    .search-input {
+      width: 100%; padding: 16px 54px 16px 22px;
+      border-radius: 8px; border: 1.5px solid var(--search-border);
+      background: var(--search-bg); color: var(--text);
+      font-family: var(--body-font); font-size: 15px;
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-input::placeholder { color: var(--text2); }
+    .search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--tag-bg); }
+    .search-icon {
+      position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
+      color: var(--accent); font-size: 18px; pointer-events: none;
+    }
+    .search-count {
+      text-align: center; margin-top: 10px;
+      font-size: 12px; color: var(--text2);
+      font-family: var(--body-font);
+      min-height: 18px;
+    }
+
+    /* ══════════════ LAYOUT ══════════════ */
+    .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      padding: 60px 0 80px;
+      align-items: start;
+    }
+
+    /* ══════════════ SIDEBAR ══════════════ */
+    .sidebar { position: sticky; top: 30px; }
+    .sidebar-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text2);
+      margin-bottom: 14px;
+      font-family: var(--heading-font);
+    }
+    .cat-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .cat-item {
+      padding: 10px 16px; border-radius: 6px; cursor: pointer;
+      font-size: 13px; font-weight: 500; color: var(--text2);
+      font-family: var(--body-font);
+      transition: all 0.2s;
+      display: flex; align-items: center; justify-content: space-between;
+      border: 1px solid transparent;
+    }
+    .cat-item:hover { background: var(--tag-bg); color: var(--accent); }
+    .cat-item.active {
+      background: var(--tag-bg); color: var(--accent);
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+    .cat-count {
+      display: inline-block; padding: 2px 8px;
+      border-radius: 10px; font-size: 10px; font-weight: 700;
+      background: var(--tag-bg); color: var(--accent);
+    }
+
+    /* ══════════════ FAQ CONTENT ══════════════ */
+    .faq-section { margin-bottom: 50px; }
+    .faq-section.hidden { display: none; }
+
+    .section-heading {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .section-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--tag-bg); color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .section-title {
+      font-family: var(--heading-font);
+      font-size: 22px; font-weight: 700; color: var(--text);
+    }
+    .section-sub { font-size: 12px; color: var(--text2); margin-top: 2px; }
+
+    /* ══════════════ ACCORDION ══════════════ */
+    .accordion-item {
+      background: var(--q-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px; margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .accordion-item.hidden { display: none; }
+    .accordion-item:hover { border-color: var(--accent); }
+    .accordion-item.open { border-color: var(--accent); }
+
+    .accordion-q {
+      width: 100%; display: flex; align-items: center;
+      justify-content: space-between; gap: 16px;
+      padding: 18px 20px; cursor: pointer; background: none; border: none;
+      text-align: left; font-family: var(--body-font);
+      font-size: 14px; font-weight: 600; color: var(--text);
+      transition: background 0.2s;
+    }
+    .accordion-q:hover { background: var(--q-hover); }
+    .accordion-item.open .accordion-q { color: var(--accent); }
+
+    .accordion-icon {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: var(--tag-bg); color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 400; transition: transform 0.3s;
+    }
+    .accordion-item.open .accordion-icon { transform: rotate(45deg); background: var(--accent); color: #fff; }
+
+    .accordion-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s;
+      padding: 0 20px;
+    }
+    .accordion-item.open .accordion-a { max-height: 600px; padding: 0 20px 20px; }
+
+    .accordion-a p {
+      font-size: 14px; line-height: 1.75; color: var(--text2);
+      border-top: 1px solid var(--card-border); padding-top: 14px;
+    }
+    .accordion-a a { color: var(--accent); font-weight: 500; }
+    .accordion-a a:hover { text-decoration: underline; }
+
+    /* highlight for search */
+    mark { background: var(--tag-bg); color: var(--accent); border-radius: 2px; padding: 0 2px; }
+
+    /* ══════════════ NO RESULTS ══════════════ */
+    .no-results {
+      text-align: center; padding: 60px 20px; display: none;
+    }
+    .no-results-icon { font-size: 48px; margin-bottom: 16px; }
+    .no-results h3 { font-family: var(--heading-font); font-size: 22px; color: var(--text); margin-bottom: 8px; }
+    .no-results p { font-size: 14px; color: var(--text2); }
+
+    /* ══════════════ CTA ══════════════ */
+    .cta-section {
+      text-align: center; padding: 70px 24px;
+      background: var(--bg2);
+      border-top: 1px solid var(--card-border);
+    }
+    .cta-title { font-family: var(--heading-font); font-size: clamp(22px,4vw,38px); font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .cta-sub { font-size: 15px; color: var(--text2); margin-bottom: 32px; max-width: 500px; margin-left:auto; margin-right:auto; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-p {
+      padding: 13px 30px; border-radius: 4px; font-family: var(--heading-font);
+      font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      background: var(--accent); color: #fff; border: 2px solid var(--accent);
+      cursor: pointer; transition: all 0.22s;
+    }
+    .btn-p:hover { background: var(--accent2); border-color: var(--accent2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .btn-s {
+      padding: 13px 30px; border-radius: 4px; font-family: var(--heading-font);
+      font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      background: transparent; color: var(--accent); border: 2px solid var(--accent);
+      cursor: pointer; transition: all 0.22s;
+    }
+    .btn-s:hover { background: var(--tag-bg); transform: translateY(-2px); }
+
+    /* ══════════════ FOOTER ══════════════ */
+.footer {
+    padding: 60px 40px;
+    color: #fff;
+
+    background: 
+        linear-gradient(rgba(11, 28, 52, 0.85), rgba(11, 28, 52, 0.85)),
+        url('footerimage.jpeg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* CONTAINER */
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* 🔥 important */
+}
+
+/* COLUMN */
+.footer-col {
+    flex: 1 1 220px; /* 🔥 responsive width */
+    min-width: 200px;
+}
+
+/* HEADINGS */
+.footer-col h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* underline */
+.footer-col h3::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #1e6fa3;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* LINKS */
+.footer-col a {
+    display: block;
+    color: #ccc;
+    margin: 8px 0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #fff;
+    transform: translateX(5px); /* 🔥 small animation */
+}
+
+/* TEXT */
+.footer-col p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #1e6fa3;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 8px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #0c4d75;
+    transform: translateY(-3px);
+}
+
+/* BOTTOM */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 50px 30px;
+    }
+
+    .footer-container {
+        gap: 25px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-col {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-col h3 {
+        font-size: 18px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+        font-size: 13px;
+    }
+}
+
+
+
+    /* ══════════════ ANIMATIONS ══════════════ */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    .faq-section { animation: fadeUp 0.4s ease both; }
+
+    /* ══════════════ RESPONSIVE ══════════════ */
+    @media (max-width: 768px) {
+      .faq-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .cat-list { flex-direction: row; flex-wrap: wrap; }
+      .theme-btn { writing-mode: horizontal-tb; transform: none; min-height: auto; padding: 10px 14px; font-size: 9px; }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+               <div class="logo">
+                </div>
+            </div>
+      
+            <div class="menu">
+                <a href="index.html">Home</a>
+               <div class="dropdown">
+             <a href="#" class="dropdown-toggle">About us ▾</a>
+
+                <div class="dropdown-menu">
+                     <p><a href="About.html">About us</a></p>
+                    <p><a href="message.html">Message From Director</a></p>
+                    <p><a href="CorporateHistory.html">Corporate history </a></p>
+                        <p><a href="Cerificates.html">ISO Certificates</a></p>
+                   
+                </div>
+            </div>
+            <!-- DROPDOWN END -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle">What is Leak test? ▾</a>
+            
+
+                <div class="dropdown-menu">
+                    <p><a href="Leakabout.html">What is Leak Test?</a></p>
+                    <p><a href="Selection.html">Select as per industry </a></p>
+             
+            
+                </div>
+            </div>
+               <a href="Machines.html">Leak Test Machines</a>
+                <a href="products.html">Products and Services</a>
+                <a href="client.html">Clients</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+            <div class="contact"><button><a href="contact.html" id="button-tag">Request Quote</a></button></div>
+        </div>
+        </header>
+      
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Help and Support</div>
+    <h1 class="hero-title">Frequently Asked <span>Questions</span></h1>
+    <p class="hero-sub">Find quick answers about Cosmo Instruments' products, services, warranty, calibration, and technical support.</p>
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="text" placeholder="Search questions… e.g. calibration, LS-1866, repair" />
+      <span class="search-icon">🔍</span>
+    </div>
+    <div class="search-count" id="searchCount"></div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="page-wrap">
+    <div class="faq-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-label">Browse by Topic</div>
+        <ul class="cat-list" id="catList">
+          <li class="cat-item active" data-cat="all">All Topics <span class="cat-count" id="cnt-all">0</span></li>
+          <li class="cat-item" data-cat="general">General <span class="cat-count" id="cnt-general">0</span></li>
+          <li class="cat-item" data-cat="ls-r902">LS-R902 <span class="cat-count" id="cnt-ls-r902">0</span></li>
+          <li class="cat-item" data-cat="ls-r700">LS-R700 <span class="cat-count" id="cnt-ls-r700">0</span></li>
+          <li class="cat-item" data-cat="ls-r740">LS-R740 <span class="cat-count" id="cnt-ls-r740">0</span></li>
+          <li class="cat-item" data-cat="ls-1866">LS-1866 <span class="cat-count" id="cnt-ls-1866">0</span></li>
+          <li class="cat-item" data-cat="ls-1881">LS-1881 <span class="cat-count" id="cnt-ls-1881">0</span></li>
+          <li class="cat-item" data-cat="afr220">AF-R220/221 <span class="cat-count" id="cnt-afr220">0</span></li>
+          <li class="cat-item" data-cat="dp-gauge">DP Gauge <span class="cat-count" id="cnt-dp-gauge">0</span></li>
+          <li class="cat-item" data-cat="leak-master">Leak Master <span class="cat-count" id="cnt-leak-master">0</span></li>
+          <li class="cat-item" data-cat="exhaust-valve">Exhaust Valve <span class="cat-count" id="cnt-exhaust-valve">0</span></li>
+          <li class="cat-item" data-cat="movelet">Movelet <span class="cat-count" id="cnt-movelet">0</span></li>
+          <li class="cat-item" data-cat="gel">Cosmo Super Gel <span class="cat-count" id="cnt-gel">0</span></li>
+          <li class="cat-item" data-cat="service">Service & Repair <span class="cat-count" id="cnt-service">0</span></li>
+          <li class="cat-item" data-cat="overseas">Overseas <span class="cat-count" id="cnt-overseas">0</span></li>
+          <li class="cat-item" data-cat="iso">ISO/IEC 17025 <span class="cat-count" id="cnt-iso">0</span></li>
+        </ul>
+      </aside>
+
+      <!-- FAQ SECTIONS -->
+      <main id="faqMain">
+        <div class="no-results" id="noResults">
+          <div class="no-results-icon">🔎</div>
+          <h3>No results found</h3>
+          <p>Try different keywords or browse all topics.</p>
+        </div>
+
+        <!-- GENERAL -->
+        <div class="faq-section" data-section="general">
+          <div class="section-heading">
+            <div class="section-icon">⚙️</div>
+            <div>
+              <div class="section-title">General</div>
+              <div class="section-sub">Fundamentals of leak testing technology</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the difference between leak testers and flow testers? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Leak testers are generally of differential pressure type — the pressure difference between the work and the master is detected by the differential pressure sensor to detect leaks. Flow testers directly measure the air flow with a laminar flow sensor or mass flow sensor.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the Equivalent Internal Volume? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>It is a coefficient for displaying the differential pressure (Pa) generated due to leak in the work in flow units, such as mL/min. See: <a href="https://cosmoinstrumentsindia.com/leak-setting/" target="_blank">The Basics of Air Leak Tester →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we educate employees about leak testing? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. Seminars on leak testers can be held at the headquarters and sales offices of Cosmo Instruments, or also on-site. Contact our sales offices for details. <a href="https://cosmoinstrumentsindia.com/list-of-offices-in-india/" target="_blank">List of Offices in India →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is Mastering compensation? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>It compensates the pressure changes (errors) caused by factors other than leaks caused by adiabatic changes. <a href="https://cosmoinstrumentsindia.com/leak-function/" target="_blank">Features of Air Leak Testers →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we locate leaks with an Air Leak Tester? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>For leak testing with positive pressure, it may be possible to locate leaks with soapy water using the Charge-Hold function. Note: Internal leaks may not be locatable with this method.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we get the CAD data? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Depending on the product, you can download 2D and 3D data. <a href="https://cosmoinstrumentsindia.com/download/" target="_blank">Download →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we get the operation manual for an old tester? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>You can download it from our website. For products not listed on our website, contact our local sales offices. <a href="https://cosmoinstrumentsindia.com/list-of-offices-in-india/" target="_blank">List of Offices in India →</a></p></div>
+          </div>
+        </div>
+
+        <!-- LS-R902 -->
+        <div class="faq-section" data-section="ls-r902">
+          <div class="section-heading">
+            <div class="section-icon">🖥️</div>
+            <div>
+              <div class="section-title">LS-R902</div>
+              <div class="section-sub">Touch screen air leak tester, 7 languages</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">When is the Temperature Compensation effective? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>It is effective in reducing errors and false judgments when testing works that have a temperature difference from the ambient temperature — for example, after the washing process.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the difference between LS-R700 and LS-R902? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The LS-R700 is a high-performance standard type tester. The LS-R902 uses a large touch screen LCD to improve operability and visibility, and supports 7 languages.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we use it for high pressures? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. The standard model supports up to 4.9 MPa. The model LS-R740SH can support up to 16 MPa.</p></div>
+          </div>
+        </div>
+
+        <!-- LS-R700 -->
+        <div class="faq-section" data-section="ls-r700">
+          <div class="section-heading">
+            <div class="section-icon">📟</div>
+            <div>
+              <div class="section-title">LS-R700</div>
+              <div class="section-sub">High-performance standard air leak tester</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Are the input and output compatible with the LS-1822? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>For LS-R700 with option N1, they are compatible. Without option N1, they are not, since the shape of the connector is different. A conversion connector is available.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we check the data before installing the USB memory? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. The tester stores the latest 1,000 test data in its internal memory.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">How can we determine the appropriate number of Mastering iterations? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The appropriate number is when the sampled data begin to show almost the same values in the Mastering Value Sampling.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">When should we use Noise Reduction (NR) mode? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Use this mode if you want the test to be automatically repeated when the measured value falls in the uncertain judgment region, so that a more precise Pass or Fail judgment can be made.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the minimum required Pilot Air pressure? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>A minimum of 400 kPa is required for the pilot pressure.</p></div>
+          </div>
+        </div>
+
+        <!-- LS-R740 -->
+        <div class="faq-section" data-section="ls-r740">
+          <div class="section-heading">
+            <div class="section-icon">🔬</div>
+            <div>
+              <div class="section-title">LS-R740</div>
+              <div class="section-sub">Volume / capsule detection type tester</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we use the ZL and WL even without connecting a master to the MASTER port? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>In most cases, you cannot. A master connection is required for proper operation.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">If the pneumatic unit breaks down, is it necessary to replace it as a set with the controller? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>It is not necessary when the replacement pneumatic unit is of the same specifications.</p></div>
+          </div>
+        </div>
+
+        <!-- LS-1866 -->
+        <div class="faq-section" data-section="ls-1866">
+          <div class="section-heading">
+            <div class="section-icon">⚡</div>
+            <div>
+              <div class="section-title">LS-1866</div>
+              <div class="section-sub">Entry-level compact air leak tester</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we set the upper and lower limits to the test pressure? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes, you can set both upper and lower pressure limits.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the range of the test pressure? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The range is from -95 kPa to 1.5 MPa. Four types of ranges (V, L, M, H15) are available within this range. <a href="https://cosmoinstrumentsindia.com/download/" target="_blank">See Product Information →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">We would like to test large volume works. How should we test them? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Since the option of Bypass Circuit Unit is not available for LS-1866, the measurement time needs to be extended. Alternatively, consider purchasing LS-R700 or LS-R902, for which the Bypass Circuit Unit option is available.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What methods are available for remote control of the tester? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Control I/O port and a serial communication interface are available.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">We input a Start signal from outside, but the tester does not start. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The tester may be in Manual mode. Change to Remote mode. Also check the Stop signal setting (Normally Open / Normally Closed).</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Is it compatible with old models LS-1860, LS-1860N, LS-1861, and LS-1862? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The input and output are compatible only with LS-1862. For compatibility with other models, our Relay Output Conversion Unit SU-10 can be used.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">We occasionally get an E-5 error. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The DL3 time may be too short, or the fill valve may be malfunctioning. Extend the DL3 time a little and check again.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we have the output of the measurement results? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>You can output measurement data to an external computer or an SD card unit (sold separately) using the serial communication interface.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we save the measurement data? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The tester does not have an internal data-save function. You can output data to an external computer or SD card unit using the serial communication interface.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Leak does not become zero even with a non-leaking work. Can we perform compensation? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. Use the Master-Preset feature to compensate for this offset.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What kind of cable should we use for RS-232C communication? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Use a D-sub 9-pin cross (reverse) cable.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we control an air cylinder with the leak tester? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. Output timing: DL1 to END. Electrical specifications: 24 VDC, 0.25 A (Max.).</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">How should we adjust the test pressure? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Set the test pressure with the test pressure regulator on the rear panel of the main unit.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we change the test pressure for each channel? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The test pressure cannot be automatically changed for each channel. It can be changed manually.</p></div>
+          </div>
+        </div>
+
+        <!-- LS-1881 -->
+        <div class="faq-section" data-section="ls-1881">
+          <div class="section-heading">
+            <div class="section-icon">🖱️</div>
+            <div>
+              <div class="section-title">LS-1881</div>
+              <div class="section-sub">Multi-channel air leak tester with touch panel</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we add a pneumatic circuit unit? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Up to 8 pneumatic circuit units can be connected.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Error 50 (Pneumatic Circuit Unit Communication Error) has occurred. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>There is no communication between the pneumatic circuit unit and the controller. No power may be supplied to the pneumatic circuit unit, or the transmission cable may have poor contact.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">No history is left in the Table screen in Quality Control Mode. Auto-Drift Compensation is not updated. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>If a Stop signal is input from the PLC at the moment of OK/NG judgment, this phenomenon may occur. Check the I/O signal timing.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we use the USB port on the rear panel? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>If the touch panel does not work, connect a USB mouse (wired). You can operate the cursor on the screen with the mouse.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we use the LAN port on the rear panel? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Currently it cannot be used.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">The screen remains black or white. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The controller may be out of order. When it is a defect of the LCD touch panel, measurement itself may still be possible. Replace the controller promptly or contact the Service Section. <a href="https://cosmoinstrumentsindia.com/worldwide-sales-and-service-network/" target="_blank">Worldwide Sales and Service Network →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Is it impossible to measure when the USB memory (CF) is removed? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Measurement is possible even without USB memory. The USB memory is used to save measurement data and back up test parameters.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we replace LS-1880 with LS-1881? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. You need to change the settings of the I/O terminal in the control panel. A procedure manual for replacement is available. Contact the Service Section. <a href="https://cosmoinstrumentsindia.com/list-of-offices-in-india/" target="_blank">List of Offices in India →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we replace LU-80 with LU-80A? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. You need to change the settings of the pneumatic circuit unit. A procedure manual is available. Contact our Service Section. <a href="https://cosmoinstrumentsindia.com/worldwide-sales-and-service-network/" target="_blank">Worldwide Network →</a></p></div>
+          </div>
+        </div>
+
+        <!-- AF-R220 -->
+        <div class="faq-section" data-section="afr220">
+          <div class="section-heading">
+            <div class="section-icon">🌬️</div>
+            <div>
+              <div class="section-title">AF-R220/221</div>
+              <div class="section-sub">Air flow tester — laminar & mass flow</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the difference between Laminar and Mass Flow? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The Laminar (laminar flow tube) is a volume flow meter. The Mass Flow is a mass flow meter.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Should we daily measure the atmospheric pressure and enter the correct value? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>By entering it daily, you can make more accurate measurements. If you do not have a barometer, enter 1.013 hPa (1 bar).</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">The test pressure is not stable. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>It may be stabilized by adding a regulator on the primary side and reducing the test pressure by one stage.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the difference between CHG Hold and DET Hold? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>CHG Hold keeps pressurizing until Stop is tapped. DET Hold keeps measuring the flow until Stop is tapped. They are usually used to check the flow rate and search for leaks.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Measurement results vary. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The measurement time may not be enough. Extend the CHG time and check again.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we control the test pressure to 5 kPa? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Pressure can be controlled with the regulator for the option L01.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Is it compatible with AF-2201 and 2220? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Since the I/O connector is different from that of AF-2201, it is not compatible. A conversion connector is available.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the difference from DF-R280? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The AF-R220 is a tester with automatic judgment capability. The DF-R280 is a meter — it does not have a function to automatically make judgments.</p></div>
+          </div>
+        </div>
+
+        <!-- DP GAUGE -->
+        <div class="faq-section" data-section="dp-gauge">
+          <div class="section-heading">
+            <div class="section-icon">📊</div>
+            <div>
+              <div class="section-title">DP Gauge</div>
+              <div class="section-sub">Differential pressure & gauge pressure meters</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the proof pressure if we exceed the upper limit? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>For differential pressure type: 10 × F.S. for ranges of 50 kPa or less; 5 × F.S. for 100 kPa range. For gauge pressure type: 2 × F.S. for ranges of 50 MPa or less; 1.5 × F.S. for other ranges.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">After zero adjustment, the reading deviates to the + or − side and does not become zero. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>It may deviate from the zero point due to an over-pressure or similar event. Contact the Service Section of our sales offices. <a href="https://cosmoinstrumentsindia.com/worldwide-sales-and-service-network/" target="_blank">Worldwide Network →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">We want to obtain the measurement data from the DP Gauge. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Depending on the model, functions including analog output, RS-232C output, and BCD digital output are available.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we measure water/oil pressure? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The gauge pressure models can measure non-corrosive liquids.</p></div>
+          </div>
+        </div>
+
+        <!-- LEAK MASTER -->
+        <div class="faq-section" data-section="leak-master">
+          <div class="section-heading">
+            <div class="section-icon">💧</div>
+            <div>
+              <div class="section-title">Leak Master</div>
+              <div class="section-sub">Reference leak standard for calibration</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we submerge the Leak Master in water to check for bubbles? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>No. It cannot be used underwater.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we change the flow rate of the Leak Master? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>No. The flow rate cannot be changed.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">The leak rate of the Leak Master and the leak value of the tester are different. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The Equivalent Internal Volume K(Ve) may be incorrect, or the sensor has poor sensitivity. Alternatively, dirt may have entered the Leak Master causing the leak rate to change. Contact our sales offices. <a href="https://cosmoinstrumentsindia.com/list-of-offices-in-india/" target="_blank">List of Offices →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Should we remove the acrylic cover before use? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>No. Use it with the acrylic cover attached. The acrylic cover has a small hole in it, so it does not affect the leak rate.</p></div>
+          </div>
+        </div>
+
+        <!-- EXTERNAL EXHAUST VALVE -->
+        <div class="faq-section" data-section="exhaust-valve">
+          <div class="section-heading">
+            <div class="section-icon">🔧</div>
+            <div>
+              <div class="section-title">External Exhaust Valve</div>
+              <div class="section-sub">Protection accessory for the leak tester</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the recommended installation location? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Select a place closer to the work and lower than the leak tester, and install it horizontally.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Is it ok to install the External Exhaust Valve vertically? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>No. It cannot be installed vertically. Install horizontally only.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the role of the External Exhaust Valve? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>It efficiently exhausts foreign matter such as water/oil discharged from the work during the Exhaust process so that the differential pressure sensor and measuring equipment inside the leak tester are protected.</p></div>
+          </div>
+        </div>
+
+        <!-- MOVELET -->
+        <div class="faq-section" data-section="movelet">
+          <div class="section-heading">
+            <div class="section-icon">🔊</div>
+            <div>
+              <div class="section-title">Movelet</div>
+              <div class="section-sub">Sound & vibration analyzer</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">How should we perform daily inspections of the Movelet? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Check if the judgments are correct using Good and NG products as test works.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can you provide inspection services? How often? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The Movelet main unit (MV-6000 series) can be inspected at Cosmo. The sound level meter and vibration meter are inspected at the manufacturers. Recommended inspection interval: one year.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Is it possible to issue traceability documents for the Movelet? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. Contact our sales offices. Traceability documents for the sound level meter and vibration meter are issued by the manufacturers. <a href="https://cosmoinstrumentsindia.com/list-of-offices-in-india/" target="_blank">List of Offices →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">How long does the measurement take? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>It depends on the work. The Movelet can measure for up to 60 seconds.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Is it possible to measure in a noisy place? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Basically yes, however in some cases it may be necessary to conduct on-site experiments beforehand to decide.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Which should we use for judgment — sound or vibration? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>It depends on the work. When both sound and vibration can be used, we basically use sound. If environmental noise has a significant impact, we use vibration.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What measurement units does the Movelet use for judgments? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>No units are used — the Movelet uses its unique Movelet filter. Judgment is based on relative values of sound/vibration intensity. Eight types of judgment parameters are available.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Is it possible to measure sound/vibration at two or more places at once? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Simultaneous measurements are not possible. However, using a multiplexer (distributor) with switching makes it possible.</p></div>
+          </div>
+        </div>
+
+        <!-- COSMO SUPER GEL -->
+        <div class="faq-section" data-section="gel">
+          <div class="section-heading">
+            <div class="section-icon">🟢</div>
+            <div>
+              <div class="section-title">Cosmo Super Gel</div>
+              <div class="section-sub">Sealing gel and customized products</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we get a sample of the gel? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Free samples are available. Let us know the size, hardness and quantity you want. In some cases, we may charge for the samples.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we get detailed materials and data about the gel? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Contact us for the required materials/data from the Download or Contact page. We will contact you to inform the availability. <a href="https://cosmoinstrumentsindia.com/download" target="_blank">Download →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we outsource production of original products using Cosmo Super Gel? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. Send us a shape drawing and let us know the hardness and quantity. We will contact you to inform the molding availability and send our quotation.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we purchase gel products directly from Cosmo? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. For standard gel sheets in stock, we accept orders even for one sheet. For gel round bars and square bars, we accept orders for the minimum delivery quantity and above. <a href="https://cosmoinstrumentsindia.com/contact-us/" target="_blank">Contact Us →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can you ship gel products overseas? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. However, we do not directly deliver to overseas destinations. Two ways are available: purchase through our overseas sales office, or ship via the Japanese distributor of another company. <a href="https://cosmoinstrumentsindia.com/contact-us/" target="_blank">Contact Us →</a></p></div>
+          </div>
+        </div>
+
+        <!-- SERVICE & REPAIR -->
+        <div class="faq-section" data-section="service">
+          <div class="section-heading">
+            <div class="section-icon">🛠️</div>
+            <div>
+              <div class="section-title">Service & Repair</div>
+              <div class="section-sub">Maintenance, calibration, and troubleshooting</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">We want to replace with a spare. Can we replace if it is the same model? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>You can replace if their specifications are the same. Contact us to check the details. <a href="https://cosmoinstrumentsindia.com/contact-us/" target="_blank">Contact →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What are the recommended inspection or calibration intervals? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>We recommend annual inspection or calibration by the manufacturer, or both.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">The leak tester frequently makes a Fail judgment. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Refer to the "Troubleshooting" section in the operation manual to identify the cause of Fail.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">A battery replacement message appears on LS-R700 and LS-R900. What happens if we don't replace it? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>When the battery is completely discharged, data such as compensation values, date & time, and error log will be lost. Replace the battery as soon as possible according to the operation manual.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Who should we contact for repair when the product breaks down? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Contact the Service Section of our sales offices. <a href="https://cosmoinstrumentsindia.com/inspectione/" target="_blank">Prices for Inspection Services in India →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can you repair old models? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Products older than 10 years may not be repaired depending on the defect. <a href="https://cosmoinstrumentsindia.com/repair/" target="_blank">Notice About Repair Service for Previous Products →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can you lend a replacement unit during the inspection/repair period? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>We may be able to meet your request (for a fee). However, depending on availability, we may not be able to fulfil every request.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can you issue traceability certificates for old testers we currently use? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Contact the Service Section of our sales offices. <a href="https://cosmoinstrumentsindia.com/traceability/" target="_blank">Traceability →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">We need ISO/IEC 17025 calibration. <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Contact our sales offices. <a href="https://cosmoinstrumentsindia.com/list-of-offices-in-india/" target="_blank">List of Offices in India →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the difference between inspection and calibration? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Inspection is to inspect the equipment according to a certain standard and show whether it can be used. Calibration is to certify the readings with measurement uncertainty to use them. Although ISO and JIS make a clear distinction, the two terms are sometimes used interchangeably. Contact our Service Section for details.</p></div>
+          </div>
+        </div>
+
+        <!-- OVERSEAS -->
+        <div class="faq-section" data-section="overseas">
+          <div class="section-heading">
+            <div class="section-icon">🌏</div>
+            <div>
+              <div class="section-title">Overseas</div>
+              <div class="section-sub">International usage, export, and service</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can we use testers used in Japan overseas? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. We recommend inspection by the manufacturer before export. For the Parameter Sheet, contact our sales offices. <a href="https://cosmoinstrumentsindia.com/worldwide-sales-and-service-network/" target="_blank">Worldwide Network →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can you provide inspection or calibration services overseas? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. Contact our sales offices in India or overseas. <a href="https://cosmoinstrumentsindia.com/worldwide-sales-and-service-network/" target="_blank">Worldwide Network →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can you provide "Supervising Services" overseas? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. Contact our sales offices in India or overseas. <a href="https://cosmoinstrumentsindia.com/worldwide-sales-and-service-network/" target="_blank">Worldwide Network →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">What is the shape of the plug of the 250 V power cord? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>The plug is Kawasaki Electric Wire's KP4819D.</p></div>
+          </div>
+        </div>
+
+        <!-- ISO/IEC 17025 -->
+        <div class="faq-section" data-section="iso">
+          <div class="section-heading">
+            <div class="section-icon">🏅</div>
+            <div>
+              <div class="section-title">ISO/IEC 17025</div>
+              <div class="section-sub">Accredited calibration & certificates</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Is a sample of ISO/IEC 17025 calibration certificate available? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>Yes. Contact our sales offices. <a href="https://cosmoinstrumentsindia.com/list-of-offices-in-india/" target="_blank">List of Offices in India →</a></p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-q">Can you provide ISO/IEC 17025 calibration using non-SI units? <span class="accordion-icon">+</span></button>
+            <div class="accordion-a"><p>We do not issue calibration certificates not traceable to SI units. We cannot perform calibration of products for which SI units cannot be used. We also cannot convert non-SI units to SI units to issue calibration certificates.</p></div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="cta-title">Still have questions?</h2>
+    <p class="cta-sub">Our technical team is ready to help. Reach out to your nearest Cosmo Instruments office.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-p">Contact Us</a>
+      <a href="contact.html" class="btn-s">Find an Office</a>
+    </div>
+  </section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+        <div class="footer-col">
+            <h3>Information</h3>
+            <p>Proudly ISO Certified – Committed to Quality and Excellence 🏅</p>
+            <p>Re-Inauguration of Extended Manufacturing Facility at Bengaluru.</p>
+            <p>⚡ EV Summit 2025–26 concluded successfully – Advancing electric mobility.</p>
+
+           
+         <div class="social-icons">
+    <a href="https://www.linkedin.com/company/cosmo-instruments-india-pvt-ltd"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/CIP_India"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cosmoinstrumentsindia/"><i class="fab fa-instagram"></i></a>
+</div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="footer-col">
+            <h3>Products</h3>
+            <a href="AirLeak.html">Air Leak Testers</a>
+            <a href="flowmeter.html">Air Flow Leak Testers</a>
+            <a href="Helium.html">Helium/Hydrogen</a>
+            <a href="presure.html">Pressure</a>
+            <a href="peripherals.html">Peripherals</a>
+            <a href="gels.html">Cosmo Gels</a>
+             <a href="soundvibration.html">Analyzers</a>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Leak Test Machine</a>
+            <a href="#">Industrial Application</a>
+            <a href="#">Warranty/Service</a>
+            <a href="#">Customers</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">Corporate history</a>
+            <a href="#">Message from the Director</a>
+            <a href="#">Employment Opportunities</a>
+            <a href="#">Offices in India</a>
+            <a href="#">Worldwide Network</a>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Cosmo Instruments India Pvt. Ltd.</p>
+    </div>
+
+</footer> 
+
+  <script>
+    
+
+    /* ── ACCORDION ── */
+    document.querySelectorAll('.accordion-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.accordion-item');
+        const isOpen = item.classList.contains('open');
+        // close all in same section
+        item.closest('.faq-section').querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    /* ── CATEGORY FILTER ── */
+    const catItems = document.querySelectorAll('.cat-item');
+    const sections = document.querySelectorAll('.faq-section');
+
+    function updateCounts() {
+      const cats = {};
+      let total = 0;
+      sections.forEach(sec => {
+        const cat = sec.dataset.section;
+        const visible = [...sec.querySelectorAll('.accordion-item')].filter(i => !i.classList.contains('hidden')).length;
+        cats[cat] = (cats[cat] || 0) + visible;
+        total += visible;
+      });
+      document.getElementById('cnt-all').textContent = total;
+      Object.entries(cats).forEach(([k, v]) => {
+        const el = document.getElementById('cnt-' + k);
+        if (el) el.textContent = v;
+      });
+    }
+
+    catItems.forEach(item => {
+      item.addEventListener('click', () => {
+        catItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        const cat = item.dataset.cat;
+        sections.forEach(sec => {
+          if (cat === 'all' || sec.dataset.section === cat) {
+            sec.classList.remove('hidden');
+          } else {
+            sec.classList.add('hidden');
+          }
+        });
+        checkNoResults();
+      });
+    });
+
+    /* ── SEARCH ── */
+    const searchInput = document.getElementById('searchInput');
+    const searchCount = document.getElementById('searchCount');
+    const noResults = document.getElementById('noResults');
+
+    function escRe(str) { return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim();
+      // reset cat
+      catItems.forEach(i => i.classList.remove('active'));
+      catItems[0].classList.add('active');
+      sections.forEach(s => s.classList.remove('hidden'));
+
+      let totalVisible = 0;
+
+      if (!q) {
+        sections.forEach(sec => {
+          sec.querySelectorAll('.accordion-item').forEach(item => {
+            item.classList.remove('hidden');
+            // remove marks
+            item.querySelector('.accordion-q').innerHTML = item.querySelector('.accordion-q').innerHTML.replace(/<mark[^>]*>(.*?)<\/mark>/g, '$1');
+            item.querySelector('.accordion-a p').innerHTML = item.querySelector('.accordion-a p').innerHTML.replace(/<mark[^>]*>(.*?)<\/mark>/g, '$1');
+          });
+        });
+        searchCount.textContent = '';
+        noResults.style.display = 'none';
+        updateCounts();
+        return;
+      }
+
+      const re = new RegExp(escRe(q), 'gi');
+
+      sections.forEach(sec => {
+        let secVisible = 0;
+        sec.querySelectorAll('.accordion-item').forEach(item => {
+          const qEl = item.querySelector('.accordion-q');
+          const aEl = item.querySelector('.accordion-a p');
+          const qText = qEl.textContent;
+          const aText = aEl.textContent;
+          if (re.test(qText) || re.test(aText)) {
+            item.classList.remove('hidden');
+            // highlight
+            qEl.innerHTML = qText.replace(re, m => `<mark>${m}</mark>`) + ' <span class="accordion-icon">+</span>';
+            aEl.innerHTML = aText.replace(re, m => `<mark>${m}</mark>`);
+            secVisible++;
+            totalVisible++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+        if (secVisible === 0) sec.classList.add('hidden');
+        else sec.classList.remove('hidden');
+      });
+
+      searchCount.textContent = totalVisible > 0 ? `${totalVisible} result${totalVisible !== 1 ? 's' : ''} found` : '';
+      noResults.style.display = totalVisible === 0 ? 'block' : 'none';
+      updateCounts();
+    });
+
+    function checkNoResults() {
+      const anySectionVisible = [...sections].some(s => !s.classList.contains('hidden'));
+      noResults.style.display = anySectionVisible ? 'none' : 'block';
+    }
+
+    // initial count
+    updateCounts();
+
+    //Drop Down
+    
+
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // mobile fix
+
+        // Close others
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.classList.remove("active");
+            }
+        });
+
+        // Toggle current
+        dropdown.classList.toggle("active");
+    });
+});
+
+// Outside click (mobile + desktop)
+document.addEventListener("click", () => {
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("active");
+    });
+});
+  </script>
+</body>
+</html>
