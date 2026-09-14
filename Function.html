@@ -122,6 +122,18 @@
             color:#555;
             margin-top:3px;
         }
+        .bp-acc-badge{
+            flex:0 0 auto;
+            font-size:11px;
+            font-weight:700;
+            letter-spacing:.5px;
+            text-transform:uppercase;
+            color:var(--bp-blue);
+            border:1px solid var(--bp-blue);
+            border-radius:999px;
+            padding:3px 10px;
+            margin-right:4px;
+        }
         .bp-acc-chevron{
             transition:transform .25s;
             color:var(--bp-blue);
@@ -133,7 +145,7 @@
             overflow:hidden;
             transition:max-height .35s ease;
         }
-        .bp-acc-item.open .bp-acc-body{ max-height:6000px; } /* large enough for content */
+        .bp-acc-item.open .bp-acc-body{ max-height:8000px; } /* large enough for content */
 
         .bp-acc-content{
             padding:28px 26px 34px;
@@ -259,12 +271,12 @@
 
         <div class="bp-search">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="bpSearchInput" placeholder="Search a feature (e.g. Bypass Circuit, Bleed Valve, Auto Zero...)">
+            <input type="text" id="bpSearchInput" placeholder="Search a feature (e.g. Bypass Circuit, Mastering, Bleed Valve...)">
         </div>
 
         <div class="bp-accordion" id="bpAccordion">
 
-            <!-- ============ FEATURE 01 — BYPASS CIRCUIT (fully filled example) ============ -->
+            <!-- ============ FEATURE 01 — BYPASS CIRCUIT ============ -->
             <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
                 <button class="bp-acc-header">
                     <span class="bp-acc-num">01</span>
@@ -377,11 +389,7 @@
             </div>
             <!-- ============ END FEATURE 01 ============ -->
 
-
-
-
-            
-              
+            <!-- ============ FEATURE 02 — MASTERING FUNCTION ============ -->
             <div class="bp-acc-item" data-title="Mastering Function accuracy improvement shorter test time patent compensation">
                 <button class="bp-acc-header">
                     <span class="bp-acc-num">02</span>
@@ -394,12 +402,12 @@
                 </button>
                 <div class="bp-acc-body">
                     <div class="bp-acc-content">
- 
+
                         <h3 class="bp-section-title">Summary</h3>
                         <div class="bp-card">
                             <p>Mastering is a function that searches for the most appropriate compensation amount, complying with test conditions or environments, using the actual Work. Mastering allows high-accuracy air leak testing in a shorter time. Also, just having one Master is good enough, as Mastering can be used for various Work.</p>
                         </div>
- 
+
                         <h3 class="bp-section-title">Merit of Mastering</h3>
                         <div class="bp-grid-2">
                             <div class="bp-card">
@@ -410,7 +418,7 @@
                                 <img src="Assets/MF1.png" alt="Chart comparing test time with Mastering ON versus Mastering OFF">
                             </div>
                         </div>
- 
+
                         <div class="bp-grid-2" style="margin-top:24px;">
                             <div class="bp-card">
                                 <h4>Less Maintenance Man-hour</h4>
@@ -427,7 +435,7 @@
                         <div class="bp-diagram-box">
                             <img src="Assets/MF2.png" alt="Diagram showing various sized Work pieces replaced by one master chamber">
                         </div>
- 
+
                         <h3 class="bp-section-title">Principle of Mastering</h3>
                         <div class="bp-grid-2">
                             <div class="bp-card">
@@ -439,7 +447,7 @@
                                 <img src="Assets/MF3.png" alt="Temperature change chart from CHG to Exhaust">
                             </div>
                         </div>
- 
+
                         <h3 class="bp-section-title">Mastering Operation</h3>
                         <div class="bp-card">
                             <p>In Mastering, the BAL and DET processes are iterated (looped) a preset number of times (N times). The difference between "a" — the pressure difference value in the normal detection process (DET 1) — and "b" — the final value once the temperature effect ends — becomes the Mastering value, regarded as the compensation amount for the next test. "b" is thought to be the unchanged leak value and is not included in the compensation amount.</p>
@@ -447,7 +455,7 @@
                         <div class="bp-diagram-box">
                             <img src="Assets/MF4.png" alt="Mastering operation graphs showing pressure change and differential pressure across DET loops">
                         </div>
- 
+
                         <h3 class="bp-section-title">Effect of Equalization Circuit</h3>
                         <div class="bp-grid-2">
                             <div class="bp-card">
@@ -458,7 +466,7 @@
                                 <img src="Assets/MF5.png" alt="Equalization valve circuit diagram with AV1, AV2, AV3, DPS, Work and Master">
                             </div>
                         </div>
- 
+
                         <h3 class="bp-section-title">Easy Operation</h3>
                         <div class="bp-grid-2">
                             <div class="bp-card">
@@ -468,7 +476,7 @@
                                 <img src="Assets/MF6.png" alt="Waveform showing pressure difference of Mastering, with and without leaks">
                             </div>
                         </div>
- 
+
                         <h3 class="bp-section-title">Data Shifting Graph</h3>
                         <div class="bp-card">
                             <p>The Mastering value, as a compensation amount for the leak test, is displayed at the time Mastering completes. Whether Mastering is properly carried out or not can be visually checked using the shifting graph.</p>
@@ -476,7 +484,7 @@
                         <div class="bp-diagram-box">
                             <img src="Assets/MF7.png" alt="Five data-shifting graph patterns: Normal, Shortening CHG/BAL Time, Shortage of CHG/BAL Time and Number of Loop, Shortage of Leaks or CHG Time, and Possible Leaks">
                         </div>
- 
+
                         <h3 class="bp-section-title">Limit Setting &amp; Ambient Temperature Adaptation</h3>
                         <div class="bp-grid-2">
                             <div class="bp-card">
@@ -488,7 +496,7 @@
                                 <p>This function searches for the compensation value using the average data of OK products. A stable leak test is allowed, as this can compensate for drifts by adapting to gentle changes in ambient temperature after Mastering.</p>
                             </div>
                         </div>
- 
+
                         <h3 class="bp-section-title">Important Notes</h3>
                         <div class="bp-card">
                             <ul>
@@ -496,14 +504,14 @@
                                 <li><strong>Note 2 — Noise cannot be compensated by Mastering:</strong> Noise from sealing parts of a jig, tubing/nylon tube, or deformation of the Work cannot be compensated by Mastering. However, compensation might be effective when deformation has declining repeatability. This includes noise generated when Work temperature differs from ambient temperature (e.g. a seal jig), and leaks not originating from the Work — internal leaks generated in a void space of the Work simply stay internal.</li>
                             </ul>
                         </div>
- 
+
                     </div>
                 </div>
             </div>
-            
-            
-            
-                <div class="bp-acc-item" data-title="Noise Reduction yield rate extra limit setting re-DET tact time">
+            <!-- ============ END FEATURE 02 ============ -->
+
+            <!-- ============ FEATURE 03 — NOISE REDUCTION ============ -->
+            <div class="bp-acc-item" data-title="Noise Reduction yield rate extra limit setting re-DET tact time">
                 <button class="bp-acc-header">
                     <span class="bp-acc-num">03</span>
                     <span class="bp-acc-title">
@@ -514,7 +522,7 @@
                 </button>
                 <div class="bp-acc-body">
                     <div class="bp-acc-content">
- 
+
                         <h3 class="bp-section-title">Summary</h3>
                         <div class="bp-grid-2">
                             <div class="bp-card">
@@ -531,7 +539,7 @@
                                 </ul>
                             </div>
                         </div>
- 
+
                         <h3 class="bp-section-title">Remarkable Method of Noise Reduction</h3>
                         <div class="bp-grid-2">
                             <div class="bp-diagram-box" style="margin:0;">
@@ -544,7 +552,7 @@
                                 <p>In Noise Reduction, repeating the DET process is carried out automatically and effectively.</p>
                             </div>
                         </div>
- 
+
                         <h3 class="bp-section-title">Noise Reduction Improves Yield Rate</h3>
                         <div class="bp-grid-2">
                             <div class="bp-diagram-box" style="margin:0;">
@@ -559,12 +567,12 @@
                                 </ul>
                             </div>
                         </div>
- 
+
                         <h3 class="bp-section-title">Removal of Noise at DET Time</h3>
                         <div class="bp-card">
                             <p>Noise elements (effects of heat or deformation, etc.) add extra leak rate and could cause a mis-judgment, even when a genuinely leaking piece is judged OK. This symptom especially happens when tact time is short. In general, this Noise can be removed by allowing sufficient time for stabilization.</p>
                         </div>
- 
+
                         <h3 class="bp-section-title">Automatically Repeat DET Process in the Extra Limit Setting Area</h3>
                         <div class="bp-card">
                             <ul>
@@ -573,1231 +581,367 @@
                                 <li>Mastering will not be available while the DET process is repeating.</li>
                             </ul>
                         </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- ============ END FEATURE 03 ============ -->
+
+            <!-- ============ FEATURE 04 — MANAGING LEAKS IN LEAK RATE UNIT ============ -->
+            <div class="bp-acc-item" data-title="Managing Leaks Leak rate Unit Auto Leak Calibration K(Ve) Leak Master equivalent internal volume">
+                <button class="bp-acc-header">
+                    <span class="bp-acc-num">04</span>
+                    <span class="bp-acc-title">
+                        Managing Leaks in Leak Rate Unit
+                        <small>Easy leak rate management with Auto Leak Calibration</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
+                </button>
+                <div class="bp-acc-body">
+                    <div class="bp-acc-content">
+
+                        <h3 class="bp-section-title">Differential Pressure to Leak Rate Management</h3>
+                        <div class="bp-card">
+                            <p>A leak of gas or fluid is determined by its viscosity, pressure difference, and the size of the leak hole. However, in the actual Differential Pressure method, only air pressure is supplied to the Work and the pressure change is detected as a leak. With this method, the value of pressure difference differs even when the tester indicates the same leak rate, for Work pieces of different internal volume.</p>
+                            <p>Cosmo's air leak tester is equipped with an Automatic Leak Calibration system that converts pressure difference to leak rate (mL/min). This system allows easy quality control management, such as daily sensitivity checks and leak rate calibration.</p>
+                        </div>
+
+                        <h3 class="bp-section-title">Equivalent Internal Volume K(Ve)</h3>
+                        <div class="bp-card">
+                            <p>Equivalent Internal Volume K(Ve) is the constant that converts the amount of differential pressure change, set in the DET process, to leak rate by DET time. The relation between leak rate Q and pressure difference ΔP is: <strong>Q = K(Ve) × ΔP ⁄ (1.013×10⁵) × 60 ⁄ T</strong>, where Q is the leak rate (mL/min), ΔP is the pressure difference (Pa), T is the DET time (sec), and K(Ve) is the Equivalent Internal Volume (mL).</p>
+                            <p>Two methods are available in the leak tester to calculate Equivalent Internal Volume: the first by flow reference (Leak Master), and the second by generating a pressure difference through volumetric change. Equivalent Internal Volume can also be called the Leak coefficient, indicated as "Ve" in theoretical expressions.</p>
+                        </div>
+
+                        <h3 class="bp-section-title">Calculate K(Ve) by Leak Master</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <ul>
+                                    <li>Calculate Equivalent Internal Volume K(Ve) by applying a given leak rate to the Work measurement system.</li>
+                                    <li>Select the most appropriate Leak Master from the LM-1B-J1 series, based on the internal volume of the Work and test pressure.</li>
+                                    <li>Calculate K(Ve) via calibration mode, after installing the Leak Master to the Work CAL port of the tester.</li>
+                                </ul>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/ML1.png" alt="Photo of the LM-1B-J1 Leak Master">
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Note: Leak Rate Varies with Barometric Pressure</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>Even for the same Work, the leak rate tested at a low-barometric-pressure place (such as high altitude) is larger than one tested at a high-barometric-pressure place (such as low altitude). We recommend using a Leak Master to control leak rate in such cases — one calibrated at normal barometric pressure allows no environmental effects when calculating Equivalent Internal Volume.</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/ML2.png" alt="Diagram comparing flow value of Leak Master at low altitude versus high altitude">
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Leak Coefficient by Volumetric Change</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>K(Ve) can also be calculated from the pressure difference generated by a volumetric change during the DET process, using <strong>K(Ve) = V × P ⁄ ΔP</strong>, where V is the volumetric change (mL), P is the test pressure — absolute pressure (Pa), and ΔP is the pressure difference caused by the volumetric change (Pa).</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/ML3.png" alt="Circuit diagram showing CHG Valve, DPS, Master, Exhaust Valve, Leak Calibrator and Work">
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Automatic Calculation of Leak Coefficient K(Ve)</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-highlight-box">
+                                <h4>Auto Leak Calibration by Cosmo's Original ALC</h4>
+                                <ul style="padding-left:18px; margin:0;">
+                                    <li>Auto calculation of K(Ve) is allowed by building the ALC into the leak tester.</li>
+                                    <li>An accurate K(Ve), compensated through the process of detecting drift, leak rate and differential pressure by volumetric change, is calculated.</li>
+                                    <li>A regular total machine check can be carried out on command from the machine side.</li>
+                                </ul>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/ML4.png" alt="Photo of the Auto Leak Calibrator (ALC)">
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Manual Leak Calibrator</h3>
+                        <div class="bp-card">
+                            <p>K(Ve) can be calculated by manually generating a volumetric change during the DET process. This manual leak calibrator can always be made available by installing it to the Work measurement system.</p>
+                        </div>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <h4>Quick Leak Calibrator — QLC Series</h4>
+                                <p>Generates a pre-determined volumetric change, set by dial reading, in one-touch action. Available even in short DET time.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/ML5.png" alt="Photo of the Quick Leak Calibrator QLC series">
+                                </div>
+                            </div>
+                            <div class="bp-card">
+                                <h4>Easy Leak Calibrator — LC Series</h4>
+                                <p>Generates volumetric change by dial (not ideal when test pressure is high or DET time is short). Its handy size allows installation to the Work CAL port on the front panel.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/ML6.png" alt="Photo of the Easy Leak Calibrator LC-22">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">CAL Port — Ideal for Leak Calibration and Daily Check</h3>
+                        <div class="bp-card">
+                            <ul>
+                                <li>CAL ports on the Work and Master side allow accurate differential-pressure calibration.</li>
+                                <li>Daily check and calibration can be carried out easily, without unplugging the Work tubing.</li>
+                                <li>Daily check and K(Ve) calculation can be carried out by installing a Leak Master and Leak Calibrator, etc.</li>
+                                <li>Calibration of the DPS and PS can be carried out by installing a standard manometer and micro pressure generator.</li>
+                                <li>The Master CAL port, open to the atmosphere, is available to carry out accurate DPS calibration.</li>
+                            </ul>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/ML7.png" alt="Front panel diagram showing Calibration Port, Auto Leak Calibrator, Standard Manometer, Manual Leak Calibrator and Leak Master">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- ============ END FEATURE 04 ============ -->
+
+            <!-- ============ FEATURE 05 — QUALITY CONTROL WITH ALC ============ -->
+            <div class="bp-acc-item" data-title="Quality Control with ALC innovative automatic leak calibration system patent K check selection">
+                <button class="bp-acc-header">
+                    <span class="bp-acc-num">05</span>
+                    <span class="bp-acc-title">
+                        Quality Control with ALC
+                        <small>Innovative Automatic Leak Calibration System</small>
+                    </span>
+                    <span class="bp-acc-badge">Patent</span>
+                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
+                </button>
+                <div class="bp-acc-body">
+                    <div class="bp-acc-content">
+
+                        <h3 class="bp-section-title">Original Calibration System by Auto Leak Calibrator (ALC)</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-highlight-box">
+                                <ul style="padding-left:18px; margin:0;">
+                                    <li>Cosmo's original leak calibration system uses the ALC to automatically generate volumetric change, giving reliable, high-accuracy leak rate management.</li>
+                                    <li>K(Ve) can be calculated without any external tools.</li>
+                                    <li>K check — a regular check including sensitivity of the whole machine — can be carried out automatically.</li>
+                                </ul>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/QC1.png" alt="Photo of the Auto Leak Calibrator device">
+                                <p class="bp-caption">Auto Leak Calibrator (ALC)</p>
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Calculate K(Ve) by Volumetric Change</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>Conversion of pressure difference (Pa) to leak rate (mL/min) in the DET process is allowed by calculating K(Ve). K(Ve) can be calculated from the pressure difference generated by applying a certain amount of volumetric change (ΔV) to the Work measurement system in the DET process: <strong>K(Ve) = V × P ⁄ ΔP</strong>.</p>
+                                <p>The volumetric change method has two ways: (1) ALC — generates automatic volumetric change, and (2) Manual Leak Calibrator.</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/QC2.png" alt="Circuit diagram with Pressurization Valve, DPS Sensor, Master side, Exhaust Valve, Leak Calibrator for Volumetric Change and Work">
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Calibration Action by ALC</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>Volumetric change applying to the Work is adjusted in advance by the ALC dial. Once CAL Mode is activated, K(Ve) is calculated through a process that detects the pressure difference generated by the volumetric change as well as by factors other than volumetric change.</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/QC3.png" alt="Graph across CHG, BAL, DET and END phases showing pressure difference and compensation">
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">ALC Built-in Intelligent Pneumatic Circuit</h3>
+                        <div class="bp-card">
+                            <p>The ALC is integrated directly into the tester's pneumatic circuit, alongside the air-operated valves (AV1–AV3), DPS sensor and pressure source, so volumetric change can be generated and measured without any external tooling. Note that the ALC (Auto Leak Calibrator) is not a standard specification.</p>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/QC4.png" alt="Full intelligent pneumatic circuit diagram with pressure source, ALC, AV1, AV2, AV3, DPS sensor and pilot pressure source">
+                        </div>
+
+                        <h3 class="bp-section-title">Selection Sheet of ALC</h3>
+                        <div class="bp-card">
+                            <p>Select the calibrator based on test pressure and Work internal volume.</p>
+                            <div class="bp-table-wrap">
+                                <table class="bp-table">
+                                    <thead>
+                                        <tr><th>Model</th><th>Max. Variable Volume</th><th>Minimum Scale Value</th><th>Pilot Pressure (kPa)</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th>ALC-05A</th><td>0.5 mL</td><td>0.001 mL</td><td>400 – 700</td></tr>
+                                        <tr><th>ALC-1A</th><td>1 mL</td><td>0.002 mL</td><td>400 – 700</td></tr>
+                                        <tr><th>ALC-4A</th><td>4 mL</td><td>0.008 mL</td><td>400 – 700</td></tr>
+                                        <tr><th>ALC-10A</th><td>10 mL</td><td>0.02 mL</td><td>400 – 700</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/QC5.png" alt="Chart plotting test pressure against Work internal volume with optimum and possible areas for ALC models A to G">
+                            <p class="bp-caption">How to select the right Auto Leak Calibrator by test pressure and Work internal volume (Vw).</p>
+                        </div>
+
+                        <h3 class="bp-section-title">K Check Function Allows Easy, Reliable Regular Check</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <ul>
+                                    <li>The K check function outputs an error if the K(Ve) currently being calculated differs from the one previously memorized in the system.</li>
+                                    <li>Regular K check allows leak sensitivity and whole-system checks — mistakes in channel setting can be avoided when testing Work of different volumes across multiple channels.</li>
+                                    <li>Automatic K check is possible, as it can be operated externally.</li>
+                                    <li>K check is available on Air Leak testers with an ALC, or J-type testers with a built-in Leak Master calibration valve.</li>
+                                </ul>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/QC6.png" alt="Control panel photo showing the Auto Leak Calibrator and an external K Check Start Button">
+                            </div>
+                        </div>
+
+                        <h3 class="bp-section-title">Manual Leak Calibrator</h3>
+                        <div class="bp-card">
+                            <p>K(Ve) can also be calculated by generating volumetric change manually during the DET process. It can be installed into the Work measurement system.</p>
+                        </div>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <h4>Quick Leak Calibrator — QLC Series</h4>
+                                <p>Generates a pre-determined volumetric change, set by dial reading, in one-touch action — even in short DET time.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/ML5.png" alt="Photo of the Quick Leak Calibrator QLC series">
+                                </div>
+                            </div>
+                            <div class="bp-card">
+                                <h4>Easy Leak Calibrator — LC Series</h4>
+                                <p>Generates volumetric change by dial (not ideal when test pressure is high or DET time is short). Its handy size allows installation to the CAL Work port on the front panel.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/ML6.png" alt="Photo of the Easy Leak Calibrator LC-22">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- ============ END FEATURE 05 ============ -->
+
+   <div class="bp-acc-item" data-title="Quality Control Leak Master flow reference calibration NG check daily check diversion">
+                <button class="bp-acc-header">
+                    <span class="bp-acc-num">06</span>
+                    <span class="bp-acc-title">
+                        Quality Control with Leak Master
+                        <small>Flow Reference Ideal for Leak Check &amp; Calibration</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
+                </button>
+                <div class="bp-acc-body">
+                    <div class="bp-acc-content">
+ 
+                        <h3 class="bp-section-title">Flow Reference — Leak Master</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>The Leak Master is an essential tool for quality control of the whole leak-testing system — for example, calibrating leak rate at startup, or during daily quality control checks.</p>
+                                <ul>
+                                    <li><strong>LM-1B</strong> — Daily OK/NG check</li>
+                                    <li><strong>LM-1B-J</strong> — Measurement of Equivalent Internal Volume K(Ve)</li>
+                                </ul>
+                            </div>
+                            <div class="bp-card">
+                                <h4>Features</h4>
+                                <ul>
+                                    <li>Less leak-rate change over time, allowing long-term stability.</li>
+                                    <li>Any leak rate can be arranged on request (with some exceptions).</li>
+                                    <li>Easy exchange with a seal plug.</li>
+                                    <li>Traceability can be issued.</li>
+                                </ul>
+                            </div>
+                        </div>
+ 
+                        <h3 class="bp-section-title">Calculate K(Ve) by Leak Master for Calibration</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>Calculate Equivalent Internal Volume K(Ve) by applying a given leak rate to the Work measurement system. K(Ve) is measured and displayed in Calibration mode by installing a Leak Master — selected based on Work internal volume, test pressure, etc. — to the CAL port and activating it.</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/LM1.png" alt="Photo of the LM-1B Leak Master">
+                            </div>
+                        </div>
+ 
+                        <h3 class="bp-section-title">Types of Leak Master (LM-1B-J1 Series for Calibration)</h3>
+                        <div class="bp-card">
+                            <div class="bp-table-wrap">
+                                <table class="bp-table">
+                                    <thead>
+                                        <tr><th>Leak Rate at 100 kPa (L/min)</th><th>1</th><th>2</th><th>5</th><th>10</th><th>20</th><th>50</th><th>100</th><th>200</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th>Test Pressure Range (kPa)</th><td colspan="5">20 ~ 600</td><td>20 ~ 300</td><td>20 ~ 200</td><td>20 ~ 100</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="bp-table-note">In the LM-1B-J1 series, leak rate data at each test pressure point is attached with the product.</p>
+                        </div>
+ 
+                        <h3 class="bp-section-title">Selection of Leak Master LM-1B-J1</h3>
+                        <div class="bp-card">
+                            <h4>Example: Volume less than 1000 mL with Medium Pressure</h4>
+                            <p>Select the most appropriate Leak Master based on Work internal volume and test pressure. Example: Work volume Vw = 500 mL, Test Pressure P = 300 kPa. Extend a line from the crossing point of Vw and the Upper/Lower limit to the test-pressure zone (left side) — the green line shows the most appropriate leak-rate zone. In this example, J1-5 is the best option.</p>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/LM2.png" alt="Nomograph chart for selecting Leak Master J1-1 through J1-20 at medium pressure, Work volume under 1000 mL">
+                        </div>
+ 
+                        <div class="bp-card" style="margin-top:24px;">
+                            <h4>Example: Work less than 2000 mL with Low / Negative Pressure</h4>
+                            <p>Example: Work Volume Vw = 1000 mL, Test Pressure P = 40 kPa. J1-100, falling in the green-line zone, is the best selection in this case.</p>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/LM3.png" alt="Nomograph chart for selecting Leak Master J1-10 through J1-200 at low/negative pressure, Work volume under 2000 mL">
+                        </div>
+ 
+                        <h3 class="bp-section-title">Difference Between Daily-Check Leak Master &amp; Calibration One</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>It is better to have a Leak Master with a large leak rate when calculating K(Ve). A Leak Master with a large leak rate allows more accurate calculation of K(Ve), as the ratio of pressure difference (a) to error factors — such as deformation or temperature effects other than the leak itself — gets smaller.</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/LM4.png" alt="Comparison of calibration with a small-leak Leak Master versus a large-leak Leak Master, showing error range relative to pressure difference">
+                            </div>
+                        </div>
+ 
+                        <h3 class="bp-section-title">Regular Check of NG Product</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>A self-check function checks for valve failure or test pressure issues, available in Cosmo's air leak testers. However, slight changes in leak sensitivity, or an operation mistake when changing a jig, should be supervised by a regular check.</p>
+                                <p>Leak sensitivity check by Leak Master is effective for any kind of failure check. It's recommended to carry this out not only at the beginning of a shift, but also whenever a tool, jig or parameter is changed.</p>
+                                <p>The example figure shows a Leak Master arranged with 15% more leak rate than the limit, in order to carry out NG judgment. (Depending on the Air Leak tester type, self-check function may not be available.)</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/LM5.png" alt="Bar chart of NG Check by Leak Master at Beginning of Shift, 1PM, and End of Shift, against a leak limit of 1.8 mL/min">
+                            </div>
+                        </div>
+ 
+                        <h3 class="bp-section-title">Leak Master for Daily Check</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <p>The CAL port sometimes cannot be reached due to the tester's location. In that case, the operator can set up a Leak Master somewhere easy to work, by diverting the Work tubing. Moreover, the Leak Master will always be ready to use if a stop valve is installed before it.</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/LM7.png" alt="Photo of a diversion tool with Leak Master and stop valve, with a dust-prevention cover">
+                            </div>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/LM6.png" alt="Diagram showing a Leak Master and stop valve diverted from the Work tubing, connected to the air leak tester and Master">
+                        </div>
  
                     </div>
                 </div>
             </div>
-            
-            
-            
-            <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
 
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
 
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
 
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
 
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
 
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
 
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>  <div class="bp-acc-item" data-title="Bypass Circuit shorter charging time low pressure large volume">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">01</span>
-                    <span class="bp-acc-title">
-                        Bypass Circuit
-                        <small>Shorter charging times for low-pressure, large-volume workpieces</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-
-                        <h3 class="bp-section-title">Overview of the Bypass Circuit</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>What it does</h4>
-                                <p>When leak testing a workpiece with a large internal volume, reaching the specified test pressure takes time. Using a bypass circuit can greatly reduce this charging time. It is particularly effective for low-pressure, large-volume workpieces (50 kPa or less, 3 L or more).</p>
-                                <p>The bypass unit also includes an exhaust valve, which shortens exhaust time and prevents contaminants from the workpiece entering the tester.</p>
-                            </div>
-                            <div class="bp-card">
-                                <h4>Benefits</h4>
-                                <ul>
-                                    <li><strong>Shorter measurement time</strong> — Large-bore valves shorten charging time.</li>
-                                    <li><strong>Shorter exhaust time</strong> — Large-bore valves also shorten exhaust time.</li>
-                                    <li><strong>Highly reliable bypass valves</strong> — Dedicated large-bore, air-operated leak-tester valves provide high reliability and durability.</li>
-                                    <li><strong>Valve control by the leak tester</strong> — The leak tester automatically controls the bypass unit valves using pilot pressure.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Circuit Schematic</h3>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP1.png" alt="Bypass circuit schematic">
-                            <p class="bp-caption">Bypass arrangement with two charging valves — the bypass circuit runs alongside the leak-test circuit.</p>
-                        </div>
-
-                        <div class="bp-grid-2">
-                            <div class="bp-highlight-box">
-                                <h4>What Is a Bypass Circuit?</h4>
-                                <p>During charging, pressure is supplied through large-diameter piping along a separate route from the leak-test path. This separate route is the bypass circuit.</p>
-                                <p>Two or three charging valves can supply pressure simultaneously to different points on the workpiece, bringing it to the specified pressure more quickly. Increasing the number of bypass routes can reduce the time even further.</p>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP2.png" alt="Charging time with and without a bypass circuit">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Workpieces with Complex Internal Structures</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <h4>The Problem</h4>
-                                <p>Small inlets, multiple internal chambers or restricted flow passages can slow charging, especially when chambers are connected in series. This effect becomes greater at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/Bp3.png" alt="Restricted flow passages diagram">
-                                </div>
-                            </div>
-                            <div class="bp-card">
-                                <h4>The Solution</h4>
-                                <p>Use a bypass unit. Separate, independent charging paths shorten charging time — particularly effective at test pressures of 50 kPa or less.</p>
-                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
-                                    <img src="Assets/BP4.png" alt="Bypass unit solution diagram">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Pressure Stabilization in the Regulator Section</h3>
-                        <div class="bp-card">
-                            <ul>
-                                <li>A mechanical precision regulator gives better charging repeatability than an electropneumatic regulator, but response can be sluggish at 50 kPa or less.</li>
-                                <li>Use two regulator stages plus an air bleed valve.</li>
-                                <li>Set the pressure difference between stages to ~100–150 kPa (e.g. 200 kPa first stage for a 100 kPa test pressure).</li>
-                                <li>Lowering the second-stage inlet pressure and maintaining airflow keeps the orifice slightly open, eliminating sluggish response.</li>
-                            </ul>
-                        </div>
-                        <div class="bp-diagram-box">
-                            <img src="Assets/BP6.png" alt="Regulator stages diagram">
-                        </div>
-
-                        <h3 class="bp-section-title">Features of the K-Type Through Exhaust Path</h3>
-                        <div class="bp-grid-2">
-                            <div class="bp-card">
-                                <p>Air inside the workpiece is exhausted through Workpiece 1, 2 and 3.</p>
-                                <ul>
-                                    <li>Simultaneous exhaust from every port prevents exhaust delays.</li>
-                                    <li>Prevents delays in transmission of the leak signal if the workpiece leaks.</li>
-                                </ul>
-                            </div>
-                            <div class="bp-diagram-box" style="margin:0;">
-                                <img src="Assets/BP7.png" alt="K-type through exhaust path diagram">
-                            </div>
-                        </div>
-
-                        <h3 class="bp-section-title">Bypass Units</h3>
-                        <div class="bp-table-wrap">
-                            <table class="bp-table">
-                                <thead>
-                                    <tr><th></th><th>BU-100-1</th><th>BU-100-2</th><th>BU-100-3</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th>Number of charging valves</th><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><th>Approx. workpiece volume*1</th><td>3 ～ 6 L</td><td>6 ～ 20 L</td><td>20 L or more</td></tr>
-                                    <tr><th>Test pressure range</th><td colspan="3">-100 kPa (vacuum source) to 500 kPa</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="bp-table-note">*1: Workpiece volumes are guidelines and vary with the leak-test environment and conditions.</p>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- ============ FEATURE 02 — placeholder (copy Feature 01 block structure here) ============ -->
-            <div class="bp-acc-item" data-title="Feature 02 placeholder">
-                <button class="bp-acc-header">
-                    <span class="bp-acc-num">02</span>
-                    <span class="bp-acc-title">
-                        Feature 02 Title
-                        <small>Short one-line description from the next PDF</small>
-                    </span>
-                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
-                </button>
-                <div class="bp-acc-body">
-                    <div class="bp-acc-content">
-                        <p class="bp-placeholder">Add this feature's content here — copy the structure used in Feature 01 (section titles, cards, diagram boxes, table if needed).</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat the pattern above for Features 03 to 25 -->
+            <!-- Repeat the pattern above for Features 06 to 25 -->
 
         </div>
 
