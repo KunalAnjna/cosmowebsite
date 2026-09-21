@@ -947,7 +947,7 @@
                         Water &amp; Oil Ingress Prevention
                         <small>Long-term reliability through sensor water and oil protection</small>
                     </span>
-                    <span class="bp-acc-badge">Patented</span>
+                    <span class="bp-acc-badge">Patent</span>
                     <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
                 </button>
                 <div class="bp-acc-body">
@@ -1149,7 +1149,139 @@
 
 
 
-            <!-- Repeat the pattern above for Features 06 to 25 -->
+            <!-- ============ FEATURE 09 — SELF-CHECK FUNCTION ============ -->
+            <div class="bp-acc-item" data-title="Self-check Function self-diagnostics fault detection patented intelligent air circuit">
+                <button class="bp-acc-header">
+                    <span class="bp-acc-num">09</span>
+                    <span class="bp-acc-title">
+                        Self-check Function
+                        <small>Rapid fault detection: self-diagnostics for reliable testing</small>
+                    </span>
+                    <span class="bp-acc-badge">Patented</span>
+                    <i class="fa-solid fa-chevron-down bp-acc-chevron"></i>
+                </button>
+                <div class="bp-acc-body">
+                    <div class="bp-acc-content">
+ 
+                        <h3 class="bp-section-title">A Risk Common to Differential-Pressure Systems</h3>
+                        <div class="bp-card">
+                            <p><strong>If a valve fails, both good parts and gross leakers may show zero differential pressure.</strong> Differential-pressure leak testers judge a part as good when the differential-pressure output is zero. This creates a risk of serious errors if leakage produces no differential pressure, or if the pressure difference is not detected. COSMO air leak testers check the causes of these faults and prevent incorrect judgments.</p>
+                        </div>
+ 
+                        <h3 class="bp-section-title">Sensitivity Fault — Causes &amp; Countermeasures</h3>
+                        <div class="bp-card">
+                            <p>A sensitivity fault occurs when the sensor fails to detect differential pressure, or a proper leak-induced differential pressure is not generated. Possible causes include: pressurization valve SV1, equalization valve SV2, or exhaust valve SV3 failing to operate; the sensor not functioning; pilot pressure not being supplied; a wrong equivalent volume setting for the active channel; or incorrect test pressure.</p>
+                            <p>COSMO testers address this with periodic diagnosis (e.g. 3 checks per day, at start of shift / 1 p.m. / end of shift) and diagnosis by the self-check function, which runs in every single test cycle.</p>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/SC1.png" alt="Flowchart showing sensitivity fault causes, periodic diagnosis versus self-check diagnosis every cycle, and three countermeasures">
+                        </div>
+ 
+                        <h3 class="bp-section-title">Countermeasure 1 — Using a Reference Leak or Volume-Change Device</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <h4>Leak Master (LM-1B)</h4>
+                                <p>Connect to the tester's calibration port to check leak sensitivity.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/SC2.png" alt="Photo of the LM-1B Leak Master">
+                                </div>
+                            </div>
+                            <div class="bp-card">
+                                <h4>Auto Leak Calibrator (ALC)</h4>
+                                <p>Built into the tester; checks K(Ve) when triggered externally.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/SC3.png" alt="Photo of the Auto Leak Calibrator (ALC)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bp-highlight-box" style="margin-top:24px;">
+                            <h4>Quick Leak Calibrator (QLC) — Patented</h4>
+                            <p>A simple manual operation instantly changes the volume to check leak sensitivity.</p>
+                            <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                <img src="Assets/SC4.png" alt="Photo of the Quick Leak Calibrator (QLC)">
+                            </div>
+                        </div>
+ 
+                        <h3 class="bp-section-title">Countermeasures 2 &amp; 3 — Using the Intelligent Air Circuit</h3>
+                        <div class="bp-card">
+                            <p><strong>Verifies all required valve operations</strong> — checks the sensor and valves during every test cycle.</p>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/SC5.png" alt="Photo of a hand holding a Cosmo intelligent air circuit component">
+                        </div>
+ 
+                        <h3 class="bp-section-title">Intelligent II Air Circuit Self-check Function (Patented)</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <h4>Checks Using Test Pressure Sensor P.S</h4>
+                                <p>P.S checks whether the test pressure is set correctly. It also monitors pressure after pressurization to check valve operation and detect gross leaks. An error message appears if an abnormality is detected.</p>
+                                <ul>
+                                    <li>At startup, the test pressure sensor offset is checked to ensure it is zero — an out-of-range value may indicate that AV2 does not close.</li>
+                                    <li>During BAL1 (equalization), AV1 and AV3 close, and the test pressure applied to pressure sensor P.S is checked.</li>
+                                </ul>
+                                <p>If no test pressure is detected, possible causes include: AV1 does not open; AV2 remains closed; AV3 does not close; or the workpiece / sealing fixture has a gross leak.*</p>
+                                <p style="font-size:13px; color:#555;">* If a tester with an equalization stage does not check test pressure during that stage, gross leaks in low-pressure, small-volume workpieces may be missed.</p>
+                            </div>
+                            <div class="bp-card">
+                                <h4>Exhaust Air-blow Check (Patented)</h4>
+                                <p>The differential-pressure sensor DPS and valve operation are checked during the exhaust stage of every leak test.</p>
+                                <ul>
+                                    <li>During exhaust (BLW), air is blown from the air supply as the workpiece and master are exhausted. A fault is detected if the sensor fails to detect the differential pressure generated by the orifice in the master circuit.</li>
+                                    <li>Operation of valves AV1, AV2 and AV3 is checked at the same time.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bp-diagram-box">
+                            <img src="Assets/SC6.png" alt="Intelligent II air circuit diagram with F1, V1, G1, AV1, AV2, AV3, DPS, P.S and orifice, showing exhaust air-blow flow">
+                            <p class="bp-caption">Exhaust air blow prevents water/oil ingress from the workpiece — it prevents faults and sensitivity changes caused by foreign matter entering the tester.</p>
+                        </div>
+ 
+                        <h3 class="bp-section-title">Functions to Eliminate Human Error and Ensure Safety</h3>
+                        <div class="bp-grid-2">
+                            <div class="bp-card">
+                                <h4>Critical Pilot Pressure Control</h4>
+                                <p>A filter regulator with a pressure gauge supplies air within the proper pressure range to the pilot-pressure solenoid valves (SV2, SV3, SV4) that drive the pneumatic valves AV1–AV3.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/SC7.png" alt="Photo of a filter regulator with pressure gauge for pilot air supply">
+                                </div>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/SC8.png" alt="Circuit diagram of the filter regulator supplying pilot air through SV2, SV3 and SV4 to AV1, AV2 and AV3">
+                            </div>
+                        </div>
+ 
+                        <div class="bp-grid-2" style="margin-top:24px;">
+                            <div class="bp-card">
+                                <h4>Remote Operation at Power-on</h4>
+                                <p>Automatic operation is unavailable if the leak tester is in manual operation (MAN mode) at the start of the shift. To prevent this problem in automated equipment, the tester always enters externally triggered remote operation (REM mode) at power-on.</p>
+                            </div>
+                            <div class="bp-card">
+                                <h4>Keyboard Lock Function</h4>
+                                <p>The keyboard is normally locked to prevent accidental changes to parameters. Unlocking requires a password entered using the numeric keypad.</p>
+                                <div class="bp-diagram-box" style="background:#fff; margin-bottom:0;">
+                                    <img src="Assets/SC9.png" alt="Photo of the numeric keypad and REMOTE/MANUAL key on the tester">
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <h3 class="bp-section-title">Workpiece/Master Stop Valve Open/Closed Check</h3>
+                        <div class="bp-card">
+                            <p>Stop valves are fitted to the workpiece and master ports so users can easily inspect the tester itself for leakage and perform other checks. If these valves are left closed during leak testing, no air reaches the workpiece and every part is judged good — creating a serious risk. Switches detect whether the stop valves are open or closed, so an error message appears in this situation.</p>
+                        </div>
+                        <div class="bp-grid-2">
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/SC10.png" alt="Photo of the workpiece/master stop valve in the closed position, with limit switch highlighted">
+                                <p class="bp-caption">Valve closed</p>
+                            </div>
+                            <div class="bp-diagram-box" style="margin:0;">
+                                <img src="Assets/SC11.png" alt="Photo of the workpiece/master stop valve in the open position">
+                                <p class="bp-caption">Valve open</p>
+                            </div>
+                        </div>
+ 
+                    </div>
+                </div>
+            </div>
 
         </div>
 
